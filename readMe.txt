@@ -37,8 +37,11 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 	
 ------------------------------------------------------------------------------------------------------------------
 ---------------------------NODOS DISPONIBLES---------------------------					             
-Cada nodo está suscrito y publica un topic /nombre_topic  (Tipo de mensaje)
-Los topics creados específicamente son de la familia nimble_interfaces/msg/NombreMensaje. Los predefinidos de ROS varían
+Cada nodo está suscrito y publica diferentes topics, descritos de la siguiente forma:
+	/nombre_topic  (Tipo de mensaje) Origen: Nodo_de_procedencia
+
+Los tipos de mensaje creados específicamente son del tipo nimble_interfaces/msg/NombreMensaje, que también es la carpeta en la que están guardados. Los predefinidos de ROS varían.
+
 Más abajo hay una lista de los tipos de mensaje usados y los distintos campos que contienen.
   
   ----------hmi ----------------------------------------------
@@ -60,7 +63,7 @@ launch/nimble_launch.py.
 Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia y la trayectoria ideal de la pelvis en y,z??
 
 		-Suscribed: 
-			/measurements (nimble_interfaces/msg/Measurements) Publisher: hmi
+			/measurements (nimble_interfaces/msg/Measurements) Origen: hmi
 				medidas fisicas paciente
 				
 			/therapy_requirements (nimble_interfaces/msg/TherapyRequirements) Origen: hmi
@@ -80,7 +83,7 @@ Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de
 				posicion, velocidad, esfuerzo de los cables (por confirmar)
 				
 			/step_target  (nimble_interfaces/msg/TherapyRequirements) Origen: kinematic_model
-				altura y longitud de paso consecuencia de la trayectoria ideal
+				altura y longitud de paso a ejecutar, consecuencia del calculo de la trayectoria articular ideal
 				
 			/interactionTorque (std_msgs/Float32MultiArray) Origen: Nodo_Simulink (H3)
 				torque de interacción medido por el H3, 6 elementos 
