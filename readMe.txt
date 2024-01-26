@@ -4,11 +4,11 @@ Pasos para la instalación del paquete
 	- Ubuntu 22.04
 	- Instalación desktop full de ROS2 version Humble
 
--Crear una carpeta ros_ws y subcarpeta ros_ws/src. En ella copiaremos los archivos. Para la compilacion situarse en "cd ros_ws".
+-Crear una carpeta workspace (p.e. nimble_ws o ros_ws) y subcarpeta nimble_ws/src. En ella copiaremos los archivos descargandolos directamente o ejecutando "git clone https://github.com/jcarballeira/nimble.git" si teneis git instalado.
+ 
+-Compilar: Situarse en "cd nimble_ws" y ejecutar "colcon build"
 
--Realizar la compilacion con "colcon build"
-
--Cargar la instalación con "source install/setup.bash" (Este paso hay que realizarlo desde ros_ws al abrir un nuevo terminal)
+-Cargar la instalación con "source install/setup.bash" (Este paso hay que realizarlo desde nimble_ws al abrir un nuevo terminal)
 
 -Ejecucion del nodo deseado "ros2 run nimble your_node"
 
