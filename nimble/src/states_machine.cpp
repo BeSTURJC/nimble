@@ -33,6 +33,7 @@ struct SharedData {
     nimble_interfaces::msg::Measurements measurements;
     std_msgs::msg::Float32MultiArray interaction_torque;
     std_msgs::msg::ByteMultiArray FSR;
+    
  //Duplicar datos de measurements y th_requirements para solo solicitar el servicio de calculo de trayectorias si algo se modifica
     nimble_interfaces::msg::TherapyRequirements therapy_requirements_previous;
     nimble_interfaces::msg::Measurements measurements_previous;
@@ -43,7 +44,11 @@ struct SharedData {
 	    measurements_previous.femur=0;
 	    measurements_previous.tibia=0;
 	    measurements_previous.height=0;
-	    measurements_previous.foot=0;
+	    measurements_previous.height_ankle=0;
+	    measurements_previous.distance_to_heel=0;
+	    measurements_previous.distance_to_toe=0;
+	    measurements_previous.depth_pelvis=0;
+	    measurements_previous.width_pelvis=0;
 	    therapy_requirements_previous.step_length=0;
 	    therapy_requirements_previous.step_height=0;
     
@@ -196,9 +201,22 @@ private:
     bool check_variations_intherapy(const nimble_interfaces::msg::Measurements & measurements, const nimble_interfaces::msg::TherapyRequirements & therapy_requirements){
     
     	bool therapy_variation=false;
-    	if (measurements.foot !=shared_data_.measurements_previous.foot){
+    	if (measurements.height_ankle !=shared_data_.measurements_previous.height_ankle){
     		therapy_variation=true;
-    		shared_data_.measurements_previous.foot=measurements.foot;
+    		shared_data_.measurements_previous.height_ankle=measurements.height_ankle;
+    	}else if (measurements.distance_to_heel !=shared_data_.measurements_previous.distance_to_heel){
+    		therapy_variation=true;
+    		shared_data_.measurements_previous.distance_to_heel=measurements.distance_to_heel;
+    	}else if (measurements.distance_to_toe !=shared_data_.measurements_previous.distance_to_toe){
+    		therapy_variation=true;
+    		shared_data_.measurements_previous.distance_to_toe=measurements.distance_to_toe;
+    	}else if (measurements.depth_pelvis !=shared_data_.measurements_previous.depth_pelvis){
+    		therapy_variation=true;
+    		shared_data_.measurements_previous.depth_pelvis=measurements.depth_pelvis;
+    	} else if (measurements.width_pelvis !=shared_data_.measurements_previous.width_pelvis){	
+    		therapy_variation=true;
+    		shared_data_.measurements_previous.width_pelvis=measurements.width_pelvis;	
+    		
     	} else if (measurements.height !=shared_data_.measurements_previous.height){	
     		therapy_variation=true;
     		shared_data_.measurements_previous.height=measurements.height;
@@ -216,7 +234,8 @@ private:
     		shared_data_.therapy_requirements_previous.step_height=therapy_requirements.step_height;
     	}
     	
-    return therapy_variation;	
+    return therapy_variation;
+	
     }
     
      

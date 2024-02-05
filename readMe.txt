@@ -40,20 +40,22 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
    
    	-nimble_interfaces/msg/Measurements
 		-std_msgs/Header header
-   		-float64 height
-   		-float64 femur
-   		-float64 tibia
-   		-float64 foot
+		-float64 height
+		-float64 femur
+		-float64 tibia
+		-float64 height_ankle
+		-float64 distance_to_heel
+		-float64 distance_to_toe
+		-float64 depth_pelvis
+		-float64 width_pelvis
    		
    	-nimble_interfaces/msg/TherapyRequirements
 		-std_msgs/Header header
-   		-float64 step_height
-   		-float64 step_length
-   		-float64 speed
+		-float64 speed
 		-float64 step_length
 		-float64 step_height
-		-int32 min_assist
-		-int32 max_assist
+		-int32 min_assist_level
+		-int32 max_assist_level
 		
    	-nimble_interfaces/msg/FrameState
 		-std_msgs/Header header
