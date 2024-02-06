@@ -75,7 +75,7 @@ public:
         publisher_jointsSP = create_publisher<sensor_msgs::msg::JointState>("joints_SP", 10);
         
         //Create wall timer to publish periodically (eliminar si no se usa)
-        timer_ = this->create_wall_timer(1000ms, std::bind(&MSDControlNode::timer_callback, this)); 
+        timer_ = this->create_wall_timer(100ms, std::bind(&MSDControlNode::timer_callback, this)); 
         
     }
 
@@ -134,6 +134,22 @@ private:
       	 //jointsSP_msg=.......;   //Rellenar con la información correspondiente
          //jointsSP_msg.header.stamp=now();   //header con el momento de publicacion
     	 //publisher_jointsSP->publish(jointsSP_msg);  //publicar
+    	 
+    	 for (size_t i = 0; i < shared_data_.joints_target.points.size(); ++i) {
+            const auto& point = shared_data_.joints_target.points[i];
+
+            // Create a JointState message
+            
+            jointsSP_msg.header.stamp=now();
+            jointsSP_msg.name = shared_data_.joints_target.joint_names;
+            jointsSP_msg.position = point.positions;
+           
+            // Publish the JointState message
+            publisher_jointsSP->publish(jointsSP_msg);
+
+            // Sleep for a short duration between publishing points (optional)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
     
       
     }

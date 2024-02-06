@@ -13,6 +13,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)  
 
+
 add_executable(hmi src/hmi_publisher.cpp)
 ament_target_dependencies(hmi rclcpp nimble_interfaces)
 
@@ -39,6 +40,7 @@ ament_target_dependencies(gamming rclcpp nimble_interfaces)
 
 add_executable(traj_generator_server src/traj_generator_service.cpp)
 ament_target_dependencies(traj_generator_server rclcpp nimble_interfaces)
+
 
 install(TARGETS
   hmi
