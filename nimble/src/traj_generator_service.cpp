@@ -2,7 +2,6 @@
 #include <functional>
 #include <memory>
 #include <string>
-#include "matio.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

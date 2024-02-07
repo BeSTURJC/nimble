@@ -6,6 +6,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/int16.hpp"
+#include "std_msgs/msg/int32.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
 #include "std_msgs/msg/float32_multi_array.hpp"
 #include "std_msgs/msg/byte_multi_array.hpp"
@@ -135,8 +136,8 @@ public:
         
         publisher_joints_target = create_publisher<trajectory_msgs::msg::JointTrajectory>("joints_target", 10);
         publisher_assistLevel = create_publisher<std_msgs::msg::Int32MultiArray>("assistLevel", 10);
-        publisher_executionMode = create_publisher<std_msgs::msg::Int32MultiArray>("executionMode", 10);
-        publisher_controlMode = create_publisher<std_msgs::msg::Int16>("controlMode", 10);
+        publisher_executionMode = create_publisher<std_msgs::msg::Int32>("executionMode", 10);
+        publisher_controlMode = create_publisher<std_msgs::msg::Int32MultiArray>("controlMode", 10);
         
         //Create callback groups to avoid multi-executor issues
         client_cb_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
@@ -168,8 +169,8 @@ private:
     //Publishers
     rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr publisher_joints_target;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_assistLevel;
-    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_executionMode;
-    rclcpp::Publisher<std_msgs::msg::Int16>::SharedPtr publisher_controlMode;
+    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr publisher_executionMode;
+    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_controlMode;
     
         
     // Funcion para convertir JointTrajectory a string (solo para mostrarla por el terminal)
