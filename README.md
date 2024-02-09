@@ -1,53 +1,51 @@
 # Nimble
 
+<!--Añadir imagen del logo-->
+
+<div align="center">
+<img width=100px src="https://img.shields.io/badge/status-in%20process-orange" alt="In process"></a>
+<!-- <img width=100px src="https://img.shields.io/badge/license-Apache-green" alt="explode"></a> -->
+</div>
+
 ## Índice
 1. [Instalación del paquete](#instalación-del-paquete)
-   - [Requisitos del sistema](#requisitos-del-sistema)
-   - [Crear una carpeta workspace](#crear-una-carpeta-workspace)
-   - [Compilar](#compilar)
-   - [Cargar la instalación](#cargar-la-instalación)
-   - [Ejecución del nodo deseado](#ejecución-del-nodo-deseado)
-   - [Ejecución en el mainPC](#ejecución-en-el-mainpc)
 
 2. [Anotaciones](#anotaciones)
-   - [Paquetes Esenciales](#paquetes-esenciales)
-   - [HMI (Human-Machine Interface)](#hmi)
-   - [States Machine](#states-machine)
-   - [Kinematic Model](#kinematic-model)
-   - [Control MSD](#control-msd)
-   - [Control ZMP](#control-zmp)
-   - [Cables Robot](#cables-robot)
-   - [Frame](#frame)
-   - [Gaming](#gaming)
-   - [Bonus Track: Nodo Simulink](#bonus-track-nodo-simulink)
 
 3. [Tipos de Mensaje Utilizados](#tipos-de-mensaje-utilizados)
-   - [nimble_interfaces/msg/Measurements](#nimble_interfacesmsgmeasurements)
-   - [nimble_interfaces/msg/TherapyRequirements](#nimble_interfacesmsgtherapyrequirements)
-   - [nimble_interfaces/msg/FrameState](#nimble_interfacesmsgframestate)
-   - [nimble_interfaces/msg/CartesianTrajectory](#nimble_interfacesmsgcartesiantrajectory)
-   - [nimble_interfaces/srv/TrajGeneratorService](#nimble_interfacessrvtrajgeneratorservice)
-   - [Mensajes Utilizados de ROS](#mensajes-utilizados-de-ros)
 
+4. [Equipo](#equipo)
+
+---
+---
 
 ## Instalación del paquete
 
-0. Requisitos sistema:
+0. **Requisitos sistema:**
 	- Ubuntu 22.04
 	- Instalación desktop de ROS2 Humble
 
-1. Crear una carpeta workspace (p.e. nimble_ws o ros_ws) y subcarpeta nimble_ws/src. En ella copiaremos los archivos descargandolos directamente o ejecutando "git clone https://github.com/jcarballeira/nimble.git" si teneis git instalado.
- 
-2. Compilar: Situarse en "cd nimble_ws" y ejecutar "colcon build". Rezar a vuestra divinidad favorita.
+1. **Crear una carpeta workspace** (p.e. nimble_ws o ros_ws) y subcarpeta nimble_ws/src. En ella copiaremos los archivos descargandolos directamente o ejecutando:
 
-3. Cargar la instalación con "source install/setup.bash" 
+```bash
+git clone https://github.com/jcarballeira/nimble.git
+```
+ 
+3. **Compilar:** Situarse en "cd nimble_ws" y ejecutar "colcon build". Rezar a vuestra divinidad favorita.
+
+4. **Cargar la instalación** con "source install/setup.bash" 
 	- Este paso hay que realizarlo desde nimble_ws al abrir un nuevo terminal. Para evitarlo, abrir un terminal nuevo, ejecutar "gedit .bashrc"
-          Se abrirá un archivo en el que debemos copiar al final la siguiente instrucción "source ~/nimble_ws/install/setup.bash". De esta forma se 	  ejecuta automáticamente al abrir un nuevo terminal. De todas formas, al compilar algo nuevo habrá que reiniciar el terminal para que se 
+          Se abrirá un archivo en el que debemos copiar al final la siguiente instrucción:
+   ```bash
+   source ~/nimble_ws/install/setup.bash
+   ```
+   
+   De esta forma se ejecuta automáticamente al abrir un nuevo terminal. De todas formas, al compilar algo nuevo habrá que reiniciar el terminal para que se 
           actualice ese archivo.
 
-4. Ejecución del nodo deseado "ros2 run nimble your_node"
+5. **Ejecución del nodo** deseado "ros2 run nimble your_node"
 
-5. En el caso del mainPC existe un fichero launch para ejecutar todos los nodos en una única instrucción. Ejecutar "ros2 launch nimble nimble_launch.py". 
+6. En el caso del mainPC existe un fichero launch para ejecutar todos los nodos en una única instrucción. Ejecutar "ros2 launch nimble nimble_launch.py". 
 
 ---
 ---
@@ -68,7 +66,8 @@ Además cada nodo tiene un timer (de perido ajustable, default:1000ms) que ejecu
 
 Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y república. Deslicen hacia abajo para más info interesante, suscribanse y denle a like.
 
-
+---
+---
 	
 ## Nodos			             
 Cada nodo está suscrito y publica diferentes topics, descritos de la siguiente forma:
@@ -78,6 +77,7 @@ Los tipos de mensaje creados específicamente son del tipo nimble_interfaces/msg
 
 AL FINAL DE ESTE ARCHIVO hay una lista de los tipos de mensaje usados y los distintos campos que contienen.
 
+---
   
 ### HMI
   
@@ -92,7 +92,8 @@ launch/nimble_launch.py.
    			/therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
    				niveles de asistencia, requisitos de altura y distancia de paso
    				
-				
+---
+
 ### States_machine
 
 Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia y quizás añadir la publicacion del estado de la marcha (porcentaje).
@@ -140,7 +141,7 @@ Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de
 				
     			/controlMode  (std_msgs/Int32MultiArray) uno por cada articulacion
     				modo de control para cada articulacion ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-    				
+---			
 		
 ### Kinematic_model
 
@@ -169,7 +170,8 @@ Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz d
 				
     			/step_target (nimble_interfaces/msg/TherapyRequirements)
 				altura y longitud de paso buscada 
-				
+    
+---			
 
 ### Control_MSD
 
@@ -196,6 +198,8 @@ Obj: control MSD de las articulaciones del Exo H3
     		-Publishes:
 			/joints_SP  (sensor_msgs/msg/JointState)
 				set points enviados al Exo (posicion, velocidad o torque)
+
+---
 
 ### Control_ZMP
 
@@ -224,6 +228,8 @@ Obj: control de la posición del COG/ZMP a través de la acción del marco/robot
 				al caso de articulaciones, considerando en este caso cada coordenada como articulacion.
 			
 
+---
+
 ### Cables_robot
 
 Obj: movimiento de la pelvis del paciente en el plano yz para la descarga de peso en la caminata
@@ -238,6 +244,7 @@ Obj: movimiento de la pelvis del paciente en el plano yz para la descarga de pes
 			/cables_state  (sensor_msgs/msg/JointState)
 				posicion, esfuerzo....de los cables (por definir)
  		
+---
 
 ### Frame 
 
@@ -253,6 +260,7 @@ Obj: movimiento del marco en la direccion de avance como acompañamiento e impul
 			/frame_state (nimble_interfaces/msg/FrameState)
 				posicion y velocidad en x del marco, informacion del sensor óptico
 				
+---
 
 ### Gamming
 
@@ -268,7 +276,8 @@ Obj: proyeccion de incentivo para el paciente en forma de huellas sobre el suelo
 
 			   				
     		-Publishes: NONE
-				
+
+---
 
 ### BONUS TRACK: NODO_SIMULINK
 
@@ -301,6 +310,8 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 			/FSR 	(std_msgs/ByteMultiArray) 
 				contacto con el suelo, 4 elentos [heelR, toeR, heelL, toeL] 
 
+---
+---
 
 ## TIPOS DE MENSAJE UTILIZADOS
 
@@ -346,7 +357,9 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 		-Request 1: measurements (nimble_interfaces/msg/Measurements)
 		-Request 2: therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
 		-Response: joints_target (trajectory_msgs/msg/JointTrajectory)	
-		
+
+ ---
+ ---
 
 ## Mensajes utilizados de los predefinidos en ROS
 
@@ -377,13 +390,15 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 		
    	-std_msgs/Int16
 		-int16 data
+
+ ---
+ ---
+ 
+## Equipo
+
 		
 
-
-		
-	
-		
-		
+<!--Licencia???-->
 		
 		
 		
