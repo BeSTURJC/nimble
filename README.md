@@ -167,7 +167,7 @@ Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz d
     			/cartesian_trajectory  (nimble_interfaces/msg/CartesianTrajectory)
 				posiciones xyz para toda la trayectoria ideal tanto de la pelvis (R,L,C) como del maleolo (R,L). 
     
-			/joint_acc_state   (nimble_interfaces/msg/JointsTrajectory)
+			/joints_acc_state   (nimble_interfaces/msg/JointsTrajectory)
 				buffer (tamaño por decidir) con las posiciones acumuladas de las articulaciones hasta el al instante actual, con % marcha de cada uno, en intervalos constantes (por definir)
     
     			/cartesian_state (nimble_interfaces/msg/CartesianTrajectory)
