@@ -188,9 +188,6 @@ Obj: A partir de la trayectoria articular ideal y la trayectoria cartesiana idea
    			/cartesian_trajectory  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
 				posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.	
     							
-    			/measurements  (nimble_interfaces/msg/Measurements) Origen: hmi
-				medidas fisicas paciente
-    
     			/step_target (nimble_interfaces/msg/TherapyRequirements)
 				altura y longitud de paso buscada 
 
