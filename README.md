@@ -151,7 +151,7 @@ Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz d
 		 	/joints_trajectory (nimble_interfaces/msg/JointsTrajectory) Origen: states_machine
    				trayectoria articular ideal
    				
-		/joints_state  (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
+			/joints_state  (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
 				informacion actual de las articulaciones del H3
     
     			/joints_target  (nimble_interfaces/msg/JointsTrajectory) Origen: gait_control
