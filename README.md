@@ -90,7 +90,7 @@ launch/nimble_launch.py.
 			/measurements (nimble_interfaces/msg/Measurements)
 				medidas fisicas paciente
    			/therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
-   				niveles de asistencia, requisitos de altura y distancia de paso
+   				niveles de asistencia, velocidad, requisitos de altura y distancia de paso
    				
 ---
 
@@ -103,12 +103,12 @@ Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de
 				medidas fisicas paciente
 				
 			/therapy_requirements (nimble_interfaces/msg/TherapyRequirements) Origen: hmi
-				rango de niveles de asistencia, objetivos de altura y distancia de paso
+				rango de niveles de asistencia, velocidad, objetivos de altura y distancia de paso
 				
 			/joints_state (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
 				informacion actual de las articulaciones del H3	
 				
-			/cartesian_target  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
+			/cartesian_trajectory  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
 				posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.  
 				El nodo debe rellenar las componentes y,z despues de recibir la componente x.	
 							
@@ -130,7 +130,7 @@ Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de
 				
 		-Publishes:
 							
-			/joints_target	(trajectory_msgs/msg/JointTrajectory)
+			/joints_trajectory	(nimble_interfaces/msg/JointsTrajectory)
    				trayectoria articular ideal obtenida por servicio (NN: TrajGenerationService)
    				  				
    			/assistLevel  (std_msgs/Int32MultiArray) 
@@ -148,11 +148,14 @@ Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de
 Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del maleolo y la pelvis, tanto de la trayectoria ideal (con long y alt de paso) como la real en cada instante (acumulando en un vector)
 
 		-Suscribed:
-		 	/joints_target  (trajectory_msgs/msg/JointTrajectory) Origen: states_machine
+		 	/joints_trajectory (nimble_interfaces/msg/JointsTrajectory) Origen: states_machine
    				trayectoria articular ideal
    				
     			/joints_state  (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
 				informacion actual de las articulaciones del H3
+    
+    			/joints_target  (nimble_interfaces/msg/JointsTrajectory) Origen: gait_control
+   				objetivo actual de las articulaciones según fase de marcha
 				
     			/cables_state  (sensor_msgs/msg/JointState) Origen: cables_robot
 				posicion, esfuerzo....de los cables (por definir)
@@ -161,10 +164,12 @@ Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz d
 				medidas fisicas paciente
     			
     		-Publishes:
-    			/cartesian_target  (nimble_interfaces/msg/CartesianTrajectory)
-				posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo. 
-				
-				
+    			/cartesian_trajectory  (nimble_interfaces/msg/CartesianTrajectory)
+				posiciones xyz para toda la trayectoria ideal tanto de la pelvis (R,L,C) como del maleolo (R,L). 
+    
+			/joint_acc_state   (nimble_interfaces/msg/JointsTrajectory)
+				buffer (tamaño por decidir) con las posiciones acumuladas de las articulaciones hasta el al instante actual, con % marcha de cada uno, en intervalos constantes (por definir)
+    
     			/cartesian_state (nimble_interfaces/msg/CartesianTrajectory)
 				posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
 				
@@ -172,15 +177,41 @@ Obj: Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz d
 				altura y longitud de paso buscada 
     
 ---			
+### Gait_control
 
+Obj: A partir de la trayectoria articular ideal y la trayectoria cartesiana ideal, interpola esos valores para publicar a una frecuencia constante manteniendo una velocidad de caminata determinada por el fisioterapeuta y/o modificada por la máquina de estados.
+
+		-Suscribed:
+		 	/joints_trajectory  (nimble_interfaces/msg/JointsTrajectory) Origen: states_machine
+   				trayectoria articular ideal
+       
+   			/cartesian_trajectory  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
+				posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.	
+    							
+    			/measurements  (nimble_interfaces/msg/Measurements) Origen: hmi
+				medidas fisicas paciente
+    
+    			/step_target (nimble_interfaces/msg/TherapyRequirements)
+				altura y longitud de paso buscada 
+
+    			/therapy_requirements (nimble_interfaces/msg/TherapyRequirements) Origen: hmi
+				rango de niveles de asistencia, velocidad, objetivos de altura y distancia de paso
+    			
+    		-Publishes:
+    			/joints_target  (nimble_interfaces/msg/JointsTrajectory) 
+   				objetivo actual de las articulaciones según fase de marcha
+
+       			/cartesian_target (nimble_interfaces/msg/CartesianTrajectory)
+    
+---		
 ### Control_MSD
 
 Obj: control MSD de las articulaciones del Exo H3
 
 		-Suscribed:
 
-			/joints_target  (trajectory_msgs/msg/JointTrajectory) Origen: states_machine
-   				trayectoria articular ideal
+			/joints_target  (nimble_interfaces/msg/JointsTrajectory) Origen: gait_control
+   				objetivo actual de las articulaciones según fase de marcha
    				
     			/joints_state  (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
 				informacion actual de las articulaciones del H3
@@ -206,8 +237,11 @@ Obj: control MSD de las articulaciones del Exo H3
 Obj: control de la posición del COG/ZMP a través de la acción del marco/robot cables.
 	
 		-Suscribed:
-			/cartesian_target  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
-				posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo. 
+			/cartesian_target  (nimble_interfaces/msg/CartesianTrajectory) Origen: gait_control
+				objetivo actual de posicion pelvis según fase de marcha
+    
+    			/cartesian_state (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
+				posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
 				
 			/step_target (nimble_interfaces/msg/TherapyRequirements) Origen: kinematic_model
 				altura y longitud de paso buscada 
@@ -344,19 +378,45 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 		
    	-nimble_interfaces/msg/CartesianTrajectory
 		-std_msgs/Header header
-		-geometry_msgs/Point[] malleolus (vector de vectores [x,y,z])
+  		-std_msgs/Float32MultiArray phase (vector con la fase de marcha de cada posicion)
+		-geometry_msgs/Point[] malleolus_R (vector de vectores [x,y,z])
 			float64 x
 			float64 y
 			float64 z
-    		-geometry_msgs/Point[] pelvis    (vector de vectores [x,y,z])
+   		-geometry_msgs/Point[] malleolus_L (vector de vectores [x,y,z])
+			float64 x
+			float64 y
+			float64 z
+    		-geometry_msgs/Point[] pelvis_R    (vector de vectores [x,y,z])
     			float64 x
 			float64 y
 			float64 z 
+		-geometry_msgs/Point[] pelvis_L    (vector de vectores [x,y,z])
+    			float64 x
+			float64 y
+			float64 z
+   		-geometry_msgs/Point[] pelvis_C    (vector de vectores [x,y,z])
+    			float64 x
+			float64 y
+			float64 z
+
+	--nimble_interfaces/msg/JointTrajectory
+		-std_msgs/Header header
+		-std_msgs/Float32MultiArray phase  (vector con la fase de marcha de cada posicion)
+		-trajectory_msgs/msg/JointTrajectory
+  			-std_msgs/Header header
+   			-string[] joint_names       seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
+   			-JointTrajectoryPoint[] points
+   				float64[] positions
+				float64[] velocities
+				float64[] accelerations
+				float64[] effort
+				duration time_from_start
    		
 	-nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
 		-Request 1: measurements (nimble_interfaces/msg/Measurements)
 		-Request 2: therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
-		-Response: joints_target (trajectory_msgs/msg/JointTrajectory)	
+		-Response: joints_target (nimble_interfaces/msg/JointTrajectory)	
 
  ---
  ---
@@ -369,16 +429,6 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 		-float64[] position    vector de vectores [pos_hipR, pos_kneeR, pos_ankleR, pos_hipL, pos_kneeL, pos_ankleL]
 		-float64[] velocity    análogo al anterior con velocidades
 		-float64[] effort      análogo al anterior con velocidades
-			
-	-trajectory_msgs/msg/JointTrajectory
-		-std_msgs/Header header
-   		-string[] joint_names       seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-   		-JointTrajectoryPoint[] points
-   			float64[] positions
-			float64[] velocities
-			float64[] accelerations
-			float64[] effort
-			duration time_from_start
    		
    	-std_msgs/Int32MultiArray
 		-MultiArrayLayout  layout        
