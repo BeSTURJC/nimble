@@ -2,6 +2,11 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <boost/tokenizer.hpp>
 
 
 #include "rclcpp/rclcpp.hpp"
@@ -40,7 +45,53 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
     float tibia=request->measurements.tibia;	
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request\nfemur: %f" " tibia: %f",
                 femur, tibia);
-   
+                
+                
+    std::string csv_file_path = "file.csv";            
+    std::ifstream file(csv_file_path);
+    std::cout << "Attempting to open file: " << csv_file_path << std::endl;
+
+
+    // Check if the file is opened successfully
+    if (!file.is_open()) {
+            RCLCPP_ERROR(rclcpp::get_logger("joint_trajectory_publisher"), "Error opening the file.");
+    throw std::runtime_error("Error opening the file.");
+        }
+        
+        // Create a JointTrajectory message
+        auto joint_trajectory = std::make_shared<trajectory_msgs::msg::JointTrajectory>();
+
+        // Initialize JointTrajectory message
+        //trajectory_msgs::msg::JointTrajectory joint_trajectory;
+        joint_trajectory->joint_names = {"hipR", "kneeR", "ankleR", "hipL", "kneeL", "ankleL"};
+
+        // Read and process each line of the CSV file
+        std::string line;
+        while (std::getline(file, line)) {
+            // Use a boost tokenizer to split the line into tokens
+            boost::tokenizer<boost::escaped_list_separator<char>> tokens(line);
+            
+            trajectory_msgs::msg::JointTrajectoryPoint point;
+            point.positions.reserve(6);
+
+            // Process the tokens and convert to double
+            for (const auto& token : tokens) {
+                point.positions.push_back(std::stod(token));
+            }
+
+            // Add the point to the trajectory
+            joint_trajectory->points.push_back(point);
+        }
+
+        // Close the file
+        file.close();
+        
+          
+
+
+             
+              
+   /*
   // Create a JointTrajectory message
     //std::shared_ptr<trajectory_msgs::msg::JointTrajectory> joint_trajectory;  
     auto joint_trajectory = std::make_shared<trajectory_msgs::msg::JointTrajectory>();
@@ -69,7 +120,7 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
     joint_trajectory->points.push_back(point1);
     joint_trajectory->points.push_back(point2);
     
-    
+    */
     RCLCPP_INFO(rclcpp::get_logger("joint_trajectory_publisher"), "JointTrajectory message:\n%s",
         jointTrajectoryToString(joint_trajectory).c_str());
 

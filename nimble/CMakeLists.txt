@@ -44,6 +44,7 @@ ament_target_dependencies(gamming rclcpp nimble_interfaces)
 add_executable(traj_generator_server src/traj_generator_service.cpp)
 ament_target_dependencies(traj_generator_server rclcpp nimble_interfaces)
 
+
 install(TARGETS
   hmi
   kinematic_model
