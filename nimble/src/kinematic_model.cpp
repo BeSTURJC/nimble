@@ -293,8 +293,7 @@ Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
 
 
 // ***** Main functions ***** //
-Eigen::Vector3d
-KinematicModelNode::gaitFeatureExtraction(  
+Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(  
     // const std::vector<double>& ankleIpsi_X,
     const std::vector<double> &ankleContra_X,
     // const std::vector<double>& ankleIpsi_Z,
