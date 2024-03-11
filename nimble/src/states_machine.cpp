@@ -242,7 +242,7 @@ private:
      
     //Funcion para solicitar el servicio de cálculo de trayectorias
     
-    void call_TrajGenerationService(const nimble_interfaces::msg::Measurements & measurements, const 			nimble_interfaces::msg::TherapyRequirements & requirements) {
+    void call_TrajGenerationService(const nimble_interfaces::msg::Measurements & measurements, const nimble_interfaces::msg::TherapyRequirements & requirements) {
     
        	RCLCPP_INFO(this->get_logger(), "Sending trajectory request");    
         // Create a request to send to the service

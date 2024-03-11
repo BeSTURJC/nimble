@@ -13,7 +13,10 @@ find_package(sensor_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)  
 
+# Directories
+include_directories(include)
 
+# Executables
 add_executable(hmi src/hmi_publisher.cpp)
 ament_target_dependencies(hmi rclcpp nimble_interfaces)
 
