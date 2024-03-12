@@ -2,6 +2,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <iterator>
 
 #include "kinetik_model/kineticModel.hpp"
 #include "nimble_interfaces/msg/cartesian_full_trajectory.hpp"
@@ -74,26 +75,33 @@ void KinematicModelNode::call_back_joints_target(
 
   // Resizes
   int size = joint_target_msg.points.size();
-  jointAng.hipR_abd.resize(size);
-  jointAng.hipL_abd.resize(size);
   jointAng.pelvisList.resize(size);
   jointAng.pelvisTilt.resize(size);
-  jointAng.phase.resize(size);
+  
 
   // Fills joint ang
   for (int i = 0; i < size; i++) {
     // * ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
     jointAng.hipR.push_back(joint_target_msg.points[i].positions[0]);
+    jointAng.hipR_abd.push_back(joint_target_msg.points[i].positions[0]);
     jointAng.hipL.push_back(joint_target_msg.points[i].positions[1]);
+    jointAng.hipL_abd.push_back(joint_target_msg.points[i].positions[1]);
     jointAng.kneeR.push_back(joint_target_msg.points[i].positions[2]);
     jointAng.kneeL.push_back(joint_target_msg.points[i].positions[3]);
     jointAng.ankleR.push_back(joint_target_msg.points[i].positions[4]);
     jointAng.ankleL.push_back(joint_target_msg.points[i].positions[5]);
+    jointAng.phase.push_back(i);
   }
 
   // Executes the kinematic model
-  this->executeKinematicModel(jointAng, measurements_, cartesian_target,
-                                      step_target);
+  this->executeKinematicModel(jointAng, measurements_, cartesian_target, step_target);
+
+  // Gets the timestamp
+  rclcpp::Clock clock;
+  auto timestamp = clock.now();
+
+  cartesian_target.header.stamp = timestamp;
+  step_target.header.stamp = timestamp;
 
   // Publishes the data
   publisher_cartTarget_->publish(cartesian_target);
@@ -343,7 +351,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
 
     // Model for the left leg
     Eigen::Matrix4d A0_L = DH_deg(jointAngles.pelvisList, 0, -measurements.width_pelvis/2, 0);
-    Eigen::Matrix4d A1_L = DH_deg(-jointAngles.hipL_abd-90, -measurements.depth_pelvis, 0, -90);
+    Eigen::Matrix4d A1_L = DH_deg(jointAngles.hipL_abd-90, -measurements.depth_pelvis, 0, -90);
     Eigen::Matrix4d A2_L = DH_deg(jointAngles.hipL+jointAngles.pelvisTilt, 0, measurements.femur, -180);
     Eigen::Matrix4d A3_L = DH_deg(jointAngles.kneeL, 0, measurements.tibia, 180);
     Eigen::Matrix4d A4_L = DH_deg(jointAngles.ankleL, 0, measurements.height_ankle, -90);
@@ -401,92 +409,107 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
                                                 exoPositions_fixedBase.refSystems.leftToe,
                                                 exoPositions_fixedBase.refSystems.rightHeel, 
                                                 exoPositions_fixedBase.refSystems.rightToe};
-    double zMin;
-    int id;
-    refSys_feet[0].minCoeff(&id);  // Finds the minimum index
-    zMin = refSys_feet[0](id);
 
+    int minIndex = 0;
+
+    // Search's the smaller Z
+    for (size_t i = 1; i < refSys_feet.size(); ++i) {
+        if (refSys_feet[i].z() < refSys_feet[minIndex].z()) {
+            minIndex = i;
+        }
+    }
+
+    double zMin = refSys_feet[minIndex].z();
+
+    auto last_error = previousExoPosition.refSystems.rightHeel;
     // Determine the point of contact
-    switch (id) {
+    switch (minIndex) {
         case 0:
-            exoPositions_fixedBase.contactPoint.name = "leftHeel";
-            exoPositions_fixedBase.contactPoint.X = exoPositions_fixedBase.refSystems.leftHeel(0);
-            exoPositions_fixedBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftHeel(1);
-            exoPositions_fixedBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftHeel(2);
+            exoPositions_movilBase.contactPoint.name = "leftHeel";
+            exoPositions_movilBase.contactPoint.X = exoPositions_fixedBase.refSystems.leftHeel(0);
+            exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftHeel(1);
+            exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftHeel(2);
+
+            //auto last_error = previousExoPosition.refSystems.rightHeel;
             break;
         case 1:
-            exoPositions_fixedBase.contactPoint.name = "leftToe";
-            exoPositions_fixedBase.contactPoint.X = exoPositions_fixedBase.refSystems.leftToe(0);
-            exoPositions_fixedBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftToe(1);
-            exoPositions_fixedBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftToe(2);
+            exoPositions_movilBase.contactPoint.name = "leftToe";
+            exoPositions_movilBase.contactPoint.X = exoPositions_fixedBase.refSystems.leftToe(0);
+            exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftToe(1);
+            exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftToe(2);
+
+            last_error = previousExoPosition.refSystems.rightHeel;
             break;
         case 2:
-            exoPositions_fixedBase.contactPoint.name = "rightHeel";
-            exoPositions_fixedBase.contactPoint.X = exoPositions_fixedBase.refSystems.rightHeel(0);
-            exoPositions_fixedBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightHeel(1);
-            exoPositions_fixedBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightHeel(2);
+            exoPositions_movilBase.contactPoint.name = "rightHeel";
+            exoPositions_movilBase.contactPoint.X = exoPositions_fixedBase.refSystems.rightHeel(0);
+            exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightHeel(1);
+            exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightHeel(2);
+
+            last_error = previousExoPosition.refSystems.rightHeel;
             break;
         case 3:
-            exoPositions_fixedBase.contactPoint.name = "rightToe";
-            exoPositions_fixedBase.contactPoint.X = exoPositions_fixedBase.refSystems.rightToe(0);
-            exoPositions_fixedBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightToe(1);
-            exoPositions_fixedBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightToe(2);
+            exoPositions_movilBase.contactPoint.name = "rightToe";
+            exoPositions_movilBase.contactPoint.X = exoPositions_fixedBase.refSystems.rightToe(0);
+            exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightToe(1);
+            exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightToe(2);
+
+            last_error = previousExoPosition.refSystems.rightHeel;
             break;
     }
 
+    
     // Error correction
     Eigen::Vector3d offset;
-    if (previousExoPosition.refSystems.base.size() > 0) {
+    if (previousExoPosition.refSystems.base.size() == 0) {
         // Considers the last point
         
-        offset << exoPositions_fixedBase.contactPoint.X - previousExoPosition.contactPoint.X,
-            exoPositions_fixedBase.contactPoint.Y - previousExoPosition.contactPoint.Y,
-            exoPositions_fixedBase.contactPoint.Z - previousExoPosition.contactPoint.Z;
+        offset << exoPositions_movilBase.contactPoint.X - last_error(0),
+            exoPositions_movilBase.contactPoint.Y - last_error(1),
+            zMin;
 
-        offset(2) = zMin;  // Height always 0
     } else{
         Eigen::Vector3d initialOffset(0, 0, zMin);
-        offset << exoPositions_fixedBase.contactPoint.X - initialOffset(0),
-            exoPositions_fixedBase.contactPoint.Y - initialOffset(1),
-            exoPositions_fixedBase.contactPoint.Z - initialOffset(2);
-
-        offset(2) = zMin;  // Height always 0
+        offset << exoPositions_movilBase.contactPoint.X - initialOffset(0),
+            exoPositions_movilBase.contactPoint.Y - initialOffset(1),
+            initialOffset(2);
     }
 
-    // Apply the correction to all references in the system
-    exoPositions_movilBase.refSystems.base -= offset;
-    exoPositions_movilBase.refSystems.leftPelvis -= offset;
-    exoPositions_movilBase.refSystems.leftHip -= offset;
-    exoPositions_movilBase.refSystems.leftKnee -= offset;
-    exoPositions_movilBase.refSystems.leftAnkle -= offset;
-    exoPositions_movilBase.refSystems.leftFoot -= offset;
-    exoPositions_movilBase.refSystems.leftToe -= offset;
-    exoPositions_movilBase.refSystems.leftHeel -= offset;
-    exoPositions_movilBase.refSystems.rightPelvis -= offset;
-    exoPositions_movilBase.refSystems.rightHip -= offset;
-    exoPositions_movilBase.refSystems.rightKnee -= offset;
-    exoPositions_movilBase.refSystems.rightAnkle -= offset;
-    exoPositions_movilBase.refSystems.rightFoot -= offset;
-    exoPositions_movilBase.refSystems.rightToe -= offset;
-    exoPositions_movilBase.refSystems.rightHeel -= offset;
+    // RCLCPP_INFO_STREAM(this->get_logger(), exoPositions_movilBase.contactPoint.name <<  "zMin: '" << zMin ); 
 
-    // Update the coordinates of the point of contact
+    // Apply the correction to all references in the system 
+    exoPositions_movilBase.refSystems.base = exoPositions_fixedBase.refSystems.base - offset;
+    exoPositions_movilBase.refSystems.leftPelvis = exoPositions_fixedBase.refSystems.leftPelvis - offset;
+    exoPositions_movilBase.refSystems.leftHip = exoPositions_fixedBase.refSystems.leftHip - offset;
+    exoPositions_movilBase.refSystems.leftKnee = exoPositions_fixedBase.refSystems.leftKnee - offset;
+    exoPositions_movilBase.refSystems.leftAnkle = exoPositions_fixedBase.refSystems.leftAnkle - offset;
+    exoPositions_movilBase.refSystems.leftFoot = exoPositions_fixedBase.refSystems.leftFoot - offset;
+    exoPositions_movilBase.refSystems.leftToe = exoPositions_fixedBase.refSystems.leftToe - offset;
+    exoPositions_movilBase.refSystems.leftHeel = exoPositions_fixedBase.refSystems.leftHeel - offset;
+
+    exoPositions_movilBase.refSystems.rightPelvis = exoPositions_fixedBase.refSystems.rightPelvis - offset;
+    exoPositions_movilBase.refSystems.rightHip = exoPositions_fixedBase.refSystems.rightHip - offset;
+    exoPositions_movilBase.refSystems.rightKnee = exoPositions_fixedBase.refSystems.rightKnee - offset;
+    exoPositions_movilBase.refSystems.rightAnkle = exoPositions_fixedBase.refSystems.rightAnkle - offset;
+    exoPositions_movilBase.refSystems.rightFoot = exoPositions_fixedBase.refSystems.rightFoot - offset;
+    exoPositions_movilBase.refSystems.rightToe = exoPositions_fixedBase.refSystems.rightToe - offset;
+    exoPositions_movilBase.refSystems.rightHeel = exoPositions_fixedBase.refSystems.rightHeel - offset;
+    
+    //Update the coordinates of the point of contact
     exoPositions_movilBase.contactPoint.X -= offset.x();
     exoPositions_movilBase.contactPoint.Y -= offset.y();
     exoPositions_movilBase.contactPoint.Z -= offset.z();
 
-    // Ensure that the height is always 0
-    exoPositions_fixedBase.contactPoint.Z = 0;
-
     // Generate output variables for fixed base
-    Eigen::MatrixXd posExo_L_fixedBase(3, 7);
+    Eigen::MatrixXd posExo_L_fixedBase(3, 8);
     posExo_L_fixedBase << exoPositions_fixedBase.refSystems.base,
                         exoPositions_fixedBase.refSystems.leftPelvis,
                         exoPositions_fixedBase.refSystems.leftHip,
                         exoPositions_fixedBase.refSystems.leftKnee,
                         exoPositions_fixedBase.refSystems.leftAnkle,
                         exoPositions_fixedBase.refSystems.leftHeel,
-                        exoPositions_fixedBase.refSystems.leftToe;
+                        exoPositions_fixedBase.refSystems.leftToe,
+                        exoPositions_fixedBase.refSystems.leftAnkle;
 
     exoPositions_fixedBase.leftLeg.X = posExo_L_fixedBase.row(0);
     exoPositions_fixedBase.leftLeg.Y = posExo_L_fixedBase.row(1);
@@ -534,7 +557,8 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     exoPositions_movilBase.rightLeg.X = posExo_R_movilBase.row(0);
     exoPositions_movilBase.rightLeg.Y = posExo_R_movilBase.row(1);
     exoPositions_movilBase.rightLeg.Z = posExo_R_movilBase.row(2);
-
+  
+    RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << exoPositions_movilBase.refSystems.leftPelvis << "'"); 
 }
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
@@ -549,7 +573,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
         return;
     }
         
-    ExoPositions exoPositions_fixedBase, exoPositions, last_exoPositions;
+    ExoPositions last_exoPositions;
 
     // Initializes all the arrays of each jointPosition structure
     jointPosition pelvisPosition;
@@ -568,6 +592,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
     resize_joint_position(toePositions, numPoints);
 
     for (int i = 0; i < numPoints; ++i) {
+        ExoPositions exoPositions_fixedBase, exoPositions;
 
         // Set joint angles
         JointAngle q_model;
@@ -588,16 +613,18 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
         // Determine contact point
         if (i == 0) {
             if (q_model.hipR > q_model.hipL) {
-                exoPositions_fixedBase.contactPoint.name = "rightHeel";
+                exoPositions.contactPoint.name = "rightHeel";
             } else {
-                exoPositions_fixedBase.contactPoint.name = "leftHeel";
+                exoPositions.contactPoint.name = "leftHeel";
             }
-            exoPositions_fixedBase.contactPoint.X = 0;
-            exoPositions_fixedBase.contactPoint.Y = measurements.width_pelvis * 0.5;
-            exoPositions_fixedBase.contactPoint.Z = 0;
+            exoPositions.contactPoint.X = 0;
+            exoPositions.contactPoint.Y = measurements.width_pelvis * 0.5;
+            exoPositions.contactPoint.Z = 0;
         } 
 
         // Kinematic model of the pelvis movement
+        // Set all elements of exoPositions_movilBase to 0
+
         this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
                                                 exoPositions_fixedBase, exoPositions);
 

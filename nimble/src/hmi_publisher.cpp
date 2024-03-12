@@ -22,13 +22,13 @@ public:
     //Declaracion de parámetros con valores por defecto
     //Measurements
     this->declare_parameter("height", 1.8);
-    this->declare_parameter("femur", 0.45);
-    this->declare_parameter("tibia", 0.4);
-    this->declare_parameter("distance_to_heel", 0.10);
-    this->declare_parameter("distance_to_toe", 0.2);
-    this->declare_parameter("height_ankle", 0.10);
-    this->declare_parameter("depth_pelvis", 0.10);
-    this->declare_parameter("width_pelvis", 0.4);
+    this->declare_parameter("femur", 0.3371);
+    this->declare_parameter("tibia", 0.3495);
+    this->declare_parameter("distance_to_heel", 0.0);
+    this->declare_parameter("distance_to_toe", 0.1065);
+    this->declare_parameter("height_ankle", 0.0705);
+    this->declare_parameter("depth_pelvis", 0.0);
+    this->declare_parameter("width_pelvis", 0.1367);
     //Therapy requirements 
     this->declare_parameter("min_assist_level", 10);
     this->declare_parameter("max_assist_level", 50);

@@ -1,37 +1,42 @@
 import rclpy
+from trajectory_msgs.msg import JointTrajectory
 from nimble_interfaces.msg import CartesianFullTrajectory
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
-def callback(msg):
-    # Extract left_malleolus points from the received message
-    left_malleolus_points = msg.left_malleolus
+LABELS = ["hipR", "kneeR", "ankleR", "hipL", "kneeL", "ankleL"]
 
-    # Extract x, y, z coordinates
-    x = [point.x for point in left_malleolus_points]
-    y = [point.y for point in left_malleolus_points]
-    z = [point.z for point in left_malleolus_points]
+def joint_trajectory_callback(msg):
+    for j in range(len(msg.points[0].positions)):
+        color = 'C' + str(j)
+        joint_positions = [point.positions[j] for point in msg.points]
+        plt.plot(range(len(msg.points)), joint_positions, color=color, label=LABELS[j])
 
-    # Plot the points in 3D
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    ax.scatter(x, y, z, c='r', marker='o')
+    # X and Y axis labels
+    plt.xlabel('Iteration Number')
+    plt.ylabel('Joint Positions')
 
-    ax.set_xlabel('X Label')
-    ax.set_ylabel('Y Label')
-    ax.set_zlabel('Z Label')
+    # Add a legend
+    plt.legend()
 
+    # Display each iteration separately
+    plt.show()
+
+def cartesian_callback(msg):
+    joint_positions = [point.z for point in msg.right_pelvis]
+
+    plt.plot(joint_positions, marker='o', label=f'Joint')
     plt.show()
 
 def main(args=None):
     rclpy.init(args=args)
 
-    node = rclpy.create_node('plot_left_malleolus')
+    node = rclpy.create_node('plot_joint_trajectory')
 
-    # Create a subscriber for the 'cartesian_full_target' topic using the 'CartesianFullTrajectory' message type
-    subscriber = node.create_subscription(CartesianFullTrajectory, 'cartesian_full_target', callback, 10)
+    # Create a subscriber for the 'joint_trajectory' topic using the 'JointTrajectory' message type
+    # subscriber = node.create_subscription(JointTrajectory, 'joints_target', joint_trajectory_callback, 10)
+    subscriber = node.create_subscription(CartesianFullTrajectory, 'cartesian_full_target', cartesian_callback, 10)
 
-    print("Waiting for CartesianFullTrajectory messages. Press Ctrl+C to exit.")
+    print("Waiting for JointTrajectory messages. Press Ctrl+C to exit.")
 
     try:
         rclpy.spin(node)
