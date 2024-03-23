@@ -63,7 +63,7 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
 
         // Initialize JointTrajectory message
         //trajectory_msgs::msg::JointTrajectory joint_trajectory;
-        joint_trajectory->joint_names = {"hipR", "kneeR", "ankleR", "hipL", "kneeL", "ankleL"};
+        joint_trajectory->joint_names = {"pelvisList", "pelvisTilt", "kneeR_flex", "hipR_flex", "hipR_abd", "ankleR_flex", "kneeL_flex", "hipL_flex", "hipL_abd", "ankleL_flex"};
 
         // Read and process each line of the CSV file
         std::string line;
@@ -72,7 +72,7 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
             boost::tokenizer<boost::escaped_list_separator<char>> tokens(line);
             
             trajectory_msgs::msg::JointTrajectoryPoint point;
-            point.positions.reserve(6);
+            point.positions.reserve(10);
 
             // Process the tokens and convert to double
             for (const auto& token : tokens) {

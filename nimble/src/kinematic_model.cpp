@@ -75,21 +75,21 @@ void KinematicModelNode::call_back_joints_target(
 
   // Resizes
   int size = joint_target_msg.points.size();
-  jointAng.pelvisList.resize(size);
-  jointAng.pelvisTilt.resize(size);
-  
 
   // Fills joint ang
   for (int i = 0; i < size; i++) {
-    // * ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-    jointAng.hipR.push_back(joint_target_msg.points[i].positions[0]);
-    jointAng.hipR_abd.push_back(joint_target_msg.points[i].positions[0]);
-    jointAng.hipL.push_back(joint_target_msg.points[i].positions[1]);
-    jointAng.hipL_abd.push_back(joint_target_msg.points[i].positions[1]);
+    // * ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]    
+    //!: Change
+    jointAng.pelvisList.push_back(joint_target_msg.points[i].positions[0]);
+    jointAng.pelvisTilt.push_back(joint_target_msg.points[i].positions[1]);
+    jointAng.hipR.push_back(joint_target_msg.points[i].positions[3]);
+    jointAng.hipR_abd.push_back(joint_target_msg.points[i].positions[4]);
+    jointAng.hipL.push_back(joint_target_msg.points[i].positions[7]);
+    jointAng.hipL_abd.push_back(joint_target_msg.points[i].positions[8]);
     jointAng.kneeR.push_back(joint_target_msg.points[i].positions[2]);
-    jointAng.kneeL.push_back(joint_target_msg.points[i].positions[3]);
-    jointAng.ankleR.push_back(joint_target_msg.points[i].positions[4]);
-    jointAng.ankleL.push_back(joint_target_msg.points[i].positions[5]);
+    jointAng.kneeL.push_back(joint_target_msg.points[i].positions[6]);
+    jointAng.ankleR.push_back(joint_target_msg.points[i].positions[5]);
+    jointAng.ankleL.push_back(joint_target_msg.points[i].positions[9]);
     jointAng.phase.push_back(i);
   }
 
@@ -286,19 +286,22 @@ Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
                                            double alpha) {
   Eigen::Matrix4d trans_Z, trans_X;
 
+  // Converts to radians
+  double thetaRads = theta * 3.14 /  180;
+  double alphaRads = alpha * 3.14 / 180;
+
   // Z-axis transformation matrix
-  trans_Z << cos(theta), -sin(theta), 0, 0, sin(theta), cos(theta), 0, 0, 0, 0,
+  trans_Z << cos(thetaRads), -sin(thetaRads), 0, 0, sin(thetaRads), cos(thetaRads), 0, 0, 0, 0,
       1, d, 0, 0, 0, 1;
 
   // X-axis transformation matrix
-  trans_X << 1, 0, 0, a, 0, cos(alpha), -sin(alpha), 0, 0, sin(alpha),
-      cos(alpha), 0, 0, 0, 0, 1;
+  trans_X << 1, 0, 0, a, 0, cos(alphaRads), -sin(alphaRads), 0, 0, sin(alphaRads),
+      cos(alphaRads), 0, 0, 0, 0, 1;
 
   Eigen::Matrix4d A = trans_Z * trans_X;
 
   return A;
 }
-
 
 // ***** Main functions ***** //
 Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(  
@@ -348,10 +351,11 @@ Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(
 void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngles, 
         const nimble_interfaces::msg::Measurements& measurements, const ExoPositions& previousExoPosition,
         ExoPositions& exoPositions_fixedBase, ExoPositions& exoPositions_movilBase) {
-
+    
+    
     // Model for the left leg
     Eigen::Matrix4d A0_L = DH_deg(jointAngles.pelvisList, 0, -measurements.width_pelvis/2, 0);
-    Eigen::Matrix4d A1_L = DH_deg(jointAngles.hipL_abd-90, -measurements.depth_pelvis, 0, -90);
+    Eigen::Matrix4d A1_L = DH_deg((-jointAngles.hipL_abd)-90, -measurements.depth_pelvis, 0, -90);
     Eigen::Matrix4d A2_L = DH_deg(jointAngles.hipL+jointAngles.pelvisTilt, 0, measurements.femur, -180);
     Eigen::Matrix4d A3_L = DH_deg(jointAngles.kneeL, 0, measurements.tibia, 180);
     Eigen::Matrix4d A4_L = DH_deg(jointAngles.ankleL, 0, measurements.height_ankle, -90);
@@ -411,7 +415,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
                                                 exoPositions_fixedBase.refSystems.rightToe};
 
     int minIndex = 0;
-
+  
     // Search's the smaller Z
     for (size_t i = 1; i < refSys_feet.size(); ++i) {
         if (refSys_feet[i].z() < refSys_feet[minIndex].z()) {
@@ -421,7 +425,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
 
     double zMin = refSys_feet[minIndex].z();
 
-    auto last_error = previousExoPosition.refSystems.rightHeel;
+    auto last_error = previousExoPosition.refSystems.leftHeel;
     // Determine the point of contact
     switch (minIndex) {
         case 0:
@@ -430,7 +434,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftHeel(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftHeel(2);
 
-            //auto last_error = previousExoPosition.refSystems.rightHeel;
+            //auto last_error = previousExoPosition.refSystems.leftHeel;
             break;
         case 1:
             exoPositions_movilBase.contactPoint.name = "leftToe";
@@ -438,7 +442,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftToe(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftToe(2);
 
-            last_error = previousExoPosition.refSystems.rightHeel;
+            last_error = previousExoPosition.refSystems.leftToe;
             break;
         case 2:
             exoPositions_movilBase.contactPoint.name = "rightHeel";
@@ -454,7 +458,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightToe(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightToe(2);
 
-            last_error = previousExoPosition.refSystems.rightHeel;
+            last_error = previousExoPosition.refSystems.rightToe;
             break;
     }
 
@@ -474,8 +478,6 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y - initialOffset(1),
             initialOffset(2);
     }
-
-    // RCLCPP_INFO_STREAM(this->get_logger(), exoPositions_movilBase.contactPoint.name <<  "zMin: '" << zMin ); 
 
     // Apply the correction to all references in the system 
     exoPositions_movilBase.refSystems.base = exoPositions_fixedBase.refSystems.base - offset;
@@ -558,7 +560,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     exoPositions_movilBase.rightLeg.Y = posExo_R_movilBase.row(1);
     exoPositions_movilBase.rightLeg.Z = posExo_R_movilBase.row(2);
   
-    RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << exoPositions_movilBase.refSystems.leftPelvis << "'"); 
+    // RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << exoPositions_movilBase.refSystems.leftPelvis << "'"); 
 }
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
