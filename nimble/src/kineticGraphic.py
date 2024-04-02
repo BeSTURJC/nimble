@@ -22,7 +22,7 @@ def joint_trajectory_callback(msg):
     plt.show()
 
 def cartesian_callback(msg):
-    joint_positions = [point.z for point in msg.right_malleolus]
+    joint_positions = [point.x for point in msg.left_knee]
 
     plt.plot(joint_positions, label=f'Joint')
     plt.show()
