@@ -12,6 +12,7 @@
 #include "nimble_interfaces/msg/measurements.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "std_msgs/msg/int64.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
@@ -67,17 +68,6 @@ struct JointAngle {
 };
 
 
-struct Leg {
-    Eigen::VectorXd X;
-    Eigen::VectorXd Y;
-    Eigen::VectorXd Z;
-
-    Leg() : X(Eigen::VectorXd::Zero(0)),
-            Y(Eigen::VectorXd::Zero(0)),
-            Z(Eigen::VectorXd::Zero(0)) {}
-};
-
-
 struct ExoPositions {
     struct RefSystems {
         Eigen::Vector3d base{0.0, 0.0, 0.0};
@@ -97,8 +87,7 @@ struct ExoPositions {
         Eigen::Vector3d rightHeel{0.0, 0.0, 0.0};
     } refSystems;
 
-    Leg leftLeg;
-    Leg rightLeg;
+
 
     // Defines contact points
     struct ContactPoint {
@@ -151,9 +140,14 @@ private:
     
     template <typename T>
     void updateCartesianState(std::vector<T>& target, const T& value, std::size_t bufferSize);
-    void fill_joint_state(jointPosition& pelvisPosition,
-        jointPosition& anklePositions,
-        nimble_interfaces::msg::CartesianFullTrajectory& cartesian_target);
+    void fill_joint_state(
+    jointPosition &pelvisPosition,
+    jointPosition &hipPositions,
+    jointPosition &anklePositions,
+    jointPosition &heelsPositions,
+    jointPosition &toePositions,
+    jointPosition &kneePositions,
+    nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target);
     void resize_joint_position(jointPosition &position, int size);
     void fill_jointPos_with_exopos(jointPosition& joint_pos,
                                    Eigen::Vector3d left, Eigen::Vector3d right,
