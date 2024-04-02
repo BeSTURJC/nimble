@@ -11,15 +11,12 @@ find_package(rclcpp REQUIRED)
 find_package(nimble_interfaces REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
-find_package(rosidl_default_generators REQUIRED)  
+find_package(rosidl_default_generators REQUIRED)
 
 # Directories
 include_directories(include)
 
 # Executables
-add_executable(hmi src/hmi_publisher.cpp)
-ament_target_dependencies(hmi rclcpp nimble_interfaces)
-
 add_executable(kinematic_model src/kinematic_model.cpp)
 ament_target_dependencies(kinematic_model rclcpp nimble_interfaces sensor_msgs trajectory_msgs)
 
@@ -30,7 +27,7 @@ add_executable(control_ZMP src/control_ZMP.cpp)
 ament_target_dependencies(control_ZMP rclcpp nimble_interfaces sensor_msgs trajectory_msgs)
 
 add_executable(control_MSD src/control_MSD.cpp)
-ament_target_dependencies(control_MSD rclcpp std_msgs sensor_msgs trajectory_msgs)
+ament_target_dependencies(control_MSD rclcpp nimble_interfaces sensor_msgs trajectory_msgs std_msgs)
 
 add_executable(cables_robot src/cables_robot.cpp)
 ament_target_dependencies(cables_robot rclcpp sensor_msgs)
@@ -44,9 +41,7 @@ ament_target_dependencies(gamming rclcpp nimble_interfaces)
 add_executable(traj_generator_server src/traj_generator_service.cpp)
 ament_target_dependencies(traj_generator_server rclcpp nimble_interfaces)
 
-
 install(TARGETS
-  hmi
   kinematic_model
   control_ZMP
   control_MSD
@@ -56,13 +51,13 @@ install(TARGETS
   states_machine
   traj_generator_server
   DESTINATION lib/${PROJECT_NAME})
-  
-  install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}
-)
 
+install(DIRECTORY launch include
+  DESTINATION share/${PROJECT_NAME})
 
+# Python executables
+install(PROGRAMS src/hmi.py
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

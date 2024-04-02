@@ -5,7 +5,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package="nimble",
-            executable="hmi",
+            executable="hmi.py",
             name="hmi",
             output="screen",
             emulate_tty=True,
@@ -30,7 +30,7 @@ def generate_launch_description():
             package="nimble",
             executable="traj_generator_server",
             name="traj_generator_server",
-            output="screen",
+            output="log",
             emulate_tty=True,
             
         ),
@@ -38,7 +38,7 @@ def generate_launch_description():
             package="nimble",
             executable="states_machine",
             name="states_machine",
-            output="screen",
+            output="log",
             emulate_tty=True,
             
         ),
@@ -46,7 +46,7 @@ def generate_launch_description():
             package="nimble",
             executable="kinematic_model",
             name="kinematic_model",
-            output="screen",
+            output="log",
             emulate_tty=True,
             
         ),
@@ -55,7 +55,7 @@ def generate_launch_description():
             package="nimble",
             executable="control_MSD",
             name="control_MSD",
-            output="screen",
+            output="log",
             emulate_tty=True,
             
         ),
@@ -63,7 +63,7 @@ def generate_launch_description():
             package="nimble",
             executable="control_ZMP",
             name="control_ZMP",
-            output="screen",
+            output="log",
             emulate_tty=True,
             
         )
