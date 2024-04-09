@@ -23,22 +23,9 @@ class ThreeDScene {
 
       // Create a renderer
       this.renderer = new THREE.WebGLRenderer();
-      // this.renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       document.body.appendChild(this.renderer.domElement);
       
-      //! Concept of assist level percent
-      this.text = document.createElement('div');
-      this.text.style.position = 'absolute';
-      this.text.style.width = 100;
-      this.text.style.height = 100;
-      this.text.style.color = 'green';
-      this.text.innerHTML = '10%';
-      this.text.style.top = '285px';
-      this.text.style.left = '1010px';
-      document.body.appendChild(this.text);
-
-
       // Creates a ground
       const groundGeometry = new THREE.BoxGeometry(400, 0.1, 100);
       const groundMaterial = new THREE.MeshBasicMaterial({ color: 0x333333 }); 
@@ -111,12 +98,12 @@ class ThreeDScene {
         x: 0,
         y: 0,
       };
-  
+      
+      // Mouse events
       document.addEventListener("mousemove", this.onMouseMove.bind(this));
       document.addEventListener("mousedown", this.onMouseDown.bind(this));
       document.addEventListener("mouseup", this.onMouseUp.bind(this));
   
-      // Animation function
       this.animate();
 
       // Initial call to fetch data for ROS
@@ -200,7 +187,6 @@ class ThreeDScene {
       }
     }
     
-    
     onMouseDown(event) {
       this.isDragging = true;
       this.previousMousePosition = {
@@ -276,15 +262,7 @@ class ThreeDScene {
     }
 
     updateTextPosition() {
-      // const vector = new THREE.Vector3();
-      // vector.setFromMatrixPosition(this.camera.matrixWorld);
-      // vector.project(this.camera);
-  
-      // const widthHalf = window.innerWidth / 2;
-      // const heightHalf = window.innerHeight / 2;
-  
-      // const style = getComputedStyle(this.text);
-      // this.text.style.transform = `translate(${vector.x * widthHalf + widthHalf - parseFloat(style.width) / 2}px, ${-vector.y * heightHalf + heightHalf - parseFloat(style.height) / 2}px)`;
+      // TODO: Text following the camera for the menu
     }
 
     animate() {
@@ -318,11 +296,8 @@ class ThreeDScene {
     }
   
     //** Fetching data functions **/
-
     // Function to update the position of each joint
     updateData(data) {
-       document.getElementById("data-display").textContent = "X =  " + 
-       data.right_pelvis_z.toFixed(2);
 
         // Sets each articulation coord 
         const joints = ['pelvis', 'hip', 'knee', 'ankle', 'heel', 'toe'];
@@ -346,7 +321,9 @@ class ThreeDScene {
             .then((response) => response.json())
             .then((data) => {this.updateData(data);})
             .catch((error) => console.error("Error:", error));
-                
+        
+
+        // Timeout to update position
         setTimeout(() => this.fetchData(), 100); // Milliseconds
     }
 }

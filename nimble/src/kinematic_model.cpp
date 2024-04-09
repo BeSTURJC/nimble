@@ -13,6 +13,7 @@
 #include "std_msgs/msg/int64.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
+#include "geometry_msgs/msg/point.hpp"
 
 using namespace std::chrono_literals;
 
@@ -79,17 +80,17 @@ void KinematicModelNode::call_back_joints_target(
 
   // Fills joint ang
   for (int i = 0; i < size; i++) {
-    // * ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]    
-    //!: Change
+    // **["pelvisList", "pelvisTilt", "hipR", "hipR_abd", "hipL", "hipL_abd", "kneeR", "kneeL", "ankleR", "ankleL"]  
+
     jointAng.pelvisList.push_back(joint_target_msg.points[i].positions[0]);
     jointAng.pelvisTilt.push_back(joint_target_msg.points[i].positions[1]);
+    jointAng.kneeR.push_back(joint_target_msg.points[i].positions[2]);
     jointAng.hipR.push_back(joint_target_msg.points[i].positions[3]);
     jointAng.hipR_abd.push_back(joint_target_msg.points[i].positions[4]);
+    jointAng.ankleR.push_back(joint_target_msg.points[i].positions[5]);
+    jointAng.kneeL.push_back(joint_target_msg.points[i].positions[6]);
     jointAng.hipL.push_back(joint_target_msg.points[i].positions[7]);
     jointAng.hipL_abd.push_back(joint_target_msg.points[i].positions[8]);
-    jointAng.kneeR.push_back(joint_target_msg.points[i].positions[2]);
-    jointAng.kneeL.push_back(joint_target_msg.points[i].positions[6]);
-    jointAng.ankleR.push_back(joint_target_msg.points[i].positions[5]);
     jointAng.ankleL.push_back(joint_target_msg.points[i].positions[9]);
     jointAng.phase.push_back(i);
   }
@@ -112,7 +113,8 @@ void KinematicModelNode::call_back_joints_target(
 void KinematicModelNode::call_back_joints_state(
     const sensor_msgs::msg::JointState &joint_state_msg) {
 
-  const int bufferSize = 100;
+  const int bufferSize = 1;
+  const int nJoints = 13;
 
   // TODO: IF TOPIC %STEP IS %5 STORE ONE POSITION
 
@@ -121,25 +123,47 @@ void KinematicModelNode::call_back_joints_state(
 
   nimble_interfaces::msg::CartesianFullTrajectory cartesian_actual_state;
   nimble_interfaces::msg::TherapyRequirements step_target;
+  
+  // Define an array of pointers to the geometry_msgs/Point arrays
+  std::array<std::vector<geometry_msgs::msg::Point>*, nJoints> actual_point_arrays = {
+      &cartesian_actual_state.right_pelvis,
+      &cartesian_actual_state.left_pelvis,
+      &cartesian_actual_state.base_pelvis,
+      &cartesian_actual_state.right_hip,
+      &cartesian_actual_state.left_hip,
+      &cartesian_actual_state.right_knee,
+      &cartesian_actual_state.left_knee,
+      &cartesian_actual_state.right_ankle,
+      &cartesian_actual_state.left_ankle,
+      &cartesian_actual_state.right_heel,
+      &cartesian_actual_state.left_heel,
+      &cartesian_actual_state.right_toe,
+      &cartesian_actual_state.left_toe
+  };
+  
+  std::array<std::vector<geometry_msgs::msg::Point>*, nJoints> cartesian_states = {
+      &cartesian_state_.right_pelvis,
+      &cartesian_state_.left_pelvis,
+      &cartesian_state_.base_pelvis,
+      &cartesian_state_.right_hip,
+      &cartesian_state_.left_hip,
+      &cartesian_state_.right_knee,
+      &cartesian_state_.left_knee,
+      &cartesian_state_.right_ankle,
+      &cartesian_state_.left_ankle,
+      &cartesian_state_.right_heel,
+      &cartesian_state_.left_heel,
+      &cartesian_state_.right_toe,
+      &cartesian_state_.left_toe
+  };
 
-  // Uses a Ring Buffer to pop back the last elements of the buffer
-  this->executeKinematicModel(joint_state_ang, measurements_,
-                                      cartesian_actual_state, step_target);
-  this->updateCartesianState(cartesian_state_.right_pelvis,
-                                     cartesian_actual_state.right_pelvis[0],
-                                     bufferSize);
-  this->updateCartesianState(cartesian_state_.left_pelvis,
-                                     cartesian_actual_state.right_pelvis[0],
-                                     bufferSize);
-  this->updateCartesianState(cartesian_state_.base_pelvis,
-                                     cartesian_actual_state.right_pelvis[0],
-                                     bufferSize);
-  this->updateCartesianState(cartesian_state_.right_ankle,
-                                     cartesian_actual_state.right_pelvis[0],
-                                     bufferSize);
-  this->updateCartesianState(cartesian_state_.left_ankle,
-                                     cartesian_actual_state.right_pelvis[0],
-                                     bufferSize);
+  // Iterate over the arrays and update the Cartesian states
+  for (int i = 0; i < nJoints; ++i) {
+      if (!actual_point_arrays[i]->empty()) {
+          // Uses a Ring Buffer to pop back the last elements of the buffer
+          this->updateCartesianState(*cartesian_states[i], (*actual_point_arrays[i])[0], bufferSize);
+      }
+  }
 
   publisher_cartState_->publish(cartesian_state_);
 }

@@ -23,8 +23,14 @@ class HmiPublisher(Node):
         super().__init__('hmi_publisher')
         self.publisher_measur_ = self.create_publisher(Measurements, 'measurements', 10)
         self.publisher_th_req_ = self.create_publisher(TherapyRequirements, 'therapy_requirements', 10)
-        self.create_subscription(CartesianFullTrajectory, 'cartesian_full_target', self.cartesian_callback, 10)
 
+        subTopic = 'cartesian_full_target' #** Shows the full trajectory
+        # subTopic = 'cartesian_state' #** Shows the actual position of the exo 
+        self.create_subscription(CartesianFullTrajectory, subTopic, self.cartesian_callback, 10)
+
+        # TODO: The cartesian_state probably have a buffer, if the buffer is implemented, get only the last element
+
+        # TODO: Clean the parameters if the HMI is confirmed
         self.declare_parameters(
             namespace='',
             parameters=[
@@ -44,7 +50,7 @@ class HmiPublisher(Node):
             ]
         )
 
-        self.timer_ = self.create_timer(1.0, self.timer_callback)
+        self.timer_ = self.create_timer(1.0, self.publisher_callback)
 
         # Runs the flask app
         self.webHmi = FlaskApp()
@@ -77,17 +83,14 @@ class HmiPublisher(Node):
     def run_flask(self):
         self.webHmi.run()
 
-    def timer_callback(self):
+    # Publish measurements and therapy requirements 
+    def publisher_callback(self):
         meas_msg = Measurements()
         th_req_msg = TherapyRequirements()
 
-        # meas_msg.height = self.get_parameter('height').get_parameter_value().double_value
-        meas_msg.height = float(self.webHmi.height)
-        # meas_msg.femur = self.get_parameter('femur').get_parameter_value().double_value
-        meas_msg.femur = float(self.webHmi.femur)
-        # meas_msg.tibia = self.get_parameter('tibia').get_parameter_value().double_value
-        meas_msg.tibia = float(self.webHmi.tibia)
-
+        meas_msg.height = self.get_parameter('height').get_parameter_value().double_value
+        meas_msg.femur = self.get_parameter('femur').get_parameter_value().double_value
+        meas_msg.tibia = self.get_parameter('tibia').get_parameter_value().double_value
         meas_msg.distance_to_heel = self.get_parameter('distance_to_heel').get_parameter_value().double_value
         meas_msg.distance_to_toe = self.get_parameter('distance_to_toe').get_parameter_value().double_value
         meas_msg.height_ankle = self.get_parameter('height_ankle').get_parameter_value().double_value
@@ -100,9 +103,14 @@ class HmiPublisher(Node):
 
         th_req_msg.min_assist_level = self.get_parameter('min_assist_level').get_parameter_value().integer_value
         th_req_msg.max_assist_level = self.get_parameter('max_assist_level').get_parameter_value().integer_value
-        th_req_msg.speed = self.get_parameter('speed').get_parameter_value().double_value
-        th_req_msg.step_length = self.get_parameter('step_length').get_parameter_value().double_value
-        th_req_msg.step_height = self.get_parameter('step_height').get_parameter_value().double_value
+        
+        #meas_msg.height = self.get_parameter('speed').get_parameter_value().double_value
+        #th_req_msg.step_length = self.get_parameter('step_length').get_parameter_value().double_value
+        #th_req_msg.step_height = self.get_parameter('step_height').get_parameter_value().double_value
+        th_req_msg.speed = float(self.webHmi.speed)
+        th_req_msg.step_length = float(self.webHmi.step_length)
+        th_req_msg.step_height = float(self.webHmi.step_height)
+        
         th_req_msg.header = Header()
         th_req_msg.header.stamp = self.get_clock().now().to_msg()
 

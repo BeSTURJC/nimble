@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 import logging
-
+from functools import partial
 from geometry_msgs.msg import Point
 
 
@@ -28,9 +28,9 @@ class FlaskApp:
         log.disabled = True
 
         # Patient measurements
-        self.height = 1.8
-        self.femur = 0.3371
-        self.tibia = 0.3495
+        self.speed = 0.3
+        self.step_length = 0.6
+        self.step_height = 0.12
 
         self.setup_routes()
         self.it = 0
@@ -38,12 +38,12 @@ class FlaskApp:
     def setup_routes(self):
         self.app.route('/')(self.index)
         self.app.route('/static/<path:filename>')(self.serve_static)
-        self.app.route('/receive_data', methods=['POST'])(self.receive_data)
         self.app.route('/node_modules/<path:filename>')(self.serve_node_modules)
         self.app.route('/get_data', methods=['GET'])(self.send_data)
-        self.app.route('/data_height', methods=['GET'])(self.get_height_data)
-        self.app.route('/data_femur', methods=['GET'])(self.get_femur_data)
-        self.app.route('/data_tibia', methods=['GET'])(self.get_tibia_data)
+        self.app.route('/data_speed', methods=['GET'])(self.get_data_speed)
+        self.app.route('/data_step_length', methods=['GET'])(self.get_data_step_length)
+        self.app.route('/data_step_height', methods=['GET'])(self.get_data_step_height)
+
 
     def index(self):
         return render_template('index.html')
@@ -51,15 +51,6 @@ class FlaskApp:
     def serve_static(self, filename):
         return self.app.send_static_file(filename)
 
-    # Receive from sender file
-    def receive_data(self):
-        data = request.json
-        try:
-            self.debug = int(data['value'])
-            # print("Received data:", self.trial)
-            return "Data received successfully"
-        except KeyError:
-            return "Error: 'value' key not found in JSON data"
     
     def set_articulation_positions(self, left_knee: Point, right_knee: Point,
                                     left_pelvis: Point, right_pelvis: Point,
@@ -132,27 +123,36 @@ class FlaskApp:
         
         return jsonify(self.data)
 
-    def get_height_data(self):
+    ## Page getters
+    def get_data_speed(self):
         # Get the value sent from the webpage
-        value = request.args.get('value', type=int)
+        value = request.args.get('value', type=float)
 
         if value is not None:
-            self.height = value
+            self.speed = value
 
-    def get_femur_data(self):
+        # Returns a json with the updated value
+        return jsonify({'value': value})
+
+    def get_data_step_length(self):
         # Get the value sent from the webpage
-        value = request.args.get('value', type=int)
+        value = request.args.get('value', type=float)
 
         if value is not None:
-            self.femur = value
+            self.step_length = value
             
-    def get_tibia_data(self):
+        # Returns a json with the updated value
+        return jsonify({'value': value})
+            
+    def get_data_step_height(self):
         # Get the value sent from the webpage
-        value = request.args.get('value', type=int)
+        value = request.args.get('value', type=float)
 
         if value is not None:
-            # Use the value in page_data
-            self.tibia = value
+            self.step_height = value
+            
+        # Returns a json with the updated value
+        return jsonify({'value': value})
 
     
     def run(self):

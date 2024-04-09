@@ -26,7 +26,6 @@ canvas {
 }
 
 .input-container {
-  /*  display: flex;*/
     margin-bottom: 20px;
     align-items: center; 
 }
@@ -50,8 +49,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s; 
-    height: 40px; 
-    width: 100px; 
+    height: 45px; 
+    width: 110px; 
 }
 
 button:hover {
