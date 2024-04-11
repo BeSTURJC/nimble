@@ -15,8 +15,15 @@
 2. [Anotaciones](#anotaciones)
 
 3. [Nodos](#nodos)
-- [HMI](https://github.com/jcarballeira/nimble/docs/hmi.md)
-- [Modelo cinemático](https://github.com/jcarballeira/nimble/docs/kinetik_model.md)
+   * [HMI](https://github.com/jcarballeira/nimble/blob/HMI/docs/hmi.md)
+   * [Modelo cinemático](https://github.com/jcarballeira/nimble/blob/HMI/docs/kinetik_model.md)
+   * [Cables robot](https://github.com/jcarballeira/nimble/blob/HMI/docs/cables_robot.md)
+   * [Control MSD](https://github.com/jcarballeira/nimble/blob/HMI/docs/control_MSD.md)
+   * [Control ZMP](https://github.com/jcarballeira/nimble/blob/HMI/docs/nimble/src/control_ZMP.cpp.md)
+   * [Frame](https://github.com/jcarballeira/nimble/blob/HMI/docs/frame.md)
+   * [Gait control](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
+   * [Gaming](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
+   * [States machine](https://github.com/jcarballeira/nimble/blob/HMI/docs/states_machine.md)
 
 4. [Tipos de Mensaje Utilizados](#tipos-de-mensaje-utilizados)
 
@@ -29,8 +36,8 @@
 
 0. **Requisitos sistema:**
 
-- Ubuntu 22.04
-- Instalación desktop de ROS2 Humble
+* Ubuntu 22.04
+* Instalación desktop de ROS2 Humble
 
 1. **Crear una carpeta workspace** (p.e. nimble_ws o ros_ws) y subcarpeta nimble_ws/src. En ella copiaremos los archivos descargandolos directamente o ejecutando:
 
@@ -42,7 +49,7 @@ git clone https://github.com/jcarballeira/nimble.git
 
 4. **Cargar la instalación** con "source install/setup.bash"
 
-- Este paso hay que realizarlo desde nimble_ws al abrir un nuevo terminal. Para evitarlo, abrir un terminal nuevo, ejecutar "gedit .bashrc"
+* Este paso hay que realizarlo desde nimble_ws al abrir un nuevo terminal. Para evitarlo, abrir un terminal nuevo, ejecutar "gedit .bashrc"
           Se abrirá un archivo en el que debemos copiar al final la siguiente instrucción:
 
    ```bash
@@ -61,11 +68,11 @@ git clone https://github.com/jcarballeira/nimble.git
 
 ## Anotaciones
 
-- Existen 2 paquetes diferentes e imprescindibles:
+* Existen 2 paquetes diferentes e imprescindibles:
 
-  - nimble_interfaces: Contiene el servicio para la generacion de trayectorias ideales (NN) y los mensajes creados para almacenar información  de forma concreta (para el resto se usan msgs predefinidos en ROS2). Al final del documento hay una lista de los tipos de mensaje creados y los distintos campos que contienen
+  * nimble_interfaces: Contiene el servicio para la generacion de trayectorias ideales (NN) y los mensajes creados para almacenar información  de forma concreta (para el resto se usan msgs predefinidos en ROS2). Al final del documento hay una lista de los tipos de mensaje creados y los distintos campos que contienen
 
-  - nimble: Incluye todos los nodos a ejecutar tanto en el mainPC como el los diferentes micros o raspberrys.
+  * nimble: Incluye todos los nodos a ejecutar tanto en el mainPC como el los diferentes micros o raspberrys.
 
 Cada nodo está suscrito a todos los topics indicados y preparado para publicar lo necesario (o eso creo).
 
@@ -91,7 +98,6 @@ AL FINAL DE ESTE ARCHIVO hay una lista de los tipos de mensaje usados y los dist
   
 ### HMI
   <!-- ! Movido a otro documento -->
-
 
 ---
 
@@ -291,7 +297,7 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
 
 -----Mensajes y servicios custom y los campos que contienen---------------
 
-    -nimble_interfaces/msg/Measurements
+  -nimble_interfaces/msg/Measurements
   -std_msgs/Header header
   -float64 height
   -float64 femur
@@ -302,7 +308,7 @@ Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona 
   -float64 depth_pelvis
   -float64 width_pelvis
 
-    -nimble_interfaces/msg/TherapyRequirements
+  - nimble_interfaces/msg/TherapyRequirements
   -std_msgs/Header header
      -float64 speed
   -float64 step_length

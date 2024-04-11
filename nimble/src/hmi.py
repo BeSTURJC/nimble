@@ -4,18 +4,11 @@ import rclpy
 from rclpy.node import Node
 from nimble_interfaces.msg import Measurements, TherapyRequirements
 from std_msgs.msg import Header
-import sys
 import threading
 import time
 from nimble_interfaces.msg import CartesianFullTrajectory
 
-import ament_index_python
-
-# Package includes
-package_path = ament_index_python.get_package_share_directory("nimble")
-sys.path.append(package_path)
-
-from include.hmi_web.flask_class import FlaskApp
+from hmi_web.flask_class import FlaskApp
 
 class HmiPublisher(Node):
 

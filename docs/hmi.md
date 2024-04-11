@@ -15,21 +15,24 @@ launch/nimble_launch.py.
 ## Topics
 <!-- TODO: Añadir topics del nuevo HMI -->
 
-  -Suscribed:
+**Suscribed:**
+
 * NONE
   
--Publishes:
-* /measurements (nimble_interfaces/msg/Measurements)
-    medidas fisicas paciente
-* /therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
-       niveles de asistencia, requisitos de altura y distancia de paso
+**Publishes:**
+
+* `/measurements` (nimble_interfaces/msg/Measurements)
+    - Medidas físicas del paciente
+* `/therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
+    - Niveles de asistencia, requisitos de altura y distancia de paso
+
 
 ---
 
 ## Interfaz gráfica
 
 <figure class="align-center" style="width:60%">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/hmiV1.png" alt="">
+  <img src="https://github.com/jcarballeira/nimble/blob/HMI/docs/assets/images/hmiV1.png" alt="">
   <figcaption>1º Versión de la interfaz gráfica</figcaption>
 </figure>
 
@@ -38,11 +41,12 @@ launch/nimble_launch.py.
 ## Ejecución
 
 1. Lanzar el launcher general:
+
 ```bash
 ros2 launch nimble nimble_launch.py
 ```
 
-2. Abrir navegador predeterminado y acceder a la dirección http://127.0.0.1:5000
+2. Abrir navegador predeterminado y acceder a la dirección <http://127.0.0.1:5000>
 
 ## Estructura de directorios
 
@@ -63,6 +67,7 @@ hmi_web/
 ```
 
 Los elementos mas importantes son:
+
 * **flask_class.py:** Es la clase que utilizará el nodo de ros para comunicarse con la web.
 * **main.js:** Programa de java script donde está todo el código de la animación 3D del exo además de la comunicación de la web con flask.
 * **style.cs:** Estilo de la página

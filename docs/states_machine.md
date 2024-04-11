@@ -1,13 +1,13 @@
-# Kinetic model
+# States machine
 
 <div align="center">
-    <img width=100px src="https://img.shields.io/badge/lenguage-%20python-blue" alt="Python">
+    <img width=100px src="https://img.shields.io/badge/lenguage-%20python-blue" alt="c++">
     <img width=100px src="https://img.shields.io/badge/status-in%20process-orange" alt="In process">
 </div>
 
 ## Objetivo
 
-Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del maleolo y la pelvis, tanto de la trayectoria ideal (con long y alt de paso) como la real en cada instante (acumulando en un vector)
+Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia y quizás añadir la publicacion del estado de la marcha (porcentaje).
 
 ---
 
