@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimble project: HMI</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Therapy requirements</h1>
+        <div>
+            <input type="number" id="Speed" placeholder="Enter a number" value="0.3">
+            <button onclick="sendData('Speed', '/data_speed')">Speed: m/s</button>
+        </div>
+    
+        <div>
+            <input type="number" id="Step_length" placeholder="Enter a number" value="0.6">
+            <button onclick="sendData('Step_length', '/data_step_length')">Step length: m</button>
+        </div>
+    
+        <div>
+            <input type="number" id="Step_height" placeholder="Enter a number" value="0.12">
+            <button onclick="sendData('Step_height', '/data_step_height')">Step height: m</button>
+        </div>
+        <!-- Information sender -->
+        <script>
+            function sendData(inputId, endpoint) {
+                var inputValue = document.getElementById(inputId).value;
+                fetch(endpoint + "?value=" + encodeURIComponent(inputValue))
+                    .then(response => response.json())
+                    .catch(error => console.error("Error:", error));
+            }
+    </script>
+
+    </div>
+
+
+    <div class="additional-container">
+        <canvas id="bg"></canvas>
+    </div>
+
+
+
+    <!-- Script for the second container -->
+    <script type="module" src="/static/main.js"></script>
+</body>
+</html>

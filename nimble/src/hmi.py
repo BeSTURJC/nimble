@@ -34,7 +34,7 @@ class HmiPublisher(Node):
                 ('distance_to_toe', 0.1065),
                 ('height_ankle', 0.0705),
                 ('depth_pelvis', 0.0),
-                ('width_pelvis', 0.1367),
+                ('width_pelvis', 0.4367),
                 ('min_assist_level', 10),
                 ('max_assist_level', 50),
                 ('speed', 1.0),
