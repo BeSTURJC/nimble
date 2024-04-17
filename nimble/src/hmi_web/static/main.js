@@ -306,9 +306,10 @@ class ThreeDScene {
     this.scene.add(ground);
 
     // Sphere for joint representation
-    const radius = 2;
+    const radius = 1;
     const widthSegments = 32;
     const heightSegments = 32;
+
     const geometry = new THREE.SphereGeometry(
       radius,
       widthSegments,
@@ -318,6 +319,14 @@ class ThreeDScene {
       color: 0xffffff,
       metalness: 1,
     });
+    
+    this.frame_Z = 70;
+    // Cables supports to create the cables
+    this.cableSupportL = new THREE.Mesh(geometry, material);
+    this.cableSupportL.position.set(0, 40, this.frame_Z);
+  
+    this.cableSupportR = new THREE.Mesh(geometry, material);
+    this.cableSupportR.position.set(0, -40, this.frame_Z);
 
 
     // Creates the joints
@@ -363,7 +372,7 @@ class ThreeDScene {
     });
 
     // Creates the box
-    //this.createBox();
+    this.createBox();
 
     // Add lighting
     this.addDirectionalLight(this.scene, new THREE.Vector3(10, 10, 10), 1);
@@ -415,10 +424,10 @@ class ThreeDScene {
       { x: 50, y: 40, z: -73 },
       { x: -50, y: -40, z: -73 },
       { x: -50, y: 40, z: -73 },
-      { x: 50, y: -40, z: 50 },
-      { x: 50, y: 40, z: 50 },
-      { x: -50, y: -40, z: 50 },
-      { x: -50, y: 40, z: 50 },
+      { x: 50, y: -40, z: this.frame_Z },
+      { x: 50, y: 40, z: this.frame_Z },
+      { x: -50, y: -40, z: this.frame_Z },
+      { x: -50, y: 40, z: this.frame_Z },
     ];
 
     // Array to store created meshes
@@ -583,16 +592,25 @@ class ThreeDScene {
 
   animate(){
     requestAnimationFrame(this.animate);
-
-
     this.renderer.render(this.scene, this.camera);
   }
 
   fullAnimation(){
+
+    // Cables
+    this.cableR = this.animateBone(
+      this.cableR,
+      this.cableSupportR,
+      this.right_hip
+    );
+
+    this.cableL = this.animateBone(
+      this.cableL,
+      this.cableSupportL,
+      this.left_hip
+    );
+
     // Animates the connections between joints
-
-
-
     this.hip2KneeR = this.animateBone(
       this.hip2KneeR,
       this.right_hip,
