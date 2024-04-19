@@ -55,7 +55,7 @@ class HmiPublisher(Node):
        #! This is the first trial, it follows the created route
        for i, position in enumerate(msg.left_knee):
 
-        self.webHmi.set_articulation_positions(
+        data1 = self.webHmi.set_articulation_positions( 'exo1', 100,
             msg.left_knee[i],
             msg.right_knee[i],
             msg.left_pelvis[i],
@@ -69,6 +69,23 @@ class HmiPublisher(Node):
             msg.left_toe[i],
             msg.right_toe[i]
         )
+
+        data2 = self.webHmi.set_articulation_positions( 'exo2', 115,
+            msg.left_knee[i],
+            msg.right_knee[i],
+            msg.left_pelvis[i],
+            msg.right_pelvis[i],
+            msg.left_hip[i],
+            msg.right_hip[i],
+            msg.left_ankle[i],
+            msg.right_ankle[i],
+            msg.left_heel[i],
+            msg.right_heel[i],
+            msg.left_toe[i],
+            msg.right_toe[i]
+        )
+
+        self.webHmi.data = {**data1, **data2}
         
         time.sleep(0.1)
 

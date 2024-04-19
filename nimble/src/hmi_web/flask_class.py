@@ -34,6 +34,7 @@ class FlaskApp:
 
         self.setup_routes()
         self.it = 0
+        self.data = []
 
     def setup_routes(self):
         self.app.route('/')(self.index)
@@ -52,64 +53,63 @@ class FlaskApp:
         return self.app.send_static_file(filename)
 
     
-    def set_articulation_positions(self, left_knee: Point, right_knee: Point,
-                                    left_pelvis: Point, right_pelvis: Point,
-                                    left_hip: Point, right_hip: Point,
-                                    left_ankle: Point, right_ankle: Point,
-                                    left_heel: Point, right_heel: Point,
-                                    left_toe: Point, right_toe: Point):
+    def set_articulation_positions(self, name, multiplier, left_knee, right_knee, left_pelvis, right_pelvis,
+                                        left_hip, right_hip, left_ankle, right_ankle,
+                                        left_heel, right_heel, left_toe, right_toe):
 
         # Saves the data into a dictionary
-        multiplier = 100
-        self.data = {
-            'left_pelvis_x': left_pelvis.x * multiplier,
-            'left_pelvis_y': left_pelvis.y * multiplier,
-            'left_pelvis_z': left_pelvis.z * multiplier,
+        data = {
+            name + '_left_pelvis_x': left_pelvis.x * multiplier,
+            name + '_left_pelvis_y': left_pelvis.y * multiplier,
+            name + '_left_pelvis_z': left_pelvis.z * multiplier,
 
-            'right_pelvis_x': right_pelvis.x * multiplier,
-            'right_pelvis_y': right_pelvis.y * multiplier,
-            'right_pelvis_z': right_pelvis.z * multiplier,
+            name + '_right_pelvis_x': right_pelvis.x * multiplier,
+            name + '_right_pelvis_y': right_pelvis.y * multiplier,
+            name + '_right_pelvis_z': right_pelvis.z * multiplier,
 
-            'left_hip_x': left_hip.x * multiplier,
-            'left_hip_y': left_hip.y * multiplier,
-            'left_hip_z': left_hip.z * multiplier,
+            name + '_left_hip_x': left_hip.x * multiplier,
+            name + '_left_hip_y': left_hip.y * multiplier,
+            name + '_left_hip_z': left_hip.z * multiplier,
 
-            'right_hip_x': right_hip.x * multiplier,
-            'right_hip_y': right_hip.y * multiplier,
-            'right_hip_z': right_hip.z * multiplier,
+            name + '_right_hip_x': right_hip.x * multiplier,
+            name + '_right_hip_y': right_hip.y * multiplier,
+            name + '_right_hip_z': right_hip.z * multiplier,
 
-            'left_knee_x': left_knee.x * multiplier,
-            'left_knee_y': left_knee.y * multiplier,
-            'left_knee_z': left_knee.z * multiplier,
+            name + '_left_knee_x': left_knee.x * multiplier,
+            name + '_left_knee_y': left_knee.y * multiplier,
+            name + '_left_knee_z': left_knee.z * multiplier,
 
-            'right_knee_x': right_knee.x * multiplier,
-            'right_knee_y': right_knee.y * multiplier,
-            'right_knee_z': right_knee.z * multiplier,
+            name + '_right_knee_x': right_knee.x * multiplier,
+            name + '_right_knee_y': right_knee.y * multiplier,
+            name + '_right_knee_z': right_knee.z * multiplier,
 
-            'left_ankle_x': left_ankle.x * multiplier,
-            'left_ankle_y': left_ankle.y * multiplier,
-            'left_ankle_z': left_ankle.z * multiplier,
+            name + '_left_ankle_x': left_ankle.x * multiplier,
+            name + '_left_ankle_y': left_ankle.y * multiplier,
+            name + '_left_ankle_z': left_ankle.z * multiplier,
 
-            'right_ankle_x': right_ankle.x * multiplier,
-            'right_ankle_y': right_ankle.y * multiplier,
-            'right_ankle_z': right_ankle.z * multiplier,
+            name + '_right_ankle_x': right_ankle.x * multiplier,
+            name + '_right_ankle_y': right_ankle.y * multiplier,
+            name + '_right_ankle_z': right_ankle.z * multiplier,
 
-            'left_heel_x': left_heel.x * multiplier,
-            'left_heel_y': left_heel.y * multiplier,
-            'left_heel_z': left_heel.z * multiplier,
+            name + '_left_heel_x': left_heel.x * multiplier,
+            name + '_left_heel_y': left_heel.y * multiplier,
+            name + '_left_heel_z': left_heel.z * multiplier,
 
-            'right_heel_x': right_heel.x * multiplier,
-            'right_heel_y': right_heel.y * multiplier,
-            'right_heel_z': right_heel.z * multiplier,
+            name + '_right_heel_x': right_heel.x * multiplier,
+            name + '_right_heel_y': right_heel.y * multiplier,
+            name + '_right_heel_z': right_heel.z * multiplier,
 
-            'left_toe_x': left_toe.x * multiplier,
-            'left_toe_y': left_toe.y * multiplier,
-            'left_toe_z': left_toe.z * multiplier,
+            name + '_left_toe_x': left_toe.x * multiplier,
+            name + '_left_toe_y': left_toe.y * multiplier,
+            name + '_left_toe_z': left_toe.z * multiplier,
 
-            'right_toe_x': right_toe.x * multiplier,
-            'right_toe_y': right_toe.y * multiplier,
-            'right_toe_z': right_toe.z * multiplier
+            name + '_right_toe_x': right_toe.x * multiplier,
+            name + '_right_toe_y': right_toe.y * multiplier,
+            name + '_right_toe_z': right_toe.z * multiplier
         }
+
+        return data
+
         
 
     def serve_node_modules(self, filename):

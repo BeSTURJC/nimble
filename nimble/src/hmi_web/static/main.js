@@ -268,7 +268,7 @@ class STLLoader extends THREE.Loader {
   }
 }
 
-function createConnection(joint1, joint2) {
+function createConnection(joint1, joint2, material) {
   // Calculate the midpoint position between joint1 and joint2
   const centerX = (joint1.position.x + joint2.position.x) / 2;
   const centerY = (joint1.position.y + joint2.position.y) / 2;
@@ -284,12 +284,6 @@ function createConnection(joint1, joint2) {
 
   // Create box geometry
   const geometry = new THREE.BoxGeometry(width, height, depth);
-
-  // Create material
-  const material = new THREE.MeshStandardMaterial({
-    color: 0xffffff,
-    metalness: 1,
-  });
 
   // Create the connection
   const connection = new THREE.Mesh(geometry, material);
@@ -314,14 +308,14 @@ function createConnection(joint1, joint2) {
   return connection;
 }
 
-function animateBone(bone, joint1, joint2, scene) {
+function animateBone(bone, joint1, joint2, material, scene) {
   // Delete the previous bone
   if (bone) {
     scene.remove(bone, scene);
   }
 
   // Adds to the scene the new bone
-  bone = createConnection(joint1, joint2);
+  bone = createConnection(joint1, joint2, material);
   scene.add(bone);
 
   return bone;
@@ -329,12 +323,13 @@ function animateBone(bone, joint1, joint2, scene) {
 
 
 class Exoskeleton {
-  constructor(material, jointData, loader, scene) {
+  constructor(material, stlData, loader, scene) {
 
     this.scene = scene;
+    this.material = material;
 
     // Gets the .stl and adds it
-    Promise.all(jointData.map(joint => {
+    Promise.all(stlData.map(joint => {
       return this.loadSTL(loader, `./static/models/${joint.name}_${joint.file}.stl`).then(geometry => {
         const multiplier = 0.07;
         geometry.scale(multiplier, multiplier, multiplier);
@@ -360,12 +355,14 @@ class Exoskeleton {
       this.hip2KneeR,
       this.right_hip,
       this.right_knee,
+      this.material,
       this.scene
     );
     this.hip2KneeL = animateBone(
       this.hip2KneeL,
       this.left_hip,
       this.left_knee,
+      this.material,
       this.scene
     );
 
@@ -373,12 +370,14 @@ class Exoskeleton {
       this.knee2AnkleR,
       this.right_knee,
       this.right_ankle,
+      this.material,
       this.scene
     );
     this.knee2AnkleL = animateBone(
       this.knee2AnkleL,
       this.left_knee,
       this.left_ankle,
+      this.material,
       this.scene
     );
 
@@ -386,12 +385,14 @@ class Exoskeleton {
       this.ankle2HeelR,
       this.right_ankle,
       this.right_heel,
+      this.material,
       this.scene
     );
     this.ankle2HeelL = animateBone(
       this.ankle2HeelL,
       this.left_ankle,
       this.left_heel,
+      this.material,
       this.scene
     );
 
@@ -399,12 +400,14 @@ class Exoskeleton {
       this.heel2ToeR,
       this.right_heel,
       this.right_toe,
+      this.material,
       this.scene
     );
     this.heel2ToeL = animateBone(
       this.heel2ToeL,
       this.left_heel,
       this.left_toe,
+      this.material,
       this.scene
     );
 
@@ -412,12 +415,14 @@ class Exoskeleton {
       this.toe2AnkleR,
       this.right_toe,
       this.right_ankle,
+      this.material,
       this.scene
     );
     this.toe2AnkleL = animateBone(
       this.toe2AnkleL,
       this.left_toe,
       this.left_ankle,
+      this.material,
       this.scene
     );
   }
@@ -479,24 +484,32 @@ class ThreeDScene {
       widthSegments,
       heightSegments
     );
-    const material = new THREE.MeshStandardMaterial({
+
+    // Materials
+    this.material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       metalness: 1,
+    });
+
+    const redMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff0000, 
+      opacity: 0.5,
+      transparent: true
     });
     
     this.frame_Z = 70; // Frame height
 
     // Cables supports to create the cables
-    this.cableSupportL = new THREE.Mesh(geometry, material);
+    this.cableSupportL = new THREE.Mesh(geometry, this.material);
     this.cableSupportL.position.set(0, 40, this.frame_Z);
   
-    this.cableSupportR = new THREE.Mesh(geometry, material);
+    this.cableSupportR = new THREE.Mesh(geometry, this.material);
     this.cableSupportR.position.set(0, -40, this.frame_Z);
 
 
-    // Creates the joints
+    // Needed data to load the stls
     var loader = new STLLoader();
-    var jointData = [
+    var stlData = [
       { name: 'right_knee', orientation: new THREE.Euler(0, Math.PI, 0), file: 'case'},
       { name: 'left_knee', orientation: new THREE.Euler(0, Math.PI, 0), file: 'case' },
 
@@ -517,7 +530,8 @@ class ThreeDScene {
       { name: 'base_pelvis', orientation: new THREE.Euler(0, 0, 0), file: 'plate' }
     ];
     
-    this.exo1 = new Exoskeleton(material, jointData, loader, this.scene);
+    this.exo1 = new Exoskeleton(this.material, stlData, loader, this.scene);
+    //this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
 
     // Creates the frame
     this.createBox();
@@ -588,20 +602,20 @@ class ThreeDScene {
     }
 
     // Generates corners between meshes
-    animateBone(this.p1, boxes[0], boxes[1], this.scene);
-    animateBone(this.p2, boxes[0], boxes[2], this.scene);
-    animateBone(this.p3, boxes[1], boxes[3], this.scene);
-    animateBone(this.p4, boxes[3], boxes[2], this.scene);
+    animateBone(this.p1, boxes[0], boxes[1], this.material, this.scene);
+    animateBone(this.p2, boxes[0], boxes[2], this.material, this.scene);
+    animateBone(this.p3, boxes[1], boxes[3], this.material, this.scene);
+    animateBone(this.p4, boxes[3], boxes[2], this.material, this.scene);
 
-    animateBone(this.p5, boxes[0], boxes[4], this.scene);
-    animateBone(this.p6, boxes[1], boxes[5], this.scene);
-    animateBone(this.p7, boxes[2], boxes[6], this.scene);
-    animateBone(this.p8, boxes[3], boxes[7], this.scene);
+    animateBone(this.p5, boxes[0], boxes[4], this.material, this.scene);
+    animateBone(this.p6, boxes[1], boxes[5], this.material, this.scene);
+    animateBone(this.p7, boxes[2], boxes[6], this.material, this.scene);
+    animateBone(this.p8, boxes[3], boxes[7], this.material, this.scene);
 
-    animateBone(this.p9, boxes[5], boxes[4], this.scene);
-    animateBone(this.p10, boxes[6], boxes[4], this.scene);
-    animateBone(this.p11, boxes[6], boxes[7], this.scene);
-    animateBone(this.p12, boxes[7], boxes[5], this.scene);
+    animateBone(this.p9, boxes[5], boxes[4], this.material, this.scene);
+    animateBone(this.p10, boxes[6], boxes[4], this.material, this.scene);
+    animateBone(this.p11, boxes[6], boxes[7], this.material, this.scene);
+    animateBone(this.p12, boxes[7], boxes[5], this.material, this.scene);
   }
 
 
@@ -679,7 +693,7 @@ class ThreeDScene {
     for (const side of sides) {
       for (const joint of joints) {
         for (const axis of ["x", "y", "z"]) {
-          const propertyName = `${side}_${joint}_${axis}`;
+          const propertyName = `exo1_${side}_${joint}_${axis}`;
           const position = data[propertyName];
           
           // Check if this[`${side}_${joint}`] is defined
@@ -689,15 +703,34 @@ class ThreeDScene {
             console.error(`Object ${side}_${joint} is undefined.`);
           }
         }
+        
+        if (this.exo2) {
+          for (const axis of ["x", "y", "z"]) {
+            const propertyName = `exo2_${side}_${joint}_${axis}`;
+            const position = data[propertyName];
+            
+            // Check if this[`${side}_${joint}`] is defined
+            if (this.exo2[`${side}_${joint}`]) {
+              this.exo2[`${side}_${joint}`].position[axis] = position;
+            } else {
+              console.error(`Object ${side}_${joint} is undefined.`);
+            }
+          }
+        }
       }
     }
-    this.exo1.exoAnimation()
+    this.exo1.exoAnimation();
 
+    if (this.exo2){
+      this.exo2.exoAnimation();
+    }
+    
     // Animates the cables
       this.cableR = animateBone(
       this.cableR,
       this.cableSupportR,
       this.exo1.right_hip,
+      this.material,
       this.scene
     );
 
@@ -705,6 +738,7 @@ class ThreeDScene {
       this.cableL,
       this.cableSupportL,
       this.exo1.left_hip,
+      this.material,
       this.scene
     );
   }
