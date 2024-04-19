@@ -268,6 +268,171 @@ class STLLoader extends THREE.Loader {
   }
 }
 
+function createConnection(joint1, joint2) {
+  // Calculate the midpoint position between joint1 and joint2
+  const centerX = (joint1.position.x + joint2.position.x) / 2;
+  const centerY = (joint1.position.y + joint2.position.y) / 2;
+  const centerZ = (joint1.position.z + joint2.position.z) / 2;
+
+  // Calculate the height of the connection
+  const distance = joint1.position.distanceTo(joint2.position);
+
+  // Define dimensions for the rectangular prism
+  const width = 3;
+  const height = distance;
+  const depth = 2; // Using the distance between joints as the depth
+
+  // Create box geometry
+  const geometry = new THREE.BoxGeometry(width, height, depth);
+
+  // Create material
+  const material = new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    metalness: 1,
+  });
+
+  // Create the connection
+  const connection = new THREE.Mesh(geometry, material);
+
+  // Calculate the direction from joint2 towards joint1
+  const direction = new THREE.Vector3()
+    .subVectors(joint1.position, joint2.position)
+    .normalize();
+
+  // Calculate connection position
+  connection.position.set(centerX, centerY, centerZ);
+
+  // Orient the connection
+  connection.quaternion.setFromUnitVectors(
+    new THREE.Vector3(0, 1, 0),
+    direction
+  );
+
+  // Changes the joint orientation
+  joint1.rotation.y = Math.atan2(connection.position.z - joint1.position.z, connection.position.x - joint1.position.x) + Math.PI/2;
+
+  return connection;
+}
+
+function animateBone(bone, joint1, joint2, scene) {
+  // Delete the previous bone
+  if (bone) {
+    scene.remove(bone, scene);
+  }
+
+  // Adds to the scene the new bone
+  bone = createConnection(joint1, joint2);
+  scene.add(bone);
+
+  return bone;
+}
+
+
+class Exoskeleton {
+  constructor(material, jointData, loader, scene) {
+
+    this.scene = scene;
+
+    // Gets the .stl and adds it
+    Promise.all(jointData.map(joint => {
+      return this.loadSTL(loader, `./static/models/${joint.name}_${joint.file}.stl`).then(geometry => {
+        const multiplier = 0.07;
+        geometry.scale(multiplier, multiplier, multiplier);
+  
+          var jointMesh = new THREE.Mesh(geometry, material);
+          jointMesh.position.set(0, 0, 0);
+          jointMesh.setRotationFromEuler(joint.orientation); // Set orientation
+          this.scene.add(jointMesh);
+  
+          // Assign the joint mesh to its corresponding property dynamically
+          this[joint.name] = jointMesh;
+          this.scene.add(this[joint.name]);
+      });
+  })).catch(error => {
+      console.error('An error occurred while loading STL files:', error);
+  });
+  }
+
+  exoAnimation(){
+
+    // Animates the connections between joints
+    this.hip2KneeR = animateBone(
+      this.hip2KneeR,
+      this.right_hip,
+      this.right_knee,
+      this.scene
+    );
+    this.hip2KneeL = animateBone(
+      this.hip2KneeL,
+      this.left_hip,
+      this.left_knee,
+      this.scene
+    );
+
+    this.knee2AnkleR = animateBone(
+      this.knee2AnkleR,
+      this.right_knee,
+      this.right_ankle,
+      this.scene
+    );
+    this.knee2AnkleL = animateBone(
+      this.knee2AnkleL,
+      this.left_knee,
+      this.left_ankle,
+      this.scene
+    );
+
+    this.ankle2HeelR = animateBone(
+      this.ankle2HeelR,
+      this.right_ankle,
+      this.right_heel,
+      this.scene
+    );
+    this.ankle2HeelL = animateBone(
+      this.ankle2HeelL,
+      this.left_ankle,
+      this.left_heel,
+      this.scene
+    );
+
+    this.heel2ToeR = animateBone(
+      this.heel2ToeR,
+      this.right_heel,
+      this.right_toe,
+      this.scene
+    );
+    this.heel2ToeL = animateBone(
+      this.heel2ToeL,
+      this.left_heel,
+      this.left_toe,
+      this.scene
+    );
+
+    this.toe2AnkleR = animateBone(
+      this.toe2AnkleR,
+      this.right_toe,
+      this.right_ankle,
+      this.scene
+    );
+    this.toe2AnkleL = animateBone(
+      this.toe2AnkleL,
+      this.left_toe,
+      this.left_ankle,
+      this.scene
+    );
+  }
+
+
+
+  loadSTL(loader, filePath) {
+    return new Promise((resolve, reject) => {
+        loader.load(filePath, resolve, undefined, reject);
+    });
+}
+}
+
+
+
 class ThreeDScene {
   constructor() {
     // Create a scene
@@ -282,7 +447,6 @@ class ThreeDScene {
     );
 
     // Camera position
-
     this.camera.position.x = 100;
     this.camera.position.y = 60;
     this.camera.position.z = -30;
@@ -305,7 +469,7 @@ class ThreeDScene {
     // Adds the ground to the scene
     this.scene.add(ground);
 
-    // Sphere for joint representation
+    // Sphere for cables supports
     const radius = 1;
     const widthSegments = 32;
     const heightSegments = 32;
@@ -320,7 +484,8 @@ class ThreeDScene {
       metalness: 1,
     });
     
-    this.frame_Z = 70;
+    this.frame_Z = 70; // Frame height
+
     // Cables supports to create the cables
     this.cableSupportL = new THREE.Mesh(geometry, material);
     this.cableSupportL.position.set(0, 40, this.frame_Z);
@@ -352,26 +517,9 @@ class ThreeDScene {
       { name: 'base_pelvis', orientation: new THREE.Euler(0, 0, 0), file: 'plate' }
     ];
     
-    // Gets the .stl and adds it
-    Promise.all(jointData.map(joint => {
-        return this.loadSTL(loader, `./static/models/${joint.name}_${joint.file}.stl`).then(geometry => {
-          const multiplier = 0.07;
-          geometry.scale(multiplier, multiplier, multiplier);
-    
-            var jointMesh = new THREE.Mesh(geometry, material);
-            jointMesh.position.set(0, 0, 0);
-            jointMesh.setRotationFromEuler(joint.orientation); // Set orientation
-            this.scene.add(jointMesh);
-    
-            // Assign the joint mesh to its corresponding property dynamically
-            this[joint.name] = jointMesh;
-            this.scene.add(this[joint.name]);
-        });
-    })).catch(error => {
-        console.error('An error occurred while loading STL files:', error);
-    });
+    this.exo1 = new Exoskeleton(material, jointData, loader, this.scene);
 
-    // Creates the box
+    // Creates the frame
     this.createBox();
 
     // Add lighting
@@ -386,11 +534,12 @@ class ThreeDScene {
       y: 0,
     };
 
-    // Mouse events
     document.addEventListener("mousemove", this.onMouseMove.bind(this));
     document.addEventListener("mousedown", this.onMouseDown.bind(this));
     document.addEventListener("mouseup", this.onMouseUp.bind(this));
     document.addEventListener('wheel', this.handleMouseWheel.bind(this));
+
+    // Animation
     this.animate = this.animate.bind(this);
     this.animate();
 
@@ -398,14 +547,10 @@ class ThreeDScene {
     this.fetchData();
   }
 
-  loadSTL(loader, filePath) {
-    return new Promise((resolve, reject) => {
-        loader.load(filePath, resolve, undefined, reject);
-    });
-}
+
   createBox() {
     // Sphere for joint representation
-    const radius = 3;
+    const radius = 2;
     const widthSegments = 32;
     const heightSegments = 32;
     const geometry = new THREE.SphereGeometry(
@@ -413,12 +558,13 @@ class ThreeDScene {
       widthSegments,
       heightSegments
     );
+
     const material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       metalness: 1,
     });
 
-    // Define object positions
+    // Define corners positions
     const positions = [
       { x: 50, y: -40, z: -73 },
       { x: 50, y: 40, z: -73 },
@@ -430,10 +576,10 @@ class ThreeDScene {
       { x: -50, y: 40, z: this.frame_Z },
     ];
 
-    // Array to store created meshes
+    // Array to store created corners
     const boxes = [];
 
-    // Create meshes and add them to the scene
+    // Create corners and add them to the scene
     for (const position of positions) {
       const box = new THREE.Mesh(geometry, material);
       box.position.set(position.x, position.y, position.z);
@@ -441,33 +587,27 @@ class ThreeDScene {
       boxes.push(box);
     }
 
-    // Animate joints between meshes
-    this.animateBone(this.p1, boxes[0], boxes[1]);
-    this.animateBone(this.p2, boxes[0], boxes[2]);
-    this.animateBone(this.p3, boxes[1], boxes[3]);
-    this.animateBone(this.p4, boxes[3], boxes[2]);
+    // Generates corners between meshes
+    animateBone(this.p1, boxes[0], boxes[1], this.scene);
+    animateBone(this.p2, boxes[0], boxes[2], this.scene);
+    animateBone(this.p3, boxes[1], boxes[3], this.scene);
+    animateBone(this.p4, boxes[3], boxes[2], this.scene);
 
-    this.animateBone(this.p5, boxes[0], boxes[4]);
-    this.animateBone(this.p6, boxes[1], boxes[5]);
-    this.animateBone(this.p7, boxes[2], boxes[6]);
-    this.animateBone(this.p8, boxes[3], boxes[7]);
+    animateBone(this.p5, boxes[0], boxes[4], this.scene);
+    animateBone(this.p6, boxes[1], boxes[5], this.scene);
+    animateBone(this.p7, boxes[2], boxes[6], this.scene);
+    animateBone(this.p8, boxes[3], boxes[7], this.scene);
 
-    this.animateBone(this.p9, boxes[5], boxes[4]);
-    this.animateBone(this.p10, boxes[6], boxes[4]);
-    this.animateBone(this.p11, boxes[6], boxes[7]);
-    this.animateBone(this.p12, boxes[7], boxes[5]);
+    animateBone(this.p9, boxes[5], boxes[4], this.scene);
+    animateBone(this.p10, boxes[6], boxes[4], this.scene);
+    animateBone(this.p11, boxes[6], boxes[7], this.scene);
+    animateBone(this.p12, boxes[7], boxes[5], this.scene);
   }
 
-  // Function to handle mouse wheel event
+
   handleMouseWheel(event) {
     // Adjust camera's Y position based on the wheel delta
-    this.camera.position.x += event.deltaY * 0.1; // Adjust the factor as needed
-    // Ensure camera does not go below ground level or above certain limit
-    // For example:
-    // camera.position.y = Math.max(camera.position.y, minHeight);
-    // camera.position.y = Math.min(camera.position.y, maxHeight);
-
-    // Render the scene
+    this.camera.position.x += event.deltaY * 0.1;
   }
 
   onMouseMove(event) {
@@ -480,8 +620,8 @@ class ThreeDScene {
       if (event.buttons === 1 && event.shiftKey) {
         // Left button pressed with Shift key
         // Adjust camera rotation based on mouse movement
-        this.camera.rotation.y += deltaMove.x * 0.01;
-        this.camera.rotation.x += deltaMove.y * 0.01;
+        this.camera.rotation.y += deltaMove.x * 0.005;
+        this.camera.rotation.x -= deltaMove.y * 0.005;
 
       } else if (event.buttons === 1) {
         // Left button pressed
@@ -489,12 +629,6 @@ class ThreeDScene {
         this.camera.position.z += deltaMove.y * 0.1;
         this.camera.position.y -= deltaMove.x * 0.1;
 
-      } else if (event.buttons === 4) {
-        // Middle button pressed
-        // Adjust camera zoom based on mouse movement
-        this.camera.position.x += deltaMove.y * 0.1;
-        this.camera.position.y += deltaMove.y * 0.1;
-        this.camera.position.z += deltaMove.z * 0.1;
       }
 
       this.previousMousePosition = {
@@ -516,54 +650,6 @@ class ThreeDScene {
     this.isDragging = false;
   }
 
-  createCylinder(joint1, joint2) {
-    // Calculate the midpoint position between joint1 and joint2
-    const centerX = (joint1.position.x + joint2.position.x) / 2;
-    const centerY = (joint1.position.y + joint2.position.y) / 2;
-    const centerZ = (joint1.position.z + joint2.position.z) / 2;
-
-    // Calculate the height of the cylinder
-    const distance = joint1.position.distanceTo(joint2.position);
-
-    // Define dimensions for the rectangular prism
-    const width = 2;
-    const height = distance;
-    const depth = 1; // Using the distance between joints as the depth
-
-    // Create box geometry
-    const geometry = new THREE.BoxGeometry(width, height, depth);
-
-    // Create material
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
-      metalness: 1,
-    });
-
-    // Create the cylinder
-    const cylinder = new THREE.Mesh(geometry, material);
-
-    // Calculate the direction from joint2 towards joint1
-    const direction = new THREE.Vector3()
-      .subVectors(joint1.position, joint2.position)
-      .normalize();
-
-    // Calculate cylinder position
-    cylinder.position.set(centerX, centerY, centerZ);
-
-    // Orient the cylinder
-    cylinder.quaternion.setFromUnitVectors(
-      new THREE.Vector3(0, 1, 0),
-      direction
-    );
-
-    // Changes the joint orientation
-    joint1.rotation.y = Math.atan2(cylinder.position.z - joint1.position.z, cylinder.position.x - joint1.position.x) + Math.PI/2;
-
-    //joint1.rotation.z = Math.atan2(joint2.position.y - joint1.position.y, joint2.position.x - joint1.position.x);
-    //joint1.rotation.x = Math.atan2(joint2.position.y - joint1.position.y, joint2.position.z - joint1.position.z) - 2*Math.PI;
-
-    return cylinder;
-  }
 
   addDirectionalLight(scene, position, intensity) {
     const light = new THREE.DirectionalLight(0xffffff, intensity);
@@ -576,95 +662,11 @@ class ThreeDScene {
     scene.add(light);
   }
 
-  animateBone(con, joint1, joint2) {
-    // Delete the previous cylinder
-    if (con) {
-      this.scene.remove(con);
-    }
-
-    // Adds to the scene the new cylinder
-    con = this.createCylinder(joint1, joint2);
-    this.scene.add(con);
-
-    return con;
-  }
 
 
   animate(){
     requestAnimationFrame(this.animate);
     this.renderer.render(this.scene, this.camera);
-  }
-
-  fullAnimation(){
-
-    // Cables
-    this.cableR = this.animateBone(
-      this.cableR,
-      this.cableSupportR,
-      this.right_hip
-    );
-
-    this.cableL = this.animateBone(
-      this.cableL,
-      this.cableSupportL,
-      this.left_hip
-    );
-
-    // Animates the connections between joints
-    this.hip2KneeR = this.animateBone(
-      this.hip2KneeR,
-      this.right_hip,
-      this.right_knee
-    );
-    this.hip2KneeL = this.animateBone(
-      this.hip2KneeL,
-      this.left_hip,
-      this.left_knee
-    );
-
-    this.knee2AnkleR = this.animateBone(
-      this.knee2AnkleR,
-      this.right_knee,
-      this.right_ankle
-    );
-    this.knee2AnkleL = this.animateBone(
-      this.knee2AnkleL,
-      this.left_knee,
-      this.left_ankle
-    );
-
-    this.ankle2HeelR = this.animateBone(
-      this.ankle2HeelR,
-      this.right_ankle,
-      this.right_heel
-    );
-    this.ankle2HeelL = this.animateBone(
-      this.ankle2HeelL,
-      this.left_ankle,
-      this.left_heel
-    );
-
-    this.heel2ToeR = this.animateBone(
-      this.heel2ToeR,
-      this.right_heel,
-      this.right_toe
-    );
-    this.heel2ToeL = this.animateBone(
-      this.heel2ToeL,
-      this.left_heel,
-      this.left_toe
-    );
-
-    this.toe2AnkleR = this.animateBone(
-      this.toe2AnkleR,
-      this.right_toe,
-      this.right_ankle
-    );
-    this.toe2AnkleL = this.animateBone(
-      this.toe2AnkleL,
-      this.left_toe,
-      this.left_ankle
-    );
   }
 
   //** Fetching data functions **/
@@ -681,15 +683,30 @@ class ThreeDScene {
           const position = data[propertyName];
           
           // Check if this[`${side}_${joint}`] is defined
-          if (this[`${side}_${joint}`]) {
-            this[`${side}_${joint}`].position[axis] = position;
+          if (this.exo1[`${side}_${joint}`]) {
+            this.exo1[`${side}_${joint}`].position[axis] = position;
           } else {
             console.error(`Object ${side}_${joint} is undefined.`);
           }
         }
       }
     }
-    this.fullAnimation()
+    this.exo1.exoAnimation()
+
+    // Animates the cables
+      this.cableR = animateBone(
+      this.cableR,
+      this.cableSupportR,
+      this.exo1.right_hip,
+      this.scene
+    );
+
+    this.cableL = animateBone(
+      this.cableL,
+      this.cableSupportL,
+      this.exo1.left_hip,
+      this.scene
+    );
   }
 
   // Function to continuously fetch data from the flask server

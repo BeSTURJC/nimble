@@ -13,11 +13,12 @@ launch/nimble_launch.py.
 ---
 
 ## Topics
-<!-- TODO: Añadir topics del nuevo HMI -->
+* 
 
 **Suscribed:**
 
-* NONE
+* `/cartesian_full_target` o `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)
+    - En caso de ser **cartesian_full_target** recrea la ruta que se le pasa al paciente, si es **cartesian_state**, seguirá el movimiento del exo.
   
 **Publishes:**
 
@@ -58,7 +59,7 @@ hmi_web/
 ├── sender.py
 ├── static/
 │   ├── main.js
-│   ├── node_modules
+│   ├── models
 │   └── style.css
 └── templates/
     ├── index.html
@@ -72,3 +73,16 @@ Los elementos mas importantes son:
 * **main.js:** Programa de java script donde está todo el código de la animación 3D del exo además de la comunicación de la web con flask.
 * **style.cs:** Estilo de la página
 * **index.html:** Estructura web del HMI
+
+* **models:** Contiene los modelos 3D del exoesqueleto, cada articulación se asocia a su respectivo stl con la siguiente representación permitiendo no tener que llamar parte a parte:
+```javascript
+    var jointData = [
+      { name: 'right_knee', orientation: new THREE.Euler(0, Math.PI, 0), 
+      file: 'case'},
+
+      { name: 'left_knee', orientation: new THREE.Euler(0, Math.PI, 0), 
+      file: 'case' } 
+      
+      ...];
+```
+    Nota: Algunos .stl fueron modificados ya que sus centros no eran los mismos que el centro geométrico de la figura.
