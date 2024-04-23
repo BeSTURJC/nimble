@@ -1,0 +1,10 @@
+hmi:
+  ros__parameters:
+    height: 1.8
+    femur: 0.3371
+    tibia: 0.3495
+    distance_to_heel: 0.0
+    distance_to_toe: 0.1065
+    height_ankle: 0.0705
+    depth_pelvis: 0.0
+    width_pelvis: 0.4

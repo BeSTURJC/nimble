@@ -7,35 +7,22 @@
 
 ## Objetivo
 
-Publicar periodicamente las medidas del paciente y los requisitos de la terapia. Se puede sustituir por publicar esos topics directamente en la terminal o creando una interfaz real. Los parámetros pueden modificarse por terminal (en caliente) inicialmente se cargan en el fichero
-launch/nimble_launch.py.
+Publicar periódicamente las medidas del paciente y los requisitos de la terapia. Se puede sustituir por publicar esos topics directamente en la terminal o creando una interfaz real. Los parámetros pueden modificarse por terminal (en caliente) inicialmente se cargan en el fichero launch/nimble_launch.py.
 
 ---
 
 ## Topics
-* 
+* **Suscripciones:**
 
-**Suscribed:**
-
-* `/cartesian_full_target` o `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)
-    - En caso de ser **cartesian_full_target** recrea la ruta que se le pasa al paciente, si es **cartesian_state**, seguirá el movimiento del exo.
+  * `/cartesian_full_target` o `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)
+    - En caso de ser **cartesian_full_target**, recrea la ruta que se le pasa al paciente; si es **cartesian_state**, seguirá el movimiento del exo.
   
-**Publishes:**
+* **Publicaciones:**
 
-* `/measurements` (nimble_interfaces/msg/Measurements)
-    - Medidas físicas del paciente
-* `/therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
-    - Niveles de asistencia, requisitos de altura y distancia de paso
-
-
----
-
-## Interfaz gráfica
-
-<figure class="align-center" style="width:60%">
-  <img src="https://github.com/jcarballeira/nimble/blob/HMI/docs/assets/images/hmiV1.png" alt="">
-  <figcaption>1º Versión de la interfaz gráfica</figcaption>
-</figure>
+  * `/measurements` (nimble_interfaces/msg/Measurements)
+    - Medidas físicas del paciente.
+  * `/therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
+    - Niveles de asistencia, requisitos de altura y distancia de paso.
 
 ---
 
@@ -53,28 +40,23 @@ ros2 launch nimble nimble_launch.py
 
 ```java
 hmi_web/
-├── flask_class.py
+├── flask_class.py: Es la clase que utilizará el nodo de ROS para comunicarse con la web.
 ├── package.json
 ├── package-lock.json
 ├── sender.py
 ├── static/
-│   ├── main.js
+│   ├── main.js: Programa de JavaScript donde está todo el código de la animación 3D del exoesqueleto, además de la comunicación de la web con Flask.
 │   ├── models
-│   └── style.css
+│   └── style.css: Estilo de la página.
 └── templates/
-    ├── index.html
+    ├── index.html: Estructura web del HMI.
     ├── package.json
     └── package-lock.json
 ```
 
-Los elementos mas importantes son:
-
-* **flask_class.py:** Es la clase que utilizará el nodo de ros para comunicarse con la web.
-* **main.js:** Programa de java script donde está todo el código de la animación 3D del exo además de la comunicación de la web con flask.
-* **style.cs:** Estilo de la página
-* **index.html:** Estructura web del HMI
 
 * **models:** Contiene los modelos 3D del exoesqueleto, cada articulación se asocia a su respectivo stl con la siguiente representación permitiendo no tener que llamar parte a parte:
+
 ```javascript
     var jointData = [
       { name: 'right_knee', orientation: new THREE.Euler(0, Math.PI, 0), 
@@ -86,3 +68,30 @@ Los elementos mas importantes son:
       ...];
 ```
     Nota: Algunos .stl fueron modificados ya que sus centros no eran los mismos que el centro geométrico de la figura.
+
+
+## Versiones del HMI
+
+### Versión 1
+<figure class="align-center" style="width:60%">
+  <img src="https://github.com/jcarballeira/nimble/blob/HMI/docs/assets/images/hmiV1.png" alt="">
+  <figcaption>V 1.0</figcaption>
+</figure>
+
+Primera versión con figuras geométricas como exoesqueleto.
+
+### Versión 2
+<figure class="align-center" style="width:60%">
+  <img src="https://github.com/jcarballeira/nimble/blob/HMI/docs/assets/images/hmiV2.png" alt="">
+  <figcaption>V 2.0</figcaption>
+</figure>
+
+Se añadieron los STLs para tener una vista más agradable del exoesqueleto.
+
+<figure class="align-center" style="width:60%">
+  <img src="https://github.com/jcarballeira/nimble/blob/HMI/docs/assets/images/hmiV2-1.png" alt="">
+  <figcaption>V 2.1</figcaption>
+</figure>
+
+Exoesqueleto "Sombra" para mostrar el movimiento actual del exoesqueleto junto al movimiento ideal.
+

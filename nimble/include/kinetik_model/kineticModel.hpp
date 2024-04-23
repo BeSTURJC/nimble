@@ -140,18 +140,14 @@ private:
     
     template <typename T>
     void updateCartesianState(std::vector<T>& target, const T& value, std::size_t bufferSize);
-    void fill_joint_state(
-    jointPosition &pelvisPosition,
-    jointPosition &hipPositions,
-    jointPosition &anklePositions,
-    jointPosition &heelsPositions,
-    jointPosition &toePositions,
-    jointPosition &kneePositions,
-    nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target);
+    
+    void fill_joint_state( jointPosition &pelvisPosition, jointPosition &hipPositions,
+        jointPosition &anklePositions, jointPosition &heelsPositions,
+        jointPosition &toePositions, jointPosition &kneePositions,
+        nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target);
+
     void resize_joint_position(jointPosition &position, int size);
-    void fill_jointPos_with_exopos(jointPosition& joint_pos,
-                                   Eigen::Vector3d left, Eigen::Vector3d right,
-                                   int index);
+    void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index);
     
     // Matrix operations
     Eigen::Vector3d position_fromSR(const Eigen::Matrix4d& T);

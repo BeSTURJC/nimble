@@ -24,8 +24,9 @@ class HmiPublisher(Node):
         # TODO: The cartesian_state probably have a buffer, if the buffer is implemented, get only the last element
 
         # TODO: Clean the parameters if the HMI is confirmed
+        self.yamlNamespace = 'hmi'
         self.declare_parameters(
-            namespace='',
+            namespace=self.yamlNamespace,
             parameters=[
                 ('height', 1.8),
                 ('femur', 0.3371),
@@ -42,7 +43,6 @@ class HmiPublisher(Node):
                 ('step_height', 0.1)
             ]
         )
-
         self.timer_ = self.create_timer(1.0, self.publisher_callback)
 
         # Runs the flask app
@@ -98,21 +98,21 @@ class HmiPublisher(Node):
         meas_msg = Measurements()
         th_req_msg = TherapyRequirements()
 
-        meas_msg.height = self.get_parameter('height').get_parameter_value().double_value
-        meas_msg.femur = self.get_parameter('femur').get_parameter_value().double_value
-        meas_msg.tibia = self.get_parameter('tibia').get_parameter_value().double_value
-        meas_msg.distance_to_heel = self.get_parameter('distance_to_heel').get_parameter_value().double_value
-        meas_msg.distance_to_toe = self.get_parameter('distance_to_toe').get_parameter_value().double_value
-        meas_msg.height_ankle = self.get_parameter('height_ankle').get_parameter_value().double_value
-        meas_msg.depth_pelvis = self.get_parameter('depth_pelvis').get_parameter_value().double_value
-        meas_msg.width_pelvis = self.get_parameter('width_pelvis').get_parameter_value().double_value
+        meas_msg.height = self.get_parameter(self.yamlNamespace + '.height').get_parameter_value().double_value
+        meas_msg.femur = self.get_parameter('hmi.femur').get_parameter_value().double_value
+        meas_msg.tibia = self.get_parameter('hmi.tibia').get_parameter_value().double_value
+        meas_msg.distance_to_heel = self.get_parameter('hmi.distance_to_heel').get_parameter_value().double_value
+        meas_msg.distance_to_toe = self.get_parameter('hmi.distance_to_toe').get_parameter_value().double_value
+        meas_msg.height_ankle = self.get_parameter('hmi.height_ankle').get_parameter_value().double_value
+        meas_msg.depth_pelvis = self.get_parameter('hmi.depth_pelvis').get_parameter_value().double_value
+        meas_msg.width_pelvis = self.get_parameter('hmi.width_pelvis').get_parameter_value().double_value
         meas_msg.header = Header()
         meas_msg.header.stamp = self.get_clock().now().to_msg()
 
         self.publisher_measur_.publish(meas_msg)
 
-        th_req_msg.min_assist_level = self.get_parameter('min_assist_level').get_parameter_value().integer_value
-        th_req_msg.max_assist_level = self.get_parameter('max_assist_level').get_parameter_value().integer_value
+        th_req_msg.min_assist_level = self.get_parameter('hmi.min_assist_level').get_parameter_value().integer_value
+        th_req_msg.max_assist_level = self.get_parameter('hmi.max_assist_level').get_parameter_value().integer_value
         
         #meas_msg.height = self.get_parameter('speed').get_parameter_value().double_value
         #th_req_msg.step_length = self.get_parameter('step_length').get_parameter_value().double_value

@@ -16,6 +16,7 @@ find_package(rosidl_default_generators REQUIRED)
 # Directories
 include_directories(include)
 
+
 # Executables
 add_executable(kinematic_model src/kinematic_model.cpp)
 ament_target_dependencies(kinematic_model rclcpp nimble_interfaces sensor_msgs trajectory_msgs)
@@ -52,7 +53,7 @@ install(TARGETS
   traj_generator_server
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch include
+install(DIRECTORY launch include config
   DESTINATION share/${PROJECT_NAME})
 
 # Python executables

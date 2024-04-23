@@ -486,7 +486,7 @@ class ThreeDScene {
     );
 
     // Materials
-    this.material = new THREE.MeshStandardMaterial({
+    this.StandardMaterial = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       metalness: 1,
     });
@@ -500,14 +500,14 @@ class ThreeDScene {
     this.frame_Z = 70; // Frame height
 
     // Cables supports to create the cables
-    this.cableSupportL = new THREE.Mesh(geometry, this.material);
+    this.cableSupportL = new THREE.Mesh(geometry, this.StandardMaterial);
     this.cableSupportL.position.set(0, 40, this.frame_Z);
   
-    this.cableSupportR = new THREE.Mesh(geometry, this.material);
+    this.cableSupportR = new THREE.Mesh(geometry, this.StandardMaterial);
     this.cableSupportR.position.set(0, -40, this.frame_Z);
 
 
-    // Needed data to load the stls
+    // Needed data to load the stl
     var loader = new STLLoader();
     var stlData = [
       { name: 'right_knee', orientation: new THREE.Euler(0, Math.PI, 0), file: 'case'},
@@ -530,8 +530,8 @@ class ThreeDScene {
       { name: 'base_pelvis', orientation: new THREE.Euler(0, 0, 0), file: 'plate' }
     ];
     
-    this.exo1 = new Exoskeleton(this.material, stlData, loader, this.scene);
-    //this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
+    this.exo1 = new Exoskeleton(this.StandardMaterial, stlData, loader, this.scene);
+    this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
 
     // Creates the frame
     this.createBox();
@@ -602,20 +602,20 @@ class ThreeDScene {
     }
 
     // Generates corners between meshes
-    animateBone(this.p1, boxes[0], boxes[1], this.material, this.scene);
-    animateBone(this.p2, boxes[0], boxes[2], this.material, this.scene);
-    animateBone(this.p3, boxes[1], boxes[3], this.material, this.scene);
-    animateBone(this.p4, boxes[3], boxes[2], this.material, this.scene);
+    animateBone(this.p1, boxes[0], boxes[1], this.StandardMaterial, this.scene);
+    animateBone(this.p2, boxes[0], boxes[2], this.StandardMaterial, this.scene);
+    animateBone(this.p3, boxes[1], boxes[3], this.StandardMaterial, this.scene);
+    animateBone(this.p4, boxes[3], boxes[2], this.StandardMaterial, this.scene);
 
-    animateBone(this.p5, boxes[0], boxes[4], this.material, this.scene);
-    animateBone(this.p6, boxes[1], boxes[5], this.material, this.scene);
-    animateBone(this.p7, boxes[2], boxes[6], this.material, this.scene);
-    animateBone(this.p8, boxes[3], boxes[7], this.material, this.scene);
+    animateBone(this.p5, boxes[0], boxes[4], this.StandardMaterial, this.scene);
+    animateBone(this.p6, boxes[1], boxes[5], this.StandardMaterial, this.scene);
+    animateBone(this.p7, boxes[2], boxes[6], this.StandardMaterial, this.scene);
+    animateBone(this.p8, boxes[3], boxes[7], this.StandardMaterial, this.scene);
 
-    animateBone(this.p9, boxes[5], boxes[4], this.material, this.scene);
-    animateBone(this.p10, boxes[6], boxes[4], this.material, this.scene);
-    animateBone(this.p11, boxes[6], boxes[7], this.material, this.scene);
-    animateBone(this.p12, boxes[7], boxes[5], this.material, this.scene);
+    animateBone(this.p9, boxes[5], boxes[4], this.StandardMaterial, this.scene);
+    animateBone(this.p10, boxes[6], boxes[4], this.StandardMaterial, this.scene);
+    animateBone(this.p11, boxes[6], boxes[7], this.StandardMaterial, this.scene);
+    animateBone(this.p12, boxes[7], boxes[5], this.StandardMaterial, this.scene);
   }
 
 
@@ -724,13 +724,13 @@ class ThreeDScene {
     if (this.exo2){
       this.exo2.exoAnimation();
     }
-    
+
     // Animates the cables
       this.cableR = animateBone(
       this.cableR,
       this.cableSupportR,
       this.exo1.right_hip,
-      this.material,
+      this.StandardMaterial,
       this.scene
     );
 
@@ -738,7 +738,7 @@ class ThreeDScene {
       this.cableL,
       this.cableSupportL,
       this.exo1.left_hip,
-      this.material,
+      this.StandardMaterial,
       this.scene
     );
   }

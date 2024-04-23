@@ -1,7 +1,15 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+import os
+from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+    config = os.path.join(
+        get_package_share_directory('nimble'),
+        'config',
+        'paciente.yaml'
+        )
+
     return LaunchDescription([
         Node(
             package="nimble",
@@ -9,22 +17,7 @@ def generate_launch_description():
             name="hmi",
             output="screen",
             emulate_tty=True,
-            parameters=[
-                {"height": 1.8},
-                {"femur": 0.3371},
-                {"tibia": 0.3495},
-                {"distance_to_heel": 0.0},
-                {"distance_to_toe": 0.1065},
-                {"height_ankle": 0.0705},
-                {"depth_pelvis": 0.0},
-                {"width_pelvis": 0.2367},
-                {"speed": 0.3},
-                {"min_assist_level": 10},
-                {"max_assist_level": 50},
-                {"step_length": 0.6},
-                {"step_height": 0.12},
-                
-            ]
+            parameters=[config]
         ),
         Node(
             package="nimble",
