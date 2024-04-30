@@ -68,7 +68,18 @@ struct JointAngle {
 };
 
 
+struct Leg {
+    Eigen::VectorXd X;
+    Eigen::VectorXd Y;
+    Eigen::VectorXd Z;
+
+    Leg() : X(Eigen::VectorXd::Zero(0)),
+            Y(Eigen::VectorXd::Zero(0)),
+            Z(Eigen::VectorXd::Zero(0)) {}
+};
+
 struct ExoPositions {
+    bool initialized{true};
     struct RefSystems {
         Eigen::Vector3d base{0.0, 0.0, 0.0};
         Eigen::Vector3d leftPelvis{0.0, 0.0, 0.0};
@@ -87,7 +98,8 @@ struct ExoPositions {
         Eigen::Vector3d rightHeel{0.0, 0.0, 0.0};
     } refSystems;
 
-
+    Leg leftLeg;
+    Leg rightLeg;
 
     // Defines contact points
     struct ContactPoint {
@@ -98,6 +110,7 @@ struct ExoPositions {
     } contactPoint;
 
 };
+
 
 namespace kineticModel
 {
@@ -147,7 +160,7 @@ private:
         nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target);
 
     void resize_joint_position(jointPosition &position, int size);
-    void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index);
+    void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index, float z_error);
     
     // Matrix operations
     Eigen::Vector3d position_fromSR(const Eigen::Matrix4d& T);
@@ -172,6 +185,7 @@ private:
         const ExoPositions& previousExoPosition,
         ExoPositions& exoPositions_fixedBase,
         ExoPositions& exoPositions_movilBase);
+
     
     void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,

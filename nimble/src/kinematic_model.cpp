@@ -280,15 +280,15 @@ void KinematicModelNode::resize_joint_position(
 
 void KinematicModelNode::fill_jointPos_with_exopos(
     jointPosition &joint_pos, Eigen::Vector3d left,
-    Eigen::Vector3d right, int index) {
+    Eigen::Vector3d right, int index, float z_error) {
 
   joint_pos.L.X[index] = left[0];
   joint_pos.L.Y[index] = left[1];
-  joint_pos.L.Z[index] = left[2];
+  joint_pos.L.Z[index] = left[2] + z_error;
 
   joint_pos.R.X[index] = right[0];
   joint_pos.R.Y[index] = right[1];
-  joint_pos.R.Z[index] = right[2];
+  joint_pos.R.Z[index] = right[2] + z_error;
 }
 
 
@@ -499,7 +499,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     
     // Error correction
     Eigen::Vector3d offset;
-    if (previousExoPosition.refSystems.base.size() == 0) {
+    if (previousExoPosition.initialized) {
         // Considers the last point
         
         offset << exoPositions_movilBase.contactPoint.X - last_error(0),
@@ -537,8 +537,65 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     exoPositions_movilBase.contactPoint.Z -= offset.z();
 
   
-    // RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << offset << "'"); 
-    // std::this_thread::sleep_for(std::chrono::seconds(1));
+    // Generate output variables for fixed base
+    Eigen::MatrixXd posExo_L_fixedBase(3, 8);
+    posExo_L_fixedBase << exoPositions_fixedBase.refSystems.base,
+                        exoPositions_fixedBase.refSystems.leftPelvis,
+                        exoPositions_fixedBase.refSystems.leftHip,
+                        exoPositions_fixedBase.refSystems.leftKnee,
+                        exoPositions_fixedBase.refSystems.leftAnkle,
+                        exoPositions_fixedBase.refSystems.leftHeel,
+                        exoPositions_fixedBase.refSystems.leftToe,
+                        exoPositions_fixedBase.refSystems.leftAnkle;
+
+    exoPositions_fixedBase.leftLeg.X = posExo_L_fixedBase.row(0);
+    exoPositions_fixedBase.leftLeg.Y = posExo_L_fixedBase.row(1);
+    exoPositions_fixedBase.leftLeg.Z = posExo_L_fixedBase.row(2);
+
+    Eigen::MatrixXd posExo_R_fixedBase(3, 8);
+    posExo_R_fixedBase << exoPositions_fixedBase.refSystems.base,
+                           exoPositions_fixedBase.refSystems.rightPelvis,
+                           exoPositions_fixedBase.refSystems.rightHip,
+                           exoPositions_fixedBase.refSystems.rightKnee,
+                           exoPositions_fixedBase.refSystems.rightAnkle,
+                           exoPositions_fixedBase.refSystems.rightHeel,
+                           exoPositions_fixedBase.refSystems.rightToe,
+                           exoPositions_fixedBase.refSystems.rightAnkle;
+
+    exoPositions_fixedBase.rightLeg.X = posExo_R_fixedBase.row(0);
+    exoPositions_fixedBase.rightLeg.Y = posExo_R_fixedBase.row(1);
+    exoPositions_fixedBase.rightLeg.Z = posExo_R_fixedBase.row(2);
+
+    // Generate output variables for mobile base
+    Eigen::MatrixXd posExo_L_movilBase(3, 8);
+    posExo_L_movilBase << exoPositions_movilBase.refSystems.base,
+                           exoPositions_movilBase.refSystems.leftPelvis,
+                           exoPositions_movilBase.refSystems.leftHip,
+                           exoPositions_movilBase.refSystems.leftKnee,
+                           exoPositions_movilBase.refSystems.leftAnkle,
+                           exoPositions_movilBase.refSystems.leftHeel,
+                           exoPositions_movilBase.refSystems.leftToe,
+                           exoPositions_movilBase.refSystems.leftAnkle;
+
+    exoPositions_movilBase.leftLeg.X = posExo_L_movilBase.row(0);
+    exoPositions_movilBase.leftLeg.Y = posExo_L_movilBase.row(1);
+    exoPositions_movilBase.leftLeg.Z = posExo_L_movilBase.row(2);
+
+    Eigen::MatrixXd posExo_R_movilBase(3, 8);
+    posExo_R_movilBase << exoPositions_movilBase.refSystems.base,
+                           exoPositions_movilBase.refSystems.rightPelvis,
+                           exoPositions_movilBase.refSystems.rightHip,
+                           exoPositions_movilBase.refSystems.rightKnee,
+                           exoPositions_movilBase.refSystems.rightAnkle,
+                           exoPositions_movilBase.refSystems.rightHeel,
+                           exoPositions_movilBase.refSystems.rightToe,
+                           exoPositions_movilBase.refSystems.rightAnkle;
+
+    exoPositions_movilBase.rightLeg.X = posExo_R_movilBase.row(0);
+    exoPositions_movilBase.rightLeg.Y = posExo_R_movilBase.row(1);
+    exoPositions_movilBase.rightLeg.Z = posExo_R_movilBase.row(2);
+  
+    // RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << exoPositions_movilBase.refSystems.leftPelvis << "'"); 
 }
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
@@ -554,7 +611,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
     }
         
     ExoPositions last_exoPositions;
-
+    last_exoPositions.initialized = false;
     // Initializes all the arrays of each jointPosition structure
     jointPosition pelvisPosition;
     resize_joint_position(pelvisPosition, numPoints);
@@ -606,15 +663,16 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
         } 
 
         // Kinematic model of the pelvis movement
-        // Set all elements of exoPositions_movilBase to 0
-
         this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
                                                 exoPositions_fixedBase, exoPositions);
 
         // Store positions
+        // Rebases for positive values
+        float z_error = measurements.femur + measurements.tibia + measurements.distance_to_heel + measurements.distance_to_toe;
+
         // --Pelvis positions
         fill_jointPos_with_exopos(pelvisPosition, exoPositions.refSystems.leftPelvis, 
-                                                exoPositions.refSystems.rightPelvis, i);
+                                                exoPositions.refSystems.rightPelvis, i, z_error);
 
         pelvisPosition.base.X[i] = exoPositions.refSystems.base[0];
         pelvisPosition.base.Y[i] = exoPositions.refSystems.base[1];
@@ -622,23 +680,23 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
 
         // --Hip positions
         fill_jointPos_with_exopos(hipPositions, exoPositions.refSystems.leftHip, 
-                                                exoPositions.refSystems.rightHip, i);
+                                                exoPositions.refSystems.rightHip, i, z_error);
 
         // --Ankle positions
         fill_jointPos_with_exopos(anklePositions, exoPositions.refSystems.leftAnkle, 
-                                                exoPositions.refSystems.rightAnkle, i);
+                                                exoPositions.refSystems.rightAnkle, i, z_error);
 
         // --Heel positions
         fill_jointPos_with_exopos(heelsPositions, exoPositions.refSystems.leftHeel, 
-                                                exoPositions.refSystems.rightHeel, i);
+                                                exoPositions.refSystems.rightHeel, i, z_error);
 
         // --Toe positions
         fill_jointPos_with_exopos(toePositions,  exoPositions.refSystems.leftToe, 
-                                                exoPositions.refSystems.rightToe, i);
+                                                exoPositions.refSystems.rightToe, i, z_error);
 
         // --Knee positions
         fill_jointPos_with_exopos(kneePositions,  exoPositions.refSystems.leftKnee, 
-                                                exoPositions.refSystems.rightKnee, i);
+                                                exoPositions.refSystems.rightKnee, i, z_error);
 
         // --Phases
         pelvisPosition.phase[i] = jointAng.phase[i];

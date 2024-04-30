@@ -52,10 +52,11 @@ class HmiPublisher(Node):
 
     def cartesian_callback(self, msg):
        
-       #! This is the first trial, it follows the created route
+       multiplier = 100
+
        for i, position in enumerate(msg.left_knee):
 
-        data1 = self.webHmi.set_articulation_positions( 'exo1', 100,
+        data1 = self.webHmi.set_articulation_positions( 'exo1', multiplier,
             msg.left_knee[i],
             msg.right_knee[i],
             msg.left_pelvis[i],
@@ -85,7 +86,13 @@ class HmiPublisher(Node):
             msg.right_toe[i]
         )
 
-        self.webHmi.data = {**data1, **data2}
+        data3 = {
+            'exo_frame_x': msg.base_pelvis[i].x * multiplier,
+            'exo_frame_y': msg.base_pelvis[i].y * multiplier,
+            'exo_frame_z': msg.base_pelvis[i].z * multiplier
+        }
+
+        self.webHmi.data = {**data1, **data2, **data3}
         
         time.sleep(0.1)
 

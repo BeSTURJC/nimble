@@ -24,6 +24,7 @@
    * [Gait control](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
    * [Gaming](https://github.com/jcarballeira/nimble/blob/HMI/docs/gaming.md)
    * [States machine](https://github.com/jcarballeira/nimble/blob/HMI/docs/states_machine.md)
+   * [Nodo simulink](https://github.com/jcarballeira/nimble/blob/HMI/docs/simulink_node.md)
 
 4. [Tipos de Mensaje Utilizados](#tipos-de-mensaje-utilizados)
 
@@ -85,296 +86,117 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 ---
 ---
 
-## Nodos
-
-Cada nodo está suscrito y publica diferentes topics, descritos de la siguiente forma:
- /nombre_topic  (Tipo de mensaje) Origen: Nodo_de_procedencia
-
-Los tipos de mensaje creados específicamente son del tipo nimble_interfaces/msg/NombreMensaje, que también es la carpeta en la que están guardados. Los predefinidos de ROS varían.
-
-AL FINAL DE ESTE ARCHIVO hay una lista de los tipos de mensaje usados y los distintos campos que contienen.
-
----
-  
-### HMI
-  <!-- ! Movido a otro documento -->
-
----
-
-### States_machine
-
-Obj: Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia y quizás añadir la publicacion del estado de la marcha (porcentaje).
-
-  -Suscribed:
-   /measurements (nimble_interfaces/msg/Measurements) Origen: hmi
-    medidas fisicas paciente
-
-   /therapy_requirements (nimble_interfaces/msg/TherapyRequirements) Origen: hmi
-    rango de niveles de asistencia, objetivos de altura y distancia de paso
-
-   /joints_state (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
-    informacion actual de las articulaciones del H3
-
-   /cartesian_target  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
-    posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.  
-    El nodo debe rellenar las componentes y,z despues de recibir la componente x.
-
-   /cartesian_state  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
-    posiciones xyz reales acumuladas hasta el instante actual tanto de la pelvis como del maleolo
-
-   /cables_state  (sensor_msgs/msg/JointState) Origen: cables_robot
-    posicion, velocidad, esfuerzo de los cables (por confirmar)
-
-   /step_target  (nimble_interfaces/msg/TherapyRequirements) Origen: kinematic_model
-    altura y longitud de paso a ejecutar, consecuencia del calculo de la trayectoria articular ideal
-
-   /interactionTorque (std_msgs/Float32MultiArray) Origen: Nodo_Simulink (H3)
-    torque de interacción medido por el H3, 6 elementos
-    ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-
-   /FSR  (std_msgs/ByteMultiArray) Origen: Nodo_Simulink (H3)
-    sensores de contacto con el suelo, 4 elementos [heelR, toeR, heelL, toeL]
-
-  -Publishes:
-
-   /joints_target (trajectory_msgs/msg/JointTrajectory)
-       trayectoria articular ideal obtenida por servicio (NN: TrajGenerationService)
-
-      /assistLevel  (std_msgs/Int32MultiArray) 
-    vector nivel de asistencia para cada articulacion ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-
-   /executionMode  (std_msgs/Int16)
-    modo de ejecucion unico (release, transparent...)
-
-       /controlMode  (std_msgs/Int32MultiArray) uno por cada articulacion
-        modo de control para cada articulacion ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
----
-  
-### Kinematic_model
-
-<!-- ! Movido a otro documento -->
-
----
-
-### Control_MSD
-
-Obj: control MSD de las articulaciones del Exo H3
-
-  -Suscribed:
-
-   /joints_target  (trajectory_msgs/msg/JointTrajectory) Origen: states_machine
-       trayectoria articular ideal
-
-       /joints_state  (sensor_msgs/msg/JointState) Origen: Nodo_Simulink (H3)
-    informacion actual de las articulaciones del H3
-    
-      /assistLevel  (std_msgs/Int32MultiArray) Origen: states_machine
-    vector nivel de asistencia para cada articulacion
-      
-     /interactionTorque (std_msgs/Float32MultiArray) Origen: Nodo_Simulink (H3)
-    torque de interacción medido por el H3, 6 elementos 
-    ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-
-   /FSR  (std_msgs/ByteMultiArray) Origen: Nodo_Simulink (H3)
-    contacto con el suelo, 4 elentos [heelR, toeR, heelL, toeL]
-
-      -Publishes:
-   /joints_SP  (sensor_msgs/msg/JointState)
-    set points enviados al Exo (posicion, velocidad o torque)
-
----
-
-### Control_ZMP
-
-Obj: control de la posición del COG/ZMP a través de la acción del marco/robot cables.
-
-  -Suscribed:
-   /cartesian_target  (nimble_interfaces/msg/CartesianTrajectory) Origen: kinematic_model
-    posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.
-
-   /step_target (nimble_interfaces/msg/TherapyRequirements) Origen: kinematic_model
-    altura y longitud de paso buscada
-
-   /frame_state (nimble_interfaces/msg/FrameState) Origen: frame
-    posicion y velocidad en x del marco, informacion del sensor óptico
-
-   /cables_state  (sensor_msgs/msg/JointState) Origen: cables_robot
-    posicion, esfuerzo....de los cables (por definir)
-
-   /FSR  (std_msgs/ByteMultiArray) Origen: Nodo_Simulink (H3)
-    contacto con el suelo, 4 elentos [heelR, toeR, heelL, toeL]
-
-      -Publishes:
-
-   /pelvis_SP  (sensor_msgs/msg/JointState)
-    setpoints de posicion, velocidad y/o torque en x,y,z. Se usa de forma análoga
-    al caso de articulaciones, considerando en este caso cada coordenada como articulacion.
-
----
-
-### Cables_robot
-
-Obj: movimiento de la pelvis del paciente en el plano yz para la descarga de peso en la caminata
-
-  -Suscribed:
-
-   /pelvis_SP  (sensor_msgs/msg/JointState) Origen: control_ZMP
-    setpoints de posicion, velocidad y/o torque en x,y,z. Interesan las coordenadas z e y.
-
-      -Publishes:
-
-   /cables_state  (sensor_msgs/msg/JointState)
-    posicion, esfuerzo....de los cables (por definir)
-
----
-
-### Frame
-
-Obj: movimiento del marco en la direccion de avance como acompañamiento e impulso del paciente
-
-  -Suscribed:
-
-   /pelvis_SP  (sensor_msgs/msg/JointState) Origen: control_MSD
-    setpoints de posicion, velocidad y/o torque en x,y,z. Interesan la coordenada x.
-
-      -Publishes:
-
-   /frame_state (nimble_interfaces/msg/FrameState)
-    posicion y velocidad en x del marco, informacion del sensor óptico
-
----
-
-### Gamming
-
-Obj: proyeccion de incentivo para el paciente en forma de huellas sobre el suelo
-
-  -Suscribed:
-  
-   /frame_state (nimble_interfaces/msg/FrameState) Origen: cables_robot
-    posicion y velocidad en x del marco, informacion del sensor óptico
-
-   /step_target (nimble_interfaces/msg/TherapyRequirements) Origen: kinematic_model
-    altura y longitud de paso buscada
-
-      -Publishes: NONE
-
----
-
-### BONUS TRACK: NODO_SIMULINK
-
-Obj: Existe un nodo implementado en simulink fuera de este paquete que gestiona la comunicacion entre ROS2 y el Exo H3 (ROS2<=>CAN)
-
-  -Suscribed:
-
-      /assistLevel  (std_msgs/Int32MultiArray) Origen: states_machine
-    vector nivel de asistencia para cada articulacion
-
-   /executionMode  (std_msgs/Int16) Origen: states_machine
-    modo de ejecucion unico (release, trnasparent...)
-
-       /controlMode  (std_msgs/Int32MultiArray) Origen: states_machine
-        modo de control para cada articulacion
-
-   /joints_SP  (sensor_msgs/msg/JointState) Origen: control_MSD
-    set points enviados al Exo (posicion, velocidad o torque)
-
-      -Publishes:
-
-   /joints_state  (sensor_msgs/msg/JointState)
-    informacion actual de las articulaciones del H3
-
-   /interactionTorque (std_msgs/Float32MultiArray)
-    torque de interacción medido por el H3, 6 elementos
-    ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-
-   /FSR  (std_msgs/ByteMultiArray)
-    contacto con el suelo, 4 elentos [heelR, toeR, heelL, toeL]
-
----
----
-
 ## TIPOS DE MENSAJE UTILIZADOS
 
------Mensajes y servicios custom y los campos que contienen---------------
+### Mensajes y servicios custom y los campos que contienen
 
-  -nimble_interfaces/msg/Measurements
-  -std_msgs/Header header
-  -float64 height
-  -float64 femur
-  -float64 tibia
-  -float64 height_ankle
-  -float64 distance_to_heel
-  -float64 distance_to_toe
-  -float64 depth_pelvis
-  -float64 width_pelvis
+#### nimble_interfaces/msg/Measurements
 
-  - nimble_interfaces/msg/TherapyRequirements
-  -std_msgs/Header header
-     -float64 speed
-  -float64 step_length
-  -float64 step_height
-  -int32 min_assist
-  -int32 max_assist
-  
-    -nimble_interfaces/msg/FrameState
-  -std_msgs/Header header
-  -float64 optic_sensor
-  -float64 velocity
-  -float64 position
-  
-    -nimble_interfaces/msg/CartesianTrajectory
-  -std_msgs/Header header
-  -geometry_msgs/Point[] malleolus (vector de vectores [x,y,z])
-   float64 x
-   float64 y
-   float64 z
-      -geometry_msgs/Point[] pelvis    (vector de vectores [x,y,z])
-       float64 x
-   float64 y
-   float64 z
+- `std_msgs/Header header`
+* `float64 height`
+* `float64 femur`
+* `float64 tibia`
+* `float64 height_ankle`
+* `float64 distance_to_heel`
+* `float64 distance_to_toe`
+* `float64 depth_pelvis`
+* `float64 width_pelvis`
 
- -nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
-  -Request 1: measurements (nimble_interfaces/msg/Measurements)
-  -Request 2: therapy_requirements (nimble_interfaces/msg/TherapyRequirements)
-  -Response: joints_target (trajectory_msgs/msg/JointTrajectory)
+#### nimble_interfaces/msg/TherapyRequirements
 
- ---
- ---
+- `std_msgs/Header header`
+* `float64 speed`
+* `float64 step_length`
+* `float64 step_height`
+* `int32 min_assist`
+* `int32 max_assist`
+
+#### nimble_interfaces/msg/FrameState
+
+- `std_msgs/Header header`
+* `float64 optic_sensor`
+* `float64 velocity`
+* `float64 position`
+
+#### nimble_interfaces/msg/CartesianTrajectory
+
+- `std_msgs/Header header`
+* `geometry_msgs/Point[] malleolus` (vector de vectores [x,y,z])
+  * `float64 x`
+  * `float64 y`
+  * `float64 z`
+* `geometry_msgs/Point[] pelvis` (vector de vectores [x,y,z])
+  * `float64 x`
+  * `float64 y`
+  * `float64 z`
+
+#### nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
+
+- Request 1: `measurements` (nimble_interfaces/msg/Measurements)
+* Request 2: `therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
+* Response: `joints_target` (trajectory_msgs/msg/JointTrajectory)
+
+#### nimble_interfaces/src/Cartesian full trajectory_
+
+- `std_msgs/Header header`
+* `geometry_msgs/Point[] left_pelvis`
+* `geometry_msgs/Point[] right_pelvis`
+* `geometry_msgs/Point[] base_pelvis`
+* `geometry_msgs/Point[] left_hip`
+* `geometry_msgs/Point[] right_hip`
+* `geometry_msgs/Point[] left_knee`
+* `geometry_msgs/Point[] right_knee`
+* `geometry_msgs/Point[] left_ankle`
+* `geometry_msgs/Point[] right_ankle`
+* `geometry_msgs/Point[] left_heel`
+* `geometry_msgs/Point[] right_heel`
+* `geometry_msgs/Point[] left_toe`
+* `geometry_msgs/Point[] right_toe`
+
+---
+---
 
 ## Mensajes utilizados de los predefinidos en ROS
 
- -sensor_msgs/msg/JointState
-  -std_msgs/Header header
-  -string[]  name        seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-  -float64[] position    vector de vectores [pos_hipR, pos_kneeR, pos_ankleR, pos_hipL, pos_kneeL, pos_ankleL]
-  -float64[] velocity    análogo al anterior con velocidades
-  -float64[] effort      análogo al anterior con velocidades
+### sensor_msgs/msg/JointState
 
- -trajectory_msgs/msg/JointTrajectory
-  -std_msgs/Header header
-     -string[] joint_names       seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
-     -JointTrajectoryPoint[] points
-      float64[] positions
-   float64[] velocities
-   float64[] accelerations
-   float64[] effort
-   duration time_from_start
+- `std_msgs/Header header`
+* `string[] name` (seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"])
+* `float64[] position` (vector de vectores [pos_hipR, pos_kneeR, pos_ankleR, pos_hipL, pos_kneeL, pos_ankleL])
+* `float64[] velocity` (análogo al anterior con velocidades)
+* `float64[] effort` (análogo al anterior con velocidades)
 
-    -std_msgs/Int32MultiArray
-  -MultiArrayLayout  layout
-  -int32[] data
-  
- -std_msgs/Float32MultiArray
-  -MultiArrayLayout  layout
-  -float32[] data  
-  
-    -std_msgs/Int16
-  -int16 data
+### trajectory_msgs/msg/JointTrajectory
+
+- `std_msgs/Header header`
+* `string[] joint_names` (seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"])
+* `JointTrajectoryPoint[] points`
+  * `float64[] positions`
+  * `float64[] velocities`
+  * `float64[] accelerations`
+  * `float64[] effort`
+  * `duration time_from_start`
+
+### std_msgs/Int32MultiArray
+
+- `MultiArrayLayout layout`
+* `int32[] data`
+
+### std_msgs/Float32MultiArray
+
+- `MultiArrayLayout layout`
+* `float32[] data`
+
+### std_msgs/Int16
+
+- `int16 data`
 
  ---
  ---
 
 ## Equipo
 
-<!--Licencia???-->
+* [Juan Carvalleira](https://github.com/jcarballeira/nimble)
+* [Jaime Ramos](https://github.com/jaimeramosr)
+* [Adrián Madinabeitia](https://github.com/Adrimapo)
   

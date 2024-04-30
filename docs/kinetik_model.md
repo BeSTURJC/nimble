@@ -1,7 +1,7 @@
 # Kinetic model
 
 <div align="center">
-    <img width=100px src="https://img.shields.io/badge/lenguage-%20python-blue" alt="Python">
+    <img width=100px src="https://img.shields.io/badge/lenguage-%20c++-blue" alt="Python">
     <img width=100px src="https://img.shields.io/badge/status-in%20process-orange" alt="In process">
 </div>
 
@@ -33,10 +33,10 @@ Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del ma
 
 **Publishes:**
 
-- `/cartesian_target` (nimble_interfaces/msg/CartesianTrajectory)
+- `/cartesian_target` (nimble_interfaces/msg/CartesianFullTrajectory)
   - Posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.
 
-- `/cartesian_state` (nimble_interfaces/msg/CartesianTrajectory)
+- `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)
   - Posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
 
 - `/step_target` (nimble_interfaces/msg/TherapyRequirements)

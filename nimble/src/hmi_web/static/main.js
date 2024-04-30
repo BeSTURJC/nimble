@@ -436,7 +436,114 @@ class Exoskeleton {
 }
 }
 
+class Box {
+  constructor(centerX, centerY, centerZ, length, width, height, material, scene) {
 
+    // General attributes
+    this.material = material;
+    this.scene = scene;
+    this.width = width;
+    this.height = height;
+    this.length = length;
+
+    // Sphere for joint representation
+    const radius = 2;
+    const widthSegments = 32;
+    const heightSegments = 32;
+    this.geometry = new THREE.SphereGeometry(
+      radius,
+      widthSegments,
+      heightSegments
+    );
+
+
+    // Define corners positions x = -50, 50 y = -40, 40, z = -73, 73
+    const positions = [
+      { x: centerX + length / 2, y: centerY - width / 2, z: centerZ - height / 2 }, 
+      { x: centerX + length / 2, y: centerY + width / 2, z: centerZ - height / 2 },
+      { x: centerX - length / 2, y: centerY - width / 2, z: centerZ - height / 2 },
+      { x: centerX - length / 2, y: centerY + width / 2, z: centerZ - height / 2 },
+      { x: centerX + length / 2, y: centerY - width / 2, z: centerZ + height / 2 },
+      { x: centerX + length / 2, y: centerY + width / 2, z: centerZ + height / 2 },
+      { x: centerX - length / 2, y: centerY - width / 2, z: centerZ + height / 2 },
+      { x: centerX - length / 2, y: centerY + width / 2, z: centerZ + height / 2 },
+    ];
+
+    // Array to store created corners
+    this.boxes = [];
+
+    // Create corners and add them to the scene
+    for (const position of positions) {
+      const box = new THREE.Mesh(this.geometry, this.material);
+      box.position.set(position.x, position.y, position.z);
+      this.scene.add(box);
+      this.boxes.push(box);
+    }
+    this.cableSupportL = new THREE.Mesh(this.geometry, this.StandardMaterial);
+    this.cableSupportR = new THREE.Mesh(this.geometry, this.StandardMaterial);
+    this.scene.add(this.cableSupportL);
+    this.scene.add(this.cableSupportR);
+
+    this.animateBox(centerX, centerY, centerZ);
+  }
+
+  animateBox(centerX, centerY, centerZ) {
+
+    this.centerX = centerX;
+    this.positions = [
+      { x: centerX + this.length / 2, y: centerY - this.width / 2, z: 1.5 }, 
+      { x: centerX + this.length / 2, y: centerY + this.width / 2, z: 1.5 },
+      { x: centerX - this.length / 2, y: centerY - this.width / 2, z: 1.5 },
+      { x: centerX - this.length / 2, y: centerY + this.width / 2, z: 1.5 },
+      { x: centerX + this.length / 2, y: centerY - this.width / 2, z: this.height },
+      { x: centerX + this.length / 2, y: centerY + this.width / 2, z: this.height },
+      { x: centerX - this.length / 2, y: centerY - this.width / 2, z: this.height },
+      { x: centerX - this.length / 2, y: centerY + this.width / 2, z: this.height },
+    ];
+
+    this.boxes.forEach((box, index) => {
+      box.position.set(this.positions[index].x, this.positions[index].y, this.positions[index].z);
+    });
+
+    // Generates corners between meshes
+    this.p1 = animateBone(this.p1, this.boxes[0], this.boxes[1], this.material, this.scene);
+    this.p2 = animateBone(this.p2, this.boxes[0], this.boxes[2], this.material, this.scene);
+    this.p3 = animateBone(this.p3, this.boxes[1], this.boxes[3], this.material, this.scene);
+    this.p4 = animateBone(this.p4, this.boxes[3], this.boxes[2], this.material, this.scene);
+
+    this.p5 = animateBone(this.p5, this.boxes[0], this.boxes[4], this.material, this.scene);
+    this.p6 = animateBone(this.p6, this.boxes[1], this.boxes[5], this.material, this.scene);
+    this.p7 = animateBone(this.p7, this.boxes[2], this.boxes[6], this.material, this.scene);
+    this.p8 = animateBone(this.p8, this.boxes[3], this.boxes[7], this.material, this.scene);
+
+    this.p9 = animateBone(this.p9, this.boxes[5], this.boxes[4], this.material, this.scene);
+    this.p10 = animateBone(this.p10, this.boxes[6], this.boxes[4], this.material, this.scene);
+    this.p11 = animateBone(this.p11, this.boxes[6], this.boxes[7], this.material, this.scene);
+    this.p12 = animateBone(this.p12, this.boxes[7], this.boxes[5], this.material, this.scene);
+  }
+
+  animateCables(rightHip, leftHip) {
+    
+    this.cableSupportL.position.set(this.centerX, this.positions[1].y, this.positions[4].z);
+    this.cableSupportR.position.set(this.centerX, this.positions[0].y, this.positions[4].z);
+    // Animates the cables
+    this.cableR = animateBone(
+      this.cableR,
+      this.cableSupportR,
+      rightHip,
+      this.material,
+      this.scene
+    );
+
+    this.cableL = animateBone(
+      this.cableL,
+      this.cableSupportL,
+      leftHip,
+      this.material,
+      this.scene
+    );
+  }
+}
 
 class ThreeDScene {
   constructor() {
@@ -452,11 +559,11 @@ class ThreeDScene {
     );
 
     // Camera position
-    this.camera.position.x = 100;
-    this.camera.position.y = 60;
-    this.camera.position.z = -30;
+    this.camera.position.x = 150;
+    this.camera.position.y = 80;
+    this.camera.position.z = 60;
 
-    this.camera.lookAt(0, 0, -30);
+    this.camera.lookAt(-800, -400, 0);
     this.camera.rotateZ(Math.PI / 2);
 
     // Create a renderer
@@ -465,10 +572,10 @@ class ThreeDScene {
     document.body.appendChild(this.renderer.domElement);
 
     // Creates a ground
-    const groundGeometry = new THREE.BoxGeometry(400, 0.1, 100);
+    const groundGeometry = new THREE.BoxGeometry(1000, 0.1, 120);
     const groundMaterial = new THREE.MeshBasicMaterial({ color: 0x333333 });
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
-    ground.position.z = -76.0;
+    ground.position.z = 0.0;
     ground.rotateX(Math.PI / 2);
 
     // Adds the ground to the scene
@@ -531,10 +638,10 @@ class ThreeDScene {
     ];
     
     this.exo1 = new Exoskeleton(this.StandardMaterial, stlData, loader, this.scene);
-    this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
+    // this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
 
     // Creates the frame
-    this.createBox();
+    this.box = new Box(0, 0, 0, 100, 80, 140, this.StandardMaterial, this.scene);
 
     // Add lighting
     this.addDirectionalLight(this.scene, new THREE.Vector3(10, 10, 10), 1);
@@ -559,63 +666,6 @@ class ThreeDScene {
 
     // Initial call to fetch data for ROS
     this.fetchData();
-  }
-
-
-  createBox() {
-    // Sphere for joint representation
-    const radius = 2;
-    const widthSegments = 32;
-    const heightSegments = 32;
-    const geometry = new THREE.SphereGeometry(
-      radius,
-      widthSegments,
-      heightSegments
-    );
-
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
-      metalness: 1,
-    });
-
-    // Define corners positions
-    const positions = [
-      { x: 50, y: -40, z: -73 },
-      { x: 50, y: 40, z: -73 },
-      { x: -50, y: -40, z: -73 },
-      { x: -50, y: 40, z: -73 },
-      { x: 50, y: -40, z: this.frame_Z },
-      { x: 50, y: 40, z: this.frame_Z },
-      { x: -50, y: -40, z: this.frame_Z },
-      { x: -50, y: 40, z: this.frame_Z },
-    ];
-
-    // Array to store created corners
-    const boxes = [];
-
-    // Create corners and add them to the scene
-    for (const position of positions) {
-      const box = new THREE.Mesh(geometry, material);
-      box.position.set(position.x, position.y, position.z);
-      this.scene.add(box);
-      boxes.push(box);
-    }
-
-    // Generates corners between meshes
-    animateBone(this.p1, boxes[0], boxes[1], this.StandardMaterial, this.scene);
-    animateBone(this.p2, boxes[0], boxes[2], this.StandardMaterial, this.scene);
-    animateBone(this.p3, boxes[1], boxes[3], this.StandardMaterial, this.scene);
-    animateBone(this.p4, boxes[3], boxes[2], this.StandardMaterial, this.scene);
-
-    animateBone(this.p5, boxes[0], boxes[4], this.StandardMaterial, this.scene);
-    animateBone(this.p6, boxes[1], boxes[5], this.StandardMaterial, this.scene);
-    animateBone(this.p7, boxes[2], boxes[6], this.StandardMaterial, this.scene);
-    animateBone(this.p8, boxes[3], boxes[7], this.StandardMaterial, this.scene);
-
-    animateBone(this.p9, boxes[5], boxes[4], this.StandardMaterial, this.scene);
-    animateBone(this.p10, boxes[6], boxes[4], this.StandardMaterial, this.scene);
-    animateBone(this.p11, boxes[6], boxes[7], this.StandardMaterial, this.scene);
-    animateBone(this.p12, boxes[7], boxes[5], this.StandardMaterial, this.scene);
   }
 
 
@@ -688,10 +738,14 @@ class ThreeDScene {
   updateData(data) {
     // Sets each articulation coord
     const joints = ["pelvis", "hip", "knee", "ankle", "heel", "toe"];
-    const sides = ["left", "right"];
+    const sides = ["left", "right", "base"];
 
     for (const side of sides) {
       for (const joint of joints) {
+
+        if (joint !== "pelvis" && side === "base") {
+          continue; // Skip "base" for all joints except "pelvis"
+      }        
         for (const axis of ["x", "y", "z"]) {
           const propertyName = `exo1_${side}_${joint}_${axis}`;
           const position = data[propertyName];
@@ -724,23 +778,10 @@ class ThreeDScene {
     if (this.exo2){
       this.exo2.exoAnimation();
     }
+    
+    this.box.animateBox(data['exo_frame_x'], data['exo_frame_y'], data['exo_frame_z']);
+    this.box.animateCables(this.exo1.right_hip, this.exo1.left_hip);
 
-    // Animates the cables
-      this.cableR = animateBone(
-      this.cableR,
-      this.cableSupportR,
-      this.exo1.right_hip,
-      this.StandardMaterial,
-      this.scene
-    );
-
-    this.cableL = animateBone(
-      this.cableL,
-      this.cableSupportL,
-      this.exo1.left_hip,
-      this.StandardMaterial,
-      this.scene
-    );
   }
 
   // Function to continuously fetch data from the flask server

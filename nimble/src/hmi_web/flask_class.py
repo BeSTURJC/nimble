@@ -59,6 +59,10 @@ class FlaskApp:
 
         # Saves the data into a dictionary
         data = {
+            name + '_base_pelvis_x': left_pelvis.x * multiplier,
+            name + '_base_pelvis_y': left_pelvis.y * multiplier,
+            name + '_base_pelvis_z': left_pelvis.z * multiplier,
+
             name + '_left_pelvis_x': left_pelvis.x * multiplier,
             name + '_left_pelvis_y': left_pelvis.y * multiplier,
             name + '_left_pelvis_z': left_pelvis.z * multiplier,

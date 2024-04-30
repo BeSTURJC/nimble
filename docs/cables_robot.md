@@ -1,7 +1,7 @@
 # Cables robot
 
 <div align="center">
-    <img width=100px src="https://img.shields.io/badge/lenguage-%20python-blue" alt="c++">
+    <img width=100px src="https://img.shields.io/badge/lenguage-%20c++-blue" alt="c++">
     <img width=100px src="https://img.shields.io/badge/status-in%20process-orange" alt="In process">
 </div>
 
