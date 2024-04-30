@@ -42,6 +42,7 @@ def generate_launch_description():
             emulate_tty=True,
             
         ),
+        
         Node(
             package="nimble",
             executable="kinematic_model",
@@ -59,12 +60,21 @@ def generate_launch_description():
             emulate_tty=True,
             
         ),
+        #Node(
+       #     package="nimble",
+      #      executable="control_ZMP",
+     #       name="control_ZMP",
+    #        output="screen",
+   #         emulate_tty=True,
+  #          
+ #       ),
         Node(
-            package="nimble",
-            executable="control_ZMP",
-            name="control_ZMP",
+            package="micro_ros_agent",
+            executable="micro_ros_agent",
+            name="micro_ros_agent",
             output="screen",
             emulate_tty=True,
+            arguments=["serial", "-b", "115200", "--dev", "/dev/ttyACM0"]
             
-        )
+        ),
     ])

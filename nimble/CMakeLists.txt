@@ -22,7 +22,8 @@ ament_target_dependencies(kinematic_model rclcpp nimble_interfaces sensor_msgs t
 add_executable(states_machine src/states_machine.cpp)
 ament_target_dependencies(states_machine rclcpp nimble_interfaces sensor_msgs trajectory_msgs std_msgs)
 
-add_executable(control_ZMP src/control_ZMP.cpp)
+add_executable(control_ZMP src/control_ZMP.cpp src/previewControl/previewClass.cpp src/ZMP/zmpupdate.cpp
+    src/zmpNode/zmpnode.cpp)
 ament_target_dependencies(control_ZMP rclcpp nimble_interfaces sensor_msgs trajectory_msgs)
 
 add_executable(control_MSD src/control_MSD.cpp)
