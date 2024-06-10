@@ -93,7 +93,7 @@ public:
         //Control Publishers
         publisher_posReference = create_publisher<std_msgs::msg::Float32>("PositionReference", 10);
         publisher_velReference = create_publisher<std_msgs::msg::Float32>("SpeedReference", 10);
-        publisher_ControlMode= create_publisher<std_msgs::msg::String>("ControlMode", 10);
+        publisher_ControlMode= create_publisher<std_msgs::msg::Float32>("ControlMode", 10);
 
         //Create wall timer to publish periodically (eliminar si no se usa)
         timer_ = this->create_wall_timer(1000ms, std::bind(&ZMPNode::timer_callback, this));
@@ -119,7 +119,7 @@ public:
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_COMy; //publishers
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_posReference;
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_velReference;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_ControlMode;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_ControlMode;
     rclcpp::TimerBase::SharedPtr timer_; //timer (eliminar si no se usa)
 
 
@@ -151,7 +151,7 @@ public:
     void PublishComRefy(double data);
     void PublishPosReference(double reference);
     void PublishVelReference(double reference);
-    void PublishCommand(std::string reference);
+    void PublishCommand(double reference);
     void command(std::string line);
 };
 

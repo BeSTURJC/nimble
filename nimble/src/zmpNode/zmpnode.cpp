@@ -74,17 +74,22 @@ void ZMPNode::PublishVelReference(double reference){
     data1.data=reference;
     publisher_velReference->publish(data1);
 }
-void ZMPNode::PublishCommand(std::string reference){
-    std::cout<<reference<<std::endl;
-    std_msgs::msg::String data1;
+void ZMPNode::PublishCommand(double reference){
+    std_msgs::msg::Float32 data1;
     data1.data=reference;
     publisher_ControlMode->publish(data1);
 }
+//void ZMPNode::PublishCommand(std::string reference){
+//    std::cout<<reference<<std::endl;
+//    std_msgs::msg::String data1;
+//    data1.data=reference;
+//    publisher_ControlMode->publish(data1);
+//}
 void ZMPNode::command(std::string line){
     size_t pos;
     float numericValue;
     char aux=line[0];
-    if (line=="s" || line=="VELOCITY" ||line =="POSITION" || line =="VERBOSE" ||
+    if (line=="s" || line=="VELOCITY" || line =="POSITION" || line =="SENSORPO" || line =="SENSORVE" || line =="MPC" || line =="VERBOSE" ||
             line =="Poserror"){
         aux='a';
     }
@@ -101,13 +106,26 @@ void ZMPNode::command(std::string line){
         this->PublishVelReference(numericValue);
         break;
     default:
-        std::cout<<"Not a valid Commnd:"<<line <<std::endl;
+        if (line=="POSITION")
+        {this->PublishCommand(1);}
+        else if (line=="VELOCITY")
+        {this->PublishCommand(2);}
+        else if (line=="SENSORPO")
+        {this->PublishCommand(3);}
+        else if (line=="SENSORVE")
+        {this->PublishCommand(4);}
+        else if (line=="MPC")
+        {this->PublishCommand(5);}
+        else if (line=="s")
+        {this->PublishCommand(6);}
+        else if (line=="VERBOSE")
+        {this->PublishCommand(7);}
 
-        if (line=="s" || line=="VELOCITY" ||line =="POSITION" || line =="VERBOSE" ||
-                line =="Poserror")
-        {
-            this->PublishCommand(line);
-        }
+        //        if (line=="s" || line=="VELOCITY" ||line =="POSITION" || line =="VERBOSE" ||
+        //                line =="Poserror")
+        //        {
+        //            this->PublishCommand(4);
+        //        }
         else{
             std::cout<<"Not a valid Command"<<std::endl;
         }

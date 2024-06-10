@@ -1,0 +1,3 @@
+../Core/Src/motorControl.c:12:6:initControlStructure	32	static
+../Core/Src/motorControl.c:18:8:applySpeedControl	40	static
+../Core/Src/motorControl.c:28:8:applyPosControl	48	static

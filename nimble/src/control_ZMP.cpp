@@ -45,8 +45,6 @@ int main(int argc, char *argv[])
 
         }
 
-
-
         //startingTime
         if (time>=4.97)
             int a=0;
@@ -73,8 +71,8 @@ int main(int argc, char *argv[])
             cartTableModel.previewControl(x_cart,myZMP.ZMPX);
             cartTableModel.previewControl(y_cart,myZMP.ZMPY);
 
-            node->PublishComRefx(x_cart[0]);
-            node->PublishComRefy(y_cart[0]);
+            node->PublishComRefx(x_cart[1]);
+            node->PublishComRefy(y_cart[1]);
 
             rclcpp::spin_some(node);
             loopRate.sleep();

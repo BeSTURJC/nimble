@@ -29,8 +29,8 @@ ZMPupdate::ZMPupdate(double DesiredStepLengthX,
     this->nextFootHold=DesiredStepLengthX;
     this->DesiredStepLengthY=DesiredStepLengthY;
     this->desiredStepTime=desiredStepTime;
-    this->RemainingSSTime=0.6;
-    this->RemainingDSTime=0.9;
+    this->RemainingSSTime=desiredStepTime*DS_SS_Ratio;
+    this->RemainingDSTime=desiredStepTime*(1-DS_SS_Ratio);
     this->DS_SS_Ratio=DS_SS_Ratio;
     this->COMyDesiredPosition=YdesiredPosition;
 

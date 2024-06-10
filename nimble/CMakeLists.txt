@@ -5,6 +5,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH
+list(APPEND CMAKE_PREFIX_PATH /opt/ros/humble/share/ament_cmake)
+
+# Or set "ament_cmake_DIR" to a directory containing the necessary files
+set(ament_cmake_DIR /opt/ros/humble/share/ament_cmake)
+set(ament_cmake_libraries_DIR /opt/ros/humble/share/ament_cmake_libraries)
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)

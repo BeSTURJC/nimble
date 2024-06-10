@@ -46,7 +46,7 @@ public:
 
     ZMPupdate(double DesiredStepLengthX=0.2,
               double DesiredStepLengthY=0.2,
-              double desiredStepTime=1.5,
+              double desiredStepTime=0.5,
               double DS_SS_Ratio=0.6,
               double YdesiredPosition=0);
     ~ZMPupdate();

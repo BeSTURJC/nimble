@@ -1,0 +1,2 @@
+../Core/Src/flowcontrol.c:9:6:initMainStructures	16	static
+../Core/Src/flowcontrol.c:17:6:printData	40	static

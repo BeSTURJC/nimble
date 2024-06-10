@@ -1,0 +1,358 @@
+[0.063s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.063s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fc738643a90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fc738643490>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fc738643490>>)
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.158s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jaime/Downloads/MotorControl/uros_ws'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extensions ['colcon_meta']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extension 'colcon_meta'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/micro_ros_setup) by extension 'ros'
+[0.169s] DEBUG:colcon.colcon_core.package_identification:Package 'src/micro_ros_setup' with type 'ros.ament_cmake' and name 'micro_ros_setup'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'ignore'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'ignore_ament_install'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['colcon_pkg']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'colcon_pkg'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['colcon_meta']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'colcon_meta'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['ros']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'ros'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['cmake', 'python']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'cmake'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'python'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extensions ['python_setup_py']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros) by extension 'python_setup_py'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'ignore_ament_install'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['colcon_pkg']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'colcon_pkg'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['colcon_meta']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'colcon_meta'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['ros']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'ros'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['cmake', 'python']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'cmake'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'python'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extensions ['python_setup_py']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent) by extension 'python_setup_py'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extension 'ignore'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extension 'ignore_ament_install'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extensions ['colcon_pkg']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extension 'colcon_pkg'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extensions ['colcon_meta']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extension 'colcon_meta'
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extensions ['ros']
+[0.170s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/micro_ros_agent) by extension 'ros'
+[0.171s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uros/micro-ROS-Agent/micro_ros_agent' with type 'ros.ament_cmake' and name 'micro_ros_agent'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['ignore', 'ignore_ament_install']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'ignore'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'ignore_ament_install'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['colcon_pkg']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'colcon_pkg'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['colcon_meta']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'colcon_meta'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['ros']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'ros'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['cmake', 'python']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap) by extension 'python_setup_py'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['ignore', 'ignore_ament_install']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'ignore'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'ignore_ament_install'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['colcon_pkg']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'colcon_pkg'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['colcon_meta']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'colcon_meta'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['ros']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'ros'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['cmake', 'python']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/hooks) by extension 'python_setup_py'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'ros'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['cmake', 'python']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'cmake'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'python'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extensions ['python_setup_py']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro-ROS-Agent/snap/local) by extension 'python_setup_py'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extension 'ignore_ament_install'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extensions ['colcon_pkg']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extension 'colcon_pkg'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extensions ['colcon_meta']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extension 'colcon_meta'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extensions ['ros']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/uros/micro_ros_msgs) by extension 'ros'
+[0.172s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uros/micro_ros_msgs' with type 'ros.ament_cmake' and name 'micro_ros_msgs'
+[0.172s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.172s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.172s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.172s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.173s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.187s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[0.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_target' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.219s] DEBUG:colcon.colcon_core.verb:Building package 'micro_ros_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs', 'merge_install': False, 'path': '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro_ros_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_target' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_clean_first' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'cmake_force_configure' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'ament_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_setup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.220s] DEBUG:colcon.colcon_core.verb:Building package 'micro_ros_setup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup', 'merge_install': False, 'path': '/home/jaime/Downloads/MotorControl/uros_ws/src/micro_ros_setup', 'symlink_install': False, 'test_result_base': None}
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_target' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_clean_cache' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_clean_first' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'cmake_force_configure' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'ament_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'catkin_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'micro_ros_agent' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.220s] DEBUG:colcon.colcon_core.verb:Building package 'micro_ros_agent' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent', 'merge_install': False, 'path': '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro-ROS-Agent/micro_ros_agent', 'symlink_install': False, 'test_result_base': None}
+[0.220s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.221s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.221s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro_ros_msgs' with build type 'ament_cmake'
+[0.221s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro_ros_msgs'
+[0.222s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.223s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.223s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.224s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jaime/Downloads/MotorControl/uros_ws/src/micro_ros_setup' with build type 'ament_cmake'
+[0.224s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jaime/Downloads/MotorControl/uros_ws/src/micro_ros_setup'
+[0.225s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.225s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.228s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro_ros_msgs -DCMAKE_INSTALL_PREFIX=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs
+[0.231s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup -- -j8 -l8
+[0.251s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup -- -j8 -l8
+[0.268s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup
+[0.277s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_setup)
+[0.281s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_setup
+[0.282s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup' for CMake module files
+[0.282s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup' for CMake config files
+[0.282s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_setup', 'cmake_prefix_path')
+[0.282s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.ps1'
+[0.283s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.dsv'
+[0.283s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.sh'
+[0.283s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib'
+[0.284s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/bin'
+[0.284s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib/pkgconfig/micro_ros_setup.pc'
+[0.284s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib/python3.10/site-packages'
+[0.284s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/bin'
+[0.284s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.ps1'
+[0.285s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.dsv'
+[0.285s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.sh'
+[0.285s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.bash'
+[0.286s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.zsh'
+[0.286s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/colcon-core/packages/micro_ros_setup)
+[0.297s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_setup)
+[0.297s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup' for CMake module files
+[0.297s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup' for CMake config files
+[0.297s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_setup', 'cmake_prefix_path')
+[0.297s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.ps1'
+[0.298s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.dsv'
+[0.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/hook/cmake_prefix_path.sh'
+[0.298s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib'
+[0.298s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/bin'
+[0.298s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib/pkgconfig/micro_ros_setup.pc'
+[0.298s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/lib/python3.10/site-packages'
+[0.299s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/bin'
+[0.299s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.ps1'
+[0.299s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.dsv'
+[0.299s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.sh'
+[0.300s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.bash'
+[0.300s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/micro_ros_setup/package.zsh'
+[0.300s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_setup/share/colcon-core/packages/micro_ros_setup)
+[0.835s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro_ros_msgs -DCMAKE_INSTALL_PREFIX=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs
+[0.835s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs -- -j8 -l8
+[1.042s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs -- -j8 -l8
+[1.083s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs
+[1.115s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_msgs)
+[1.115s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs' for CMake module files
+[1.115s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_msgs
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs' for CMake config files
+[1.116s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_msgs', 'cmake_prefix_path')
+[1.116s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.ps1'
+[1.116s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.dsv'
+[1.116s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.sh'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib'
+[1.117s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_msgs', 'ld_library_path_lib')
+[1.117s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.ps1'
+[1.117s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.dsv'
+[1.117s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.sh'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/bin'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib/pkgconfig/micro_ros_msgs.pc'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib/python3.10/site-packages'
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/bin'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.ps1'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.dsv'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.sh'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.bash'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.zsh'
+[1.119s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/colcon-core/packages/micro_ros_msgs)
+[1.159s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_msgs)
+[1.160s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs' for CMake module files
+[1.160s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs' for CMake config files
+[1.160s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_msgs', 'cmake_prefix_path')
+[1.160s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.ps1'
+[1.160s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.dsv'
+[1.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/cmake_prefix_path.sh'
+[1.161s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib'
+[1.161s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_msgs', 'ld_library_path_lib')
+[1.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.ps1'
+[1.161s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.dsv'
+[1.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/hook/ld_library_path_lib.sh'
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/bin'
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib/pkgconfig/micro_ros_msgs.pc'
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib/python3.10/site-packages'
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/bin'
+[1.162s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.ps1'
+[1.163s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.dsv'
+[1.163s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.sh'
+[1.163s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.bash'
+[1.163s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/micro_ros_msgs/package.zsh'
+[1.163s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/share/colcon-core/packages/micro_ros_msgs)
+[1.164s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro-ROS-Agent/micro_ros_agent' with build type 'ament_cmake'
+[1.164s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro-ROS-Agent/micro_ros_agent'
+[1.164s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.164s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.169s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro-ROS-Agent/micro_ros_agent -DCMAKE_INSTALL_PREFIX=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent
+[1.416s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent' returned '0': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/jaime/Downloads/MotorControl/uros_ws/src/uros/micro-ROS-Agent/micro_ros_agent -DCMAKE_INSTALL_PREFIX=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent
+[1.417s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent -- -j8 -l8
+[1.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent' returned '0': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent -- -j8 -l8
+[1.476s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent
+[1.482s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_agent)
+[1.482s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent' for CMake module files
+[1.482s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent' returned '0': AMENT_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/lib:${LD_LIBRARY_PATH} PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] PYTHONPATH=/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jaime/Downloads/MotorControl/uros_ws/build/micro_ros_agent
+[1.483s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent' for CMake config files
+[1.483s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_agent', 'cmake_prefix_path')
+[1.483s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.ps1'
+[1.483s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.dsv'
+[1.483s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.sh'
+[1.484s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib'
+[1.484s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_agent', 'ld_library_path_lib')
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.ps1'
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.dsv'
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.sh'
+[1.484s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/bin'
+[1.484s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib/pkgconfig/micro_ros_agent.pc'
+[1.485s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib/python3.10/site-packages'
+[1.485s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/bin'
+[1.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.ps1'
+[1.485s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.dsv'
+[1.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.sh'
+[1.486s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.bash'
+[1.486s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.zsh'
+[1.486s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/colcon-core/packages/micro_ros_agent)
+[1.502s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(micro_ros_agent)
+[1.502s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent' for CMake module files
+[1.502s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent' for CMake config files
+[1.502s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_agent', 'cmake_prefix_path')
+[1.502s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.ps1'
+[1.503s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.dsv'
+[1.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/cmake_prefix_path.sh'
+[1.503s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib'
+[1.503s] Level 1:colcon.colcon_core.shell:create_environment_hook('micro_ros_agent', 'ld_library_path_lib')
+[1.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.ps1'
+[1.504s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.dsv'
+[1.504s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/hook/ld_library_path_lib.sh'
+[1.504s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/bin'
+[1.504s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib/pkgconfig/micro_ros_agent.pc'
+[1.504s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/lib/python3.10/site-packages'
+[1.504s] Level 1:colcon.colcon_core.environment:checking '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/bin'
+[1.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.ps1'
+[1.505s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.dsv'
+[1.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.sh'
+[1.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.bash'
+[1.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/micro_ros_agent/package.zsh'
+[1.506s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jaime/Downloads/MotorControl/uros_ws/install/micro_ros_agent/share/colcon-core/packages/micro_ros_agent)
+[1.506s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.506s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.506s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.506s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.509s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.509s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.509s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.516s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.517s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jaime/Downloads/MotorControl/uros_ws/install/local_setup.ps1'
+[1.518s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jaime/Downloads/MotorControl/uros_ws/install/_local_setup_util_ps1.py'
+[1.519s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jaime/Downloads/MotorControl/uros_ws/install/setup.ps1'
+[1.520s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jaime/Downloads/MotorControl/uros_ws/install/local_setup.sh'
+[1.520s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jaime/Downloads/MotorControl/uros_ws/install/_local_setup_util_sh.py'
+[1.521s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jaime/Downloads/MotorControl/uros_ws/install/setup.sh'
+[1.521s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jaime/Downloads/MotorControl/uros_ws/install/local_setup.bash'
+[1.522s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jaime/Downloads/MotorControl/uros_ws/install/setup.bash'
+[1.522s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jaime/Downloads/MotorControl/uros_ws/install/local_setup.zsh'
+[1.522s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jaime/Downloads/MotorControl/uros_ws/install/setup.zsh'
