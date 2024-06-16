@@ -1,0 +1,52 @@
+[0.272s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor': /usr/bin/cmake /home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/googletest/googletest -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor
+[0.409s] -- Configuring done
+[0.410s] -- Generating done
+[0.410s] -- Build files have been written to: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor
+[0.548s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor' returned '0': /usr/bin/cmake /home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/googletest/googletest -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor
+[0.549s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor': /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor -- -j8 -l8
+[0.581s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor' returned '0': /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor -- -j8 -l8
+[0.607s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor': /usr/bin/cmake --install /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor
+[0.613s] -- Install configuration: ""
+[0.613s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/share/gtest_vendor/cmake/gtest_vendorConfig.cmake
+[0.614s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/share/gtest_vendor/package.xml
+[0.614s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/CMakeLists.txt
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-param-test.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-printers.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-spi.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest_prod.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-test-part.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest.h
+[0.616s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-message.h
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest_pred_impl.h
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest-printers.h
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest.h
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest-port.h
+[0.617s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/README.md
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-filepath.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-type-util.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-port-arch.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-port.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-type-util.h.pump
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-param-util.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-string.h
+[0.618s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-internal.h
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-death-test-internal.h
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-matchers.h
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-typed-test.h
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-death-test.h
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-filepath.cc
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-printers.cc
+[0.619s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-test-part.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-internal-inl.h
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-typed-test.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-matchers.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-death-test.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-port.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest-all.cc
+[0.620s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest_main.cc
+[0.621s] -- Installing: /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/gtest_vendor/src/gtest_vendor/src/gtest.cc
+[0.621s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor' returned '0': /usr/bin/cmake --install /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/gtest_vendor

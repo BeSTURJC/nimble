@@ -1,0 +1,31 @@
+{
+    "description": "UEFI firmware for arm",
+    "interface-types": [
+        "uefi"
+    ],
+    "mapping": {
+        "device": "flash",
+        "executable": {
+            "filename": "/home/jaime/MotorControl/uros_ws/firmware/zephyr-sdk/sysroots/x86_64-pokysdk-linux/usr/share/qemu/edk2-arm-code.fd",
+            "format": "raw"
+        },
+        "nvram-template": {
+            "filename": "/home/jaime/MotorControl/uros_ws/firmware/zephyr-sdk/sysroots/x86_64-pokysdk-linux/usr/share/qemu/edk2-arm-vars.fd",
+            "format": "raw"
+        }
+    },
+    "targets": [
+        {
+            "architecture": "arm",
+            "machines": [
+                "virt-*"
+            ]
+        }
+    ],
+    "features": [
+        "verbose-static"
+    ],
+    "tags": [
+
+    ]
+}

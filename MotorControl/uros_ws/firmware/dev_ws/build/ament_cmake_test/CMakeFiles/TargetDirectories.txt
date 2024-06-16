@@ -1,0 +1,9 @@
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/ament_cmake_test_uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/ament_cmake_python_copy_ament_cmake_test.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/ament_cmake_python_build_ament_cmake_test_egg.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/edit_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/rebuild_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/list_install_components.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/install.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_test/CMakeFiles/install/local.dir

@@ -1,0 +1,24 @@
+[0.014s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/micro_ros_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/build/micro_ros_msgs -- -j8 -l8
+[0.062s] [  6%] Built target micro_ros_msgs__cpp
+[0.062s] [ 12%] Built target micro_ros_msgs__rosidl_generator_c
+[0.079s] [ 12%] Built target ament_cmake_python_copy_micro_ros_msgs
+[0.091s] [ 23%] Built target micro_ros_msgs__rosidl_typesupport_cpp
+[0.093s] [ 34%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_cpp
+[0.097s] [ 44%] Built target micro_ros_msgs__rosidl_typesupport_introspection_cpp
+[0.110s] [ 55%] Built target micro_ros_msgs__rosidl_typesupport_c
+[0.111s] [ 65%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c
+[0.112s] [ 76%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c
+[0.151s] [ 76%] Built target micro_ros_msgs
+[0.159s] [ 78%] Built target micro_ros_msgs__py
+[0.184s] [ 87%] Built target micro_ros_msgs__rosidl_generator_py
+[0.208s] [ 95%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c__pyext
+[0.208s] [ 95%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.216s] [100%] Built target micro_ros_msgs__rosidl_typesupport_c__pyext
+[0.327s] running egg_info
+[0.328s] writing micro_ros_msgs.egg-info/PKG-INFO
+[0.328s] writing dependency_links to micro_ros_msgs.egg-info/dependency_links.txt
+[0.328s] writing top-level names to micro_ros_msgs.egg-info/top_level.txt
+[0.330s] reading manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'
+[0.330s] writing manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'
+[0.356s] [100%] Built target ament_cmake_python_build_micro_ros_msgs_egg
+[0.366s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/micro_ros_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/build/micro_ros_msgs -- -j8 -l8

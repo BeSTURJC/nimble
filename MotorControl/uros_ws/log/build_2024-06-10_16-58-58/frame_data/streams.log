@@ -1,0 +1,50 @@
+[0.014s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/frame_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data
+[0.024s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.024s] -- Found ament_cmake_core: 1.3.8 (/opt/ros/humble/share/ament_cmake_core/cmake)
+[0.177s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.178s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.224s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.380s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.380s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.380s]   frame_data --arguments-file
+[0.380s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter__arguments__frame_data.json
+[0.380s]   --output-dir
+[0.380s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter/frame_data
+[0.380s]   --output-file
+[0.381s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter/frame_data.idls)
+[0.381s]   returned error code 1:
+[0.381s] 
+[0.381s]   Error processing 'float32 position_Ref' of 'frame_data/framedata':
+[0.381s]   ''position_Ref' is an invalid field name.  It should have the pattern
+[0.381s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.381s] 
+[0.381s]   Traceback (most recent call last):
+[0.381s] 
+[0.381s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.381s]       return _run_code(code, main_globals, None,
+[0.381s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.381s]       exec(code, run_globals)
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.382s]       sys.exit(main())
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.382s]       abs_idl_file = convert_to_idl(
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.382s]       return convert_msg_to_idl(
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.382s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.382s]       fields.append(Field(
+[0.382s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.382s]       raise NameError(
+[0.382s] 
+[0.382s]   NameError: 'position_Ref' is an invalid field name.  It should have the
+[0.382s]   pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.382s] 
+[0.382s] Call Stack (most recent call first):
+[0.383s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.383s]   CMakeLists.txt:7 (rosidl_generate_interfaces)
+[0.383s] 
+[0.383s] [0m
+[0.383s] -- Configuring incomplete, errors occurred!
+[0.383s] See also "/home/jaime/MotorControl/uros_ws/build/frame_data/CMakeFiles/CMakeOutput.log".
+[0.385s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/frame_data' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data

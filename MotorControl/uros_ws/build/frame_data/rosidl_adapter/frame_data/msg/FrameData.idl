@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from frame_data/msg/FrameData.msg
+// generated code does not contain a copyright notice
+
+
+module frame_data {
+  module msg {
+    struct FrameData {
+      uint32 contador;
+
+      float frame_position;
+
+      float frame_speed;
+
+      float sensor_dist;
+
+      float position_ref;
+
+      float speed_ref;
+    };
+  };
+};

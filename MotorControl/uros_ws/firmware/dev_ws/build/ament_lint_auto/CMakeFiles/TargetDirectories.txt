@@ -1,0 +1,7 @@
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/ament_lint_auto_uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/edit_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/rebuild_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/list_install_components.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/install.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_lint_auto/CMakeFiles/install/local.dir

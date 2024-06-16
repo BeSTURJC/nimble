@@ -1,0 +1,40 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/exlib_bad"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/exlib_bad.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/exlib_bad-complete.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-build.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-configure.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-download.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-install.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-mkdir.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/exlib_bad-prefix/src/exlib_bad-stamp/exlib_bad-patch.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"exlib_bad"
+		],
+		"name" : "exlib_bad"
+	}
+}

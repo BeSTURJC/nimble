@@ -1,0 +1,41 @@
+[1.064s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_clang_format': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_clang_format build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/install.log --single-version-externally-managed install_data
+[1.392s] running egg_info
+[1.393s] creating ../../../build/ament_clang_format/ament_clang_format.egg-info
+[1.393s] writing ../../../build/ament_clang_format/ament_clang_format.egg-info/PKG-INFO
+[1.393s] writing dependency_links to ../../../build/ament_clang_format/ament_clang_format.egg-info/dependency_links.txt
+[1.393s] writing entry points to ../../../build/ament_clang_format/ament_clang_format.egg-info/entry_points.txt
+[1.393s] writing requirements to ../../../build/ament_clang_format/ament_clang_format.egg-info/requires.txt
+[1.393s] writing top-level names to ../../../build/ament_clang_format/ament_clang_format.egg-info/top_level.txt
+[1.394s] writing manifest file '../../../build/ament_clang_format/ament_clang_format.egg-info/SOURCES.txt'
+[1.397s] reading manifest file '../../../build/ament_clang_format/ament_clang_format.egg-info/SOURCES.txt'
+[1.398s] writing manifest file '../../../build/ament_clang_format/ament_clang_format.egg-info/SOURCES.txt'
+[1.399s] running build
+[1.399s] running build_py
+[1.399s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build
+[1.399s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib
+[1.399s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format
+[1.399s] copying ament_clang_format/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format
+[1.399s] copying ament_clang_format/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format
+[1.399s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format/configuration
+[1.400s] copying ament_clang_format/configuration/.clang-format -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format/configuration
+[1.400s] running install
+[1.400s] running install_lib
+[1.401s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format
+[1.401s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format
+[1.401s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format/configuration
+[1.402s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format/configuration/.clang-format -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format/configuration
+[1.402s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build/lib/ament_clang_format/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format
+[1.403s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format/main.py to main.cpython-310.pyc
+[1.407s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format/__init__.py to __init__.cpython-310.pyc
+[1.407s] running install_data
+[1.407s] copying package.xml -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/share/ament_clang_format
+[1.407s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/share/ament_index
+[1.407s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/share/ament_index/resource_index
+[1.407s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/share/ament_index/resource_index/packages
+[1.407s] copying resource/ament_clang_format -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/share/ament_index/resource_index/packages
+[1.408s] running install_egg_info
+[1.410s] Copying ../../../build/ament_clang_format/ament_clang_format.egg-info to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages/ament_clang_format-0.12.11-py3.10.egg-info
+[1.411s] running install_scripts
+[1.435s] Installing ament_clang_format script to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/bin
+[1.435s] writing list of installed files to '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/install.log'
+[1.482s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_clang_format' returned '0': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_clang_format/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_clang_format build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_clang_format/install.log --single-version-externally-managed install_data

@@ -1,0 +1,63 @@
+[0.011s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/frame_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data
+[0.059s] -- The C compiler identification is GNU 11.4.0
+[0.116s] -- The CXX compiler identification is GNU 11.4.0
+[0.123s] -- Detecting C compiler ABI info
+[0.186s] -- Detecting C compiler ABI info - done
+[0.195s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.195s] -- Detecting C compile features
+[0.195s] -- Detecting C compile features - done
+[0.198s] -- Detecting CXX compiler ABI info
+[0.287s] -- Detecting CXX compiler ABI info - done
+[0.293s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.293s] -- Detecting CXX compile features
+[0.293s] -- Detecting CXX compile features - done
+[0.295s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.296s] -- Found ament_cmake_core: 1.3.8 (/opt/ros/humble/share/ament_cmake_core/cmake)
+[0.443s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.496s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.502s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.557s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.713s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.713s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.713s]   frame_data --arguments-file
+[0.713s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter__arguments__frame_data.json
+[0.713s]   --output-dir
+[0.713s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter/frame_data
+[0.713s]   --output-file
+[0.714s]   /home/jaime/MotorControl/uros_ws/build/frame_data/rosidl_adapter/frame_data.idls)
+[0.714s]   returned error code 1:
+[0.714s] 
+[0.714s]   Error processing 'float32 position_Ref' of 'frame_data/frameData':
+[0.714s]   ''position_Ref' is an invalid field name.  It should have the pattern
+[0.714s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.714s] 
+[0.714s]   Traceback (most recent call last):
+[0.714s] 
+[0.714s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.714s]       return _run_code(code, main_globals, None,
+[0.714s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.714s]       exec(code, run_globals)
+[0.714s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.714s]       sys.exit(main())
+[0.714s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.714s]       abs_idl_file = convert_to_idl(
+[0.714s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.714s]       return convert_msg_to_idl(
+[0.714s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.714s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.714s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.714s]       fields.append(Field(
+[0.715s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.715s]       raise NameError(
+[0.715s] 
+[0.715s]   NameError: 'position_Ref' is an invalid field name.  It should have the
+[0.715s]   pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.715s] 
+[0.715s] Call Stack (most recent call first):
+[0.715s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.715s]   CMakeLists.txt:7 (rosidl_generate_interfaces)
+[0.715s] 
+[0.715s] [0m
+[0.715s] -- Configuring incomplete, errors occurred!
+[0.715s] See also "/home/jaime/MotorControl/uros_ws/build/frame_data/CMakeFiles/CMakeOutput.log".
+[0.720s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/frame_data' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data

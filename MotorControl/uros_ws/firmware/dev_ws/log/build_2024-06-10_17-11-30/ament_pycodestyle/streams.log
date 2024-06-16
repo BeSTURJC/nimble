@@ -1,0 +1,41 @@
+[1.005s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_pycodestyle': PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_pycodestyle build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/install.log --single-version-externally-managed install_data
+[1.185s] running egg_info
+[1.185s] creating ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info
+[1.186s] writing ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/PKG-INFO
+[1.186s] writing dependency_links to ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/dependency_links.txt
+[1.186s] writing entry points to ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/entry_points.txt
+[1.186s] writing requirements to ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/requires.txt
+[1.186s] writing top-level names to ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/top_level.txt
+[1.186s] writing manifest file '../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/SOURCES.txt'
+[1.187s] reading manifest file '../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/SOURCES.txt'
+[1.189s] writing manifest file '../../../build/ament_pycodestyle/ament_pycodestyle.egg-info/SOURCES.txt'
+[1.189s] running build
+[1.189s] running build_py
+[1.189s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build
+[1.189s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib
+[1.189s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle
+[1.189s] copying ament_pycodestyle/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle
+[1.189s] copying ament_pycodestyle/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle
+[1.189s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle/configuration
+[1.190s] copying ament_pycodestyle/configuration/ament_pycodestyle.ini -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle/configuration
+[1.190s] running install
+[1.190s] running install_lib
+[1.191s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle
+[1.191s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle
+[1.191s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle/configuration
+[1.191s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle/configuration/ament_pycodestyle.ini -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle/configuration
+[1.191s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build/lib/ament_pycodestyle/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle
+[1.191s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle/main.py to main.cpython-310.pyc
+[1.193s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle/__init__.py to __init__.cpython-310.pyc
+[1.193s] running install_data
+[1.193s] copying package.xml -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/share/ament_pycodestyle
+[1.193s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/share/ament_index
+[1.193s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/share/ament_index/resource_index
+[1.193s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/share/ament_index/resource_index/packages
+[1.193s] copying resource/ament_pycodestyle -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/share/ament_index/resource_index/packages
+[1.193s] running install_egg_info
+[1.195s] Copying ../../../build/ament_pycodestyle/ament_pycodestyle.egg-info to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages/ament_pycodestyle-0.12.11-py3.10.egg-info
+[1.195s] running install_scripts
+[1.214s] Installing ament_pycodestyle script to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/bin
+[1.214s] writing list of installed files to '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/install.log'
+[1.300s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_pycodestyle' returned '0': PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pycodestyle/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_pycodestyle build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pycodestyle/install.log --single-version-externally-managed install_data

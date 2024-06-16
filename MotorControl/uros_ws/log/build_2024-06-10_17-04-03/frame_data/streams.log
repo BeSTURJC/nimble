@@ -1,0 +1,212 @@
+[0.013s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/frame_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data
+[0.023s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.023s] -- Found ament_cmake_core: 1.3.8 (/opt/ros/humble/share/ament_cmake_core/cmake)
+[0.174s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.179s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.220s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.446s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.606s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.803s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.821s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[0.822s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.844s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[0.844s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.844s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.844s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.862s] -- Found PythonExtra: .so  
+[0.890s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.902s] -- Added test 'lint_cmake' to check CMake code style
+[0.903s] -- Added test 'xmllint' to check XML markup files
+[0.905s] -- Configuring done
+[0.923s] -- Generating done
+[0.924s] -- Build files have been written to: /home/jaime/MotorControl/uros_ws/build/frame_data
+[0.934s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/frame_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake /home/jaime/MotorControl/uros_ws/frame_data -DCMAKE_INSTALL_PREFIX=/home/jaime/MotorControl/uros_ws/install/frame_data
+[0.934s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/frame_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/build/frame_data -- -j8 -l8
+[0.970s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.979s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[0.987s] [  6%] Built target ament_cmake_python_copy_frame_data
+[1.225s] running egg_info
+[1.226s] creating frame_data.egg-info
+[1.227s] writing frame_data.egg-info/PKG-INFO
+[1.227s] writing dependency_links to frame_data.egg-info/dependency_links.txt
+[1.227s] writing top-level names to frame_data.egg-info/top_level.txt
+[1.227s] writing manifest file 'frame_data.egg-info/SOURCES.txt'
+[1.230s] reading manifest file 'frame_data.egg-info/SOURCES.txt'
+[1.230s] writing manifest file 'frame_data.egg-info/SOURCES.txt'
+[1.245s] [  6%] Built target frame_data__cpp
+[1.248s] [  9%] [32mBuilding C object CMakeFiles/frame_data__rosidl_generator_c.dir/rosidl_generator_c/frame_data/msg/detail/frame_data__functions.c.o[0m
+[1.256s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.258s] [ 12%] Built target ament_cmake_python_build_frame_data_egg
+[1.260s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.260s] [ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.305s] [ 22%] [32m[1mLinking C shared library libframe_data__rosidl_generator_c.so[0m
+[1.343s] [ 22%] Built target frame_data__rosidl_generator_c
+[1.357s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.359s] [ 29%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.359s] [ 32%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.501s] [ 35%] [32mBuilding CXX object CMakeFiles/frame_data__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/frame_data/msg/frame_data__type_support.cpp.o[0m
+[1.527s] [ 38%] [32mBuilding CXX object CMakeFiles/frame_data__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/frame_data/msg/detail/dds_fastrtps/frame_data__type_support.cpp.o[0m
+[1.647s] [ 41%] [32mBuilding CXX object CMakeFiles/frame_data__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/frame_data/msg/detail/frame_data__type_support.cpp.o[0m
+[1.778s] [ 45%] [32mBuilding C object CMakeFiles/frame_data__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/frame_data/msg/detail/frame_data__type_support.c.o[0m
+[1.784s] [ 48%] [32mBuilding CXX object CMakeFiles/frame_data__rosidl_typesupport_c.dir/rosidl_typesupport_c/frame_data/msg/frame_data__type_support.cpp.o[0m
+[1.792s] [ 51%] [32m[1mLinking CXX shared library libframe_data__rosidl_typesupport_cpp.so[0m
+[1.820s] [ 54%] [32m[1mLinking C shared library libframe_data__rosidl_typesupport_introspection_c.so[0m
+[1.825s] [ 58%] [32mBuilding CXX object CMakeFiles/frame_data__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/frame_data/msg/detail/frame_data__type_support_c.cpp.o[0m
+[1.830s] [ 61%] [32m[1mLinking CXX shared library libframe_data__rosidl_typesupport_c.so[0m
+[1.852s] [ 61%] Built target frame_data__rosidl_typesupport_cpp
+[1.862s] [ 61%] Built target frame_data__rosidl_typesupport_introspection_c
+[1.893s] [ 61%] Built target frame_data__rosidl_typesupport_c
+[1.965s] [ 64%] [32m[1mLinking CXX shared library libframe_data__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.034s] [ 64%] Built target frame_data__rosidl_typesupport_fastrtps_cpp
+[2.060s] [ 67%] [32m[1mLinking CXX shared library libframe_data__rosidl_typesupport_introspection_cpp.so[0m
+[2.093s] [ 67%] Built target frame_data__rosidl_typesupport_introspection_cpp
+[2.117s] [ 70%] [32m[1mLinking CXX shared library libframe_data__rosidl_typesupport_fastrtps_c.so[0m
+[2.174s] [ 70%] Built target frame_data__rosidl_typesupport_fastrtps_c
+[2.190s] [ 70%] Built target frame_data
+[2.208s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.416s] [ 74%] Built target frame_data__py
+[2.434s] [ 77%] [32mBuilding C object CMakeFiles/frame_data__rosidl_generator_py.dir/rosidl_generator_py/frame_data/msg/_frame_data_s.c.o[0m
+[2.505s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/frame_data/libframe_data__rosidl_generator_py.so[0m
+[2.536s] [ 80%] Built target frame_data__rosidl_generator_py
+[2.555s] [ 90%] [32mBuilding C object CMakeFiles/frame_data__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/frame_data/_frame_data_s.ep.rosidl_typesupport_c.c.o[0m
+[2.555s] [ 90%] [32mBuilding C object CMakeFiles/frame_data__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/frame_data/_frame_data_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.555s] [ 90%] [32mBuilding C object CMakeFiles/frame_data__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/frame_data/_frame_data_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.633s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/frame_data/frame_data_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.633s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/frame_data/frame_data_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.636s] [100%] [32m[1mLinking C shared library rosidl_generator_py/frame_data/frame_data_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.664s] [100%] Built target frame_data__rosidl_typesupport_introspection_c__pyext
+[2.664s] [100%] Built target frame_data__rosidl_typesupport_c__pyext
+[2.668s] [100%] Built target frame_data__rosidl_typesupport_fastrtps_c__pyext
+[2.677s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/frame_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --build /home/jaime/MotorControl/uros_ws/build/frame_data -- -j8 -l8
+[2.741s] Invoking command in '/home/jaime/MotorControl/uros_ws/build/frame_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/MotorControl/uros_ws/build/frame_data
+[2.748s] -- Install configuration: ""
+[2.748s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/ament_index/resource_index/rosidl_interfaces/frame_data
+[2.748s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/frame_data.h
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__type_support.h
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__functions.c
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__functions.h
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__struct.h
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/rosidl_generator_c__visibility_control.h
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/library_path.sh
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/library_path.dsv
+[2.749s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_generator_c.so
+[2.749s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_generator_c.so" to ""
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__rosidl_typesupport_fastrtps_c.h
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_fastrtps_c.so
+[2.750s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_fastrtps_c.so" to ""
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.750s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__rosidl_typesupport_introspection_c.h
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__type_support.c
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_introspection_c.so
+[2.750s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_introspection_c.so" to ""
+[2.750s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_c.so
+[2.750s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_c.so" to ""
+[2.751s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.751s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.751s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.751s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__builder.hpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__traits.hpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__struct.hpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/frame_data.hpp
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/dds_fastrtps
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__rosidl_typesupport_fastrtps_cpp.hpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_fastrtps_cpp.so
+[2.752s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_fastrtps_cpp.so" to ""
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg
+[2.752s] -- Up-to-date: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__type_support.cpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/include/frame_data/frame_data/msg/detail/frame_data__rosidl_typesupport_introspection_cpp.hpp
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_introspection_cpp.so
+[2.752s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_introspection_cpp.so" to ""
+[2.752s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_cpp.so
+[2.753s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_typesupport_cpp.so" to ""
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/pythonpath.sh
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/pythonpath.dsv
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data-0.0.0-py3.10.egg-info
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data-0.0.0-py3.10.egg-info/PKG-INFO
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data-0.0.0-py3.10.egg-info/top_level.txt
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/libframe_data__rosidl_generator_py.so
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/_frame_data_s.ep.rosidl_typesupport_c.c
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/_frame_data_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/_frame_data_s.ep.rosidl_typesupport_introspection_c.c
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/__init__.py
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg/_frame_data.py
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg/__init__.py
+[2.753s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg/_frame_data_s.c
+[2.777s] Listing '/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data'...
+[2.777s] Compiling '/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/__init__.py'...
+[2.777s] Listing '/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg'...
+[2.777s] Compiling '/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg/__init__.py'...
+[2.777s] Compiling '/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/msg/_frame_data.py'...
+[2.780s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.781s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.781s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.781s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.781s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.781s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/local/lib/python3.10/dist-packages/frame_data/frame_data_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.781s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_generator_py.so
+[2.781s] -- Set runtime path of "/home/jaime/MotorControl/uros_ws/install/frame_data/lib/libframe_data__rosidl_generator_py.so" to ""
+[2.781s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/msg/FrameData.idl
+[2.781s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/msg/FrameData.msg
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/ament_index/resource_index/package_run_dependencies/frame_data
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/ament_index/resource_index/parent_prefix_path/frame_data
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/ament_prefix_path.sh
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/ament_prefix_path.dsv
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/path.sh
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/environment/path.dsv
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/local_setup.bash
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/local_setup.sh
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/local_setup.zsh
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/local_setup.dsv
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/package.dsv
+[2.782s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/ament_index/resource_index/packages/frame_data
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_generator_cExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_generator_cExport-noconfig.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_typesupport_fastrtps_cExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_introspection_cExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_cExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_cExport-noconfig.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_generator_cppExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.783s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_introspection_cppExport.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_cppExport.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_data__rosidl_typesupport_cppExport-noconfig.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_generator_pyExport.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/export_frame_data__rosidl_generator_pyExport-noconfig.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/rosidl_cmake-extras.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/ament_cmake_export_libraries-extras.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/ament_cmake_export_targets-extras.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.784s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.785s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.785s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_dataConfig.cmake
+[2.785s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/cmake/frame_dataConfig-version.cmake
+[2.785s] -- Installing: /home/jaime/MotorControl/uros_ws/install/frame_data/share/frame_data/package.xml
+[2.787s] Invoked command in '/home/jaime/MotorControl/uros_ws/build/frame_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=\[\033[01;32m\]\u@\h \[\033[01;34m\]\w \[\033[31m\]`git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[35m\]$\[\033[00m\] /usr/bin/cmake --install /home/jaime/MotorControl/uros_ws/build/frame_data

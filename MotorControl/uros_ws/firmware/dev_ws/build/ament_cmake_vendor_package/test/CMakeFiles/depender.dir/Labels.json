@@ -1,0 +1,40 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/depender"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/depender.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/CMakeFiles/depender-complete.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-build.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-configure.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-download.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-install.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-mkdir.rule"
+		},
+		{
+			"file" : "/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_vendor_package/test/depender-prefix/src/depender-stamp/depender-patch.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"depender"
+		],
+		"name" : "depender"
+	}
+}

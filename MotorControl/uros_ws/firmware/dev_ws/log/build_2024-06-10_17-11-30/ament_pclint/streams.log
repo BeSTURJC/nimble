@@ -1,0 +1,79 @@
+[0.971s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_pclint': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_pclint build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/install.log --single-version-externally-managed install_data
+[1.275s] running egg_info
+[1.279s] creating ../../../build/ament_pclint/ament_pclint.egg-info
+[1.279s] writing ../../../build/ament_pclint/ament_pclint.egg-info/PKG-INFO
+[1.279s] writing dependency_links to ../../../build/ament_pclint/ament_pclint.egg-info/dependency_links.txt
+[1.279s] writing entry points to ../../../build/ament_pclint/ament_pclint.egg-info/entry_points.txt
+[1.281s] writing requirements to ../../../build/ament_pclint/ament_pclint.egg-info/requires.txt
+[1.281s] writing top-level names to ../../../build/ament_pclint/ament_pclint.egg-info/top_level.txt
+[1.281s] writing manifest file '../../../build/ament_pclint/ament_pclint.egg-info/SOURCES.txt'
+[1.284s] reading manifest file '../../../build/ament_pclint/ament_pclint.egg-info/SOURCES.txt'
+[1.284s] writing manifest file '../../../build/ament_pclint/ament_pclint.egg-info/SOURCES.txt'
+[1.284s] running build
+[1.284s] running build_py
+[1.284s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build
+[1.284s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib
+[1.284s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint
+[1.284s] copying ament_pclint/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint
+[1.284s] copying ament_pclint/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint
+[1.285s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.285s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.285s] copying ament_pclint/config/gcc/co-g++.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.285s] copying ament_pclint/config/gcc/co-g++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.286s] copying ament_pclint/config/gcc/co-gcc.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.286s] copying ament_pclint/config/gcc/co-gcc.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.286s] copying ament_pclint/config/gcc/co-osx-g++.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.286s] copying ament_pclint/config/gcc/co-osx-g++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.287s] copying ament_pclint/config/gcc/co-osx-gcc.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.287s] copying ament_pclint/config/gcc/co-osx-gcc.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc
+[1.287s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc
+[1.287s] copying ament_pclint/config/msvc/co-cl.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc
+[1.288s] copying ament_pclint/config/msvc/co-cl++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc
+[1.288s] copying ament_pclint/config/msvc/co-cl.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc
+[1.288s] copying ament_pclint/config/au-misra3.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.288s] copying ament_pclint/config/au-misra3-amd1.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.289s] copying ament_pclint/config/au-misra-cpp.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.289s] copying ament_pclint/config/c99.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.289s] copying ament_pclint/config/c++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.289s] copying ament_pclint/config/deprecate.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.289s] copying ament_pclint/config/env-xml.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config
+[1.290s] running install
+[1.290s] running install_lib
+[1.293s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint
+[1.293s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint
+[1.293s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint
+[1.293s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.293s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/c++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/au-misra3-amd1.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/deprecate.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/c99.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.294s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/msvc
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc/co-cl.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/msvc
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc/co-cl++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/msvc
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/msvc/co-cl.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/msvc
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/env-xml.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.294s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.294s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-osx-g++.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-osx-gcc.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-gcc.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-gcc.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-osx-gcc.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-g++.h -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.295s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-g++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.296s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/gcc/co-osx-g++.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config/gcc
+[1.296s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/au-misra-cpp.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.296s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build/lib/ament_pclint/config/au-misra3.lnt -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/config
+[1.297s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/main.py to main.cpython-310.pyc
+[1.301s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint/__init__.py to __init__.cpython-310.pyc
+[1.302s] running install_data
+[1.302s] copying package.xml -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/share/ament_pclint
+[1.303s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/share/ament_index
+[1.304s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/share/ament_index/resource_index
+[1.304s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/share/ament_index/resource_index/packages
+[1.304s] copying resource/ament_pclint -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/share/ament_index/resource_index/packages
+[1.305s] running install_egg_info
+[1.306s] Copying ../../../build/ament_pclint/ament_pclint.egg-info to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages/ament_pclint-0.12.11-py3.10.egg-info
+[1.306s] running install_scripts
+[1.342s] Installing ament_pclint script to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/bin
+[1.343s] writing list of installed files to '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/install.log'
+[1.384s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_pclint' returned '0': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pclint/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_pclint build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_pclint/install.log --single-version-externally-managed install_data

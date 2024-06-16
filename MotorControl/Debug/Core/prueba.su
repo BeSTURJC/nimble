@@ -1,0 +1,3 @@
+../Core/prueba.cpp:10:1:prueba::prueba()	16	static
+../Core/prueba.cpp:15:1:prueba::~prueba()	16	static
+../Core/prueba.cpp:15:1:virtual prueba::~prueba()	16	static

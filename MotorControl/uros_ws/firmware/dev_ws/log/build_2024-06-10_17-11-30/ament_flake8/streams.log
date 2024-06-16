@@ -1,0 +1,44 @@
+[0.456s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_flake8': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_flake8 build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/install.log --single-version-externally-managed install_data
+[0.669s] running egg_info
+[0.671s] creating ../../../build/ament_flake8/ament_flake8.egg-info
+[0.671s] writing ../../../build/ament_flake8/ament_flake8.egg-info/PKG-INFO
+[0.672s] writing dependency_links to ../../../build/ament_flake8/ament_flake8.egg-info/dependency_links.txt
+[0.672s] writing entry points to ../../../build/ament_flake8/ament_flake8.egg-info/entry_points.txt
+[0.673s] writing requirements to ../../../build/ament_flake8/ament_flake8.egg-info/requires.txt
+[0.673s] writing top-level names to ../../../build/ament_flake8/ament_flake8.egg-info/top_level.txt
+[0.674s] writing manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[0.677s] reading manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[0.679s] writing manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[0.679s] running build
+[0.679s] running build_py
+[0.680s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build
+[0.680s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib
+[0.681s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8
+[0.683s] copying ament_flake8/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8
+[0.684s] copying ament_flake8/pytest_marker.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8
+[0.684s] copying ament_flake8/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8
+[0.685s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/configuration
+[0.685s] copying ament_flake8/configuration/ament_flake8.ini -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/configuration
+[0.686s] running install
+[0.687s] running install_lib
+[0.688s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8
+[0.689s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/main.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8
+[0.689s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8/configuration
+[0.689s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/configuration/ament_flake8.ini -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8/configuration
+[0.690s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/pytest_marker.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8
+[0.690s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build/lib/ament_flake8/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8
+[0.692s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8/main.py to main.cpython-310.pyc
+[0.696s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8/pytest_marker.py to pytest_marker.cpython-310.pyc
+[0.697s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8/__init__.py to __init__.cpython-310.pyc
+[0.698s] running install_data
+[0.698s] copying package.xml -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/share/ament_flake8
+[0.699s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/share/ament_index
+[0.699s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/share/ament_index/resource_index
+[0.699s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/share/ament_index/resource_index/packages
+[0.699s] copying resource/ament_flake8 -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/share/ament_index/resource_index/packages
+[0.700s] running install_egg_info
+[0.704s] Copying ../../../build/ament_flake8/ament_flake8.egg-info to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages/ament_flake8-0.12.11-py3.10.egg-info
+[0.704s] running install_scripts
+[0.740s] Installing ament_flake8 script to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin
+[0.741s] writing list of installed files to '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/install.log'
+[0.793s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_lint/ament_flake8' returned '0': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_flake8 build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_flake8/install.log --single-version-externally-managed install_data

@@ -1,0 +1,52 @@
+[0.650s] Invoking command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_index/ament_index_python': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_index_python build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/install.log --single-version-externally-managed install_data
+[0.899s] running egg_info
+[0.901s] creating ../../../build/ament_index_python/ament_index_python.egg-info
+[0.902s] writing ../../../build/ament_index_python/ament_index_python.egg-info/PKG-INFO
+[0.902s] writing dependency_links to ../../../build/ament_index_python/ament_index_python.egg-info/dependency_links.txt
+[0.902s] writing entry points to ../../../build/ament_index_python/ament_index_python.egg-info/entry_points.txt
+[0.902s] writing requirements to ../../../build/ament_index_python/ament_index_python.egg-info/requires.txt
+[0.902s] writing top-level names to ../../../build/ament_index_python/ament_index_python.egg-info/top_level.txt
+[0.902s] writing manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[0.903s] reading manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[0.904s] writing manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[0.904s] running build
+[0.904s] running build_py
+[0.904s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build
+[0.904s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib
+[0.905s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/cli.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/resources.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/packages.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/search_paths.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/constants.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.905s] copying ament_index_python/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python
+[0.907s] running install
+[0.907s] running install_lib
+[0.908s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.909s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/cli.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.910s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/resources.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.911s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/packages.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.911s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/search_paths.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.911s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/constants.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.911s] copying /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build/lib/ament_index_python/__init__.py -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python
+[0.911s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/cli.py to cli.cpython-310.pyc
+[0.911s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/resources.py to resources.cpython-310.pyc
+[0.912s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/packages.py to packages.cpython-310.pyc
+[0.914s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/search_paths.py to search_paths.cpython-310.pyc
+[0.914s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/constants.py to constants.cpython-310.pyc
+[0.915s] byte-compiling /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python/__init__.py to __init__.cpython-310.pyc
+[0.915s] running install_data
+[0.915s] copying package.xml -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index_python
+[0.915s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index_python/environment
+[0.915s] copying completion/ament_index-argcomplete.bash -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index_python/environment
+[0.915s] copying completion/ament_index-argcomplete.zsh -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index_python/environment
+[0.915s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index
+[0.915s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index/resource_index
+[0.915s] creating /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index/resource_index/packages
+[0.916s] copying resource/ament_index_python -> /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/share/ament_index/resource_index/packages
+[0.916s] running install_egg_info
+[0.916s] Copying ../../../build/ament_index_python/ament_index_python.egg-info to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages/ament_index_python-1.4.0-py3.10.egg-info
+[0.918s] running install_scripts
+[0.949s] Installing ament_index script to /home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/bin
+[0.950s] writing list of installed files to '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/install.log'
+[1.004s] Invoked command in '/home/jaime/MotorControl/uros_ws/firmware/dev_ws/ament/ament_index/ament_index_python' returned '0': AMENT_PREFIX_PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint PATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/bin:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/bin:${PATH} PYTHONPATH=/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/prefix_override:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_index_python/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_copyright/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_pep257/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_flake8/lib/python3.10/site-packages:/home/jaime/MotorControl/uros_ws/firmware/dev_ws/install/ament_lint/lib/python3.10/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/ament_index_python build --build-base /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/build install --record /home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_index_python/install.log --single-version-externally-managed install_data

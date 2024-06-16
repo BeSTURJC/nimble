@@ -1,0 +1,13 @@
+# Target labels
+ xrceagent
+# Source files and their labels
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/CMakeFiles/xrceagent
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/CMakeFiles/xrceagent.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/CMakeFiles/xrceagent-complete.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-build.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-configure.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-download.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-install.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-mkdir.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-patch.rule
+/home/jaime/MotorControl/uros_ws/build/micro_ros_agent/agent/src/xrceagent-stamp/xrceagent-update.rule

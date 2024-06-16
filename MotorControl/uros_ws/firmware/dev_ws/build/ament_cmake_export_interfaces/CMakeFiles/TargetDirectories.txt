@@ -1,0 +1,7 @@
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/ament_cmake_export_interfaces_uninstall.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/edit_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/rebuild_cache.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/list_install_components.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/install.dir
+/home/jaime/MotorControl/uros_ws/firmware/dev_ws/build/ament_cmake_export_interfaces/CMakeFiles/install/local.dir
