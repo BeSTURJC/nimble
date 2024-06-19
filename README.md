@@ -196,7 +196,7 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 
 ## Equipo
 
-* [Juan Carvalleira](https://github.com/jcarballeira)
+* [Juan Carballeira](https://github.com/jcarballeira)
 * [Jaime Ramos](https://github.com/jaimeramosr)
 * [Adrián Madinabeitia](https://github.com/Adrimapo)
   
