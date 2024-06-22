@@ -1,0 +1,35 @@
+[0.107s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.150s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.171s] [ 18%] Built target cables_robot
+[0.172s] [ 18%] [32mBuilding CXX object CMakeFiles/control_ZMP.dir/src/control_ZMP.cpp.o[0m
+[0.174s] [ 25%] [32mBuilding CXX object CMakeFiles/gamming.dir/src/gamming.cpp.o[0m
+[0.176s] [ 31%] [32m[1mLinking CXX executable control_MSD[0m
+[0.177s] [ 43%] [32mBuilding CXX object CMakeFiles/frame.dir/src/frame.cpp.o[0m
+[0.177s] [ 43%] [32mBuilding CXX object CMakeFiles/traj_generator_server.dir/src/traj_generator_service.cpp.o[0m
+[0.186s] [ 50%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[0.187s] [ 56%] [32mBuilding CXX object CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o[0m
+[2.648s] [ 62%] Built target control_MSD
+[5.657s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()[m[K’:
+[5.658s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:313:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kjoint_trajectory[m[K’; did you mean ‘[01m[KJointsTrajectory_[m[K’?
+[5.659s]   313 |     curr_target_message.[01;31m[Kjoint_trajectory[m[K.points.push_back(curr_target);
+[5.659s]       |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[5.660s]       |                         [32m[KJointsTrajectory_[m[K
+[7.199s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:[m[K In member function ‘[01m[Kvoid kineticModel::KinematicModelNode::call_back_state_cables(const JointState&)[m[K’:
+[7.200s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:172:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kjoint_state_cables_msg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[7.202s]   172 |     [01;35m[Kconst sensor_msgs::msg::JointState &joint_state_cables_msg[m[K) {
+[7.204s]       |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[7.679s] [ 68%] [32m[1mLinking CXX executable traj_generator_server[0m
+[7.926s] [ 68%] Built target traj_generator_server
+[14.106s] [ 75%] [32m[1mLinking CXX executable frame[0m
+[14.925s] [ 75%] Built target frame
+[15.618s] [ 81%] [32m[1mLinking CXX executable gamming[0m
+[16.497s] [ 81%] Built target gamming
+[19.099s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[19.099s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[19.099s] gmake[1]: *** Waiting for unfinished jobs....
+[24.178s] [ 87%] [32m[1mLinking CXX executable kinematic_model[0m
+[24.819s] [ 93%] [32m[1mLinking CXX executable control_ZMP[0m
+[25.309s] [ 93%] Built target kinematic_model
+[26.207s] [ 93%] Built target control_ZMP
+[26.208s] gmake: *** [Makefile:146: all] Error 2
+[26.211s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8

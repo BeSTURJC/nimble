@@ -1,0 +1,165 @@
+[0.108s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.159s] [35m[1mConsolidate compiler generated dependencies of target frame[0m
+[0.159s] [35m[1mConsolidate compiler generated dependencies of target gamming[0m
+[0.159s] [35m[1mConsolidate compiler generated dependencies of target kinematic_model[0m
+[0.168s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.168s] [35m[1mConsolidate compiler generated dependencies of target traj_generator_server[0m
+[0.168s] [35m[1mConsolidate compiler generated dependencies of target control_ZMP[0m
+[0.187s] [ 12%] Built target control_MSD
+[0.192s] [ 25%] Built target gamming
+[0.192s] [ 37%] Built target cables_robot
+[0.193s] [ 50%] Built target frame
+[0.193s] [ 62%] Built target control_ZMP
+[0.194s] [ 75%] Built target kinematic_model
+[0.197s] [ 81%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[0.204s] [ 87%] [32mBuilding CXX object CMakeFiles/traj_generator_server.dir/src/traj_generator_service.cpp.o[0m
+[3.413s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In lambda function:
+[3.413s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:28:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcall_back_cartesian_trajectory[m[K’ was not declared in this scope; did you mean ‘[01m[Kcall_back_cartesian_target[m[K’?
+[3.413s]    28 |             [01;31m[Kcall_back_cartesian_trajectory[m[K(msg);});
+[3.413s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.413s]       |             [32m[Kcall_back_cartesian_target[m[K
+[3.418s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In constructor ‘[01m[KstateMachine::StatesMachineNode::StatesMachineNode()[m[K’:
+[3.418s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:111:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Krclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >::SharedPtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >[m[K’} and ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >[m[K’)
+[3.418s]    65 |   publisher_joints_trajectory = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10[01;31m[K)[m[K;
+[3.418s]       |                                                                                                               [01;31m[K^[m[K
+[3.418s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[3.418s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:4[m[K:
+[3.419s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.419s]   363 |         [01;36m[Koperator[m[K=(const shared_ptr<_Yp>& __r) noexcept
+[3.419s]       |         [01;36m[K^~~~~~~~[m[K
+[3.419s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.419s] /usr/include/c++/11/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = const std::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >&; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’:
+[3.419s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >::_Assignable<const std::shared_ptr<_Tp>&> std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >::operator=<_Yp>(const std::shared_ptr<_Tp>&) [with _Yp = rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > >][m[K’
+[3.419s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:111:[m[K   required from here
+[3.419s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:130:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >&>[m[K’
+[3.419s]   130 |         using [01;31m[K_Assignable[m[K = typename enable_if<
+[3.420s]       |               [01;31m[K^~~~~~~~~~~[m[K
+[3.420s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.420s]   374 |         [01;36m[Koperator[m[K=(auto_ptr<_Yp>&& __r)
+[3.420s]       |         [01;36m[K^~~~~~~~[m[K
+[3.420s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.420s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:111:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >[m[K’ is not derived from ‘[01m[Kstd::auto_ptr<_Up>[m[K’
+[3.420s]    65 |   publisher_joints_trajectory = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10[01;36m[K)[m[K;
+[3.420s]       |                                                                                                               [01;36m[K^[m[K
+[3.421s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[3.421s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:4[m[K:
+[3.421s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.421s]   391 |         [01;36m[Koperator[m[K=(shared_ptr<_Yp>&& __r) noexcept
+[3.421s]       |         [01;36m[K^~~~~~~~[m[K
+[3.421s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.421s] /usr/include/c++/11/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = std::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’:
+[3.421s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >::_Assignable<std::shared_ptr<_Tp> > std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >::operator=<_Yp>(std::shared_ptr<_Tp>&&) [with _Yp = rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > >][m[K’
+[3.421s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:111:[m[K   required from here
+[3.422s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:130:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >&>[m[K’
+[3.422s]   130 |         using [01;31m[K_Assignable[m[K = typename enable_if<
+[3.422s]       |               [01;31m[K^~~~~~~~~~~[m[K
+[3.422s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.422s]   399 |         [01;36m[Koperator[m[K=(unique_ptr<_Yp, _Del>&& __r)
+[3.422s]       |         [01;36m[K^~~~~~~~[m[K
+[3.422s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.422s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:111:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<_Tp, _Dp>[m[K’
+[3.422s]    65 |   publisher_joints_trajectory = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10[01;36m[K)[m[K;
+[3.423s]       |                                                                                                               [01;36m[K^[m[K
+[3.423s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[3.423s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:4[m[K:
+[3.423s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.423s]   359 |       shared_ptr& [01;36m[Koperator[m[K=(const shared_ptr&) noexcept = default;
+[3.423s]       |                   [01;36m[K^~~~~~~~[m[K
+[3.423s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >[m[K’ to ‘[01m[Kconst std::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >&[m[K’
+[3.423s]   359 |       shared_ptr& operator=([01;36m[Kconst shared_ptr&[m[K) noexcept = default;
+[3.423s]       |                             [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[3.424s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > >][m[K’
+[3.424s]   383 |       [01;36m[Koperator[m[K=(shared_ptr&& __r) noexcept
+[3.424s]       |       [01;36m[K^~~~~~~~[m[K
+[3.424s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:30:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> > > >[m[K’ to ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory_<std::allocator<void> > > >&&[m[K’
+[3.424s]   383 |       operator=([01;36m[Kshared_ptr&& __r[m[K) noexcept
+[3.424s]       |                 [01;36m[K~~~~~~~~~~~~~^~~[m[K
+[3.432s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:79:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_trajectory_ts[m[K’ was not declared in this scope
+[3.432s]    79 |   timer_joint_trajectory_ = this->create_wall_timer([01;31m[Kjoints_trajectory_ts[m[K, std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this));
+[3.432s]       |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[3.448s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:80:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_target_ts[m[K’ was not declared in this scope
+[3.448s]    80 |   timer_joint_target_= this->create_wall_timer([01;31m[Kjoints_target_ts[m[K, std::bind(&StatesMachineNode::call_back_joints_current_target, this));
+[3.448s]       |                                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.461s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[3.462s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:190:52:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Knimble_interfaces::msg::JointsTrajectory[m[K’ {aka ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >[m[K’} and ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’})
+[3.462s]   190 |     shared_data_.joints_trajectory = result.get()->[01;31m[Kjoints_trajectory[m[K;
+[3.462s]       |                                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[3.462s] In file included from [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/joints_trajectory.hpp:7[m[K,
+[3.462s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:15[m[K,
+[3.462s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[3.462s] [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(const nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&)[m[K’
+[3.462s]    40 | struct [01;36m[KJointsTrajectory_[m[K
+[3.462s]       |        [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[3.463s] [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Kconst nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&[m[K’
+[3.463s] [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&)[m[K’
+[3.463s] [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&[m[K’
+[3.476s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:196:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_target_ts[m[K’ was not declared in this scope
+[3.476s]   196 |     float ps=shared_data_.therapy_requirements.speed*[01;31m[Kjoints_target_ts[m[K/shared_data_.therapy_requirements.step_length/;
+[3.476s]       |                                                      [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.477s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:196:117:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[3.477s]   196 |     float ps=shared_data_.therapy_requirements.speed*joints_target_ts/shared_data_.therapy_requirements.step_length/[01;31m[K;[m[K
+[3.477s]       |                                                                                                                     [01;31m[K^[m[K
+[3.477s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:201:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct std_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+[3.477s]   201 |         phase.[01;31m[Kpush_back[m[K(i);
+[3.477s]       |               [01;31m[K^~~~~~~~~[m[K
+[3.477s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:203:38:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+[3.477s]   203 |         traj.points.push_back(target)
+[3.477s]       |                                      [01;31m[K^[m[K
+[3.477s]       |                                      [32m[K;[m[K
+[3.477s]   204 |     [32m[K}[m[K
+[3.478s]       |     [32m[K~[m[K                                 
+[3.478s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:209:42:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.478s]   209 | float StatesMachineNode::get_step_percent[01;31m[K([m[K) {
+[3.478s]       |                                          [01;31m[K^[m[K
+[3.478s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:238:85:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.478s]   238 | trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_state[01;31m[K([m[Kfloat step_percent) {
+[3.478s]       |                                                                                     [01;31m[K^[m[K
+[3.478s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:278:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.478s]   278 | void StatesMachineNode::call_back_joints_state[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_msg) {
+[3.478s]       |                                               [01;31m[K^[m[K
+[3.478s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:283:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.478s]   283 | void StatesMachineNode::call_back_cartesian_trajectory[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory_msg) {
+[3.478s]       |                                                       [01;31m[K^[m[K
+[3.478s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:287:50:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.478s]   287 | void StatesMachineNode::call_back_cartesian_state[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_state_msg) {
+[3.478s]       |                                                  [01;31m[K^[m[K
+[3.479s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:292:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.479s]   292 | void StatesMachineNode::call_back_state_cables[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_cables_msg) {
+[3.479s]       |                                               [01;31m[K^[m[K
+[3.479s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:297:46:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.479s]   297 | void StatesMachineNode::call_back_step_target[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements& step_target_msg) {
+[3.479s]       |                                              [01;31m[K^[m[K
+[3.479s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:302:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.479s]   302 | void StatesMachineNode::call_back_therapy_requirements[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements&therapy_requirements_msg) {
+[3.479s]       |                                                       [01;31m[K^[m[K
+[3.479s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:307:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.479s]   307 | void StatesMachineNode::call_back_measurements[01;31m[K([m[Kconst nimble_interfaces::msg::Measurements& measurements_msg) {
+[3.479s]       |                                               [01;31m[K^[m[K
+[3.479s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:312:53:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.479s]   312 | void StatesMachineNode::call_back_interaction_torque[01;31m[K([m[Kconst std_msgs::msg::Float32MultiArray& interaction_torque_msg) {
+[3.479s]       |                                                     [01;31m[K^[m[K
+[3.480s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:317:38:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.480s]   317 | void StatesMachineNode::call_back_FSR[01;31m[K([m[Kconst std_msgs::msg::ByteMultiArray& FSR_msg) {
+[3.480s]       |                                      [01;31m[K^[m[K
+[3.480s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:322:56:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.480s]   322 | void StatesMachineNode::call_back_joints_current_target[01;31m[K([m[K) {
+[3.480s]       |                                                        [01;31m[K^[m[K
+[3.480s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:337:58:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.480s]   337 | void StatesMachineNode::call_back_joints_trajectory_timer[01;31m[K([m[K) {
+[3.480s]       |                                                          [01;31m[K^[m[K
+[3.480s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:348:36:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[3.480s]   348 | void StatesMachineNode::processData[01;31m[K([m[K) {
+[3.480s]       |                                    [01;31m[K^[m[K
+[3.481s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K At global scope:
+[3.482s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:377:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[3.482s]   377 | }
+[3.482s]       |  [01;31m[K^[m[K
+[3.482s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:12:24:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.482s]    12 | namespace stateMachine [01;36m[K{[m[K
+[3.482s]       |                        [01;36m[K^[m[K
+[4.620s] [ 93%] [32m[1mLinking CXX executable traj_generator_server[0m
+[4.832s] [ 93%] Built target traj_generator_server
+[12.540s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[12.540s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[12.540s] gmake: *** [Makefile:146: all] Error 2
+[12.542s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8

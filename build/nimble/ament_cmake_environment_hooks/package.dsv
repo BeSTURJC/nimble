@@ -1,0 +1,4 @@
+source;share/nimble/local_setup.bash
+source;share/nimble/local_setup.dsv
+source;share/nimble/local_setup.sh
+source;share/nimble/local_setup.zsh

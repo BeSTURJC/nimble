@@ -1,0 +1,4 @@
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:[m[K In member function ‘[01m[Kvoid kineticModel::KinematicModelNode::call_back_state_cables(const JointState&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:172:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kjoint_state_cables_msg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  172 |     [01;35m[Kconst sensor_msgs::msg::JointState &joint_state_cables_msg[m[K) {
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K

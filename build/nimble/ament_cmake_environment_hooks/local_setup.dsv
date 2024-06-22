@@ -1,0 +1,2 @@
+source;share/nimble/environment/ament_prefix_path.sh
+source;share/nimble/environment/path.sh

@@ -1,0 +1,15 @@
+setup.py
+nimble_interfaces/__init__.py
+nimble_interfaces.egg-info/PKG-INFO
+nimble_interfaces.egg-info/SOURCES.txt
+nimble_interfaces.egg-info/dependency_links.txt
+nimble_interfaces.egg-info/top_level.txt
+nimble_interfaces/msg/__init__.py
+nimble_interfaces/msg/_cartesian_full_trajectory.py
+nimble_interfaces/msg/_cartesian_trajectory.py
+nimble_interfaces/msg/_frame_state.py
+nimble_interfaces/msg/_joints_trajectory.py
+nimble_interfaces/msg/_measurements.py
+nimble_interfaces/msg/_therapy_requirements.py
+nimble_interfaces/srv/__init__.py
+nimble_interfaces/srv/_traj_generator_service.py

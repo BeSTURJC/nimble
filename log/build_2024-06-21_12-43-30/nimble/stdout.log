@@ -1,0 +1,42 @@
+[35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[ 50%] Built target control_ZMP
+[ 50%] Built target cables_robot
+[ 50%] Built target control_MSD
+[ 50%] Built target frame
+[ 62%] Built target kinematic_model
+[ 75%] Built target gamming
+[ 87%] Built target traj_generator_server
+[ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[100%] [32m[1mLinking CXX executable states_machine[0m
+[100%] Built target states_machine
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/kinematic_model
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_ZMP
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_MSD
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/cables_robot
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/gamming
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/frame
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/states_machine
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/traj_generator_server
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/__pycache__/nimble_launch.cpython-310.pyc
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/nimble_launch.py
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/kinetik_model/kineticModel.hpp
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/state_machine/stateMachine.hpp
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/config/paciente.yaml
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/hmi.py
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/package_run_dependencies/nimble
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/parent_prefix_path/nimble
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.sh
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.dsv
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.bash
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.sh
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.zsh
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.dsv
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.dsv
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/packages/nimble
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig.cmake
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig-version.cmake
+-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.xml

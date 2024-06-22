@@ -1,0 +1,102 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found nimble_interfaces: 0.0.0 (/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake)
+-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/jcarballeira/nimble_ws/src/nimble/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jcarballeira/nimble_ws/src/build/nimble
+[ 43%] [32mBuilding CXX object CMakeFiles/frame.dir/src/frame.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/gamming.dir/src/gamming.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/control_MSD.dir/src/control_MSD.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/traj_generator_server.dir/src/traj_generator_service.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/control_ZMP.dir/src/control_ZMP.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/cables_robot.dir/src/cables_robot.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o[0m
+[ 56%] [32m[1mLinking CXX executable traj_generator_server[0m
+[ 56%] Built target traj_generator_server
+[ 62%] [32m[1mLinking CXX executable cables_robot[0m
+[ 62%] Built target cables_robot
+[ 68%] [32m[1mLinking CXX executable frame[0m
+[ 68%] Built target frame
+[ 75%] [32m[1mLinking CXX executable gamming[0m
+[ 75%] Built target gamming
+[ 81%] [32m[1mLinking CXX executable kinematic_model[0m
+[ 81%] Built target kinematic_model
+[ 87%] [32m[1mLinking CXX executable control_MSD[0m
+[ 93%] [32m[1mLinking CXX executable control_ZMP[0m
+[ 93%] Built target control_MSD
+[ 93%] Built target control_ZMP
+[100%] [32m[1mLinking CXX executable states_machine[0m
+[100%] Built target states_machine
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/kinematic_model
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_ZMP
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_MSD
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/cables_robot
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/gamming
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/frame
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/states_machine
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/traj_generator_server
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/__pycache__/nimble_launch.cpython-310.pyc
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/nimble_launch.py
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/kinetik_model/kineticModel.hpp
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/state_machine/stateMachine.hpp
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/config/paciente.yaml
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/hmi.py
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/package_run_dependencies/nimble
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/parent_prefix_path/nimble
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.sh
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.dsv
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.sh
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.dsv
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.bash
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.sh
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.zsh
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.dsv
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.dsv
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/packages/nimble
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig.cmake
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig-version.cmake
+-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.xml

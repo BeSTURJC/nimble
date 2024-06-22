@@ -1,0 +1,9 @@
+[35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[ 25%] Built target gamming
+[ 25%] Built target cables_robot
+[ 37%] Built target frame
+[ 50%] Built target control_MSD
+[ 62%] Built target control_ZMP
+[ 75%] Built target traj_generator_server
+[ 87%] Built target kinematic_model
+[ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m

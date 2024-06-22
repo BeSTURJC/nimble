@@ -1,0 +1,46 @@
+[0.093s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.140s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.158s] [ 50%] Built target control_ZMP
+[0.159s] [ 50%] Built target cables_robot
+[0.159s] [ 50%] Built target control_MSD
+[0.160s] [ 50%] Built target frame
+[0.161s] [ 62%] Built target kinematic_model
+[0.162s] [ 75%] Built target gamming
+[0.165s] [ 87%] Built target traj_generator_server
+[0.166s] [ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[25.665s] [100%] [32m[1mLinking CXX executable states_machine[0m
+[27.319s] [100%] Built target states_machine
+[27.330s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '0': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[27.369s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble
+[27.376s] -- Install configuration: ""
+[27.376s] -- Execute custom install script
+[27.377s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/kinematic_model
+[27.377s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_ZMP
+[27.377s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/control_MSD
+[27.377s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/cables_robot
+[27.378s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/gamming
+[27.378s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/frame
+[27.378s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/states_machine
+[27.378s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/traj_generator_server
+[27.379s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/__pycache__/nimble_launch.cpython-310.pyc
+[27.379s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/launch/nimble_launch.py
+[27.379s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/kinetik_model/kineticModel.hpp
+[27.380s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/include/state_machine/stateMachine.hpp
+[27.380s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/config/paciente.yaml
+[27.380s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/lib/nimble/hmi.py
+[27.380s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/package_run_dependencies/nimble
+[27.381s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/parent_prefix_path/nimble
+[27.381s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.sh
+[27.381s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/ament_prefix_path.dsv
+[27.381s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.sh
+[27.381s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/environment/path.dsv
+[27.382s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.bash
+[27.382s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.sh
+[27.382s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.zsh
+[27.382s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/local_setup.dsv
+[27.382s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.dsv
+[27.391s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/ament_index/resource_index/packages/nimble
+[27.391s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig.cmake
+[27.391s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/cmake/nimbleConfig-version.cmake
+[27.392s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.xml
+[27.393s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '0': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble

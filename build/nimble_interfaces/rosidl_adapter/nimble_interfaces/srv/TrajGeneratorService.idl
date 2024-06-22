@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nimble_interfaces/srv/TrajGeneratorService.srv
+// generated code does not contain a copyright notice
+
+#include "nimble_interfaces/msg/Measurements.idl"
+#include "nimble_interfaces/msg/TherapyRequirements.idl"
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+module nimble_interfaces {
+  module srv {
+    struct TrajGeneratorService_Request {
+      nimble_interfaces::msg::Measurements measurements;
+
+      nimble_interfaces::msg::TherapyRequirements therapy_requirements;
+    };
+    struct TrajGeneratorService_Response {
+      trajectory_msgs::msg::JointTrajectory joints_trajectory;
+    };
+  };
+};

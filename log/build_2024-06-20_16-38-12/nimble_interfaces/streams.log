@@ -1,0 +1,357 @@
+[0.106s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces
+[0.166s] -- The C compiler identification is GNU 11.4.0
+[0.218s] -- The CXX compiler identification is GNU 11.4.0
+[0.227s] -- Detecting C compiler ABI info
+[0.289s] -- Detecting C compiler ABI info - done
+[0.297s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.297s] -- Detecting C compile features
+[0.298s] -- Detecting C compile features - done
+[0.301s] -- Detecting CXX compiler ABI info
+[0.371s] -- Detecting CXX compiler ABI info - done
+[0.379s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.380s] -- Detecting CXX compile features
+[0.380s] -- Detecting CXX compile features - done
+[0.388s] -- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.562s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.683s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.720s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.724s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.733s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.787s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.826s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.954s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.037s] -- Found trajectory_msgs: 4.2.3 (/opt/ros/humble/share/trajectory_msgs/cmake)
+[1.423s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.672s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.997s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.020s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.022s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.049s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.049s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.049s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.049s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.070s] -- Found PythonExtra: .so  
+[2.137s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.162s] -- Added test 'lint_cmake' to check CMake code style
+[2.163s] -- Added test 'xmllint' to check XML markup files
+[2.166s] -- Configuring done
+[2.206s] -- Generating done
+[2.208s] -- Build files have been written to: /home/jcarballeira/nimble_ws/src/build/nimble_interfaces
+[2.216s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces
+[2.218s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8
+[2.256s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.265s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.272s] [  2%] Built target ament_cmake_python_symlink_nimble_interfaces
+[2.553s] running egg_info
+[2.553s] creating nimble_interfaces.egg-info
+[2.553s] writing nimble_interfaces.egg-info/PKG-INFO
+[2.554s] writing dependency_links to nimble_interfaces.egg-info/dependency_links.txt
+[2.554s] writing top-level names to nimble_interfaces.egg-info/top_level.txt
+[2.554s] writing manifest file 'nimble_interfaces.egg-info/SOURCES.txt'
+[2.556s] reading manifest file 'nimble_interfaces.egg-info/SOURCES.txt'
+[2.557s] writing manifest file 'nimble_interfaces.egg-info/SOURCES.txt'
+[2.583s] [  2%] Built target ament_cmake_python_build_nimble_interfaces_egg
+[2.899s] [  2%] Built target nimble_interfaces__cpp
+[2.914s] [  3%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.923s] [  5%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.924s] [  6%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.956s] [ 11%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/frame_state__functions.c.o[0m
+[2.957s] [ 11%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/therapy_requirements__functions.c.o[0m
+[2.957s] [ 11%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.c.o[0m
+[2.957s] [ 11%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/joints_trajectory__functions.c.o[0m
+[2.960s] [ 12%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c.o[0m
+[3.032s] [ 13%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.c.o[0m
+[3.033s] [ 15%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.o[0m
+[3.094s] [ 16%] [32m[1mLinking C shared library libnimble_interfaces__rosidl_generator_c.so[0m
+[3.131s] [ 16%] Built target nimble_interfaces__rosidl_generator_c
+[3.142s] [ 17%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.144s] [ 18%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.147s] [ 20%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.600s] [ 24%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/frame_state__type_support.cpp.o[0m
+[3.600s] [ 24%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/therapy_requirements__type_support.cpp.o[0m
+[3.601s] [ 24%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/measurements__type_support.cpp.o[0m
+[3.730s] [ 25%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp.o[0m
+[3.917s] [ 26%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/measurements__type_support.c.o[0m
+[3.974s] [ 27%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/measurements__type_support.cpp.o[0m
+[3.981s] [ 29%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__type_support.c.o[0m
+[4.006s] [ 30%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/measurements__type_support.cpp.o[0m
+[4.029s] [ 31%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/therapy_requirements__type_support.cpp.o[0m
+[4.039s] [ 32%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/frame_state__type_support.c.o[0m
+[4.076s] [ 34%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/frame_state__type_support.cpp.o[0m
+[4.096s] [ 35%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/joints_trajectory__type_support.c.o[0m
+[4.129s] [ 36%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o[0m
+[4.162s] [ 37%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.c.o[0m
+[4.183s] [ 39%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o[0m
+[4.206s] [ 40%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/therapy_requirements__type_support.cpp.o[0m
+[4.231s] [ 41%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.c.o[0m
+[4.235s] [ 43%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o[0m
+[4.285s] [ 44%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o[0m
+[4.311s] [ 46%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/frame_state__type_support.cpp.o[0m
+[4.311s] [ 46%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/joints_trajectory__type_support.cpp.o[0m
+[4.316s] [ 48%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/cartesian_trajectory__type_support.cpp.o[0m
+[4.331s] [ 49%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o[0m
+[4.340s] [ 50%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_c.so[0m
+[4.348s] [ 51%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.c.o[0m
+[4.409s] [ 51%] Built target nimble_interfaces__rosidl_typesupport_c
+[4.412s] [ 53%] [32m[1mLinking C shared library libnimble_interfaces__rosidl_typesupport_introspection_c.so[0m
+[4.425s] [ 54%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/therapy_requirements__type_support_c.cpp.o[0m
+[4.470s] [ 54%] Built target nimble_interfaces__rosidl_typesupport_introspection_c
+[4.483s] [ 55%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o[0m
+[4.661s] [ 56%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o[0m
+[4.666s] [ 58%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/therapy_requirements__type_support.cpp.o[0m
+[4.763s] [ 59%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/frame_state__type_support_c.cpp.o[0m
+[4.902s] [ 60%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/joints_trajectory__type_support_c.cpp.o[0m
+[4.944s] [ 62%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o[0m
+[5.041s] [ 63%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support_c.cpp.o[0m
+[5.056s] [ 64%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/cartesian_full_trajectory__type_support.cpp.o[0m
+[5.123s] [ 65%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/srv/detail/dds_fastrtps/traj_generator_service__type_support.cpp.o[0m
+[5.124s] [ 67%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o[0m
+[5.362s] [ 68%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o[0m
+[5.377s] [ 69%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support_c.cpp.o[0m
+[5.396s] [ 70%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.o[0m
+[5.508s] [ 72%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/joints_trajectory__type_support.cpp.o[0m
+[5.610s] [ 73%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_cpp.so[0m
+[5.641s] [ 74%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.cpp.o[0m
+[5.682s] [ 74%] Built target nimble_interfaces__rosidl_typesupport_cpp
+[5.696s] [ 75%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.cpp.o[0m
+[5.904s] [ 77%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/srv/detail/traj_generator_service__type_support.cpp.o[0m
+[5.954s] [ 78%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.233s] [ 79%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[6.279s] [ 79%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_cpp
+[6.474s] [ 79%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c
+[6.665s] [ 81%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[6.751s] [ 81%] Built target nimble_interfaces__rosidl_typesupport_introspection_cpp
+[6.769s] [ 81%] Built target nimble_interfaces
+[6.789s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[7.738s] [ 82%] Built target nimble_interfaces__py
+[7.759s] [ 83%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_cartesian_full_trajectory_s.c.o[0m
+[7.760s] [ 87%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_measurements_s.c.o[0m
+[7.760s] [ 87%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_therapy_requirements_s.c.o[0m
+[7.760s] [ 89%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_frame_state_s.c.o[0m
+[7.760s] [ 89%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory_s.c.o[0m
+[7.760s] [ 89%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/msg/_joints_trajectory_s.c.o[0m
+[7.761s] [ 91%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_py.dir/rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c.o[0m
+[7.964s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/nimble_interfaces/libnimble_interfaces__rosidl_generator_py.so[0m
+[8.004s] [ 92%] Built target nimble_interfaces__rosidl_generator_py
+[8.022s] [ 96%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[8.022s] [ 96%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[8.023s] [ 96%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[8.143s] [100%] [32m[1mLinking C shared library rosidl_generator_py/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.143s] [100%] [32m[1mLinking C shared library rosidl_generator_py/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.143s] [100%] [32m[1mLinking C shared library rosidl_generator_py/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.184s] [100%] Built target nimble_interfaces__rosidl_typesupport_introspection_c__pyext
+[8.185s] [100%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[8.185s] [100%] Built target nimble_interfaces__rosidl_typesupport_c__pyext
+[8.196s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8
+[8.341s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble_interfaces
+[8.348s] -- Install configuration: ""
+[8.348s] -- Execute custom install script
+[8.349s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/rosidl_interfaces/nimble_interfaces
+[8.358s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_full_trajectory.h
+[8.366s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_trajectory.h
+[8.374s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.h
+[8.382s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.h
+[8.391s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.h
+[8.399s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__functions.h
+[8.407s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__struct.h
+[8.415s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.h
+[8.423s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__functions.h
+[8.431s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__struct.h
+[8.439s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__type_support.h
+[8.448s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__functions.h
+[8.456s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__struct.h
+[8.465s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__type_support.h
+[8.473s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__functions.h
+[8.481s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__struct.h
+[8.489s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__type_support.h
+[8.497s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__functions.h
+[8.506s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__struct.h
+[8.514s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__type_support.h
+[8.522s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/frame_state.h
+[8.530s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/joints_trajectory.h
+[8.539s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/measurements.h
+[8.547s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_generator_c__visibility_control.h
+[8.555s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/therapy_requirements.h
+[8.564s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__functions.h
+[8.572s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__struct.h
+[8.580s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__type_support.h
+[8.588s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/traj_generator_service.h
+[8.597s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/library_path.sh
+[8.605s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/library_path.dsv
+[8.614s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_fastrtps_c.h
+[8.622s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_fastrtps_c.h
+[8.630s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_fastrtps_c.h
+[8.639s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_fastrtps_c.h
+[8.647s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h
+[8.655s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_fastrtps_c.h
+[8.664s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[8.672s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_fastrtps_c.h
+[8.680s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_introspection_c.h
+[8.690s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_introspection_c.h
+[8.698s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_introspection_c.h
+[8.707s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_introspection_c.h
+[8.715s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_introspection_c.h
+[8.723s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_introspection_c.h
+[8.732s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[8.740s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_introspection_c.h
+[8.749s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_full_trajectory.hpp
+[8.758s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_trajectory.hpp
+[8.766s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp
+[8.774s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp
+[8.783s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp
+[8.791s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp
+[8.799s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp
+[8.807s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp
+[8.815s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__builder.hpp
+[8.824s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__struct.hpp
+[8.832s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__traits.hpp
+[8.840s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__builder.hpp
+[8.848s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp
+[8.857s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__traits.hpp
+[8.865s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__builder.hpp
+[8.873s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__struct.hpp
+[8.881s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__traits.hpp
+[8.890s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__builder.hpp
+[8.898s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__struct.hpp
+[8.906s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__traits.hpp
+[8.914s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/frame_state.hpp
+[8.923s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/joints_trajectory.hpp
+[8.931s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/measurements.hpp
+[8.939s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/therapy_requirements.hpp
+[8.947s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__builder.hpp
+[8.956s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__struct.hpp
+[8.965s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__traits.hpp
+[8.973s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/traj_generator_service.hpp
+[8.982s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[8.990s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[8.998s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_fastrtps_cpp.hpp
+[9.007s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[9.015s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_cpp.hpp
+[9.023s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_fastrtps_cpp.hpp
+[9.031s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[9.039s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_fastrtps_cpp.hpp
+[9.048s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[9.056s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[9.065s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_introspection_cpp.hpp
+[9.073s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[9.081s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_introspection_cpp.hpp
+[9.089s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_introspection_cpp.hpp
+[9.097s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_introspection_cpp.hpp
+[9.105s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/pythonpath.sh
+[9.114s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/pythonpath.dsv
+[9.122s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[9.130s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[9.138s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[9.146s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[9.156s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/__init__.py
+[9.164s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_c.c
+[9.172s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[9.180s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[9.188s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/libnimble_interfaces__rosidl_generator_py.so
+[9.197s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/__init__.py
+[9.205s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_full_trajectory.py
+[9.213s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_full_trajectory_s.c
+[9.221s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_trajectory.py
+[9.229s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_trajectory_s.c
+[9.237s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_frame_state.py
+[9.245s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_frame_state_s.c
+[9.254s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_joints_trajectory.py
+[9.262s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_joints_trajectory_s.c
+[9.270s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_measurements.py
+[9.278s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_measurements_s.c
+[9.286s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_therapy_requirements.py
+[9.295s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_therapy_requirements_s.c
+[9.303s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.311s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.319s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.327s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/__init__.py
+[9.336s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/_traj_generator_service.py
+[9.344s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/_traj_generator_service_s.c
+[9.353s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.353s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.353s] -- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.354s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/Measurements.idl
+[9.362s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/TherapyRequirements.idl
+[9.370s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/FrameState.idl
+[9.379s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/JointsTrajectory.idl
+[9.387s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianTrajectory.idl
+[9.395s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianFullTrajectory.idl
+[9.404s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService.idl
+[9.412s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/Measurements.msg
+[9.421s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/TherapyRequirements.msg
+[9.429s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/FrameState.msg
+[9.437s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/JointsTrajectory.msg
+[9.445s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianTrajectory.msg
+[9.454s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianFullTrajectory.msg
+[9.462s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService.srv
+[9.471s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService_Request.msg
+[9.479s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService_Response.msg
+[9.487s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/package_run_dependencies/nimble_interfaces
+[9.495s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/parent_prefix_path/nimble_interfaces
+[9.504s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/ament_prefix_path.sh
+[9.512s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/ament_prefix_path.dsv
+[9.520s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/path.sh
+[9.529s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/path.dsv
+[9.537s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.bash
+[9.545s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.sh
+[9.553s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.zsh
+[9.562s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.dsv
+[9.570s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.dsv
+[9.578s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/packages/nimble_interfaces
+[9.587s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake-extras.cmake
+[9.595s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[9.603s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[9.612s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[9.620s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[9.629s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[9.637s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[9.646s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfacesConfig.cmake
+[9.654s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfacesConfig-version.cmake
+[9.662s] -- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.xml
+[9.671s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_c.so
+[9.671s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_c.so" to ""
+[9.671s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_c.so
+[9.671s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[9.671s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_c.so
+[9.672s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[9.672s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_c.so
+[9.672s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_c.so" to ""
+[9.672s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[9.672s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[9.672s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_cpp.so
+[9.673s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[9.673s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_cpp.so
+[9.673s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_cpp.so" to ""
+[9.733s] Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/__init__.py'...
+[9.733s] Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/__init__.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_full_trajectory.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_trajectory.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_frame_state.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_joints_trajectory.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_measurements.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_therapy_requirements.py'...
+[9.733s] Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/__init__.py'...
+[9.733s] Compiling '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/_traj_generator_service.py'...
+[9.737s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_py.so
+[9.738s] -- Set runtime path of "/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_py.so" to ""
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cExport.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cExport-noconfig.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[9.738s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cppExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cppExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_pyExport.cmake
+[9.739s] -- Installing: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[9.742s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble_interfaces

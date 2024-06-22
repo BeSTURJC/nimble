@@ -1,0 +1,8 @@
+source;share/nimble/hook/cmake_prefix_path.ps1
+source;share/nimble/hook/cmake_prefix_path.dsv
+source;share/nimble/hook/cmake_prefix_path.sh
+source;share/nimble/local_setup.bash
+source;share/nimble/local_setup.dsv
+source;share/nimble/local_setup.ps1
+source;share/nimble/local_setup.sh
+source;share/nimble/local_setup.zsh

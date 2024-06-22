@@ -1,0 +1,33 @@
+[35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[ 18%] Built target cables_robot
+[ 18%] [32mBuilding CXX object CMakeFiles/control_ZMP.dir/src/control_ZMP.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/gamming.dir/src/gamming.cpp.o[0m
+[ 31%] [32m[1mLinking CXX executable control_MSD[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/frame.dir/src/frame.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/traj_generator_server.dir/src/traj_generator_service.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o[0m
+[ 62%] Built target control_MSD
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:313:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kjoint_trajectory[m[K’; did you mean ‘[01m[KJointsTrajectory_[m[K’?
+  313 |     curr_target_message.[01;31m[Kjoint_trajectory[m[K.points.push_back(curr_target);
+      |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                         [32m[KJointsTrajectory_[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:[m[K In member function ‘[01m[Kvoid kineticModel::KinematicModelNode::call_back_state_cables(const JointState&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/kinematic_model.cpp:172:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kjoint_state_cables_msg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  172 |     [01;35m[Kconst sensor_msgs::msg::JointState &joint_state_cables_msg[m[K) {
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[ 68%] [32m[1mLinking CXX executable traj_generator_server[0m
+[ 68%] Built target traj_generator_server
+[ 75%] [32m[1mLinking CXX executable frame[0m
+[ 75%] Built target frame
+[ 81%] [32m[1mLinking CXX executable gamming[0m
+[ 81%] Built target gamming
+gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 87%] [32m[1mLinking CXX executable kinematic_model[0m
+[ 93%] [32m[1mLinking CXX executable control_ZMP[0m
+[ 93%] Built target kinematic_model
+[ 93%] Built target control_ZMP
+gmake: *** [Makefile:146: all] Error 2

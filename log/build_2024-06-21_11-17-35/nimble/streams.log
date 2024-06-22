@@ -1,0 +1,50 @@
+[0.096s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.143s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.161s] [ 31%] Built target gamming
+[0.161s] [ 43%] Built target control_MSD
+[0.161s] [ 68%] Built target kinematic_model
+[0.161s] [ 68%] Built target control_ZMP
+[0.162s] [ 31%] Built target frame
+[0.162s] [ 75%] Built target cables_robot
+[0.167s] [ 81%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[0.168s] [ 93%] Built target traj_generator_server
+[2.883s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()[m[K’:
+[2.883s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:329:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::vector<float>[m[K’} and ‘[01m[Kfloat[m[K’)
+[2.883s]   329 |   percent.data = get_step_percent([01;31m[K)[m[K;
+[2.883s]       |                                   [01;31m[K^[m[K
+[2.883s] In file included from [01m[K/usr/include/c++/11/vector:72[m[K,
+[2.883s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[2.883s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:3[m[K:
+[2.883s] [01m[K/usr/include/c++/11/bits/vector.tcc:198:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[2.883s]   198 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+[2.883s]       |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.883s] [01m[K/usr/include/c++/11/bits/vector.tcc:199:42:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kconst std::vector<float>&[m[K’
+[2.883s]   199 |     operator=([01;36m[Kconst vector<_Tp, _Alloc>& __x[m[K)
+[2.883s]       |               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.883s] In file included from [01m[K/usr/include/c++/11/vector:67[m[K,
+[2.883s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[2.883s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:3[m[K:
+[2.884s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[2.884s]   709 |       [01;36m[Koperator[m[K=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+[2.884s]       |       [01;36m[K^~~~~~~~[m[K
+[2.884s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kstd::vector<float>&&[m[K’
+[2.884s]   709 |       operator=([01;36m[Kvector&& __x[m[K) noexcept(_Alloc_traits::_S_nothrow_move())
+[2.884s]       |                 [01;36m[K~~~~~~~~~^~~[m[K
+[2.884s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[2.884s]   730 |       [01;36m[Koperator[m[K=(initializer_list<value_type> __l)
+[2.884s]       |       [01;36m[K^~~~~~~~[m[K
+[2.884s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kstd::initializer_list<float>[m[K’
+[2.884s]   730 |       operator=([01;36m[Kinitializer_list<value_type> __l[m[K)
+[2.884s]       |                 [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.884s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:93:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::vector<float>[m[K’} to ‘[01m[Kfloat[m[K’
+[2.884s]   333 |     trajectory_msgs::msg::JointTrajectoryPoint curr_target = get_actual_joint_state([01;31m[Kpercent.data[m[K);
+[2.884s]       |                                                                                     [01;31m[K~~~~~~~~^~~~[m[K
+[2.885s]       |                                                                                             [01;31m[K|[m[K
+[2.885s]       |                                                                                             [01;31m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::_data_type {aka std::vector<float>}[m[K
+[2.885s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:242:92:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint stateMachine::StatesMachineNode::get_actual_joint_state(float)[m[K’
+[2.885s]   242 | trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_state([01;36m[Kfloat step_percent[m[K) {
+[2.885s]       |                                                                                      [01;36m[K~~~~~~^~~~~~~~~~~~[m[K
+[11.295s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[11.295s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[11.295s] gmake: *** [Makefile:146: all] Error 2
+[11.298s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8

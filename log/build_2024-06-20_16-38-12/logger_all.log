@@ -1,0 +1,260 @@
+[1.212s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.212s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f23a7599d50>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f23a7bdbd30>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f23a7bdbd30>>)
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.291s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jcarballeira/nimble_ws/src'
+[1.291s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ignore', 'ignore_ament_install']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore_ament_install'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_pkg']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_pkg'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_meta']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_meta'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ros']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ros'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['cmake', 'python']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'cmake'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['python_setup_py']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python_setup_py'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['ignore', 'ignore_ament_install']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'ignore'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'ignore_ament_install'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['colcon_pkg']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'colcon_pkg'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['colcon_meta']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'colcon_meta'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['ros']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'ros'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['cmake', 'python']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'cmake'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'python'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extensions ['python_setup_py']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets) by extension 'python_setup_py'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['ignore', 'ignore_ament_install']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'ignore'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'ignore_ament_install'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['colcon_pkg']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'colcon_pkg'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['colcon_meta']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'colcon_meta'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['ros']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'ros'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['cmake', 'python']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'cmake'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'python'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extensions ['python_setup_py']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(docs/assets/images) by extension 'python_setup_py'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extensions ['ignore', 'ignore_ament_install']
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extension 'ignore'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extension 'ignore_ament_install'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extensions ['colcon_pkg']
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extension 'colcon_pkg'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extensions ['colcon_meta']
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extension 'colcon_meta'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extensions ['ros']
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(nimble) by extension 'ros'
+[1.309s] DEBUG:colcon.colcon_core.package_identification:Package 'nimble' with type 'ros.ament_cmake' and name 'nimble'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extension 'ignore'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extension 'ignore_ament_install'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extensions ['colcon_pkg']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extension 'colcon_pkg'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extensions ['colcon_meta']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extension 'colcon_meta'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extensions ['ros']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(nimble_interfaces) by extension 'ros'
+[1.310s] DEBUG:colcon.colcon_core.package_identification:Package 'nimble_interfaces' with type 'ros.ament_cmake' and name 'nimble_interfaces'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore_ament_install'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_pkg']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_pkg'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_meta']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_meta'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ros']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ros'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['cmake', 'python']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'cmake'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['python_setup_py']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python_setup_py'
+[1.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.407s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.407s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.440s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/jcarballeira/evloc_ws/install
+[1.466s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/jcarballeira/nimble_ws/install
+[1.487s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 413 installed packages in /opt/ros/humble
+[1.489s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_args' from command line to 'None'
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_target' from command line to 'None'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.598s] Level 5:colcon.colcon_core.verb:set package 'nimble_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.598s] DEBUG:colcon.colcon_core.verb:Building package 'nimble_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces', 'merge_install': False, 'path': '/home/jcarballeira/nimble_ws/src/nimble_interfaces', 'symlink_install': True, 'test_result_base': None}
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_args' from command line to 'None'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_target' from command line to 'None'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_clean_cache' from command line to 'False'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_clean_first' from command line to 'False'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'cmake_force_configure' from command line to 'False'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'ament_cmake_args' from command line to 'None'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'catkin_cmake_args' from command line to 'None'
+[1.614s] Level 5:colcon.colcon_core.verb:set package 'nimble' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.614s] DEBUG:colcon.colcon_core.verb:Building package 'nimble' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jcarballeira/nimble_ws/src/build/nimble', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jcarballeira/nimble_ws/src/install/nimble', 'merge_install': False, 'path': '/home/jcarballeira/nimble_ws/src/nimble', 'symlink_install': True, 'test_result_base': None}
+[1.630s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.647s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.647s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jcarballeira/nimble_ws/src/nimble_interfaces' with build type 'ament_cmake'
+[1.647s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jcarballeira/nimble_ws/src/nimble_interfaces'
+[1.677s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.677s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.677s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.754s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces
+[3.863s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces
+[3.865s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8
+[9.843s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8
+[9.988s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble_interfaces
+[11.388s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(nimble_interfaces)
+[11.389s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble_interfaces
+[11.411s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces' for CMake module files
+[11.412s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces' for CMake config files
+[11.412s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble_interfaces', 'cmake_prefix_path')
+[11.431s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.ps1'
+[11.432s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.dsv'
+[11.433s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.sh'
+[11.434s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib'
+[11.434s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble_interfaces', 'ld_library_path_lib')
+[11.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.ps1'
+[11.454s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.dsv'
+[11.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.sh'
+[11.455s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/bin'
+[11.455s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/pkgconfig/nimble_interfaces.pc'
+[11.455s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/python3.10/site-packages'
+[11.455s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/bin'
+[11.474s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.ps1'
+[11.475s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.dsv'
+[11.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.sh'
+[11.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.bash'
+[11.477s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.zsh'
+[11.477s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/colcon-core/packages/nimble_interfaces)
+[11.619s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(nimble_interfaces)
+[11.637s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces' for CMake module files
+[11.637s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces' for CMake config files
+[11.638s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble_interfaces', 'cmake_prefix_path')
+[11.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.ps1'
+[11.656s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.dsv'
+[11.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/cmake_prefix_path.sh'
+[11.657s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib'
+[11.657s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble_interfaces', 'ld_library_path_lib')
+[11.674s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.ps1'
+[11.674s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.dsv'
+[11.675s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/hook/ld_library_path_lib.sh'
+[11.675s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/bin'
+[11.675s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/pkgconfig/nimble_interfaces.pc'
+[11.675s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/python3.10/site-packages'
+[11.675s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/bin'
+[11.692s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.ps1'
+[11.693s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.dsv'
+[11.693s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.sh'
+[11.693s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.bash'
+[11.694s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.zsh'
+[11.694s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/colcon-core/packages/nimble_interfaces)
+[11.694s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jcarballeira/nimble_ws/src/nimble' with build type 'ament_cmake'
+[11.694s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jcarballeira/nimble_ws/src/nimble'
+[11.714s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.714s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.788s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble
+[13.528s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '0': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/jcarballeira/nimble_ws/src/nimble -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jcarballeira/nimble_ws/src/install/nimble
+[13.529s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[51.004s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '0': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[51.042s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble
+[51.311s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(nimble)
+[51.312s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '0': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jcarballeira/nimble_ws/src/build/nimble
+[51.335s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble' for CMake module files
+[51.335s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble' for CMake config files
+[51.336s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble', 'cmake_prefix_path')
+[51.354s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.ps1'
+[51.355s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.dsv'
+[51.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.sh'
+[51.355s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib'
+[51.355s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/bin'
+[51.356s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib/pkgconfig/nimble.pc'
+[51.356s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib/python3.10/site-packages'
+[51.356s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/bin'
+[51.374s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.ps1'
+[51.375s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.dsv'
+[51.375s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.sh'
+[51.375s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.bash'
+[51.376s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.zsh'
+[51.376s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jcarballeira/nimble_ws/src/install/nimble/share/colcon-core/packages/nimble)
+[51.430s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(nimble)
+[51.449s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble' for CMake module files
+[51.450s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble' for CMake config files
+[51.450s] Level 1:colcon.colcon_core.shell:create_environment_hook('nimble', 'cmake_prefix_path')
+[51.468s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.ps1'
+[51.469s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.dsv'
+[51.469s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/hook/cmake_prefix_path.sh'
+[51.470s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib'
+[51.470s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/bin'
+[51.470s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib/pkgconfig/nimble.pc'
+[51.470s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/lib/python3.10/site-packages'
+[51.470s] Level 1:colcon.colcon_core.environment:checking '/home/jcarballeira/nimble_ws/src/install/nimble/bin'
+[51.489s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.ps1'
+[51.489s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.dsv'
+[51.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.sh'
+[51.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.bash'
+[51.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/jcarballeira/nimble_ws/src/install/nimble/share/nimble/package.zsh'
+[51.491s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jcarballeira/nimble_ws/src/install/nimble/share/colcon-core/packages/nimble)
+[51.491s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[51.491s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[51.491s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[51.491s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[51.517s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[51.517s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[51.517s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[51.528s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[51.547s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jcarballeira/nimble_ws/src/install/local_setup.ps1'
+[51.548s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jcarballeira/nimble_ws/src/install/_local_setup_util_ps1.py'
+[51.550s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jcarballeira/nimble_ws/src/install/setup.ps1'
+[51.570s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jcarballeira/nimble_ws/src/install/local_setup.sh'
+[51.571s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jcarballeira/nimble_ws/src/install/_local_setup_util_sh.py'
+[51.571s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jcarballeira/nimble_ws/src/install/setup.sh'
+[51.591s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jcarballeira/nimble_ws/src/install/local_setup.bash'
+[51.592s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jcarballeira/nimble_ws/src/install/setup.bash'
+[51.611s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jcarballeira/nimble_ws/src/install/local_setup.zsh'
+[51.611s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jcarballeira/nimble_ws/src/install/setup.zsh'

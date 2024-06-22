@@ -1,0 +1,227 @@
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:4[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp: In instantiation of ‘[01m[Kauto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool) [with ParameterT = std::chrono::duration<long int, std::ratio<1, 1000> >; std::string = std::__cxx11::basic_string<char>; rcl_interfaces::msg::ParameterDescriptor = rcl_interfaces::msg::ParameterDescriptor_<std::allocator<void> >][m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:16:26:[m[K   required from here
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:204:15:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::chrono::duration<long int, std::ratio<1, 1000> >&)[m[K’
+  204 |       rclcpp::[01;31m[KParameterValue(default_value)[m[K,
+      |               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:54[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:4[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:121:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >&)[m[K’
+  121 |   explicit [01;36m[KParameterValue[m[K(const std::vector<std::string> & string_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:121:60:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >&[m[K’
+  121 |   explicit ParameterValue([01;36m[Kconst std::vector<std::string> & string_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:118:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<double, std::allocator<double> >&)[m[K’
+  118 |   explicit [01;36m[KParameterValue[m[K(const std::vector<double> & double_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:118:55:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<double, std::allocator<double> >&[m[K’
+  118 |   explicit ParameterValue([01;36m[Kconst std::vector<double> & double_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:115:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<float>&)[m[K’
+  115 |   explicit [01;36m[KParameterValue[m[K(const std::vector<float> & double_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:115:54:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<float>&[m[K’
+  115 |   explicit ParameterValue([01;36m[Kconst std::vector<float> & double_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:112:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<long int, std::allocator<long int> >&)[m[K’
+  112 |   explicit [01;36m[KParameterValue[m[K(const std::vector<int64_t> & int_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:112:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<long int, std::allocator<long int> >&[m[K’
+  112 |   explicit ParameterValue([01;36m[Kconst std::vector<int64_t> & int_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:109:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<int>&)[m[K’
+  109 |   explicit [01;36m[KParameterValue[m[K(const std::vector<int> & int_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:109:52:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<int>&[m[K’
+  109 |   explicit ParameterValue([01;36m[Kconst std::vector<int> & int_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:106:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<bool, std::allocator<bool> >&)[m[K’
+  106 |   explicit [01;36m[KParameterValue[m[K(const std::vector<bool> & bool_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:106:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<bool, std::allocator<bool> >&[m[K’
+  106 |   explicit ParameterValue([01;36m[Kconst std::vector<bool> & bool_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:103:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const std::vector<unsigned char, std::allocator<unsigned char> >&)[m[K’
+  103 |   explicit [01;36m[KParameterValue[m[K(const std::vector<uint8_t> & byte_array_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:103:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst std::vector<unsigned char, std::allocator<unsigned char> >&[m[K’
+  103 |   explicit ParameterValue([01;36m[Kconst std::vector<uint8_t> & byte_array_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:100:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const char*)[m[K’
+  100 |   explicit [01;36m[KParameterValue[m[K(const char * string_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:100:40:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst char*[m[K’
+  100 |   explicit ParameterValue([01;36m[Kconst char * string_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:97:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const string&)[m[K’
+   97 |   explicit [01;36m[KParameterValue[m[K(const std::string & string_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:97:47:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst string&[m[K’ {aka ‘[01m[Kconst std::__cxx11::basic_string<char>&[m[K’}
+   97 |   explicit ParameterValue([01;36m[Kconst std::string & string_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:94:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(double)[m[K’
+   94 |   explicit [01;36m[KParameterValue[m[K(const double double_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:94:40:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kdouble[m[K’
+   94 |   explicit ParameterValue([01;36m[Kconst double double_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:91:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(float)[m[K’
+   91 |   explicit [01;36m[KParameterValue[m[K(const float double_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:91:39:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kfloat[m[K’
+   91 |   explicit ParameterValue([01;36m[Kconst float double_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:88:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(int64_t)[m[K’
+   88 |   explicit [01;36m[KParameterValue[m[K(const int64_t int_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:88:41:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kint64_t[m[K’ {aka ‘[01m[Klong int[m[K’}
+   88 |   explicit ParameterValue([01;36m[Kconst int64_t int_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:85:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(int)[m[K’
+   85 |   explicit [01;36m[KParameterValue[m[K(const int int_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:85:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kint[m[K’
+   85 |   explicit ParameterValue([01;36m[Kconst int int_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:82:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(bool)[m[K’
+   82 |   explicit [01;36m[KParameterValue[m[K(const bool bool_value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:82:38:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kbool[m[K’
+   82 |   explicit ParameterValue([01;36m[Kconst bool bool_value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:79:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const ParameterValue&)[m[K’
+   79 |   explicit [01;36m[KParameterValue[m[K(const rcl_interfaces::msg::ParameterValue & value);
+      |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:79:71:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst ParameterValue&[m[K’ {aka ‘[01m[Kconst rcl_interfaces::msg::ParameterValue_<std::allocator<void> >&[m[K’}
+   79 |   explicit ParameterValue([01;36m[Kconst rcl_interfaces::msg::ParameterValue & value[m[K);
+      |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:76:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue()[m[K’
+   76 |   [01;36m[KParameterValue[m[K();
+      |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:76:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:71:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(const rclcpp::ParameterValue&)[m[K’
+   71 | class [01;36m[KParameterValue[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:71:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Kconst rclcpp::ParameterValue&[m[K’
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:71:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::ParameterValue::ParameterValue(rclcpp::ParameterValue&&)[m[K’
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:71:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >[m[K’ to ‘[01m[Krclcpp::ParameterValue&&[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In constructor ‘[01m[KstateMachine::StatesMachineNode::StatesMachineNode()[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:79:52:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KstateMachine::StatesMachineNode::create_wall_timer(double&, std::_Bind_helper<false, void (stateMachine::StatesMachineNode::*)(), stateMachine::StatesMachineNode*>::type)[m[K’
+   79 |   timer_joint_trajectory_ = [01;31m[Kthis->create_wall_timer(joints_trajectory_ts, std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this))[m[K;
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:4[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DurationRepT, class DurationT, class CallbackT> typename rclcpp::WallTimer<CallbackT>::SharedPtr rclcpp::Node::create_wall_timer(std::chrono::duration<_Rep1, _Period1>, CallbackT, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  238 |   [01;36m[Kcreate_wall_timer[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:79:52:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+   79 |   timer_joint_trajectory_ = [01;36m[Kthis->create_wall_timer(joints_trajectory_ts, std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this))[m[K;
+      |                             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:80:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KstateMachine::StatesMachineNode::create_wall_timer(double&, std::_Bind_helper<false, void (stateMachine::StatesMachineNode::*)(), stateMachine::StatesMachineNode*>::type)[m[K’
+   80 |   timer_joint_target_= [01;31m[Kthis->create_wall_timer(joints_target_ts, std::bind(&StatesMachineNode::call_back_joints_current_target, this))[m[K;
+      |                        [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:4[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DurationRepT, class DurationT, class CallbackT> typename rclcpp::WallTimer<CallbackT>::SharedPtr rclcpp::Node::create_wall_timer(std::chrono::duration<_Rep1, _Period1>, CallbackT, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  238 |   [01;36m[Kcreate_wall_timer[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:238:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:80:47:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+   80 |   timer_joint_target_= [01;36m[Kthis->create_wall_timer(joints_target_ts, std::bind(&StatesMachineNode::call_back_joints_current_target, this))[m[K;
+      |                        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:190:52:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Knimble_interfaces::msg::JointsTrajectory[m[K’ {aka ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >[m[K’} and ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’})
+  190 |     shared_data_.joints_trajectory = result.get()->[01;31m[Kjoints_trajectory[m[K;
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/joints_trajectory.hpp:7[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:15[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(const nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&)[m[K’
+   40 | struct [01;36m[KJointsTrajectory_[m[K
+      |        [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Kconst nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&)[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:196:117:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+  196 |     float ps=shared_data_.therapy_requirements.speed*joints_target_ts/shared_data_.therapy_requirements.step_length/[01;31m[K;[m[K
+      |                                                                                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:201:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct std_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+  201 |         phase.[01;31m[Kpush_back[m[K(i);
+      |               [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:203:38:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  203 |         traj.points.push_back(target)
+      |                                      [01;31m[K^[m[K
+      |                                      [32m[K;[m[K
+  204 |     [32m[K}[m[K
+      |     [32m[K~[m[K                                 
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:209:42:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  209 | float StatesMachineNode::get_step_percent[01;31m[K([m[K) {
+      |                                          [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:238:85:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  238 | trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_state[01;31m[K([m[Kfloat step_percent) {
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:278:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  278 | void StatesMachineNode::call_back_joints_state[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:283:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  283 | void StatesMachineNode::call_back_cartesian_trajectory[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory_msg) {
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:287:50:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  287 | void StatesMachineNode::call_back_cartesian_state[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_state_msg) {
+      |                                                  [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:292:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  292 | void StatesMachineNode::call_back_state_cables[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_cables_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:297:46:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  297 | void StatesMachineNode::call_back_step_target[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements& step_target_msg) {
+      |                                              [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:302:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  302 | void StatesMachineNode::call_back_therapy_requirements[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements&therapy_requirements_msg) {
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:307:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  307 | void StatesMachineNode::call_back_measurements[01;31m[K([m[Kconst nimble_interfaces::msg::Measurements& measurements_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:312:53:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  312 | void StatesMachineNode::call_back_interaction_torque[01;31m[K([m[Kconst std_msgs::msg::Float32MultiArray& interaction_torque_msg) {
+      |                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:317:38:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  317 | void StatesMachineNode::call_back_FSR[01;31m[K([m[Kconst std_msgs::msg::ByteMultiArray& FSR_msg) {
+      |                                      [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:322:56:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  322 | void StatesMachineNode::call_back_joints_current_target[01;31m[K([m[K) {
+      |                                                        [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:337:58:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  337 | void StatesMachineNode::call_back_joints_trajectory_timer[01;31m[K([m[K) {
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:348:36:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  348 | void StatesMachineNode::processData[01;31m[K([m[K) {
+      |                                    [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K At global scope:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:377:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  377 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:12:24:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   12 | namespace stateMachine [01;36m[K{[m[K
+      |                        [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

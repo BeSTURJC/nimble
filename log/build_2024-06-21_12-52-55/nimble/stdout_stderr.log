@@ -1,0 +1,17 @@
+[35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[ 31%] Built target cables_robot
+[ 43%] Built target kinematic_model
+[ 31%] Built target control_ZMP
+[ 56%] Built target control_MSD
+[ 62%] Built target gamming
+[ 75%] Built target traj_generator_server
+[ 87%] Built target frame
+[ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:169:27:[m[K [01;31m[Kerror: [m[K‘[01m[KJointsTrajectory[m[K’ is not a member of ‘[01m[Ktrajectory_msgs::msg[m[K’; did you mean ‘[01m[KJointTrajectory[m[K’?
+  169 |     trajectory_msgs::msg::[01;31m[KJointsTrajectory[m[K serv_response=result.get()->joints_trajectory;
+      |                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                           [32m[KJointTrajectory[m[K
+gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

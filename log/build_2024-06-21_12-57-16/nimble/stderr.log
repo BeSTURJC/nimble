@@ -1,0 +1,11 @@
+In file included from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krajectory_msgs[m[K’ does not name a type
+   25 |     [01;31m[Krajectory_msgs[m[K::msg::JointTrajectory serv_response;
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:169:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct stateMachine::SharedData[m[K’ has no member named ‘[01m[Kserv_response[m[K’
+  169 |     shared_data_.[01;31m[Kserv_response[m[K=result.get()->joints_trajectory;
+      |                  [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

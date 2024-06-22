@@ -1,0 +1,16 @@
+msg/CartesianFullTrajectory.idl
+msg/CartesianFullTrajectory.msg
+msg/CartesianTrajectory.idl
+msg/CartesianTrajectory.msg
+msg/FrameState.idl
+msg/FrameState.msg
+msg/JointsTrajectory.idl
+msg/JointsTrajectory.msg
+msg/Measurements.idl
+msg/Measurements.msg
+msg/TherapyRequirements.idl
+msg/TherapyRequirements.msg
+srv/TrajGeneratorService.idl
+srv/TrajGeneratorService.srv
+srv/TrajGeneratorService_Request.msg
+srv/TrajGeneratorService_Response.msg

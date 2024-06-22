@@ -1,0 +1,122 @@
+[0.090s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8
+[0.113s] -- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.252s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.259s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.261s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.263s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.295s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.319s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.438s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.517s] -- Found trajectory_msgs: 4.2.3 (/opt/ros/humble/share/trajectory_msgs/cmake)
+[0.908s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.159s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.485s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.507s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.531s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.531s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.531s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.578s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.587s] -- Added test 'lint_cmake' to check CMake code style
+[1.588s] -- Added test 'xmllint' to check XML markup files
+[1.590s] -- Configuring done
+[1.631s] -- Generating done
+[1.634s] -- Build files have been written to: /home/jcarballeira/nimble_ws/src/build/nimble_interfaces
+[1.658s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.668s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.674s] [  2%] Built target ament_cmake_python_symlink_nimble_interfaces
+[1.972s] running egg_info
+[1.972s] writing nimble_interfaces.egg-info/PKG-INFO
+[1.973s] writing dependency_links to nimble_interfaces.egg-info/dependency_links.txt
+[1.973s] writing top-level names to nimble_interfaces.egg-info/top_level.txt
+[1.975s] reading manifest file 'nimble_interfaces.egg-info/SOURCES.txt'
+[1.976s] writing manifest file 'nimble_interfaces.egg-info/SOURCES.txt'
+[2.003s] [  2%] Built target ament_cmake_python_build_nimble_interfaces_egg
+[2.377s] [  2%] Built target nimble_interfaces__cpp
+[2.387s] [  6%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.387s] [  6%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.388s] [  6%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.388s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_generator_c[0m
+[2.405s] [  8%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/therapy_requirements__functions.c.o[0m
+[2.405s] [ 10%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c.o[0m
+[2.405s] [ 10%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/joints_trajectory__functions.c.o[0m
+[2.405s] [ 11%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.c.o[0m
+[2.407s] [ 12%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/frame_state__functions.c.o[0m
+[2.484s] [ 15%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.o[0m
+[2.484s] [ 15%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.c.o[0m
+[2.548s] [ 16%] [32m[1mLinking C shared library libnimble_interfaces__rosidl_generator_c.so[0m
+[2.586s] [ 16%] Built target nimble_interfaces__rosidl_generator_c
+[2.596s] [ 17%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.600s] [ 18%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.601s] [ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.997s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_cpp[0m
+[3.010s] [ 21%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/frame_state__type_support.cpp.o[0m
+[3.011s] [ 22%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/therapy_requirements__type_support.cpp.o[0m
+[3.013s] [ 24%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp.o[0m
+[3.364s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_introspection_cpp[0m
+[3.374s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[3.398s] [ 25%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/measurements__type_support.cpp.o[0m
+[3.405s] [ 26%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/measurements__type_support.cpp.o[0m
+[3.474s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_c[0m
+[3.490s] [ 27%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/measurements__type_support.cpp.o[0m
+[3.497s] [ 29%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/therapy_requirements__type_support.cpp.o[0m
+[3.500s] [ 30%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o[0m
+[3.519s] [ 31%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o[0m
+[3.551s] [ 32%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/frame_state__type_support.cpp.o[0m
+[3.558s] [ 34%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o[0m
+[3.606s] [ 35%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o[0m
+[3.628s] [ 36%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o[0m
+[3.673s] [ 37%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o[0m
+[3.686s] [ 39%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o[0m
+[3.712s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_introspection_c[0m
+[3.727s] [ 40%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_c.so[0m
+[3.734s] [ 41%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/measurements__type_support.c.o[0m
+[3.794s] [ 43%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__type_support.c.o[0m
+[3.812s] [ 43%] Built target nimble_interfaces__rosidl_typesupport_c
+[3.848s] [ 44%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/frame_state__type_support.c.o[0m
+[3.878s] [ 45%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/joints_trajectory__type_support.c.o[0m
+[3.878s] [35m[1mConsolidate compiler generated dependencies of target nimble_interfaces__rosidl_typesupport_fastrtps_c[0m
+[3.904s] [ 46%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o[0m
+[3.943s] [ 48%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.c.o[0m
+[3.958s] [ 49%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/therapy_requirements__type_support_c.cpp.o[0m
+[3.995s] [ 50%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o[0m
+[4.007s] [ 51%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/frame_state__type_support_c.cpp.o[0m
+[4.012s] [ 53%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.c.o[0m
+[4.103s] [ 54%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/therapy_requirements__type_support.cpp.o[0m
+[4.111s] [ 55%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/therapy_requirements__type_support.cpp.o[0m
+[4.125s] [ 56%] [32mBuilding C object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.c.o[0m
+[4.189s] [ 58%] [32m[1mLinking C shared library libnimble_interfaces__rosidl_typesupport_introspection_c.so[0m
+[4.194s] [ 59%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/frame_state__type_support.cpp.o[0m
+[4.245s] [ 59%] Built target nimble_interfaces__rosidl_typesupport_introspection_c
+[4.260s] [ 60%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/joints_trajectory__type_support.cpp.o[0m
+[4.473s] [ 62%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_cpp.so[0m
+[4.514s] [ 63%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/joints_trajectory__type_support_c.cpp.o[0m
+[4.573s] [ 63%] Built target nimble_interfaces__rosidl_typesupport_cpp
+[4.587s] [ 64%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support_c.cpp.o[0m
+[4.610s] [ 65%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support_c.cpp.o[0m
+[4.629s] [ 67%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.o[0m
+[4.815s] [ 68%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/cartesian_trajectory__type_support.cpp.o[0m
+[4.864s] [ 69%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o[0m
+[4.895s] [ 70%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/msg/detail/dds_fastrtps/cartesian_full_trajectory__type_support.cpp.o[0m
+[5.001s] [ 72%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/srv/detail/dds_fastrtps/traj_generator_service__type_support.cpp.o[0m
+[5.182s] [ 74%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/joints_trajectory__type_support.cpp.o[0m
+[5.184s] [ 74%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.cpp.o[0m
+[5.257s] [ 75%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.cpp.o[0m
+[5.276s] [ 77%] [32m[1mLinking CXX shared library libnimble_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[5.486s] [ 77%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c
+[5.503s] [ 78%] [32mBuilding CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/srv/detail/traj_generator_service__type_support.cpp.o[0m
+[5.628s] gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make:282: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/srv/detail/dds_fastrtps/traj_generator_service__type_support.cpp.o] Interrupt
+[5.630s] gmake[2]: *** Deleting file 'CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o'
+[5.630s] gmake[2]: *** wait: No child processes.  Stop.
+[5.630s] gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:240: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/joints_trajectory__type_support.cpp.o] Interrupt
+[5.631s] gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:226: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o] Interrupt
+[5.631s] gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:268: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.cpp.o] Interrupt
+[5.631s] gmake[2]: *** Waiting for unfinished jobs....
+[5.631s] gmake[2]: *** wait: No child processes.  Stop.
+[5.631s] gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:282: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/srv/detail/traj_generator_service__type_support.cpp.o] Interrupt
+[5.631s] gmake[2]: *** wait: No child processes.  Stop.
+[5.631s] gmake[2]: *** Waiting for unfinished jobs....
+[5.631s] gmake[2]: *** wait: No child processes.  Stop.
+[5.631s] gmake[1]: *** [CMakeFiles/Makefile2:343: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all] Error 2
+[5.631s] gmake[1]: *** [CMakeFiles/Makefile2:369: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/all] Error 2
+[5.631s] gmake: *** [Makefile:146: all] Interrupt
+[5.635s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble_interfaces -- -j8 -l8

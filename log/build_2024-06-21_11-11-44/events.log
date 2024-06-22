@@ -1,0 +1,405 @@
+[0.000000] (-) TimerEvent: {}
+[0.000176] (nimble_interfaces) JobQueued: {'identifier': 'nimble_interfaces', 'dependencies': OrderedDict()}
+[0.000262] (nimble) JobQueued: {'identifier': 'nimble', 'dependencies': OrderedDict([('nimble_interfaces', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces')])}
+[0.000308] (nimble_interfaces) JobStarted: {'identifier': 'nimble_interfaces'}
+[0.091633] (nimble_interfaces) JobProgress: {'identifier': 'nimble_interfaces', 'progress': 'cmake'}
+[0.093030] (nimble_interfaces) JobProgress: {'identifier': 'nimble_interfaces', 'progress': 'build'}
+[0.093157] (nimble_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jcarballeira'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jcarballeira'), ('OLDPWD', '/home/jcarballeira'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1488'), ('SYSTEMD_EXEC_PID', '1893'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '152600'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jcarballeira/evloc_ws/install:/home/jcarballeira/nimble_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jcarballeira'), ('JOURNAL_STREAM', '8:28594'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jcarballeira'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jcarballeira/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jcarballeira/.local/bin'), ('SESSION_MANAGER', 'local/jcl-urjc-ubuntu:@/tmp/.ICE-unix/1686,unix/jcl-urjc-ubuntu:/tmp/.ICE-unix/1686'), ('INVOCATION_ID', '692b3ab55c8344d88df1870141a2bac3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.19HRP2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:d2be3f56-81f8-45e8-a0b7-616e11f4e420'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/local/lib/python3.10/dist-packages:/home/jcarballeira/evloc_ws/install/evloc/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble')]), 'shell': False}
+[0.099180] (-) TimerEvent: {}
+[0.145748] (nimble_interfaces) StdoutLine: {'line': b'[  1%] Built target nimble_interfaces__cpp\n'}
+[0.147960] (nimble_interfaces) StdoutLine: {'line': b'[ 12%] Built target nimble_interfaces__rosidl_generator_c\n'}
+[0.157522] (nimble_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_symlink_nimble_interfaces\n'}
+[0.177127] (nimble_interfaces) StdoutLine: {'line': b'[ 35%] Built target nimble_interfaces__rosidl_typesupport_cpp\n'}
+[0.177371] (nimble_interfaces) StdoutLine: {'line': b'[ 35%] Built target nimble_interfaces__rosidl_typesupport_c\n'}
+[0.179118] (nimble_interfaces) StdoutLine: {'line': b'[ 46%] Built target nimble_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.179395] (nimble_interfaces) StdoutLine: {'line': b'[ 58%] Built target nimble_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.180857] (nimble_interfaces) StdoutLine: {'line': b'[ 69%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.181555] (nimble_interfaces) StdoutLine: {'line': b'[ 81%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.199306] (-) TimerEvent: {}
+[0.200241] (nimble_interfaces) StdoutLine: {'line': b'[ 81%] Built target nimble_interfaces\n'}
+[0.219701] (nimble_interfaces) StdoutLine: {'line': b'[ 82%] Built target nimble_interfaces__py\n'}
+[0.244308] (nimble_interfaces) StdoutLine: {'line': b'[ 92%] Built target nimble_interfaces__rosidl_generator_py\n'}
+[0.265269] (nimble_interfaces) StdoutLine: {'line': b'[100%] Built target nimble_interfaces__rosidl_typesupport_c__pyext\n'}
+[0.265539] (nimble_interfaces) StdoutLine: {'line': b'[100%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.265679] (nimble_interfaces) StdoutLine: {'line': b'[100%] Built target nimble_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[0.299403] (-) TimerEvent: {}
+[0.399717] (-) TimerEvent: {}
+[0.452972] (nimble_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[0.453551] (nimble_interfaces) StdoutLine: {'line': b'writing nimble_interfaces.egg-info/PKG-INFO\n'}
+[0.453780] (nimble_interfaces) StdoutLine: {'line': b'writing dependency_links to nimble_interfaces.egg-info/dependency_links.txt\n'}
+[0.453956] (nimble_interfaces) StdoutLine: {'line': b'writing top-level names to nimble_interfaces.egg-info/top_level.txt\n'}
+[0.456163] (nimble_interfaces) StdoutLine: {'line': b"reading manifest file 'nimble_interfaces.egg-info/SOURCES.txt'\n"}
+[0.456972] (nimble_interfaces) StdoutLine: {'line': b"writing manifest file 'nimble_interfaces.egg-info/SOURCES.txt'\n"}
+[0.481621] (nimble_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_nimble_interfaces_egg\n'}
+[0.493137] (nimble_interfaces) CommandEnded: {'returncode': 0}
+[0.499823] (-) TimerEvent: {}
+[0.600091] (-) TimerEvent: {}
+[0.630274] (nimble_interfaces) JobProgress: {'identifier': 'nimble_interfaces', 'progress': 'install'}
+[0.639222] (nimble_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces'], 'cwd': '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jcarballeira'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jcarballeira'), ('OLDPWD', '/home/jcarballeira'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1488'), ('SYSTEMD_EXEC_PID', '1893'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '152600'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jcarballeira/evloc_ws/install:/home/jcarballeira/nimble_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jcarballeira'), ('JOURNAL_STREAM', '8:28594'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jcarballeira'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jcarballeira/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jcarballeira/.local/bin'), ('SESSION_MANAGER', 'local/jcl-urjc-ubuntu:@/tmp/.ICE-unix/1686,unix/jcl-urjc-ubuntu:/tmp/.ICE-unix/1686'), ('INVOCATION_ID', '692b3ab55c8344d88df1870141a2bac3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.19HRP2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:d2be3f56-81f8-45e8-a0b7-616e11f4e420'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/local/lib/python3.10/dist-packages:/home/jcarballeira/evloc_ws/install/evloc/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble')]), 'shell': False}
+[0.646748] (nimble_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.647409] (nimble_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.647737] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/rosidl_interfaces/nimble_interfaces\n'}
+[0.648689] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_full_trajectory.h\n'}
+[0.648923] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_trajectory.h\n'}
+[0.649190] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.h\n'}
+[0.649306] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.h\n'}
+[0.649378] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.h\n'}
+[0.649472] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__functions.h\n'}
+[0.649690] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__struct.h\n'}
+[0.649875] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.h\n'}
+[0.649994] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__functions.h\n'}
+[0.650135] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__struct.h\n'}
+[0.650397] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__type_support.h\n'}
+[0.650559] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__functions.h\n'}
+[0.650726] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__struct.h\n'}
+[0.650972] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__type_support.h\n'}
+[0.651093] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__functions.h\n'}
+[0.651275] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__struct.h\n'}
+[0.651476] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__type_support.h\n'}
+[0.651640] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__functions.h\n'}
+[0.651778] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__struct.h\n'}
+[0.651872] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__type_support.h\n'}
+[0.652084] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/frame_state.h\n'}
+[0.652225] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/joints_trajectory.h\n'}
+[0.652358] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/measurements.h\n'}
+[0.652521] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.652720] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/therapy_requirements.h\n'}
+[0.652896] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__functions.h\n'}
+[0.653034] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__struct.h\n'}
+[0.653211] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__type_support.h\n'}
+[0.653381] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/traj_generator_service.h\n'}
+[0.653638] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/library_path.sh\n'}
+[0.653868] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/library_path.dsv\n'}
+[0.654797] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[0.654974] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655153] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655326] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655498] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655669] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655889] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.656058] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_fastrtps_c.h\n'}
+[0.656678] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_introspection_c.h\n'}
+[0.656859] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_introspection_c.h\n'}
+[0.657032] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_introspection_c.h\n'}
+[0.657207] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_introspection_c.h\n'}
+[0.657380] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_introspection_c.h\n'}
+[0.657532] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_introspection_c.h\n'}
+[0.657664] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.657835] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_introspection_c.h\n'}
+[0.658741] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_full_trajectory.hpp\n'}
+[0.658921] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/cartesian_trajectory.hpp\n'}
+[0.659078] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp\n'}
+[0.659251] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp\n'}
+[0.659423] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp\n'}
+[0.659593] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp\n'}
+[0.659781] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp\n'}
+[0.659910] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp\n'}
+[0.660078] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__builder.hpp\n'}
+[0.660246] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__struct.hpp\n'}
+[0.660416] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__traits.hpp\n'}
+[0.660617] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__builder.hpp\n'}
+[0.660787] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp\n'}
+[0.660953] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__traits.hpp\n'}
+[0.661090] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__builder.hpp\n'}
+[0.661258] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__struct.hpp\n'}
+[0.661425] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__traits.hpp\n'}
+[0.661593] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__builder.hpp\n'}
+[0.661761] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__struct.hpp\n'}
+[0.661928] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__traits.hpp\n'}
+[0.662091] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/frame_state.hpp\n'}
+[0.662258] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/joints_trajectory.hpp\n'}
+[0.662426] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/measurements.hpp\n'}
+[0.662591] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/therapy_requirements.hpp\n'}
+[0.662763] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__builder.hpp\n'}
+[0.662934] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__struct.hpp\n'}
+[0.663104] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__traits.hpp\n'}
+[0.663271] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/traj_generator_service.hpp\n'}
+[0.664243] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.664427] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.664607] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.664784] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.664956] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.665126] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.665314] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.665545] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.666154] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_full_trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.666818] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/cartesian_trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667002] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/frame_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667174] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/joints_trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667354] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667528] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667697] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/include/nimble_interfaces/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.667944] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/pythonpath.sh\n'}
+[0.668176] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/pythonpath.dsv\n'}
+[0.668582] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[0.668753] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[0.668972] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[0.669122] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[0.670246] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/__init__.py\n'}
+[0.670449] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[0.670623] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.670787] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.670952] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/libnimble_interfaces__rosidl_generator_py.so\n'}
+[0.671070] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/__init__.py\n'}
+[0.671239] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_full_trajectory.py\n'}
+[0.671410] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_full_trajectory_s.c\n'}
+[0.671641] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_trajectory.py\n'}
+[0.671748] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_cartesian_trajectory_s.c\n'}
+[0.671927] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_frame_state.py\n'}
+[0.672091] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_frame_state_s.c\n'}
+[0.672265] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_joints_trajectory.py\n'}
+[0.672429] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_joints_trajectory_s.c\n'}
+[0.672594] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_measurements.py\n'}
+[0.672755] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_measurements_s.c\n'}
+[0.672919] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_therapy_requirements.py\n'}
+[0.673082] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg/_therapy_requirements_s.c\n'}
+[0.673243] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.673402] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.673562] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.673726] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/__init__.py\n'}
+[0.673891] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/_traj_generator_service.py\n'}
+[0.674056] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv/_traj_generator_service_s.c\n'}
+[0.674432] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.674787] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.675150] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/nimble_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.675394] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/Measurements.idl\n'}
+[0.675634] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/TherapyRequirements.idl\n'}
+[0.675863] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/FrameState.idl\n'}
+[0.676093] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/JointsTrajectory.idl\n'}
+[0.676322] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianTrajectory.idl\n'}
+[0.676550] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianFullTrajectory.idl\n'}
+[0.676781] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService.idl\n'}
+[0.677008] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/Measurements.msg\n'}
+[0.677218] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/TherapyRequirements.msg\n'}
+[0.677426] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/FrameState.msg\n'}
+[0.677636] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/JointsTrajectory.msg\n'}
+[0.677842] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianTrajectory.msg\n'}
+[0.678053] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/msg/CartesianFullTrajectory.msg\n'}
+[0.678269] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService.srv\n'}
+[0.678488] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService_Request.msg\n'}
+[0.678701] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/srv/TrajGeneratorService_Response.msg\n'}
+[0.678943] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/package_run_dependencies/nimble_interfaces\n'}
+[0.679179] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/parent_prefix_path/nimble_interfaces\n'}
+[0.679402] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/ament_prefix_path.sh\n'}
+[0.679618] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/ament_prefix_path.dsv\n'}
+[0.679880] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/path.sh\n'}
+[0.680102] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/environment/path.dsv\n'}
+[0.680313] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.bash\n'}
+[0.680523] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.sh\n'}
+[0.680733] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.zsh\n'}
+[0.680939] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/local_setup.dsv\n'}
+[0.681095] (nimble_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.dsv\n'}
+[0.689116] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/ament_index/resource_index/packages/nimble_interfaces\n'}
+[0.689354] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[0.689552] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.689759] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.689938] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.690095] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.690335] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.690473] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.690610] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfacesConfig.cmake\n'}
+[0.690703] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfacesConfig-version.cmake\n'}
+[0.690829] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/package.xml\n'}
+[0.690981] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_c.so\n'}
+[0.691202] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[0.691416] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[0.691639] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_c.so\n'}
+[0.691804] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.692015] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[0.692214] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_typesupport_cpp.so\n'}
+[0.700180] (-) TimerEvent: {}
+[0.720842] (nimble_interfaces) StdoutLine: {'line': b"Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces'...\n"}
+[0.721062] (nimble_interfaces) StdoutLine: {'line': b"Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/msg'...\n"}
+[0.721165] (nimble_interfaces) StdoutLine: {'line': b"Listing '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages/nimble_interfaces/srv'...\n"}
+[0.724899] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib/libnimble_interfaces__rosidl_generator_py.so\n'}
+[0.725118] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cExport.cmake\n'}
+[0.725362] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.725496] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.725631] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.725781] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.725908] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.726009] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[0.726111] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.726230] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_cppExport.cmake\n'}
+[0.726332] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.726431] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.726528] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.726626] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.726724] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[0.726822] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/nimble_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.726934] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_pyExport.cmake\n'}
+[0.727035] (nimble_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jcarballeira/nimble_ws/src/install/nimble_interfaces/share/nimble_interfaces/cmake/export_nimble_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.728984] (nimble_interfaces) CommandEnded: {'returncode': 0}
+[0.800534] (-) TimerEvent: {}
+[0.900999] (-) TimerEvent: {}
+[1.001279] (-) TimerEvent: {}
+[1.032138] (nimble_interfaces) JobEnded: {'identifier': 'nimble_interfaces', 'rc': 0}
+[1.033012] (nimble) JobStarted: {'identifier': 'nimble'}
+[1.101677] (-) TimerEvent: {}
+[1.136879] (nimble) JobProgress: {'identifier': 'nimble', 'progress': 'cmake'}
+[1.138759] (nimble) JobProgress: {'identifier': 'nimble', 'progress': 'build'}
+[1.138861] (nimble) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jcarballeira/nimble_ws/src/build/nimble', '--', '-j8', '-l8'], 'cwd': '/home/jcarballeira/nimble_ws/src/build/nimble', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jcarballeira'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:/home/jcarballeira/nimble_ws/install/nimble_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jcarballeira'), ('OLDPWD', '/home/jcarballeira'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1488'), ('SYSTEMD_EXEC_PID', '1893'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '152600'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jcarballeira/evloc_ws/install:/home/jcarballeira/nimble_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jcarballeira'), ('JOURNAL_STREAM', '8:28594'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jcarballeira'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jcarballeira/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jcarballeira/.local/bin'), ('SESSION_MANAGER', 'local/jcl-urjc-ubuntu:@/tmp/.ICE-unix/1686,unix/jcl-urjc-ubuntu:/tmp/.ICE-unix/1686'), ('INVOCATION_ID', '692b3ab55c8344d88df1870141a2bac3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.19HRP2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:d2be3f56-81f8-45e8-a0b7-616e11f4e420'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jcarballeira/nimble_ws/src/build/nimble'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:/home/jcarballeira/nimble_ws/install/nimble_interfaces/local/lib/python3.10/dist-packages:/home/jcarballeira/evloc_ws/install/evloc/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble')]), 'shell': False}
+[1.183839] (nimble) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target states_machine\x1b[0m\n'}
+[1.201454] (nimble) StdoutLine: {'line': b'[ 25%] Built target control_ZMP\n'}
+[1.201728] (-) TimerEvent: {}
+[1.202071] (nimble) StdoutLine: {'line': b'[ 43%] Built target cables_robot\n'}
+[1.202328] (nimble) StdoutLine: {'line': b'[ 50%] Built target control_MSD\n'}
+[1.202593] (nimble) StdoutLine: {'line': b'[ 50%] Built target frame\n'}
+[1.204638] (nimble) StdoutLine: {'line': b'[ 75%] Built target traj_generator_server\n'}
+[1.204887] (nimble) StdoutLine: {'line': b'[ 75%] Built target kinematic_model\n'}
+[1.206063] (nimble) StdoutLine: {'line': b'[ 87%] Built target gamming\n'}
+[1.211365] (nimble) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o\x1b[0m\n'}
+[1.301867] (-) TimerEvent: {}
+[1.402162] (-) TimerEvent: {}
+[1.502413] (-) TimerEvent: {}
+[1.602691] (-) TimerEvent: {}
+[1.702981] (-) TimerEvent: {}
+[1.803261] (-) TimerEvent: {}
+[1.903542] (-) TimerEvent: {}
+[2.003835] (-) TimerEvent: {}
+[2.104128] (-) TimerEvent: {}
+[2.204418] (-) TimerEvent: {}
+[2.304700] (-) TimerEvent: {}
+[2.404999] (-) TimerEvent: {}
+[2.505283] (-) TimerEvent: {}
+[2.605568] (-) TimerEvent: {}
+[2.705868] (-) TimerEvent: {}
+[2.806167] (-) TimerEvent: {}
+[2.906444] (-) TimerEvent: {}
+[3.006741] (-) TimerEvent: {}
+[3.107076] (-) TimerEvent: {}
+[3.207385] (-) TimerEvent: {}
+[3.307702] (-) TimerEvent: {}
+[3.407988] (-) TimerEvent: {}
+[3.508291] (-) TimerEvent: {}
+[3.608592] (-) TimerEvent: {}
+[3.708885] (-) TimerEvent: {}
+[3.809146] (-) TimerEvent: {}
+[3.909446] (-) TimerEvent: {}
+[3.948986] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.949177] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99} is not a template\n'}
+[3.949255] (nimble) StderrLine: {'line': b'  333 |     curr_target_message.phase = \x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::Float32MultiArray<float>(percent);\n'}
+[3.949324] (nimble) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[3.949388] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:80:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(float&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.949454] (nimble) StderrLine: {'line': b'  333 |     curr_target_message.phase = std_msgs::msg::Float32MultiArray<float>(percent\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.949516] (nimble) StderrLine: {'line': b'      |                                                                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.949581] (nimble) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:7\x1b[m\x1b[K,\n'}
+[3.949683] (nimble) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:8\x1b[m\x1b[K,\n'}
+[3.949748] (nimble) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8\x1b[m\x1b[K:\n'}
+[3.949821] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:46:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<ContainerAllocator>::Float32MultiArray_(const ContainerAllocator&, rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.949889] (nimble) StderrLine: {'line': b'   46 |   explicit \x1b[01;36m\x1b[KFloat32MultiArray_\x1b[m\x1b[K(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)\n'}
+[3.949954] (nimble) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.950016] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:46:58:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std::allocator<void>&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.950081] (nimble) StderrLine: {'line': b'   46 |   explicit Float32MultiArray_(\x1b[01;36m\x1b[Kconst ContainerAllocator & _alloc\x1b[m\x1b[K, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)\n'}
+[3.950145] (nimble) StderrLine: {'line': b'      |                               \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[3.950221] (nimble) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:7\x1b[m\x1b[K,\n'}
+[3.950284] (nimble) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:8\x1b[m\x1b[K,\n'}
+[3.950354] (nimble) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8\x1b[m\x1b[K:\n'}
+[3.950418] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:40:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<ContainerAllocator>::Float32MultiArray_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.950483] (nimble) StderrLine: {'line': b'   40 |   explicit \x1b[01;36m\x1b[KFloat32MultiArray_\x1b[m\x1b[K(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)\n'}
+[3.950546] (nimble) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.950607] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:40:73:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krosidl_runtime_cpp::MessageInitialization\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.950674] (nimble) StderrLine: {'line': b'   40 |   explicit Float32MultiArray_(\x1b[01;36m\x1b[Krosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL\x1b[m\x1b[K)\n'}
+[3.950744] (nimble) StderrLine: {'line': b'      |                               \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.950806] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(const std_msgs::msg::Float32MultiArray_<std::allocator<void> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.950887] (nimble) StderrLine: {'line': b'   36 | struct \x1b[01;36m\x1b[KFloat32MultiArray_\x1b[m\x1b[K\n'}
+[3.950969] (nimble) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.951035] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Float32MultiArray_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.951145] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(std_msgs::msg::Float32MultiArray_<std::allocator<void> >&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.951254] (nimble) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.009584] (-) TimerEvent: {}
+[4.109845] (-) TimerEvent: {}
+[4.210145] (-) TimerEvent: {}
+[4.310439] (-) TimerEvent: {}
+[4.410826] (-) TimerEvent: {}
+[4.511164] (-) TimerEvent: {}
+[4.611659] (-) TimerEvent: {}
+[4.712333] (-) TimerEvent: {}
+[4.812652] (-) TimerEvent: {}
+[4.912967] (-) TimerEvent: {}
+[5.013226] (-) TimerEvent: {}
+[5.113541] (-) TimerEvent: {}
+[5.213879] (-) TimerEvent: {}
+[5.314218] (-) TimerEvent: {}
+[5.414651] (-) TimerEvent: {}
+[5.515006] (-) TimerEvent: {}
+[5.615355] (-) TimerEvent: {}
+[5.715648] (-) TimerEvent: {}
+[5.815951] (-) TimerEvent: {}
+[5.916232] (-) TimerEvent: {}
+[6.016511] (-) TimerEvent: {}
+[6.116807] (-) TimerEvent: {}
+[6.217100] (-) TimerEvent: {}
+[6.317388] (-) TimerEvent: {}
+[6.417684] (-) TimerEvent: {}
+[6.517988] (-) TimerEvent: {}
+[6.618286] (-) TimerEvent: {}
+[6.718577] (-) TimerEvent: {}
+[6.818879] (-) TimerEvent: {}
+[6.919228] (-) TimerEvent: {}
+[7.019500] (-) TimerEvent: {}
+[7.119832] (-) TimerEvent: {}
+[7.220128] (-) TimerEvent: {}
+[7.320398] (-) TimerEvent: {}
+[7.420697] (-) TimerEvent: {}
+[7.521001] (-) TimerEvent: {}
+[7.621284] (-) TimerEvent: {}
+[7.721586] (-) TimerEvent: {}
+[7.821846] (-) TimerEvent: {}
+[7.922199] (-) TimerEvent: {}
+[8.022491] (-) TimerEvent: {}
+[8.122802] (-) TimerEvent: {}
+[8.223093] (-) TimerEvent: {}
+[8.323411] (-) TimerEvent: {}
+[8.423742] (-) TimerEvent: {}
+[8.524077] (-) TimerEvent: {}
+[8.624401] (-) TimerEvent: {}
+[8.724733] (-) TimerEvent: {}
+[8.825082] (-) TimerEvent: {}
+[8.925463] (-) TimerEvent: {}
+[9.025899] (-) TimerEvent: {}
+[9.126386] (-) TimerEvent: {}
+[9.226835] (-) TimerEvent: {}
+[9.327182] (-) TimerEvent: {}
+[9.427561] (-) TimerEvent: {}
+[9.527916] (-) TimerEvent: {}
+[9.628276] (-) TimerEvent: {}
+[9.728584] (-) TimerEvent: {}
+[9.828895] (-) TimerEvent: {}
+[9.929225] (-) TimerEvent: {}
+[10.029569] (-) TimerEvent: {}
+[10.129863] (-) TimerEvent: {}
+[10.230167] (-) TimerEvent: {}
+[10.330482] (-) TimerEvent: {}
+[10.430780] (-) TimerEvent: {}
+[10.531066] (-) TimerEvent: {}
+[10.631370] (-) TimerEvent: {}
+[10.731690] (-) TimerEvent: {}
+[10.831996] (-) TimerEvent: {}
+[10.932287] (-) TimerEvent: {}
+[11.032569] (-) TimerEvent: {}
+[11.132906] (-) TimerEvent: {}
+[11.233196] (-) TimerEvent: {}
+[11.333454] (-) TimerEvent: {}
+[11.433756] (-) TimerEvent: {}
+[11.534045] (-) TimerEvent: {}
+[11.634272] (-) TimerEvent: {}
+[11.734562] (-) TimerEvent: {}
+[11.834823] (-) TimerEvent: {}
+[11.935129] (-) TimerEvent: {}
+[12.035412] (-) TimerEvent: {}
+[12.135717] (-) TimerEvent: {}
+[12.236007] (-) TimerEvent: {}
+[12.336284] (-) TimerEvent: {}
+[12.436588] (-) TimerEvent: {}
+[12.536885] (-) TimerEvent: {}
+[12.637177] (-) TimerEvent: {}
+[12.737474] (-) TimerEvent: {}
+[12.837796] (-) TimerEvent: {}
+[12.907831] (nimble) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1\n'}
+[12.908179] (nimble) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2\n'}
+[12.908375] (nimble) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[12.910699] (nimble) CommandEnded: {'returncode': 2}
+[12.937908] (-) TimerEvent: {}
+[13.023809] (nimble) JobEnded: {'identifier': 'nimble', 'rc': 2}
+[13.034279] (-) EventReactorShutdown: {}

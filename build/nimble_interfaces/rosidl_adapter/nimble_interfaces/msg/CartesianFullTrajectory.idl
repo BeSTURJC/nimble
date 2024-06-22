@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nimble_interfaces/msg/CartesianFullTrajectory.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+#include "std_msgs/msg/Header.idl"
+
+module nimble_interfaces {
+  module msg {
+    struct CartesianFullTrajectory {
+      std_msgs::msg::Header header;
+
+      sequence<geometry_msgs::msg::Point> left_pelvis;
+
+      sequence<geometry_msgs::msg::Point> right_pelvis;
+
+      sequence<geometry_msgs::msg::Point> base_pelvis;
+
+      sequence<geometry_msgs::msg::Point> left_hip;
+
+      sequence<geometry_msgs::msg::Point> right_hip;
+
+      sequence<geometry_msgs::msg::Point> left_knee;
+
+      sequence<geometry_msgs::msg::Point> right_knee;
+
+      sequence<geometry_msgs::msg::Point> left_ankle;
+
+      sequence<geometry_msgs::msg::Point> right_ankle;
+
+      sequence<geometry_msgs::msg::Point> left_heel;
+
+      sequence<geometry_msgs::msg::Point> right_heel;
+
+      sequence<geometry_msgs::msg::Point> left_toe;
+
+      sequence<geometry_msgs::msg::Point> right_toe;
+    };
+  };
+};

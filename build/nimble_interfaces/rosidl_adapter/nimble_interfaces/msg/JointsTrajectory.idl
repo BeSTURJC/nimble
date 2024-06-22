@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nimble_interfaces/msg/JointsTrajectory.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Float32MultiArray.idl"
+#include "std_msgs/msg/Header.idl"
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+module nimble_interfaces {
+  module msg {
+    struct JointsTrajectory {
+      std_msgs::msg::Header header;
+
+      std_msgs::msg::Float32MultiArray phase;
+
+      trajectory_msgs::msg::JointTrajectory trajectory;
+    };
+  };
+};

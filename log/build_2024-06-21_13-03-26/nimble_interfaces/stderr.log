@@ -1,0 +1,15 @@
+gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make:282: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/nimble_interfaces/srv/detail/dds_fastrtps/traj_generator_service__type_support.cpp.o] Interrupt
+gmake[2]: *** Deleting file 'CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o'
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:240: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/joints_trajectory__type_support.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:226: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/frame_state__type_support.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:268: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.cpp.o] Interrupt
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[2]: *** [CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make:282: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/nimble_interfaces/srv/detail/traj_generator_service__type_support.cpp.o] Interrupt
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** wait: No child processes.  Stop.
+gmake[1]: *** [CMakeFiles/Makefile2:343: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:369: CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_cpp.dir/all] Error 2
+gmake: *** [Makefile:146: all] Interrupt

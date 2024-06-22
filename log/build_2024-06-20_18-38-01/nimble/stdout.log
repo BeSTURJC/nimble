@@ -1,0 +1,16 @@
+[35m[1mConsolidate compiler generated dependencies of target frame[0m
+[35m[1mConsolidate compiler generated dependencies of target gamming[0m
+[35m[1mConsolidate compiler generated dependencies of target kinematic_model[0m
+[35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[35m[1mConsolidate compiler generated dependencies of target traj_generator_server[0m
+[35m[1mConsolidate compiler generated dependencies of target control_ZMP[0m
+[ 12%] Built target control_MSD
+[ 25%] Built target gamming
+[ 37%] Built target cables_robot
+[ 50%] Built target frame
+[ 62%] Built target control_ZMP
+[ 75%] Built target kinematic_model
+[ 81%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/traj_generator_server.dir/src/traj_generator_service.cpp.o[0m
+[ 93%] [32m[1mLinking CXX executable traj_generator_server[0m
+[ 93%] Built target traj_generator_server

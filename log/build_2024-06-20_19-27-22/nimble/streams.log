@@ -1,0 +1,43 @@
+[0.108s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.154s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.174s] [ 37%] Built target gamming
+[0.174s] [ 37%] Built target frame
+[0.174s] [ 37%] Built target control_MSD
+[0.174s] [ 56%] Built target kinematic_model
+[0.174s] [ 62%] Built target control_ZMP
+[0.175s] [ 75%] Built target cables_robot
+[0.185s] [ 81%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[0.186s] [ 93%] Built target traj_generator_server
+[3.123s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[3.123s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:203:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct std_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+[3.124s]   203 |         phase.[01;31m[Kpush_back[m[K(i);
+[3.124s]       |               [01;31m[K^~~~~~~~~[m[K
+[3.126s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()[m[K’:
+[3.126s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:332:33:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::_phase_type[m[K’ {aka ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’} and ‘[01m[Kfloat[m[K’)
+[3.126s]   332 |     curr_target_message.phase = [01;31m[Kpercent[m[K;
+[3.127s]       |                                 [01;31m[K^~~~~~~[m[K
+[3.127s] In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:7[m[K,
+[3.127s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:8[m[K,
+[3.127s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[3.127s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >& std_msgs::msg::Float32MultiArray_<std::allocator<void> >::operator=(const std_msgs::msg::Float32MultiArray_<std::allocator<void> >&)[m[K’
+[3.127s]    36 | struct [01;36m[KFloat32MultiArray_[m[K
+[3.127s]       |        [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[3.127s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kconst std_msgs::msg::Float32MultiArray_<std::allocator<void> >&[m[K’
+[3.127s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >& std_msgs::msg::Float32MultiArray_<std::allocator<void> >::operator=(std_msgs::msg::Float32MultiArray_<std::allocator<void> >&&)[m[K’
+[3.127s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >&&[m[K’
+[3.127s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:44:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::_joint_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} and ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint_<std::allocator<void> >[m[K’})
+[3.127s]   333 |     curr_target_message.joint_trajectory = [01;31m[Kcurr_target[m[K;
+[3.127s]       |                                            [01;31m[K^~~~~~~~~~~[m[K
+[3.127s] In file included from [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/srv/detail/traj_generator_service__struct.hpp:147[m[K,
+[3.127s]                  from [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/srv/traj_generator_service.hpp:7[m[K,
+[3.128s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:7[m[K:
+[3.128s] [01m[K/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:38:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >& trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::operator=(const trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >&)[m[K’
+[3.128s]    38 | struct [01;36m[KJointTrajectory_[m[K
+[3.128s]       |        [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[3.128s] [01m[K/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:38:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint_<std::allocator<void> >[m[K’} to ‘[01m[Kconst trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >&[m[K’
+[3.128s] [01m[K/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:38:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >& trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >::operator=(trajectory_msgs::msg::JointTrajectory_<std::allocator<void> >&&)[m[K’
+[3.128s] [01m[K/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:38:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectoryPoint_<std::allocator<void> >[m[K’} to ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >&&[m[K’
+[12.100s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[12.100s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[12.100s] gmake: *** [Makefile:146: all] Error 2
+[12.103s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8

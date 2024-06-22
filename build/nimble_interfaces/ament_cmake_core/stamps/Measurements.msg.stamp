@@ -1,0 +1,9 @@
+std_msgs/Header header
+float64 height
+float64 femur
+float64 tibia
+float64 height_ankle
+float64 distance_to_heel
+float64 distance_to_toe
+float64 depth_pelvis
+float64 width_pelvis

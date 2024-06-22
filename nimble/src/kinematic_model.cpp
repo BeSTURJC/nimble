@@ -5,9 +5,10 @@
 #include <iterator>
 
 #include "kinetik_model/kineticModel.hpp"
-#include "nimble_interfaces/msg/cartesian_full_trajectory.hpp"
+#include "nimble_interfaces/msg/cartesian_trajectory.hpp"
 #include "nimble_interfaces/msg/measurements.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
+#include "nimble_interfaces/msg/joints_trajectory.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "std_msgs/msg/int64.hpp"
@@ -27,11 +28,10 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
   this->declare_parameter("param2", 2);
 
   // Creates subscribers
-  subscriber_joints_target_ =
-      create_subscription<trajectory_msgs::msg::JointTrajectory>(
-          "joints_target", 10,
-          [this](const trajectory_msgs::msg::JointTrajectory msg) {
-            call_back_joints_target(msg);
+  subscriber_joints_trajectory_ = create_subscription<nimble_interfaces::msg::JointsTrajectory>(
+          "joints_trajectory", 10,
+          [this](const nimble_interfaces::msg::JointsTrajectory msg) {
+            call_back_joints_trajectory(msg);
           });
 
   subscriber_joints_state_ = create_subscription<sensor_msgs::msg::JointState>(
@@ -55,58 +55,58 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
   publisher_stepTarget_ =
       create_publisher<nimble_interfaces::msg::TherapyRequirements>("step_target", 10);
 
-  publisher_cartTarget_ =
-      create_publisher<nimble_interfaces::msg::CartesianFullTrajectory>("cartesian_full_target", 10);
+  publisher_cartTrajectory_ =
+      create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_trajectory", 10);
 
   publisher_cartState_ =
-      create_publisher<nimble_interfaces::msg::CartesianFullTrajectory>("cartesian_state", 10);
+      create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_state", 10);
 }
 
 
 
 // *** Callbacks *** //
-void KinematicModelNode::call_back_joints_target(
-    const trajectory_msgs::msg::JointTrajectory &joint_target_msg) {
+void KinematicModelNode::call_back_joints_trajectory(
+    const nimble_interfaces::msg::JointsTrajectory &joint_trajectory_msg) {
 
   // Subscriber message
   JointAngles jointAng;
 
   // Publisher messages
-  nimble_interfaces::msg::CartesianFullTrajectory cartesian_target;
+  nimble_interfaces::msg::CartesianTrajectory cartesian_trajectory;
   nimble_interfaces::msg::TherapyRequirements step_target;
 
   // Resizes
-  int size = joint_target_msg.points.size();
+  int size = joint_trajectory_msg.trajectory.points.size();
 
   // Fills joint ang
   for (int i = 0; i < size; i++) {
     // **["pelvisList", "pelvisTilt", "hipR", "hipR_abd", "hipL", "hipL_abd", "kneeR", "kneeL", "ankleR", "ankleL"]  
 
-    jointAng.pelvisList.push_back(joint_target_msg.points[i].positions[0]);
-    jointAng.pelvisTilt.push_back(joint_target_msg.points[i].positions[1]);
-    jointAng.kneeR.push_back(joint_target_msg.points[i].positions[2]);
-    jointAng.hipR.push_back(joint_target_msg.points[i].positions[3]);
-    jointAng.hipR_abd.push_back(joint_target_msg.points[i].positions[4]);
-    jointAng.ankleR.push_back(joint_target_msg.points[i].positions[5]);
-    jointAng.kneeL.push_back(joint_target_msg.points[i].positions[6]);
-    jointAng.hipL.push_back(joint_target_msg.points[i].positions[7]);
-    jointAng.hipL_abd.push_back(joint_target_msg.points[i].positions[8]);
-    jointAng.ankleL.push_back(joint_target_msg.points[i].positions[9]);
+    jointAng.pelvisList.push_back(joint_trajectory_msg.trajectory.points[i].positions[0]);
+    jointAng.pelvisTilt.push_back(joint_trajectory_msg.trajectory.points[i].positions[1]);
+    jointAng.kneeR.push_back(joint_trajectory_msg.trajectory.points[i].positions[2]);
+    jointAng.hipR.push_back(joint_trajectory_msg.trajectory.points[i].positions[3]);
+    jointAng.hipR_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[4]);
+    jointAng.ankleR.push_back(joint_trajectory_msg.trajectory.points[i].positions[5]);
+    jointAng.kneeL.push_back(joint_trajectory_msg.trajectory.points[i].positions[6]);
+    jointAng.hipL.push_back(joint_trajectory_msg.trajectory.points[i].positions[7]);
+    jointAng.hipL_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[8]);
+    jointAng.ankleL.push_back(joint_trajectory_msg.trajectory.points[i].positions[9]);
     jointAng.phase.push_back(i);
   }
 
   // Executes the kinematic model
-  this->executeKinematicModel(jointAng, measurements_, cartesian_target, step_target);
+  this->executeKinematicModel(jointAng, measurements_, cartesian_trajectory, step_target);
 
   // Gets the timestamp
   rclcpp::Clock clock;
   auto timestamp = clock.now();
 
-  cartesian_target.header.stamp = timestamp;
+  cartesian_trajectory.header.stamp = timestamp;
   step_target.header.stamp = timestamp;
 
   // Publishes the data
-  publisher_cartTarget_->publish(cartesian_target);
+  publisher_cartTrajectory_->publish(cartesian_trajectory);
   publisher_stepTarget_->publish(step_target);
 }
 
@@ -121,7 +121,7 @@ void KinematicModelNode::call_back_joints_state(
   JointAngles joint_state_ang;
   this->fillJointAngles(joint_state_msg, joint_state_ang);
 
-  nimble_interfaces::msg::CartesianFullTrajectory cartesian_actual_state;
+  nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
   nimble_interfaces::msg::TherapyRequirements step_target;
   
   // Define an array of pointers to the geometry_msgs/Point arrays
@@ -222,22 +222,22 @@ void KinematicModelNode::fill_joint_state(
     jointPosition &heelsPositions,
     jointPosition &toePositions,
     jointPosition &kneePositions,
-    nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target) {
+    nimble_interfaces::msg::CartesianTrajectory &cartesian_trajectory) {
 
   // Resizes the publisher message for all articulations
-  cartesian_target.right_pelvis.resize(pelvisPosition.R.X.size());
-  cartesian_target.left_pelvis.resize(pelvisPosition.L.X.size());
-  cartesian_target.base_pelvis.resize(pelvisPosition.base.X.size());
-  cartesian_target.right_hip.resize(hipPositions.R.X.size());
-  cartesian_target.left_hip.resize(hipPositions.L.X.size());
-  cartesian_target.right_ankle.resize(anklePositions.R.X.size());
-  cartesian_target.left_ankle.resize(anklePositions.L.X.size());
-  cartesian_target.right_heel.resize(heelsPositions.R.X.size());
-  cartesian_target.left_heel.resize(heelsPositions.L.X.size());
-  cartesian_target.right_toe.resize(toePositions.R.X.size());
-  cartesian_target.left_toe.resize(toePositions.L.X.size());
-  cartesian_target.right_knee.resize(kneePositions.R.X.size());
-  cartesian_target.left_knee.resize(kneePositions.L.X.size());
+  cartesian_trajectory.right_pelvis.resize(pelvisPosition.R.X.size());
+  cartesian_trajectory.left_pelvis.resize(pelvisPosition.L.X.size());
+  cartesian_trajectory.base_pelvis.resize(pelvisPosition.base.X.size());
+  cartesian_trajectory.right_hip.resize(hipPositions.R.X.size());
+  cartesian_trajectory.left_hip.resize(hipPositions.L.X.size());
+  cartesian_trajectory.right_ankle.resize(anklePositions.R.X.size());
+  cartesian_trajectory.left_ankle.resize(anklePositions.L.X.size());
+  cartesian_trajectory.right_heel.resize(heelsPositions.R.X.size());
+  cartesian_trajectory.left_heel.resize(heelsPositions.L.X.size());
+  cartesian_trajectory.right_toe.resize(toePositions.R.X.size());
+  cartesian_trajectory.left_toe.resize(toePositions.L.X.size());
+  cartesian_trajectory.right_knee.resize(kneePositions.R.X.size());
+  cartesian_trajectory.left_knee.resize(kneePositions.L.X.size());
 
   // Optimized assignment loop for all articulations
   auto fill_cartesian_positions = [](auto& positions, auto& target) {
@@ -248,19 +248,19 @@ void KinematicModelNode::fill_joint_state(
     }
   };
 
-  fill_cartesian_positions(pelvisPosition.R, cartesian_target.right_pelvis);
-  fill_cartesian_positions(pelvisPosition.L, cartesian_target.left_pelvis);
-  fill_cartesian_positions(pelvisPosition.base, cartesian_target.base_pelvis);
-  fill_cartesian_positions(hipPositions.R, cartesian_target.right_hip);
-  fill_cartesian_positions(hipPositions.L, cartesian_target.left_hip);
-  fill_cartesian_positions(anklePositions.R, cartesian_target.right_ankle);
-  fill_cartesian_positions(anklePositions.L, cartesian_target.left_ankle);
-  fill_cartesian_positions(heelsPositions.R, cartesian_target.right_heel);
-  fill_cartesian_positions(heelsPositions.L, cartesian_target.left_heel);
-  fill_cartesian_positions(toePositions.R, cartesian_target.right_toe);
-  fill_cartesian_positions(toePositions.L, cartesian_target.left_toe);
-  fill_cartesian_positions(kneePositions.R, cartesian_target.right_knee);
-  fill_cartesian_positions(kneePositions.L, cartesian_target.left_knee);
+  fill_cartesian_positions(pelvisPosition.R, cartesian_trajectory.right_pelvis);
+  fill_cartesian_positions(pelvisPosition.L, cartesian_trajectory.left_pelvis);
+  fill_cartesian_positions(pelvisPosition.base, cartesian_trajectory.base_pelvis);
+  fill_cartesian_positions(hipPositions.R, cartesian_trajectory.right_hip);
+  fill_cartesian_positions(hipPositions.L, cartesian_trajectory.left_hip);
+  fill_cartesian_positions(anklePositions.R, cartesian_trajectory.right_ankle);
+  fill_cartesian_positions(anklePositions.L, cartesian_trajectory.left_ankle);
+  fill_cartesian_positions(heelsPositions.R, cartesian_trajectory.right_heel);
+  fill_cartesian_positions(heelsPositions.L, cartesian_trajectory.left_heel);
+  fill_cartesian_positions(toePositions.R, cartesian_trajectory.right_toe);
+  fill_cartesian_positions(toePositions.L, cartesian_trajectory.left_toe);
+  fill_cartesian_positions(kneePositions.R, cartesian_trajectory.right_knee);
+  fill_cartesian_positions(kneePositions.L, cartesian_trajectory.left_knee);
 }
 
 void KinematicModelNode::resize_joint_position(
@@ -600,7 +600,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianFullTrajectory& cartesian_target, 
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
             nimble_interfaces::msg::TherapyRequirements& step_target)
 { 
     int numPoints = jointAng.hipR_abd.size();
@@ -726,7 +726,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
 
     // Fills cartesian target message
     fill_joint_state(pelvisPosition, hipPositions, anklePositions, heelsPositions,
-    toePositions, kneePositions, cartesian_target);
+    toePositions, kneePositions, cartesian_trajectory);
     }
 
 };  // namespace kineticModel

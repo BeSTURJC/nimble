@@ -1,0 +1,19 @@
+[0.091s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.138s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.156s] [ 31%] Built target cables_robot
+[0.157s] [ 43%] Built target kinematic_model
+[0.157s] [ 31%] Built target control_ZMP
+[0.157s] [ 56%] Built target control_MSD
+[0.158s] [ 62%] Built target gamming
+[0.159s] [ 75%] Built target traj_generator_server
+[0.163s] [ 87%] Built target frame
+[0.163s] [ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[2.895s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[2.895s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:169:27:[m[K [01;31m[Kerror: [m[K‘[01m[KJointsTrajectory[m[K’ is not a member of ‘[01m[Ktrajectory_msgs::msg[m[K’; did you mean ‘[01m[KJointTrajectory[m[K’?
+[2.895s]   169 |     trajectory_msgs::msg::[01;31m[KJointsTrajectory[m[K serv_response=result.get()->joints_trajectory;
+[2.895s]       |                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.895s]       |                           [32m[KJointTrajectory[m[K
+[11.418s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[11.419s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[11.419s] gmake: *** [Makefile:146: all] Error 2
+[11.421s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8

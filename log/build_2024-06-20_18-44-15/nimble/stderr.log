@@ -1,0 +1,106 @@
+In file included from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:86:47:[m[K [01;31m[Kerror: [m[K‘[01m[KJointTrajectory[m[K’ is not a member of ‘[01m[Knimble_interfaces::msg[m[K’; did you mean ‘[01m[KJointsTrajectory[m[K’?
+   86 |     rclcpp::Publisher<nimble_interfaces::msg::[01;31m[KJointTrajectory[m[K>::SharedPtr publisher_joints_trajectory;
+      |                                               [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                               [32m[KJointsTrajectory[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:86:62:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   86 |     rclcpp::Publisher<nimble_interfaces::msg::JointTrajectory[01;31m[K>[m[K::SharedPtr publisher_joints_trajectory;
+      |                                                              [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:86:65:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   86 |     rclcpp::Publisher<nimble_interfaces::msg::JointTrajectory>::[01;31m[KSharedPtr[m[K publisher_joints_trajectory;
+      |                                                                 [01;31m[K^~~~~~~~~[m[K
+      |                                                                          [32m[K;[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:86:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_joints_trajectory[m[K’ does not name a type
+   86 |     rclcpp::Publisher<nimble_interfaces::msg::JointTrajectory>::SharedPtr [01;31m[Kpublisher_joints_trajectory[m[K;
+      |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In constructor ‘[01m[KstateMachine::StatesMachineNode::StatesMachineNode()[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:65:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_joints_trajectory[m[K’ was not declared in this scope; did you mean ‘[01m[Kpublisher_joints_target[m[K’?
+   65 |   [01;31m[Kpublisher_joints_trajectory[m[K = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_trajectory", 10);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |   [32m[Kpublisher_joints_target[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:79:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_trajectory_ts[m[K’ was not declared in this scope
+   79 |   timer_joint_trajectory_ = this->create_wall_timer([01;31m[Kjoints_trajectory_ts[m[K, std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this));
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:80:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_target_ts[m[K’ was not declared in this scope
+   80 |   timer_joint_target_= this->create_wall_timer([01;31m[Kjoints_target_ts[m[K, std::bind(&StatesMachineNode::call_back_joints_current_target, this));
+      |                                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_TrajGenerationService(const Measurements&, const TherapyRequirements&)[m[K’:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:190:52:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Knimble_interfaces::msg::JointsTrajectory[m[K’ {aka ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >[m[K’} and ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’})
+  190 |     shared_data_.joints_trajectory = result.get()->[01;31m[Kjoints_trajectory[m[K;
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/joints_trajectory.hpp:7[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:15[m[K,
+                 from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(const nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&)[m[K’
+   40 | struct [01;36m[KJointsTrajectory_[m[K
+      |        [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Kconst nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >& nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >::operator=(nimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&)[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:40:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Knimble_interfaces::srv::TrajGeneratorService_Response_<std::allocator<void> >::_joints_trajectory_type[m[K’ {aka ‘[01m[Ktrajectory_msgs::msg::JointTrajectory_<std::allocator<void> >[m[K’} to ‘[01m[Knimble_interfaces::msg::JointsTrajectory_<std::allocator<void> >&&[m[K’
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:196:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoints_target_ts[m[K’ was not declared in this scope
+  196 |     float ps=shared_data_.therapy_requirements.speed*[01;31m[Kjoints_target_ts[m[K/shared_data_.therapy_requirements.step_length/;
+      |                                                      [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:196:117:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+  196 |     float ps=shared_data_.therapy_requirements.speed*joints_target_ts/shared_data_.therapy_requirements.step_length/[01;31m[K;[m[K
+      |                                                                                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:201:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct std_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+  201 |         phase.[01;31m[Kpush_back[m[K(i);
+      |               [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:203:38:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  203 |         traj.points.push_back(target)
+      |                                      [01;31m[K^[m[K
+      |                                      [32m[K;[m[K
+  204 |     [32m[K}[m[K
+      |     [32m[K~[m[K                                 
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:209:42:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  209 | float StatesMachineNode::get_step_percent[01;31m[K([m[K) {
+      |                                          [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:238:85:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  238 | trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_state[01;31m[K([m[Kfloat step_percent) {
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:278:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  278 | void StatesMachineNode::call_back_joints_state[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:283:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  283 | void StatesMachineNode::call_back_cartesian_trajectory[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory_msg) {
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:287:50:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  287 | void StatesMachineNode::call_back_cartesian_state[01;31m[K([m[Kconst nimble_interfaces::msg::CartesianTrajectory& cartesian_state_msg) {
+      |                                                  [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:292:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  292 | void StatesMachineNode::call_back_state_cables[01;31m[K([m[Kconst sensor_msgs::msg::JointState& joint_state_cables_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:297:46:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  297 | void StatesMachineNode::call_back_step_target[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements& step_target_msg) {
+      |                                              [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:302:55:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  302 | void StatesMachineNode::call_back_therapy_requirements[01;31m[K([m[Kconst nimble_interfaces::msg::TherapyRequirements&therapy_requirements_msg) {
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:307:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  307 | void StatesMachineNode::call_back_measurements[01;31m[K([m[Kconst nimble_interfaces::msg::Measurements& measurements_msg) {
+      |                                               [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:312:53:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  312 | void StatesMachineNode::call_back_interaction_torque[01;31m[K([m[Kconst std_msgs::msg::Float32MultiArray& interaction_torque_msg) {
+      |                                                     [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:317:38:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  317 | void StatesMachineNode::call_back_FSR[01;31m[K([m[Kconst std_msgs::msg::ByteMultiArray& FSR_msg) {
+      |                                      [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:322:56:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  322 | void StatesMachineNode::call_back_joints_current_target[01;31m[K([m[K) {
+      |                                                        [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:337:58:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  337 | void StatesMachineNode::call_back_joints_trajectory_timer[01;31m[K([m[K) {
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:348:36:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  348 | void StatesMachineNode::processData[01;31m[K([m[K) {
+      |                                    [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K At global scope:
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:377:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  377 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:12:24:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   12 | namespace stateMachine [01;36m[K{[m[K
+      |                        [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

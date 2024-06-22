@@ -12,6 +12,7 @@
 #include "nimble_interfaces/msg/frame_state.hpp"
 #include "nimble_interfaces/msg/cartesian_trajectory.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
+#include "nimble_interfaces/msg/joints_trajectory.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 
 #include "nimble_interfaces/srv/traj_generator_service.hpp"
@@ -21,8 +22,8 @@ namespace stateMachine
 
 // ***** Structs ***** // 
 struct SharedData {
-    trajectory_msgs::msg::JointTrajectory joints_target;
-    nimble_interfaces::msg::CartesianTrajectory cartesian_target;
+    nimble_interfaces::msg::JointsTrajectory joints_trajectory;
+    nimble_interfaces::msg::CartesianTrajectory cartesian_trajectory;
     nimble_interfaces::msg::CartesianTrajectory cartesian_state;
     sensor_msgs::msg::JointState joints_state;
     sensor_msgs::msg::JointState cables_state;
@@ -50,6 +51,7 @@ struct SharedData {
 	    measurements_previous.width_pelvis=0;
 	    therapy_requirements_previous.step_length=0;
 	    therapy_requirements_previous.step_height=0;
+        therapy_requirements_previous.speed=0;
     
     }
 };
@@ -64,14 +66,16 @@ private:
     // Instances	
     rclcpp::CallbackGroup::SharedPtr client_cb_group_; // Callback group to enable simultaneous service and node operation
     rclcpp::Client<nimble_interfaces::srv::TrajGeneratorService>::SharedPtr client_; // Client for the trajectory service
+    rclcpp::TimerBase::SharedPtr timer_joint_trajectory_;
     rclcpp::TimerBase::SharedPtr timer_joint_target_;
-    rclcpp::TimerBase::SharedPtr timer_percent_;
     SharedData shared_data_;
     std::chrono::steady_clock::time_point time_jt_received_;
-
+    bool th_req_received;
+    bool meas_received;
+    
     // Subscribers
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_joints_state;
-    rclcpp::Subscription<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr subscriber_cartesian_target;
+    rclcpp::Subscription<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr subscriber_cartesian_trajectory;
     rclcpp::Subscription<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr subscriber_cartesian_state;
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_state_cables;
     rclcpp::Subscription<nimble_interfaces::msg::TherapyRequirements>::SharedPtr subscriber_step_target;
@@ -81,20 +85,20 @@ private:
     rclcpp::Subscription<std_msgs::msg::ByteMultiArray>::SharedPtr subscriber_FSR;
     
     // Publishers
-    rclcpp::Publisher<trajectory_msgs::msg::JointTrajectory>::SharedPtr publisher_joints_target;
+    rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory>::SharedPtr publisher_joints_target;
+    rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory>::SharedPtr publisher_joints_trajectory;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_assistLevel;
     rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr publisher_executionMode;
-    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr publisher_step_percent;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_controlMode;
 
     // Functions
     std::string jointTrajectoryToString(const trajectory_msgs::msg::JointTrajectory::SharedPtr& joint_trajectory);
-    bool check_variations_in_therapy(const nimble_interfaces::msg::Measurements & measurements, const nimble_interfaces::msg::TherapyRequirements & therapy_requirements);
+    bool check_variations_in_therapy();
     void call_TrajGenerationService(const nimble_interfaces::msg::Measurements & measurements, const nimble_interfaces::msg::TherapyRequirements & requirements);
 
     // Subscribers callbacks
     void call_back_joints_state(const sensor_msgs::msg::JointState & joint_state_msg);
-    void call_back_cartesian_target(const nimble_interfaces::msg::CartesianTrajectory & cartesian_target_msg);
+    void call_back_cartesian_trajectory(const nimble_interfaces::msg::CartesianTrajectory & cartesian_trajectory_msg);
     void call_back_cartesian_state(const nimble_interfaces::msg::CartesianTrajectory & cartesian_state_msg);
     void call_back_state_cables(const sensor_msgs::msg::JointState & joint_state_cables_msg);
     void call_back_step_target(const nimble_interfaces::msg::TherapyRequirements & step_target_msg);
@@ -104,13 +108,16 @@ private:
     void call_back_FSR(const std_msgs::msg::ByteMultiArray & FSR_msg);
 
     // Publisher functions
-    int get_step_percent();
-    trajectory_msgs::msg::JointTrajectoryPoint get_actual_joint_state(int step_percent);
+    float get_step_percent();
+    trajectory_msgs::msg::JointTrajectoryPoint get_actual_joint_state(float step_percent);
     void processData();
 
     // Timer callbacks for publishers
-    void step_percent_timer_callback();
-    void joints_target_timer_callback();
+    void call_back_joints_trajectory_timer();
+    void call_back_joints_current_target();
+    //Timers periods
+    double joints_target_ts;
+    double joints_trajectory_ts;
 };
 
 }; // namespace stateMachine

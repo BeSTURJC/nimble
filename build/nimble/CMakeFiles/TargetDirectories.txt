@@ -1,0 +1,17 @@
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/uninstall.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/nimble_uninstall.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/kinematic_model.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/states_machine.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/control_ZMP.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/control_MSD.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/cables_robot.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/frame.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/gamming.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/traj_generator_server.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/test.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/edit_cache.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/rebuild_cache.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/list_install_components.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/install.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/install/local.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/install/strip.dir

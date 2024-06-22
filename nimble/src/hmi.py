@@ -6,7 +6,7 @@ from nimble_interfaces.msg import Measurements, TherapyRequirements
 from std_msgs.msg import Header
 import threading
 import time
-from nimble_interfaces.msg import CartesianFullTrajectory
+from nimble_interfaces.msg import CartesianTrajectory
 
 from hmi_web.flask_class import FlaskApp
 
@@ -17,9 +17,9 @@ class HmiPublisher(Node):
         self.publisher_measur_ = self.create_publisher(Measurements, 'measurements', 10)
         self.publisher_th_req_ = self.create_publisher(TherapyRequirements, 'therapy_requirements', 10)
 
-        subTopic = 'cartesian_full_target' #** Shows the full trajectory
+        subTopic = 'cartesian_trajectory' #** Shows the full trajectory
         # subTopic = 'cartesian_state' #** Shows the actual position of the exo 
-        self.create_subscription(CartesianFullTrajectory, subTopic, self.cartesian_callback, 10)
+        self.create_subscription(CartesianTrajectory, subTopic, self.cartesian_callback, 10)
 
         # TODO: The cartesian_state probably have a buffer, if the buffer is implemented, get only the last element
 

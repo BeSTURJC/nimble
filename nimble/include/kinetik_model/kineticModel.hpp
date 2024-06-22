@@ -8,9 +8,10 @@
 #include <vector>
 
 #include "kinetik_model/kineticModel.hpp"
-#include "nimble_interfaces/msg/cartesian_full_trajectory.hpp"
+#include "nimble_interfaces/msg/cartesian_trajectory.hpp"
 #include "nimble_interfaces/msg/measurements.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
+#include "nimble_interfaces/msg/joints_trajectory.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
@@ -124,26 +125,26 @@ private:
     
     // **** Atributes **** //
     // Subscribers
-    rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharedPtr subscriber_joints_target_;
+    rclcpp::Subscription<nimble_interfaces::msg::JointsTrajectory>::SharedPtr subscriber_joints_trajectory_;
 
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_joints_state_;
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_state_cables_;
     rclcpp::Subscription<nimble_interfaces::msg::Measurements>::SharedPtr subscriber_measurements_;
 
     // Publishers
-    rclcpp::Publisher<nimble_interfaces::msg::CartesianFullTrajectory>::SharedPtr publisher_cartTarget_;
-    rclcpp::Publisher<nimble_interfaces::msg::CartesianFullTrajectory>::SharedPtr publisher_cartState_;
+    rclcpp::Publisher<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr publisher_cartTrajectory_;
+    rclcpp::Publisher<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr publisher_cartState_;
     rclcpp::Publisher<nimble_interfaces::msg::TherapyRequirements>::SharedPtr publisher_stepTarget_;
 
     // Message data for publishers
-    nimble_interfaces::msg::CartesianFullTrajectory cartesian_state_;
+    nimble_interfaces::msg::CartesianTrajectory cartesian_state_;
 
     // Message data for subscribers
     nimble_interfaces::msg::Measurements measurements_;
 
     // **** Functions **** //
     // Callback functions 
-    void call_back_joints_target(const trajectory_msgs::msg::JointTrajectory & joint_target_msg);
+    void call_back_joints_trajectory(const nimble_interfaces::msg::JointsTrajectory & joint_trajectory_msg);
     void call_back_joints_state(const sensor_msgs::msg::JointState &joint_state_msg);
     void call_back_state_cables(const sensor_msgs::msg::JointState & joint_state_cables_msg);
     void call_back_measurements(const nimble_interfaces::msg::Measurements & measurements_msg);
@@ -157,7 +158,7 @@ private:
     void fill_joint_state( jointPosition &pelvisPosition, jointPosition &hipPositions,
         jointPosition &anklePositions, jointPosition &heelsPositions,
         jointPosition &toePositions, jointPosition &kneePositions,
-        nimble_interfaces::msg::CartesianFullTrajectory &cartesian_target);
+        nimble_interfaces::msg::CartesianTrajectory &cartesian_trajectory);
 
     void resize_joint_position(jointPosition &position, int size);
     void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index, float z_error);
@@ -189,7 +190,7 @@ private:
     
     void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianFullTrajectory& cartesian_target, 
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
             nimble_interfaces::msg::TherapyRequirements& step_target);
 };
 

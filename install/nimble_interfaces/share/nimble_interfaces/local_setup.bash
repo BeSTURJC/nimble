@@ -1,0 +1,1 @@
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/ament_cmake_environment_hooks/local_setup.bash

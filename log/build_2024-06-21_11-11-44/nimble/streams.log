@@ -1,0 +1,45 @@
+[0.107s] Invoking command in '/home/jcarballeira/nimble_ws/src/build/nimble': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
+[0.151s] [35m[1mConsolidate compiler generated dependencies of target states_machine[0m
+[0.169s] [ 25%] Built target control_ZMP
+[0.169s] [ 43%] Built target cables_robot
+[0.169s] [ 50%] Built target control_MSD
+[0.170s] [ 50%] Built target frame
+[0.172s] [ 75%] Built target traj_generator_server
+[0.172s] [ 75%] Built target kinematic_model
+[0.173s] [ 87%] Built target gamming
+[0.178s] [ 93%] [32mBuilding CXX object CMakeFiles/states_machine.dir/src/states_machine.cpp.o[0m
+[2.916s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:[m[K In member function ‘[01m[Kvoid stateMachine::StatesMachineNode::call_back_joints_current_target()[m[K’:
+[2.916s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs::msg::Float32MultiArray[m[K’ {aka ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >[m[K’} is not a template
+[2.916s]   333 |     curr_target_message.phase = [01;31m[Kstd_msgs[m[K::msg::Float32MultiArray<float>(percent);
+[2.916s]       |                                 [01;31m[K^~~~~~~~[m[K
+[2.916s] [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:333:80:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(float&)[m[K’
+[2.916s]   333 |     curr_target_message.phase = std_msgs::msg::Float32MultiArray<float>(percent[01;31m[K)[m[K;
+[2.917s]       |                                                                                [01;31m[K^[m[K
+[2.917s] In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:7[m[K,
+[2.917s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:8[m[K,
+[2.917s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[2.917s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:46:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<ContainerAllocator>::Float32MultiArray_(const ContainerAllocator&, rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>][m[K’
+[2.917s]    46 |   explicit [01;36m[KFloat32MultiArray_[m[K(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+[2.917s]       |            [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.917s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:46:58:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kconst std::allocator<void>&[m[K’
+[2.917s]    46 |   explicit Float32MultiArray_([01;36m[Kconst ContainerAllocator & _alloc[m[K, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+[2.917s]       |                               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[2.917s] In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/float32_multi_array.hpp:7[m[K,
+[2.917s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/include/state_machine/stateMachine.hpp:8[m[K,
+[2.917s]                  from [01m[K/home/jcarballeira/nimble_ws/src/nimble/src/states_machine.cpp:8[m[K:
+[2.917s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:40:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<ContainerAllocator>::Float32MultiArray_(rosidl_runtime_cpp::MessageInitialization) [with ContainerAllocator = std::allocator<void>][m[K’
+[2.917s]    40 |   explicit [01;36m[KFloat32MultiArray_[m[K(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+[2.918s]       |            [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.918s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:40:73:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Krosidl_runtime_cpp::MessageInitialization[m[K’
+[2.918s]    40 |   explicit Float32MultiArray_([01;36m[Krosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL[m[K)
+[2.918s]       |                               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.918s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(const std_msgs::msg::Float32MultiArray_<std::allocator<void> >&)[m[K’
+[2.918s]    36 | struct [01;36m[KFloat32MultiArray_[m[K
+[2.918s]       |        [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[2.918s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kconst std_msgs::msg::Float32MultiArray_<std::allocator<void> >&[m[K’
+[2.918s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::Float32MultiArray_(std_msgs::msg::Float32MultiArray_<std::allocator<void> >&&)[m[K’
+[2.918s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:36:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kfloat[m[K’ to ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >&&[m[K’
+[11.875s] gmake[2]: *** [CMakeFiles/states_machine.dir/build.make:76: CMakeFiles/states_machine.dir/src/states_machine.cpp.o] Error 1
+[11.875s] gmake[1]: *** [CMakeFiles/Makefile2:177: CMakeFiles/states_machine.dir/all] Error 2
+[11.875s] gmake: *** [Makefile:146: all] Error 2
+[11.878s] Invoked command in '/home/jcarballeira/nimble_ws/src/build/nimble' returned '2': AMENT_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces:/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble LD_LIBRARY_PATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jcarballeira/nimble_ws/src/install/nimble_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jcarballeira/nimble_ws/src/build/nimble -- -j8 -l8
