@@ -82,7 +82,7 @@ void KinematicModelNode::call_back_joints_trajectory(
   for (int i = 0; i < size; i++) {
     // **["pelvisList", "pelvisTilt", "hipR", "hipR_abd", "hipL", "hipL_abd", "kneeR", "kneeL", "ankleR", "ankleL"]  
 
-    jointAng.pelvisList.push_back(joint_trajectory_msg.trajectory.points[i].positions[0]);
+    /*jointAng.pelvisList.push_back(joint_trajectory_msg.trajectory.points[i].positions[0]);
     jointAng.pelvisTilt.push_back(joint_trajectory_msg.trajectory.points[i].positions[1]);
     jointAng.kneeR.push_back(joint_trajectory_msg.trajectory.points[i].positions[2]);
     jointAng.hipR.push_back(joint_trajectory_msg.trajectory.points[i].positions[3]);
@@ -92,6 +92,20 @@ void KinematicModelNode::call_back_joints_trajectory(
     jointAng.hipL.push_back(joint_trajectory_msg.trajectory.points[i].positions[7]);
     jointAng.hipL_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[8]);
     jointAng.ankleL.push_back(joint_trajectory_msg.trajectory.points[i].positions[9]);
+    jointAng.phase.push_back(i);*/
+
+    // **["hipR","kneeR", "ankleR", "hipL", "kneeL", "ankleL", "pelvisList", "pelvisTilt", "hipR_abd", "hipL_abd"]  
+
+    jointAng.hipR.push_back(joint_trajectory_msg.trajectory.points[i].positions[0]);
+    jointAng.kneeR.push_back(joint_trajectory_msg.trajectory.points[i].positions[1]);
+    jointAng.ankleR.push_back(joint_trajectory_msg.trajectory.points[i].positions[2]);
+    jointAng.hipL.push_back(joint_trajectory_msg.trajectory.points[i].positions[3]);
+    jointAng.kneeL.push_back(joint_trajectory_msg.trajectory.points[i].positions[4]);
+    jointAng.ankleL.push_back(joint_trajectory_msg.trajectory.points[i].positions[5]);
+    jointAng.pelvisList.push_back(joint_trajectory_msg.trajectory.points[i].positions[6]);
+    jointAng.pelvisTilt.push_back(joint_trajectory_msg.trajectory.points[i].positions[7]);
+    jointAng.hipR_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[8]);
+    jointAng.hipL_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[9]);
     jointAng.phase.push_back(i);
   }
 

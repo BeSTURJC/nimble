@@ -40,7 +40,7 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
 
         // Initialize JointTrajectory message
         //trajectory_msgs::msg::JointTrajectory joint_trajectory;
-        joint_trajectory->joint_names = {"hipR_flex", "kneeR_flex", "ankleR_flex", "hipL_flex", "kneeL_flex", "ankleL_flex"};
+        joint_trajectory->joint_names = {"hipR_flex", "kneeR_flex", "ankleR_flex", "hipL_flex", "kneeL_flex", "ankleL_flex","pelvisList","pelvisTilt","HipR_Abd","hipL_Abd"};
 
         // Read and process each line of the CSV file
         std::string line;

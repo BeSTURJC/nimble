@@ -229,7 +229,7 @@ void StatesMachineNode::call_TrajGenerationService(
     std_msgs::msg::Float32MultiArray phases_msg;
     phases_msg.data=linspaced_phases;
     shared_data_.joints_trajectory.phase=phases_msg;
-    shared_data_.joints_trajectory.trajectory=traj;
+    shared_data_.joints_trajectory.trajectory.points=traj.points;
   }
   //auto joint_trajectory_msg_ptr = std::make_shared<trajectory_msgs::msg::JointTrajectory>(shared_data_.joints_trajectory.trajectory);
   //RCLCPP_INFO(this->get_logger(), "JointTrajectory message:\n%s",jointTrajectoryToString(joint_trajectory_msg_ptr).c_str());
@@ -333,8 +333,8 @@ void StatesMachineNode::call_back_therapy_requirements(const nimble_interfaces::
   shared_data_.therapy_requirements = therapy_requirements_msg;
   th_req_received=true;
   bool therapy_variation = check_variations_in_therapy();
-  RCLCPP_INFO(this->get_logger(), "The value of my_boolean is: %s", therapy_variation ? "true" : "false");
-  RCLCPP_INFO(this->get_logger(), "Speed: %f", shared_data_.therapy_requirements.speed);
+  /*RCLCPP_INFO(this->get_logger(), "The value of my_boolean is: %s", therapy_variation ? "true" : "false");
+  RCLCPP_INFO(this->get_logger(), "Speed: %f", shared_data_.therapy_requirements.speed);*/
   if (th_req_received && meas_received && therapy_variation) {
       // If there are any, request ideal trajectory calculation
       call_TrajGenerationService(shared_data_.measurements, shared_data_.therapy_requirements);
@@ -378,7 +378,7 @@ void StatesMachineNode::call_back_joints_current_target() {
     trajectory_msgs::msg::JointTrajectoryPoint curr_target = get_actual_joint_state(curr_percent);
     phases.push_back(curr_percent);
     curr_target_message.phase.data = phases;
-    curr_target_message.trajectory.joint_names={"hipR", "kneeR","ankleR","hipL", "kneeL","ankleL"};
+    curr_target_message.trajectory.joint_names={"hipR","kneeR", "ankleR", "hipL", "kneeL", "ankleL", "pelvisList", "pelvisTilt", "hipR_abd", "hipL_abd"};
     curr_target_message.trajectory.points.push_back(curr_target);
 
     publisher_joints_target->publish(curr_target_message);

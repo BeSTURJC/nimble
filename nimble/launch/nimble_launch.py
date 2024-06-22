@@ -51,13 +51,13 @@ def generate_launch_description():
             output="log",
             emulate_tty=True,
             
-        ),
-        Node(
-            package="nimble",
-            executable="control_ZMP",
-            name="control_ZMP",
-            output="log",
-            emulate_tty=True,
+        )#,
+        #Node(
+           # package="nimble",
+            #executable="control_ZMP",
+            #name="control_ZMP",
+            #output="log",
+            #emulate_tty=True,
             
-        )
+        #)
     ])
