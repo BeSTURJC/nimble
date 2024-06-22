@@ -16,15 +16,14 @@
 
 3. [Nodos](#nodos)
    * [HMI](https://github.com/jcarballeira/nimble/blob/HMI/docs/hmi.md)
-   * [Modelo cinemático](https://github.com/jcarballeira/nimble/blob/HMI/docs/kinetik_model.md)
-   * [Cables robot](https://github.com/jcarballeira/nimble/blob/HMI/docs/cables_robot.md)
+   * [Kinematic Model](https://github.com/jcarballeira/nimble/blob/HMI/docs/kinematic_model.md)
+   * [Cables Robot](https://github.com/jcarballeira/nimble/blob/HMI/docs/cables_robot.md)
    * [Control MSD](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_MSD.md)
    * [Control ZMP](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_ZMP.md)
    * [Frame](https://github.com/jcarballeira/nimble/blob/HMI/docs/frame.md)
-   * [Gait control](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
    * [Gaming](https://github.com/jcarballeira/nimble/blob/HMI/docs/gaming.md)
-   * [States machine](https://github.com/jcarballeira/nimble/blob/HMI/docs/states_machine.md)
-   * [Nodo simulink](https://github.com/jcarballeira/nimble/blob/HMI/docs/simulink_node.md)
+   * [States Machine](https://github.com/jcarballeira/nimble/blob/HMI/docs/states_machine.md)
+   * [Simulink Node](https://github.com/jcarballeira/nimble/blob/HMI/docs/simulink_node.md)
 
 4. [Tipos de Mensaje Utilizados](#tipos-de-mensaje-utilizados)
 
@@ -118,28 +117,18 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * `float64 velocity`
 * `float64 position`
 
-#### nimble_interfaces/msg/CartesianTrajectory
-
+#### nimble_interfaces/src/JointsTrajectory
 - `std_msgs/Header header`
-* `geometry_msgs/Point[] malleolus` (vector de vectores [x,y,z])
-  * `float64 x`
-  * `float64 y`
-  * `float64 z`
-* `geometry_msgs/Point[] pelvis` (vector de vectores [x,y,z])
-  * `float64 x`
-  * `float64 y`
-  * `float64 z`
+-  std_msgs/Float32MultiArray phase
+-  trajectory_msgs/msg/JointTrajectory trajectory
 
-#### nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
-
-- Request 1: `measurements` (nimble_interfaces/msg/Measurements)
-* Request 2: `therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
-* Response: `joints_target` (trajectory_msgs/msg/JointTrajectory)
-
-#### nimble_interfaces/src/Cartesian full trajectory_
+#### nimble_interfaces/src/CartesianTrajectory
 
 - `std_msgs/Header header`
 * `geometry_msgs/Point[] left_pelvis`
+  * `float64 x`
+  * `float64 y`
+  * `float64 z`
 * `geometry_msgs/Point[] right_pelvis`
 * `geometry_msgs/Point[] base_pelvis`
 * `geometry_msgs/Point[] left_hip`
@@ -152,6 +141,13 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * `geometry_msgs/Point[] right_heel`
 * `geometry_msgs/Point[] left_toe`
 * `geometry_msgs/Point[] right_toe`
+
+
+#### nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
+
+- Request 1: `measurements` (nimble_interfaces/msg/Measurements)
+* Request 2: `therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
+* Response: `joints_trajectory` (trajectory_msgs/msg/JointTrajectory)
 
 ---
 ---
@@ -169,7 +165,7 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 ### trajectory_msgs/msg/JointTrajectory
 
 - `std_msgs/Header header`
-* `string[] joint_names` (seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"])
+* `string[] joint_names` (seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL","pelvisList", "pelvisTilt", "hipR_Abd", "hipL_Abd"])
 * `JointTrajectoryPoint[] points`
   * `float64[] positions`
   * `float64[] velocities`
