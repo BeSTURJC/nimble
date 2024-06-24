@@ -269,9 +269,6 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_p
   rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__struct.h \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
   rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.h \
-  rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.h \
-  rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.h \
-  rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.h \
   rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.h \
   rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__struct.h \
   rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.h
@@ -282,10 +279,6 @@ rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__function
 rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__struct.h:
 
 rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.h:
-
-rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.h:
-
-rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.h:
 
 rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support.h:
 
@@ -640,8 +633,6 @@ rosidl_generator_c/nimble_interfaces/msg/detail/joints_trajectory__struct.h:
 /usr/include/python3.10/pymacro.h:
 
 /usr/include/python3.10/warnings.h:
-
-rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.h:
 
 rosidl_generator_c/nimble_interfaces/msg/rosidl_generator_c__visibility_control.h:
 

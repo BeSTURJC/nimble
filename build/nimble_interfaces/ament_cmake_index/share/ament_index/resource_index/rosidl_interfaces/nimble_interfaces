@@ -1,5 +1,3 @@
-msg/CartesianFullTrajectory.idl
-msg/CartesianFullTrajectory.msg
 msg/CartesianTrajectory.idl
 msg/CartesianTrajectory.msg
 msg/FrameState.idl

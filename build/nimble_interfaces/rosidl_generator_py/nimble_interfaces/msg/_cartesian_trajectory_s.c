@@ -34,6 +34,50 @@ ROSIDL_GENERATOR_C_IMPORT
 bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
 ROSIDL_GENERATOR_C_IMPORT
 PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool nimble_interfaces__msg__cartesian_trajectory__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -79,12 +123,12 @@ bool nimble_interfaces__msg__cartesian_trajectory__convert_from_py(PyObject * _p
     }
     Py_DECREF(field);
   }
-  {  // malleolus
-    PyObject * field = PyObject_GetAttrString(_pymsg, "malleolus");
+  {  // left_pelvis
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_pelvis");
     if (!field) {
       return false;
     }
-    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'malleolus'");
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_pelvis'");
     if (!seq_field) {
       Py_DECREF(field);
       return false;
@@ -95,13 +139,13 @@ bool nimble_interfaces__msg__cartesian_trajectory__convert_from_py(PyObject * _p
       Py_DECREF(field);
       return false;
     }
-    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->malleolus), size)) {
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_pelvis), size)) {
       PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
       Py_DECREF(seq_field);
       Py_DECREF(field);
       return false;
     }
-    geometry_msgs__msg__Point * dest = ros_message->malleolus.data;
+    geometry_msgs__msg__Point * dest = ros_message->left_pelvis.data;
     for (Py_ssize_t i = 0; i < size; ++i) {
       if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
         Py_DECREF(seq_field);
@@ -112,12 +156,12 @@ bool nimble_interfaces__msg__cartesian_trajectory__convert_from_py(PyObject * _p
     Py_DECREF(seq_field);
     Py_DECREF(field);
   }
-  {  // pelvis
-    PyObject * field = PyObject_GetAttrString(_pymsg, "pelvis");
+  {  // right_pelvis
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_pelvis");
     if (!field) {
       return false;
     }
-    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'pelvis'");
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_pelvis'");
     if (!seq_field) {
       Py_DECREF(field);
       return false;
@@ -128,13 +172,376 @@ bool nimble_interfaces__msg__cartesian_trajectory__convert_from_py(PyObject * _p
       Py_DECREF(field);
       return false;
     }
-    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->pelvis), size)) {
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_pelvis), size)) {
       PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
       Py_DECREF(seq_field);
       Py_DECREF(field);
       return false;
     }
-    geometry_msgs__msg__Point * dest = ros_message->pelvis.data;
+    geometry_msgs__msg__Point * dest = ros_message->right_pelvis.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // base_pelvis
+    PyObject * field = PyObject_GetAttrString(_pymsg, "base_pelvis");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'base_pelvis'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->base_pelvis), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->base_pelvis.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // left_hip
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_hip");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_hip'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_hip), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->left_hip.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // right_hip
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_hip");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_hip'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_hip), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->right_hip.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // left_knee
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_knee");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_knee'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_knee), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->left_knee.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // right_knee
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_knee");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_knee'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_knee), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->right_knee.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // left_ankle
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_ankle");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_ankle'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_ankle), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->left_ankle.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // right_ankle
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_ankle");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_ankle'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_ankle), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->right_ankle.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // left_heel
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_heel");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_heel'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_heel), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->left_heel.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // right_heel
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_heel");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_heel'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_heel), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->right_heel.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // left_toe
+    PyObject * field = PyObject_GetAttrString(_pymsg, "left_toe");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'left_toe'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->left_toe), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->left_toe.data;
+    for (Py_ssize_t i = 0; i < size; ++i) {
+      if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
+        Py_DECREF(seq_field);
+        Py_DECREF(field);
+        return false;
+      }
+    }
+    Py_DECREF(seq_field);
+    Py_DECREF(field);
+  }
+  {  // right_toe
+    PyObject * field = PyObject_GetAttrString(_pymsg, "right_toe");
+    if (!field) {
+      return false;
+    }
+    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'right_toe'");
+    if (!seq_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_ssize_t size = PySequence_Size(field);
+    if (-1 == size) {
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    if (!geometry_msgs__msg__Point__Sequence__init(&(ros_message->right_toe), size)) {
+      PyErr_SetString(PyExc_RuntimeError, "unable to create geometry_msgs__msg__Point__Sequence ros_message");
+      Py_DECREF(seq_field);
+      Py_DECREF(field);
+      return false;
+    }
+    geometry_msgs__msg__Point * dest = ros_message->right_toe.data;
     for (Py_ssize_t i = 0; i < size; ++i) {
       if (!geometry_msgs__msg__point__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
         Py_DECREF(seq_field);
@@ -181,16 +588,16 @@ PyObject * nimble_interfaces__msg__cartesian_trajectory__convert_to_py(void * ra
       }
     }
   }
-  {  // malleolus
+  {  // left_pelvis
     PyObject * field = NULL;
-    size_t size = ros_message->malleolus.size;
+    size_t size = ros_message->left_pelvis.size;
     field = PyList_New(size);
     if (!field) {
       return NULL;
     }
     geometry_msgs__msg__Point * item;
     for (size_t i = 0; i < size; ++i) {
-      item = &(ros_message->malleolus.data[i]);
+      item = &(ros_message->left_pelvis.data[i]);
       PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
       if (!pyitem) {
         Py_DECREF(field);
@@ -202,23 +609,23 @@ PyObject * nimble_interfaces__msg__cartesian_trajectory__convert_to_py(void * ra
     }
     assert(PySequence_Check(field));
     {
-      int rc = PyObject_SetAttrString(_pymessage, "malleolus", field);
+      int rc = PyObject_SetAttrString(_pymessage, "left_pelvis", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // pelvis
+  {  // right_pelvis
     PyObject * field = NULL;
-    size_t size = ros_message->pelvis.size;
+    size_t size = ros_message->right_pelvis.size;
     field = PyList_New(size);
     if (!field) {
       return NULL;
     }
     geometry_msgs__msg__Point * item;
     for (size_t i = 0; i < size; ++i) {
-      item = &(ros_message->pelvis.data[i]);
+      item = &(ros_message->right_pelvis.data[i]);
       PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
       if (!pyitem) {
         Py_DECREF(field);
@@ -230,7 +637,315 @@ PyObject * nimble_interfaces__msg__cartesian_trajectory__convert_to_py(void * ra
     }
     assert(PySequence_Check(field));
     {
-      int rc = PyObject_SetAttrString(_pymessage, "pelvis", field);
+      int rc = PyObject_SetAttrString(_pymessage, "right_pelvis", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // base_pelvis
+    PyObject * field = NULL;
+    size_t size = ros_message->base_pelvis.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->base_pelvis.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "base_pelvis", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // left_hip
+    PyObject * field = NULL;
+    size_t size = ros_message->left_hip.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->left_hip.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "left_hip", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // right_hip
+    PyObject * field = NULL;
+    size_t size = ros_message->right_hip.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->right_hip.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "right_hip", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // left_knee
+    PyObject * field = NULL;
+    size_t size = ros_message->left_knee.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->left_knee.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "left_knee", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // right_knee
+    PyObject * field = NULL;
+    size_t size = ros_message->right_knee.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->right_knee.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "right_knee", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // left_ankle
+    PyObject * field = NULL;
+    size_t size = ros_message->left_ankle.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->left_ankle.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "left_ankle", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // right_ankle
+    PyObject * field = NULL;
+    size_t size = ros_message->right_ankle.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->right_ankle.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "right_ankle", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // left_heel
+    PyObject * field = NULL;
+    size_t size = ros_message->left_heel.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->left_heel.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "left_heel", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // right_heel
+    PyObject * field = NULL;
+    size_t size = ros_message->right_heel.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->right_heel.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "right_heel", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // left_toe
+    PyObject * field = NULL;
+    size_t size = ros_message->left_toe.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->left_toe.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "left_toe", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // right_toe
+    PyObject * field = NULL;
+    size_t size = ros_message->right_toe.size;
+    field = PyList_New(size);
+    if (!field) {
+      return NULL;
+    }
+    geometry_msgs__msg__Point * item;
+    for (size_t i = 0; i < size; ++i) {
+      item = &(ros_message->right_toe.data[i]);
+      PyObject * pyitem = geometry_msgs__msg__point__convert_to_py(item);
+      if (!pyitem) {
+        Py_DECREF(field);
+        return NULL;
+      }
+      int rc = PyList_SetItem(field, i, pyitem);
+      (void)rc;
+      assert(rc == 0);
+    }
+    assert(PySequence_Check(field));
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "right_toe", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nimble_interfaces__cpp"
-  "rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp"
   "rosidl_generator_cpp/nimble_interfaces/msg/cartesian_trajectory.hpp"
-  "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp"
-  "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp"
-  "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp"
   "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp"
   "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp"
   "rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp"

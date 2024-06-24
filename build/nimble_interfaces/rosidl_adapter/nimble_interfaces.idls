@@ -3,5 +3,4 @@
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/FrameState.idl
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/JointsTrajectory.idl
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/CartesianTrajectory.idl
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/CartesianFullTrajectory.idl
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:srv/TrajGeneratorService.idl

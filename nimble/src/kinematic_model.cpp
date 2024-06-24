@@ -29,8 +29,7 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
 
   // Creates subscribers
   subscriber_joints_trajectory_ = create_subscription<nimble_interfaces::msg::JointsTrajectory>(
-          "joints_trajectory", 10,
-          [this](const nimble_interfaces::msg::JointsTrajectory msg) {
+          "joints_trajectory", 10,[this](const nimble_interfaces::msg::JointsTrajectory msg) {
             call_back_joints_trajectory(msg);
           });
 
@@ -46,8 +45,7 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
 
   subscriber_measurements_ =
       create_subscription<nimble_interfaces::msg::Measurements>(
-          "measurements", 10,
-          [this](const nimble_interfaces::msg::Measurements msg) {
+          "measurements", 10,[this](const nimble_interfaces::msg::Measurements msg) {
             call_back_measurements(msg);
           });
 
@@ -61,8 +59,6 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
   publisher_cartState_ =
       create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_state", 10);
 }
-
-
 
 // *** Callbacks *** //
 void KinematicModelNode::call_back_joints_trajectory(
@@ -744,9 +740,6 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
     }
 
 };  // namespace kineticModel
-
-
-
 
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);

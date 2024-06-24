@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "../rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_introspection_c.c"
   "../rosidl_generator_py/nimble_interfaces/msg/__init__.py"
-  "../rosidl_generator_py/nimble_interfaces/msg/_cartesian_full_trajectory.py"
-  "../rosidl_generator_py/nimble_interfaces/msg/_cartesian_full_trajectory_s.c"
   "../rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory.py"
   "../rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory_s.c"
   "../rosidl_generator_py/nimble_interfaces/msg/_frame_state.py"

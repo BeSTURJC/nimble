@@ -373,9 +373,6 @@ ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_inter
 # install(FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl" "DESTINATION" "share/nimble_interfaces/msg")
 ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl" "DESTINATION" "share/nimble_interfaces/msg")
 
-# install(FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/CartesianFullTrajectory.idl" "DESTINATION" "share/nimble_interfaces/msg")
-ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/CartesianFullTrajectory.idl" "DESTINATION" "share/nimble_interfaces/msg")
-
 # install(FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl" "DESTINATION" "share/nimble_interfaces/srv")
 ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl" "DESTINATION" "share/nimble_interfaces/srv")
 
@@ -393,9 +390,6 @@ ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_inter
 
 # install(FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianTrajectory.msg" "DESTINATION" "share/nimble_interfaces/msg")
 ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianTrajectory.msg" "DESTINATION" "share/nimble_interfaces/msg")
-
-# install(FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianFullTrajectory.msg" "DESTINATION" "share/nimble_interfaces/msg")
-ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianFullTrajectory.msg" "DESTINATION" "share/nimble_interfaces/msg")
 
 # install(FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/srv/TrajGeneratorService.srv" "DESTINATION" "share/nimble_interfaces/srv")
 ament_cmake_symlink_install_files("/home/jcarballeira/nimble_ws/src/nimble_interfaces" FILES "/home/jcarballeira/nimble_ws/src/nimble_interfaces/srv/TrajGeneratorService.srv" "DESTINATION" "share/nimble_interfaces/srv")

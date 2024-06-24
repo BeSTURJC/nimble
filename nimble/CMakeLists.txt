@@ -30,6 +30,9 @@ ament_target_dependencies(control_ZMP rclcpp nimble_interfaces sensor_msgs traje
 add_executable(control_MSD src/control_MSD.cpp)
 ament_target_dependencies(control_MSD rclcpp nimble_interfaces sensor_msgs trajectory_msgs std_msgs)
 
+add_executable(fake_H3_node src/fake_H3_node.cpp)
+ament_target_dependencies(fake_H3_node rclcpp sensor_msgs std_msgs)
+
 add_executable(cables_robot src/cables_robot.cpp)
 ament_target_dependencies(cables_robot rclcpp sensor_msgs)
 
@@ -46,6 +49,7 @@ install(TARGETS
   kinematic_model
   control_ZMP
   control_MSD
+  fake_H3_node
   cables_robot
   gamming
   frame

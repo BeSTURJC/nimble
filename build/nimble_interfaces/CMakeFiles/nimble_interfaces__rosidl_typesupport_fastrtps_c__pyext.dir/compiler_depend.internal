@@ -270,9 +270,6 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_ge
  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__struct.h
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h
  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.h
- /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__type_support.h
- /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.h
- /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_full_trajectory__functions.h
  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.h
  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__struct.h
  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.h

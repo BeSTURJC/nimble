@@ -10,11 +10,31 @@ module nimble_interfaces {
     struct CartesianTrajectory {
       std_msgs::msg::Header header;
 
-      sequence<geometry_msgs::msg::Point> malleolus;
+      sequence<geometry_msgs::msg::Point> left_pelvis;
 
-      @verbatim (language="comment", text=
-        "Tobillo")
-      sequence<geometry_msgs::msg::Point> pelvis;
+      sequence<geometry_msgs::msg::Point> right_pelvis;
+
+      sequence<geometry_msgs::msg::Point> base_pelvis;
+
+      sequence<geometry_msgs::msg::Point> left_hip;
+
+      sequence<geometry_msgs::msg::Point> right_hip;
+
+      sequence<geometry_msgs::msg::Point> left_knee;
+
+      sequence<geometry_msgs::msg::Point> right_knee;
+
+      sequence<geometry_msgs::msg::Point> left_ankle;
+
+      sequence<geometry_msgs::msg::Point> right_ankle;
+
+      sequence<geometry_msgs::msg::Point> left_heel;
+
+      sequence<geometry_msgs::msg::Point> right_heel;
+
+      sequence<geometry_msgs::msg::Point> left_toe;
+
+      sequence<geometry_msgs::msg::Point> right_toe;
     };
   };
 };

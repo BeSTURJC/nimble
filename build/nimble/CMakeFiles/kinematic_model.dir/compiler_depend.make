@@ -472,16 +472,16 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
   /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
   /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /usr/include/c++/11/iostream \
-  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp \
-  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/cartesian_trajectory.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
   /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
-  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp \
-  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/traits.hpp \
   /usr/include/c++/11/codecvt \
   /usr/include/c++/11/bits/codecvt.h \
@@ -505,6 +505,22 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
   /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/therapy_requirements__struct.hpp \
   /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/therapy_requirements__builder.hpp \
   /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/therapy_requirements__traits.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/joints_trajectory.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp \
+  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp \
+  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__builder.hpp \
+  /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
+  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__traits.hpp \
+  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp \
+  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
   /usr/include/c++/11/csignal \
   /usr/include/signal.h \
@@ -674,9 +690,7 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
   /opt/ros/humble/include/rclcpp/rclcpp/qos.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/duration.hpp \
   /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp \
-  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
   /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp \
-  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp \
   /opt/ros/humble/include/rcl/rcl/logging_rosout.h \
   /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h \
   /opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp \
@@ -890,12 +904,8 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/float64_multi_array.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__struct.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__builder.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__traits.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp \
-  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joint_state.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__struct.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__builder.hpp \
@@ -905,11 +915,7 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/int64__builder.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/int64__traits.hpp \
   /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/joint_trajectory.hpp \
-  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp \
-  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp \
   /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__builder.hpp \
-  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__traits.hpp \
-  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp
 
@@ -917,10 +923,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.hpp:
-
-/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp:
-
-/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/int64__builder.hpp:
 
@@ -930,11 +932,7 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__struct.hpp:
 
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp:
-
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__builder.hpp:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__struct.hpp:
 
@@ -965,10 +963,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
-
-/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
@@ -1174,12 +1168,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h:
 
-/usr/include/c++/11/numeric:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
-
 /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/joint_trajectory.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:
@@ -1211,6 +1199,12 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rcpputils/rcpputils/visibility_control.hpp:
 
 /opt/ros/humble/include/rcpputils/rcpputils/filesystem_helper.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
 
@@ -1257,8 +1251,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
 
 /opt/ros/humble/include/rmw/rmw/qos_profiles.h:
-
-/opt/ros/humble/include/rmw/rmw/publisher_options.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp:
 
@@ -1346,10 +1338,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /opt/ros/humble/include/rmw/rmw/security_options.h:
 
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
-
-/opt/ros/humble/include/rmw/rmw/ret_types.h:
-
 /opt/ros/humble/include/rmw/rmw/macros.h:
 
 /opt/ros/humble/include/rmw/rmw/localhost.h:
@@ -1361,8 +1349,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h:
-
-/opt/ros/humble/include/rcutils/rcutils/visibility_control.h:
 
 /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h:
 
@@ -1389,6 +1375,26 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/c++/11/thread:
 
 /usr/include/c++/11/bits/stl_multiset.h:
+
+/usr/include/c++/11/bits/stl_tree.h:
+
+/usr/include/c++/11/bits/stl_set.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:
+
+/usr/include/c++/11/bits/std_thread.h:
+
+/usr/include/c++/11/bits/unique_lock.h:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/usr/include/c++/11/mutex:
+
+/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
 /usr/include/c++/11/cwctype:
 
@@ -1456,9 +1462,19 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp:
+
 /usr/include/c++/11/string_view:
 
 /usr/include/eigen3/Eigen/src/LU/Determinant.h:
+
+/opt/ros/humble/include/rcutils/rcutils/visibility_control.h:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp:
+
+/usr/include/c++/11/numeric:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
 
 /usr/include/c++/11/stdexcept:
 
@@ -1546,8 +1562,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__traits.hpp:
-
 /usr/include/c++/11/bits/stream_iterator.h:
 
 /usr/include/ctype.h:
@@ -1582,15 +1596,9 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/c++/11/ext/string_conversions.h:
 
+/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp:
+
 /usr/include/c++/11/exception:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:
-
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp:
 
@@ -1619,8 +1627,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/c++/11/functional:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/c++/11/bits/stl_bvector.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
@@ -1694,8 +1700,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
-
 /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
 
 /usr/include/asm-generic/errno-base.h:
@@ -1720,13 +1724,9 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/eigen3/Eigen/src/Core/IO.h:
-
-/usr/include/pthread.h:
 
 /usr/include/eigen3/Eigen/src/Core/StlIterators.h:
 
@@ -1736,21 +1736,11 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
-/usr/include/c++/11/bits/std_thread.h:
-
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/Macros.h:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp:
-
-/opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
-
-/usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
 
@@ -1778,6 +1768,14 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
 
+/opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
+
+/usr/include/c++/11/bits/std_abs.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__struct.hpp:
+
 /usr/include/c++/11/bits/stl_pair.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
@@ -1787,8 +1785,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/util/IntegralConstant.h:
-
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp:
 
 /usr/include/eigen3/Eigen/Dense:
 
@@ -1876,6 +1872,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/c++/11/chrono:
+
 /opt/ros/humble/include/rcl/rcl/allocator.h:
 
 /usr/include/errno.h:
@@ -1903,6 +1903,14 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/eigen3/Eigen/src/Core/Redux.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/c++/11/bits/move.h:
 
@@ -1932,8 +1940,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
 
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp:
-
 /usr/include/c++/11/bits/allocator.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp:
@@ -1955,8 +1961,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp:
 
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/measurements__traits.hpp:
 
@@ -2032,8 +2036,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/c++/11/bits/unique_lock.h:
-
 /usr/include/eigen3/Eigen/src/Core/Assign.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
@@ -2078,6 +2080,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
 
+/usr/include/c++/11/bits/stl_bvector.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__traits.hpp:
+
 /usr/include/c++/11/bits/stringfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
@@ -2113,8 +2119,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp:
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
-
-/usr/include/c++/11/bits/std_mutex.h:
 
 /opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp:
 
@@ -2153,6 +2157,8 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /opt/ros/humble/include/rclcpp/rclcpp/any_subscription_callback.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/joints_trajectory.hpp:
 
 /usr/include/c++/11/cassert:
 
@@ -2198,6 +2204,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/c++/11/algorithm:
 
+/usr/include/pthread.h:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__traits.hpp:
+
 /usr/include/eigen3/Eigen/src/Core/util/Constants.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/Translation.h:
@@ -2209,8 +2219,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:
-
-/usr/include/c++/11/mutex:
 
 /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
 
@@ -2298,6 +2306,8 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32_multi_array__struct.hpp:
+
 /opt/ros/humble/include/rcl/rcl/time.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
@@ -2364,15 +2374,19 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Core/Block.h:
 
-/usr/include/eigen3/Eigen/src/Core/Reshaped.h:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
+
+/usr/include/c++/11/set:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/Transform.h:
 
-/usr/include/c++/11/set:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
+
+/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__traits.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Reshaped.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp:
 
@@ -2395,10 +2409,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
 
 /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
-
-/usr/include/c++/11/chrono:
-
-/usr/include/x86_64-linux-gnu/bits/sigthread.h:
 
 /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp:
 
@@ -2426,6 +2436,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
 
+/opt/ros/humble/include/rmw/rmw/publisher_options.h:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__struct.hpp:
+
 /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/contexts/default_context.hpp:
@@ -2451,6 +2465,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/joints_trajectory__builder.hpp:
 
 /usr/include/stdc-predef.h:
 
@@ -2532,6 +2550,12 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Householder/Householder.h:
 
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
+
+/opt/ros/humble/include/rmw/rmw/ret_types.h:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Stride.h:
@@ -2576,9 +2600,9 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp:
 
-/usr/include/c++/11/cstring:
-
 /usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
 
@@ -2612,6 +2636,10 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__traits.hpp:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/cartesian_trajectory.hpp:
+
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:
 
 /usr/include/c++/11/bits/stl_map.h:
@@ -2621,8 +2649,6 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/c++/11/tuple:
 
 /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
 /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
 
@@ -2666,15 +2692,21 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp:
 
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp:
+/usr/include/c++/11/future:
+
+/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/therapy_requirements.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__struct.hpp:
+
+/opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_layout__traits.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
 
 /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/detail/measurements__struct.hpp:
 
-/usr/include/c++/11/future:
-
-/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_cpp/nimble_interfaces/msg/therapy_requirements.hpp:
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:
 
@@ -2703,17 +2735,3 @@ CMakeFiles/kinematic_model.dir/src/kinematic_model.cpp.o: /home/jcarballeira/nim
 /usr/include/c++/11/bits/stl_numeric.h:
 
 /usr/include/linux/close_range.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
-
-/usr/include/c++/11/bits/stl_set.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:
-
-/usr/include/c++/11/bits/stl_tree.h:

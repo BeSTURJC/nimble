@@ -14,8 +14,19 @@
 // Include directives for member types
 // Member `header`
 #include "std_msgs/msg/detail/header__functions.h"
-// Member `malleolus`
-// Member `pelvis`
+// Member `left_pelvis`
+// Member `right_pelvis`
+// Member `base_pelvis`
+// Member `left_hip`
+// Member `right_hip`
+// Member `left_knee`
+// Member `right_knee`
+// Member `left_ankle`
+// Member `right_ankle`
+// Member `left_heel`
+// Member `right_heel`
+// Member `left_toe`
+// Member `right_toe`
 #include "geometry_msgs/msg/detail/point__functions.h"
 
 bool
@@ -29,13 +40,68 @@ nimble_interfaces__msg__CartesianTrajectory__init(nimble_interfaces__msg__Cartes
     nimble_interfaces__msg__CartesianTrajectory__fini(msg);
     return false;
   }
-  // malleolus
-  if (!geometry_msgs__msg__Point__Sequence__init(&msg->malleolus, 0)) {
+  // left_pelvis
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_pelvis, 0)) {
     nimble_interfaces__msg__CartesianTrajectory__fini(msg);
     return false;
   }
-  // pelvis
-  if (!geometry_msgs__msg__Point__Sequence__init(&msg->pelvis, 0)) {
+  // right_pelvis
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_pelvis, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // base_pelvis
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->base_pelvis, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // left_hip
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_hip, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // right_hip
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_hip, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // left_knee
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_knee, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // right_knee
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_knee, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // left_ankle
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_ankle, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // right_ankle
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_ankle, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // left_heel
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_heel, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // right_heel
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_heel, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // left_toe
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->left_toe, 0)) {
+    nimble_interfaces__msg__CartesianTrajectory__fini(msg);
+    return false;
+  }
+  // right_toe
+  if (!geometry_msgs__msg__Point__Sequence__init(&msg->right_toe, 0)) {
     nimble_interfaces__msg__CartesianTrajectory__fini(msg);
     return false;
   }
@@ -50,10 +116,32 @@ nimble_interfaces__msg__CartesianTrajectory__fini(nimble_interfaces__msg__Cartes
   }
   // header
   std_msgs__msg__Header__fini(&msg->header);
-  // malleolus
-  geometry_msgs__msg__Point__Sequence__fini(&msg->malleolus);
-  // pelvis
-  geometry_msgs__msg__Point__Sequence__fini(&msg->pelvis);
+  // left_pelvis
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_pelvis);
+  // right_pelvis
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_pelvis);
+  // base_pelvis
+  geometry_msgs__msg__Point__Sequence__fini(&msg->base_pelvis);
+  // left_hip
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_hip);
+  // right_hip
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_hip);
+  // left_knee
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_knee);
+  // right_knee
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_knee);
+  // left_ankle
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_ankle);
+  // right_ankle
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_ankle);
+  // left_heel
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_heel);
+  // right_heel
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_heel);
+  // left_toe
+  geometry_msgs__msg__Point__Sequence__fini(&msg->left_toe);
+  // right_toe
+  geometry_msgs__msg__Point__Sequence__fini(&msg->right_toe);
 }
 
 bool
@@ -68,15 +156,81 @@ nimble_interfaces__msg__CartesianTrajectory__are_equal(const nimble_interfaces__
   {
     return false;
   }
-  // malleolus
+  // left_pelvis
   if (!geometry_msgs__msg__Point__Sequence__are_equal(
-      &(lhs->malleolus), &(rhs->malleolus)))
+      &(lhs->left_pelvis), &(rhs->left_pelvis)))
   {
     return false;
   }
-  // pelvis
+  // right_pelvis
   if (!geometry_msgs__msg__Point__Sequence__are_equal(
-      &(lhs->pelvis), &(rhs->pelvis)))
+      &(lhs->right_pelvis), &(rhs->right_pelvis)))
+  {
+    return false;
+  }
+  // base_pelvis
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->base_pelvis), &(rhs->base_pelvis)))
+  {
+    return false;
+  }
+  // left_hip
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->left_hip), &(rhs->left_hip)))
+  {
+    return false;
+  }
+  // right_hip
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->right_hip), &(rhs->right_hip)))
+  {
+    return false;
+  }
+  // left_knee
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->left_knee), &(rhs->left_knee)))
+  {
+    return false;
+  }
+  // right_knee
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->right_knee), &(rhs->right_knee)))
+  {
+    return false;
+  }
+  // left_ankle
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->left_ankle), &(rhs->left_ankle)))
+  {
+    return false;
+  }
+  // right_ankle
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->right_ankle), &(rhs->right_ankle)))
+  {
+    return false;
+  }
+  // left_heel
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->left_heel), &(rhs->left_heel)))
+  {
+    return false;
+  }
+  // right_heel
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->right_heel), &(rhs->right_heel)))
+  {
+    return false;
+  }
+  // left_toe
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->left_toe), &(rhs->left_toe)))
+  {
+    return false;
+  }
+  // right_toe
+  if (!geometry_msgs__msg__Point__Sequence__are_equal(
+      &(lhs->right_toe), &(rhs->right_toe)))
   {
     return false;
   }
@@ -97,15 +251,81 @@ nimble_interfaces__msg__CartesianTrajectory__copy(
   {
     return false;
   }
-  // malleolus
+  // left_pelvis
   if (!geometry_msgs__msg__Point__Sequence__copy(
-      &(input->malleolus), &(output->malleolus)))
+      &(input->left_pelvis), &(output->left_pelvis)))
   {
     return false;
   }
-  // pelvis
+  // right_pelvis
   if (!geometry_msgs__msg__Point__Sequence__copy(
-      &(input->pelvis), &(output->pelvis)))
+      &(input->right_pelvis), &(output->right_pelvis)))
+  {
+    return false;
+  }
+  // base_pelvis
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->base_pelvis), &(output->base_pelvis)))
+  {
+    return false;
+  }
+  // left_hip
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->left_hip), &(output->left_hip)))
+  {
+    return false;
+  }
+  // right_hip
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->right_hip), &(output->right_hip)))
+  {
+    return false;
+  }
+  // left_knee
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->left_knee), &(output->left_knee)))
+  {
+    return false;
+  }
+  // right_knee
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->right_knee), &(output->right_knee)))
+  {
+    return false;
+  }
+  // left_ankle
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->left_ankle), &(output->left_ankle)))
+  {
+    return false;
+  }
+  // right_ankle
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->right_ankle), &(output->right_ankle)))
+  {
+    return false;
+  }
+  // left_heel
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->left_heel), &(output->left_heel)))
+  {
+    return false;
+  }
+  // right_heel
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->right_heel), &(output->right_heel)))
+  {
+    return false;
+  }
+  // left_toe
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->left_toe), &(output->left_toe)))
+  {
+    return false;
+  }
+  // right_toe
+  if (!geometry_msgs__msg__Point__Sequence__copy(
+      &(input->right_toe), &(output->right_toe)))
   {
     return false;
   }

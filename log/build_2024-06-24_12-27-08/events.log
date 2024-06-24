@@ -1,0 +1,65 @@
+[0.000000] (-) TimerEvent: {}
+[0.000123] (nimble_interfaces) JobQueued: {'identifier': 'nimble_interfaces', 'dependencies': OrderedDict()}
+[0.000248] (nimble) JobQueued: {'identifier': 'nimble', 'dependencies': OrderedDict([('nimble_interfaces', '/home/jcarballeira/nimble_ws/src/install/nimble_interfaces')])}
+[0.000362] (nimble_interfaces) JobStarted: {'identifier': 'nimble_interfaces'}
+[0.090068] (nimble_interfaces) JobProgress: {'identifier': 'nimble_interfaces', 'progress': 'cmake'}
+[0.091354] (nimble_interfaces) JobProgress: {'identifier': 'nimble_interfaces', 'progress': 'build'}
+[0.091405] (nimble_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jcarballeira'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jcarballeira'), ('OLDPWD', '/home/jcarballeira'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1475'), ('SYSTEMD_EXEC_PID', '1877'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '8797'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jcarballeira/evloc_ws/install:/home/jcarballeira/nimble_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jcarballeira'), ('JOURNAL_STREAM', '8:35043'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jcarballeira'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jcarballeira/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jcarballeira/.local/bin'), ('SESSION_MANAGER', 'local/jcl-urjc-ubuntu:@/tmp/.ICE-unix/1664,unix/jcl-urjc-ubuntu:/tmp/.ICE-unix/1664'), ('INVOCATION_ID', '8aee2911970d4d389da455e663948e37'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.RBC4P2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:bc15cde2-3299-48a8-afc3-d7e67381d40f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jcarballeira/nimble_ws/src/build/nimble_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jcarballeira/nimble_ws/install/nimble_interfaces/local/lib/python3.10/dist-packages:/home/jcarballeira/evloc_ws/install/evloc/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jcarballeira/nimble_ws/install/nimble:/home/jcarballeira/nimble_ws/install/nimble_interfaces:/home/jcarballeira/evloc_ws/install/evloc:/opt/ros/humble')]), 'shell': False}
+[0.099461] (-) TimerEvent: {}
+[0.144167] (nimble_interfaces) StdoutLine: {'line': b'[ 11%] Built target nimble_interfaces__rosidl_generator_c\n'}
+[0.144639] (nimble_interfaces) StdoutLine: {'line': b'[ 12%] Built target nimble_interfaces__cpp\n'}
+[0.150341] (nimble_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_symlink_nimble_interfaces\n'}
+[0.174710] (nimble_interfaces) StdoutLine: {'line': b'[ 33%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.174990] (nimble_interfaces) StdoutLine: {'line': b'[ 39%] Built target nimble_interfaces__rosidl_typesupport_c\n'}
+[0.175222] (nimble_interfaces) StdoutLine: {'line': b'[ 56%] Built target nimble_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.175358] (nimble_interfaces) StdoutLine: {'line': b'[ 57%] Built target nimble_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.180844] (nimble_interfaces) StdoutLine: {'line': b'[ 69%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.182055] (nimble_interfaces) StdoutLine: {'line': b'[ 80%] Built target nimble_interfaces__rosidl_typesupport_cpp\n'}
+[0.199581] (-) TimerEvent: {}
+[0.200510] (nimble_interfaces) StdoutLine: {'line': b'[ 80%] Built target nimble_interfaces\n'}
+[0.219270] (nimble_interfaces) StdoutLine: {'line': b'[ 81%] Built target nimble_interfaces__py\n'}
+[0.244782] (nimble_interfaces) StdoutLine: {'line': b'[ 91%] Built target nimble_interfaces__rosidl_generator_py\n'}
+[0.267045] (nimble_interfaces) StdoutLine: {'line': b'[ 97%] Built target nimble_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[0.267468] (nimble_interfaces) StdoutLine: {'line': b'[ 97%] Built target nimble_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.271279] (nimble_interfaces) StdoutLine: {'line': b'[100%] Built target nimble_interfaces__rosidl_typesupport_c__pyext\n'}
+[0.299702] (-) TimerEvent: {}
+[0.399930] (-) TimerEvent: {}
+[0.400728] (nimble_interfaces) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.400903] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap_external>", line 1372, in _path_importer_cache\n'}
+[0.400970] (nimble_interfaces) StderrLine: {'line': b"KeyError: '/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/_vendor/packaging'\n"}
+[0.401033] (nimble_interfaces) StderrLine: {'line': b'\n'}
+[0.401091] (nimble_interfaces) StderrLine: {'line': b'During handling of the above exception, another exception occurred:\n'}
+[0.401147] (nimble_interfaces) StderrLine: {'line': b'\n'}
+[0.401210] (nimble_interfaces) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.401265] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/ament_cmake_python/nimble_interfaces/setup.py", line 1, in <module>\n'}
+[0.401320] (nimble_interfaces) StderrLine: {'line': b'    from setuptools import find_packages\n'}
+[0.401374] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 18, in <module>\n'}
+[0.405138] (nimble_interfaces) StderrLine: {'line': b'    from setuptools.dist import Distribution\n'}
+[0.405207] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/dist.py", line 30, in <module>\n'}
+[0.405361] (nimble_interfaces) StderrLine: {'line': b'    from setuptools.extern import packaging\n'}
+[0.405463] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load\n'}
+[0.405593] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked\n'}
+[0.405684] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked\n'}
+[0.405745] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 571, in module_from_spec\n'}
+[0.405867] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/extern/__init__.py", line 52, in create_module\n'}
+[0.405968] (nimble_interfaces) StderrLine: {'line': b'    return self.load_module(spec.name)\n'}
+[0.406026] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/extern/__init__.py", line 37, in load_module\n'}
+[0.406083] (nimble_interfaces) StderrLine: {'line': b'    __import__(extant)\n'}
+[0.406138] (nimble_interfaces) StderrLine: {'line': b'  File "/home/jcarballeira/.local/lib/python3.10/site-packages/setuptools/_vendor/packaging/__init__.py", line 6, in <module>\n'}
+[0.406194] (nimble_interfaces) StderrLine: {'line': b'    from .__about__ import (\n'}
+[0.406261] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load\n'}
+[0.406316] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 1002, in _find_and_load_unlocked\n'}
+[0.406371] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap>", line 945, in _find_spec\n'}
+[0.406424] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap_external>", line 1439, in find_spec\n'}
+[0.406492] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap_external>", line 1408, in _get_spec\n'}
+[0.406547] (nimble_interfaces) StderrLine: {'line': b'  File "<frozen importlib._bootstrap_external>", line 1372, in _path_importer_cache\n'}
+[0.406602] (nimble_interfaces) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[0.419791] (nimble_interfaces) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ament_cmake_python_build_nimble_interfaces_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_nimble_interfaces_egg] Interrupt\n'}
+[0.419978] (nimble_interfaces) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_nimble_interfaces_egg.dir/all] Interrupt\n'}
+[0.420106] (nimble_interfaces) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[0.421308] (nimble_interfaces) CommandEnded: {'returncode': -2}
+[0.500007] (-) TimerEvent: {}
+[0.600292] (-) TimerEvent: {}
+[0.651064] (nimble_interfaces) JobEnded: {'identifier': 'nimble_interfaces', 'rc': 'SIGINT'}
+[0.661687] (nimble) JobSkipped: {'identifier': 'nimble'}
+[0.661765] (-) EventReactorShutdown: {}

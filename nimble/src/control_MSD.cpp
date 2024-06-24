@@ -151,9 +151,7 @@ private:
            
             // Publish the JointState message
             publisher_jointsSP->publish(jointsSP_msg);
-
-            // Sleep for a short duration between publishing points (optional)
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            
         }
     
       

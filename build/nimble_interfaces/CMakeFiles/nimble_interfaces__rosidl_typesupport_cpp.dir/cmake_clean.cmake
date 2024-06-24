@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o"
-  "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp.o.d"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o.d"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/frame_state__type_support.cpp.o"
@@ -15,7 +13,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o.d"
   "libnimble_interfaces__rosidl_typesupport_cpp.pdb"
   "libnimble_interfaces__rosidl_typesupport_cpp.so"
-  "rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_full_trajectory__type_support.cpp"
   "rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp"
   "rosidl_typesupport_cpp/nimble_interfaces/msg/frame_state__type_support.cpp"
   "rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp"

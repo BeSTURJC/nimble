@@ -18,8 +18,19 @@
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.hpp"
-// Member 'malleolus'
-// Member 'pelvis'
+// Member 'left_pelvis'
+// Member 'right_pelvis'
+// Member 'base_pelvis'
+// Member 'left_hip'
+// Member 'right_hip'
+// Member 'left_knee'
+// Member 'right_knee'
+// Member 'left_ankle'
+// Member 'right_ankle'
+// Member 'left_heel'
+// Member 'right_heel'
+// Member 'left_toe'
+// Member 'right_toe'
 #include "geometry_msgs/msg/detail/point__struct.hpp"
 
 #ifndef _WIN32
@@ -56,12 +67,45 @@ struct CartesianTrajectory_
   using _header_type =
     std_msgs::msg::Header_<ContainerAllocator>;
   _header_type header;
-  using _malleolus_type =
+  using _left_pelvis_type =
     std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
-  _malleolus_type malleolus;
-  using _pelvis_type =
+  _left_pelvis_type left_pelvis;
+  using _right_pelvis_type =
     std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
-  _pelvis_type pelvis;
+  _right_pelvis_type right_pelvis;
+  using _base_pelvis_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _base_pelvis_type base_pelvis;
+  using _left_hip_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _left_hip_type left_hip;
+  using _right_hip_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _right_hip_type right_hip;
+  using _left_knee_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _left_knee_type left_knee;
+  using _right_knee_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _right_knee_type right_knee;
+  using _left_ankle_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _left_ankle_type left_ankle;
+  using _right_ankle_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _right_ankle_type right_ankle;
+  using _left_heel_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _left_heel_type left_heel;
+  using _right_heel_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _right_heel_type right_heel;
+  using _left_toe_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _left_toe_type left_toe;
+  using _right_toe_type =
+    std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>>;
+  _right_toe_type right_toe;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -70,16 +114,82 @@ struct CartesianTrajectory_
     this->header = _arg;
     return *this;
   }
-  Type & set__malleolus(
+  Type & set__left_pelvis(
     const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
   {
-    this->malleolus = _arg;
+    this->left_pelvis = _arg;
     return *this;
   }
-  Type & set__pelvis(
+  Type & set__right_pelvis(
     const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
   {
-    this->pelvis = _arg;
+    this->right_pelvis = _arg;
+    return *this;
+  }
+  Type & set__base_pelvis(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->base_pelvis = _arg;
+    return *this;
+  }
+  Type & set__left_hip(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->left_hip = _arg;
+    return *this;
+  }
+  Type & set__right_hip(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->right_hip = _arg;
+    return *this;
+  }
+  Type & set__left_knee(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->left_knee = _arg;
+    return *this;
+  }
+  Type & set__right_knee(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->right_knee = _arg;
+    return *this;
+  }
+  Type & set__left_ankle(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->left_ankle = _arg;
+    return *this;
+  }
+  Type & set__right_ankle(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->right_ankle = _arg;
+    return *this;
+  }
+  Type & set__left_heel(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->left_heel = _arg;
+    return *this;
+  }
+  Type & set__right_heel(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->right_heel = _arg;
+    return *this;
+  }
+  Type & set__left_toe(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->left_toe = _arg;
+    return *this;
+  }
+  Type & set__right_toe(
+    const std::vector<geometry_msgs::msg::Point_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<geometry_msgs::msg::Point_<ContainerAllocator>>> & _arg)
+  {
+    this->right_toe = _arg;
     return *this;
   }
 
@@ -128,10 +238,43 @@ struct CartesianTrajectory_
     if (this->header != other.header) {
       return false;
     }
-    if (this->malleolus != other.malleolus) {
+    if (this->left_pelvis != other.left_pelvis) {
       return false;
     }
-    if (this->pelvis != other.pelvis) {
+    if (this->right_pelvis != other.right_pelvis) {
+      return false;
+    }
+    if (this->base_pelvis != other.base_pelvis) {
+      return false;
+    }
+    if (this->left_hip != other.left_hip) {
+      return false;
+    }
+    if (this->right_hip != other.right_hip) {
+      return false;
+    }
+    if (this->left_knee != other.left_knee) {
+      return false;
+    }
+    if (this->right_knee != other.right_knee) {
+      return false;
+    }
+    if (this->left_ankle != other.left_ankle) {
+      return false;
+    }
+    if (this->right_ankle != other.right_ankle) {
+      return false;
+    }
+    if (this->left_heel != other.left_heel) {
+      return false;
+    }
+    if (this->right_heel != other.right_heel) {
+      return false;
+    }
+    if (this->left_toe != other.left_toe) {
+      return false;
+    }
+    if (this->right_toe != other.right_toe) {
       return false;
     }
     return true;

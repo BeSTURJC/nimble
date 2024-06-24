@@ -37,97 +37,592 @@ void CartesianTrajectory_fini_function(void * message_memory)
   typed_message->~CartesianTrajectory();
 }
 
-size_t size_function__CartesianTrajectory__malleolus(const void * untyped_member)
+size_t size_function__CartesianTrajectory__left_pelvis(const void * untyped_member)
 {
   const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return member->size();
 }
 
-const void * get_const_function__CartesianTrajectory__malleolus(const void * untyped_member, size_t index)
+const void * get_const_function__CartesianTrajectory__left_pelvis(const void * untyped_member, size_t index)
 {
   const auto & member =
     *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__CartesianTrajectory__malleolus(void * untyped_member, size_t index)
+void * get_function__CartesianTrajectory__left_pelvis(void * untyped_member, size_t index)
 {
   auto & member =
     *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__CartesianTrajectory__malleolus(
+void fetch_function__CartesianTrajectory__left_pelvis(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
-    get_const_function__CartesianTrajectory__malleolus(untyped_member, index));
+    get_const_function__CartesianTrajectory__left_pelvis(untyped_member, index));
   auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
   value = item;
 }
 
-void assign_function__CartesianTrajectory__malleolus(
+void assign_function__CartesianTrajectory__left_pelvis(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
-    get_function__CartesianTrajectory__malleolus(untyped_member, index));
+    get_function__CartesianTrajectory__left_pelvis(untyped_member, index));
   const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
   item = value;
 }
 
-void resize_function__CartesianTrajectory__malleolus(void * untyped_member, size_t size)
+void resize_function__CartesianTrajectory__left_pelvis(void * untyped_member, size_t size)
 {
   auto * member =
     reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   member->resize(size);
 }
 
-size_t size_function__CartesianTrajectory__pelvis(const void * untyped_member)
+size_t size_function__CartesianTrajectory__right_pelvis(const void * untyped_member)
 {
   const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return member->size();
 }
 
-const void * get_const_function__CartesianTrajectory__pelvis(const void * untyped_member, size_t index)
+const void * get_const_function__CartesianTrajectory__right_pelvis(const void * untyped_member, size_t index)
 {
   const auto & member =
     *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__CartesianTrajectory__pelvis(void * untyped_member, size_t index)
+void * get_function__CartesianTrajectory__right_pelvis(void * untyped_member, size_t index)
 {
   auto & member =
     *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__CartesianTrajectory__pelvis(
+void fetch_function__CartesianTrajectory__right_pelvis(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
-    get_const_function__CartesianTrajectory__pelvis(untyped_member, index));
+    get_const_function__CartesianTrajectory__right_pelvis(untyped_member, index));
   auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
   value = item;
 }
 
-void assign_function__CartesianTrajectory__pelvis(
+void assign_function__CartesianTrajectory__right_pelvis(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
-    get_function__CartesianTrajectory__pelvis(untyped_member, index));
+    get_function__CartesianTrajectory__right_pelvis(untyped_member, index));
   const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
   item = value;
 }
 
-void resize_function__CartesianTrajectory__pelvis(void * untyped_member, size_t size)
+void resize_function__CartesianTrajectory__right_pelvis(void * untyped_member, size_t size)
 {
   auto * member =
     reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember CartesianTrajectory_message_member_array[3] = {
+size_t size_function__CartesianTrajectory__base_pelvis(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__base_pelvis(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__base_pelvis(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__base_pelvis(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__base_pelvis(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__base_pelvis(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__base_pelvis(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__base_pelvis(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__left_hip(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__left_hip(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__left_hip(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__left_hip(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__left_hip(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__left_hip(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__left_hip(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__left_hip(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__right_hip(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__right_hip(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__right_hip(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__right_hip(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__right_hip(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__right_hip(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__right_hip(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__right_hip(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__left_knee(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__left_knee(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__left_knee(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__left_knee(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__left_knee(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__left_knee(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__left_knee(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__left_knee(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__right_knee(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__right_knee(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__right_knee(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__right_knee(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__right_knee(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__right_knee(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__right_knee(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__right_knee(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__left_ankle(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__left_ankle(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__left_ankle(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__left_ankle(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__left_ankle(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__left_ankle(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__left_ankle(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__left_ankle(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__right_ankle(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__right_ankle(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__right_ankle(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__right_ankle(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__right_ankle(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__right_ankle(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__right_ankle(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__right_ankle(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__left_heel(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__left_heel(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__left_heel(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__left_heel(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__left_heel(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__left_heel(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__left_heel(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__left_heel(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__right_heel(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__right_heel(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__right_heel(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__right_heel(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__right_heel(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__right_heel(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__right_heel(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__right_heel(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__left_toe(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__left_toe(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__left_toe(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__left_toe(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__left_toe(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__left_toe(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__left_toe(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__left_toe(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+size_t size_function__CartesianTrajectory__right_toe(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__CartesianTrajectory__right_toe(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__CartesianTrajectory__right_toe(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__CartesianTrajectory__right_toe(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const geometry_msgs::msg::Point *>(
+    get_const_function__CartesianTrajectory__right_toe(untyped_member, index));
+  auto & value = *reinterpret_cast<geometry_msgs::msg::Point *>(untyped_value);
+  value = item;
+}
+
+void assign_function__CartesianTrajectory__right_toe(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<geometry_msgs::msg::Point *>(
+    get_function__CartesianTrajectory__right_toe(untyped_member, index));
+  const auto & value = *reinterpret_cast<const geometry_msgs::msg::Point *>(untyped_value);
+  item = value;
+}
+
+void resize_function__CartesianTrajectory__right_toe(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<geometry_msgs::msg::Point> *>(untyped_member);
+  member->resize(size);
+}
+
+static const ::rosidl_typesupport_introspection_cpp::MessageMember CartesianTrajectory_message_member_array[14] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -146,45 +641,232 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember CartesianTraj
     nullptr  // resize(index) function pointer
   },
   {
-    "malleolus",  // name
+    "left_pelvis",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
     ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(nimble_interfaces::msg::CartesianTrajectory, malleolus),  // bytes offset in struct
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_pelvis),  // bytes offset in struct
     nullptr,  // default value
-    size_function__CartesianTrajectory__malleolus,  // size() function pointer
-    get_const_function__CartesianTrajectory__malleolus,  // get_const(index) function pointer
-    get_function__CartesianTrajectory__malleolus,  // get(index) function pointer
-    fetch_function__CartesianTrajectory__malleolus,  // fetch(index, &value) function pointer
-    assign_function__CartesianTrajectory__malleolus,  // assign(index, value) function pointer
-    resize_function__CartesianTrajectory__malleolus  // resize(index) function pointer
+    size_function__CartesianTrajectory__left_pelvis,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_pelvis,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_pelvis,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_pelvis,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_pelvis,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_pelvis  // resize(index) function pointer
   },
   {
-    "pelvis",  // name
+    "right_pelvis",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
     ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(nimble_interfaces::msg::CartesianTrajectory, pelvis),  // bytes offset in struct
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_pelvis),  // bytes offset in struct
     nullptr,  // default value
-    size_function__CartesianTrajectory__pelvis,  // size() function pointer
-    get_const_function__CartesianTrajectory__pelvis,  // get_const(index) function pointer
-    get_function__CartesianTrajectory__pelvis,  // get(index) function pointer
-    fetch_function__CartesianTrajectory__pelvis,  // fetch(index, &value) function pointer
-    assign_function__CartesianTrajectory__pelvis,  // assign(index, value) function pointer
-    resize_function__CartesianTrajectory__pelvis  // resize(index) function pointer
+    size_function__CartesianTrajectory__right_pelvis,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_pelvis,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_pelvis,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_pelvis,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_pelvis,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_pelvis  // resize(index) function pointer
+  },
+  {
+    "base_pelvis",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, base_pelvis),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__base_pelvis,  // size() function pointer
+    get_const_function__CartesianTrajectory__base_pelvis,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__base_pelvis,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__base_pelvis,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__base_pelvis,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__base_pelvis  // resize(index) function pointer
+  },
+  {
+    "left_hip",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_hip),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__left_hip,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_hip,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_hip,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_hip,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_hip,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_hip  // resize(index) function pointer
+  },
+  {
+    "right_hip",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_hip),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__right_hip,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_hip,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_hip,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_hip,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_hip,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_hip  // resize(index) function pointer
+  },
+  {
+    "left_knee",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_knee),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__left_knee,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_knee,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_knee,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_knee,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_knee,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_knee  // resize(index) function pointer
+  },
+  {
+    "right_knee",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_knee),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__right_knee,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_knee,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_knee,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_knee,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_knee,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_knee  // resize(index) function pointer
+  },
+  {
+    "left_ankle",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_ankle),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__left_ankle,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_ankle,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_ankle,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_ankle,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_ankle,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_ankle  // resize(index) function pointer
+  },
+  {
+    "right_ankle",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_ankle),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__right_ankle,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_ankle,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_ankle,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_ankle,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_ankle,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_ankle  // resize(index) function pointer
+  },
+  {
+    "left_heel",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_heel),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__left_heel,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_heel,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_heel,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_heel,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_heel,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_heel  // resize(index) function pointer
+  },
+  {
+    "right_heel",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_heel),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__right_heel,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_heel,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_heel,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_heel,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_heel,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_heel  // resize(index) function pointer
+  },
+  {
+    "left_toe",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, left_toe),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__left_toe,  // size() function pointer
+    get_const_function__CartesianTrajectory__left_toe,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__left_toe,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__left_toe,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__left_toe,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__left_toe  // resize(index) function pointer
+  },
+  {
+    "right_toe",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::CartesianTrajectory, right_toe),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__CartesianTrajectory__right_toe,  // size() function pointer
+    get_const_function__CartesianTrajectory__right_toe,  // get_const(index) function pointer
+    get_function__CartesianTrajectory__right_toe,  // get(index) function pointer
+    fetch_function__CartesianTrajectory__right_toe,  // fetch(index, &value) function pointer
+    assign_function__CartesianTrajectory__right_toe,  // assign(index, value) function pointer
+    resize_function__CartesianTrajectory__right_toe  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers CartesianTrajectory_message_members = {
   "nimble_interfaces::msg",  // message namespace
   "CartesianTrajectory",  // message name
-  3,  // number of fields
+  14,  // number of fields
   sizeof(nimble_interfaces::msg::CartesianTrajectory),
   CartesianTrajectory_message_member_array,  // message members
   CartesianTrajectory_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -64,18 +64,51 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
 
     __slots__ = [
         '_header',
-        '_malleolus',
-        '_pelvis',
+        '_left_pelvis',
+        '_right_pelvis',
+        '_base_pelvis',
+        '_left_hip',
+        '_right_hip',
+        '_left_knee',
+        '_right_knee',
+        '_left_ankle',
+        '_right_ankle',
+        '_left_heel',
+        '_right_heel',
+        '_left_toe',
+        '_right_toe',
     ]
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
-        'malleolus': 'sequence<geometry_msgs/Point>',
-        'pelvis': 'sequence<geometry_msgs/Point>',
+        'left_pelvis': 'sequence<geometry_msgs/Point>',
+        'right_pelvis': 'sequence<geometry_msgs/Point>',
+        'base_pelvis': 'sequence<geometry_msgs/Point>',
+        'left_hip': 'sequence<geometry_msgs/Point>',
+        'right_hip': 'sequence<geometry_msgs/Point>',
+        'left_knee': 'sequence<geometry_msgs/Point>',
+        'right_knee': 'sequence<geometry_msgs/Point>',
+        'left_ankle': 'sequence<geometry_msgs/Point>',
+        'right_ankle': 'sequence<geometry_msgs/Point>',
+        'left_heel': 'sequence<geometry_msgs/Point>',
+        'right_heel': 'sequence<geometry_msgs/Point>',
+        'left_toe': 'sequence<geometry_msgs/Point>',
+        'right_toe': 'sequence<geometry_msgs/Point>',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point')),  # noqa: E501
     )
@@ -86,8 +119,19 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         from std_msgs.msg import Header
         self.header = kwargs.get('header', Header())
-        self.malleolus = kwargs.get('malleolus', [])
-        self.pelvis = kwargs.get('pelvis', [])
+        self.left_pelvis = kwargs.get('left_pelvis', [])
+        self.right_pelvis = kwargs.get('right_pelvis', [])
+        self.base_pelvis = kwargs.get('base_pelvis', [])
+        self.left_hip = kwargs.get('left_hip', [])
+        self.right_hip = kwargs.get('right_hip', [])
+        self.left_knee = kwargs.get('left_knee', [])
+        self.right_knee = kwargs.get('right_knee', [])
+        self.left_ankle = kwargs.get('left_ankle', [])
+        self.right_ankle = kwargs.get('right_ankle', [])
+        self.left_heel = kwargs.get('left_heel', [])
+        self.right_heel = kwargs.get('right_heel', [])
+        self.left_toe = kwargs.get('left_toe', [])
+        self.right_toe = kwargs.get('right_toe', [])
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -120,9 +164,31 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
             return False
         if self.header != other.header:
             return False
-        if self.malleolus != other.malleolus:
+        if self.left_pelvis != other.left_pelvis:
             return False
-        if self.pelvis != other.pelvis:
+        if self.right_pelvis != other.right_pelvis:
+            return False
+        if self.base_pelvis != other.base_pelvis:
+            return False
+        if self.left_hip != other.left_hip:
+            return False
+        if self.right_hip != other.right_hip:
+            return False
+        if self.left_knee != other.left_knee:
+            return False
+        if self.right_knee != other.right_knee:
+            return False
+        if self.left_ankle != other.left_ankle:
+            return False
+        if self.right_ankle != other.right_ankle:
+            return False
+        if self.left_heel != other.left_heel:
+            return False
+        if self.right_heel != other.right_heel:
+            return False
+        if self.left_toe != other.left_toe:
+            return False
+        if self.right_toe != other.right_toe:
             return False
         return True
 
@@ -146,12 +212,12 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
         self._header = value
 
     @builtins.property
-    def malleolus(self):
-        """Message field 'malleolus'."""
-        return self._malleolus
+    def left_pelvis(self):
+        """Message field 'left_pelvis'."""
+        return self._left_pelvis
 
-    @malleolus.setter
-    def malleolus(self, value):
+    @left_pelvis.setter
+    def left_pelvis(self, value):
         if __debug__:
             from geometry_msgs.msg import Point
             from collections.abc import Sequence
@@ -166,16 +232,16 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
                  not isinstance(value, UserString) and
                  all(isinstance(v, Point) for v in value) and
                  True), \
-                "The 'malleolus' field must be a set or sequence and each value of type 'Point'"
-        self._malleolus = value
+                "The 'left_pelvis' field must be a set or sequence and each value of type 'Point'"
+        self._left_pelvis = value
 
     @builtins.property
-    def pelvis(self):
-        """Message field 'pelvis'."""
-        return self._pelvis
+    def right_pelvis(self):
+        """Message field 'right_pelvis'."""
+        return self._right_pelvis
 
-    @pelvis.setter
-    def pelvis(self, value):
+    @right_pelvis.setter
+    def right_pelvis(self, value):
         if __debug__:
             from geometry_msgs.msg import Point
             from collections.abc import Sequence
@@ -190,5 +256,269 @@ class CartesianTrajectory(metaclass=Metaclass_CartesianTrajectory):
                  not isinstance(value, UserString) and
                  all(isinstance(v, Point) for v in value) and
                  True), \
-                "The 'pelvis' field must be a set or sequence and each value of type 'Point'"
-        self._pelvis = value
+                "The 'right_pelvis' field must be a set or sequence and each value of type 'Point'"
+        self._right_pelvis = value
+
+    @builtins.property
+    def base_pelvis(self):
+        """Message field 'base_pelvis'."""
+        return self._base_pelvis
+
+    @base_pelvis.setter
+    def base_pelvis(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'base_pelvis' field must be a set or sequence and each value of type 'Point'"
+        self._base_pelvis = value
+
+    @builtins.property
+    def left_hip(self):
+        """Message field 'left_hip'."""
+        return self._left_hip
+
+    @left_hip.setter
+    def left_hip(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'left_hip' field must be a set or sequence and each value of type 'Point'"
+        self._left_hip = value
+
+    @builtins.property
+    def right_hip(self):
+        """Message field 'right_hip'."""
+        return self._right_hip
+
+    @right_hip.setter
+    def right_hip(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'right_hip' field must be a set or sequence and each value of type 'Point'"
+        self._right_hip = value
+
+    @builtins.property
+    def left_knee(self):
+        """Message field 'left_knee'."""
+        return self._left_knee
+
+    @left_knee.setter
+    def left_knee(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'left_knee' field must be a set or sequence and each value of type 'Point'"
+        self._left_knee = value
+
+    @builtins.property
+    def right_knee(self):
+        """Message field 'right_knee'."""
+        return self._right_knee
+
+    @right_knee.setter
+    def right_knee(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'right_knee' field must be a set or sequence and each value of type 'Point'"
+        self._right_knee = value
+
+    @builtins.property
+    def left_ankle(self):
+        """Message field 'left_ankle'."""
+        return self._left_ankle
+
+    @left_ankle.setter
+    def left_ankle(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'left_ankle' field must be a set or sequence and each value of type 'Point'"
+        self._left_ankle = value
+
+    @builtins.property
+    def right_ankle(self):
+        """Message field 'right_ankle'."""
+        return self._right_ankle
+
+    @right_ankle.setter
+    def right_ankle(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'right_ankle' field must be a set or sequence and each value of type 'Point'"
+        self._right_ankle = value
+
+    @builtins.property
+    def left_heel(self):
+        """Message field 'left_heel'."""
+        return self._left_heel
+
+    @left_heel.setter
+    def left_heel(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'left_heel' field must be a set or sequence and each value of type 'Point'"
+        self._left_heel = value
+
+    @builtins.property
+    def right_heel(self):
+        """Message field 'right_heel'."""
+        return self._right_heel
+
+    @right_heel.setter
+    def right_heel(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'right_heel' field must be a set or sequence and each value of type 'Point'"
+        self._right_heel = value
+
+    @builtins.property
+    def left_toe(self):
+        """Message field 'left_toe'."""
+        return self._left_toe
+
+    @left_toe.setter
+    def left_toe(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'left_toe' field must be a set or sequence and each value of type 'Point'"
+        self._left_toe = value
+
+    @builtins.property
+    def right_toe(self):
+        """Message field 'right_toe'."""
+        return self._right_toe
+
+    @right_toe.setter
+    def right_toe(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, Point) for v in value) and
+                 True), \
+                "The 'right_toe' field must be a set or sequence and each value of type 'Point'"
+        self._right_toe = value

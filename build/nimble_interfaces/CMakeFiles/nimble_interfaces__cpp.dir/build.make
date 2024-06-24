@@ -86,10 +86,6 @@ CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/ca
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp
-CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp
-CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp
-CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp
-CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/srv/traj_generator_service.hpp
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/srv/detail/traj_generator_service__builder.hpp
 CMakeFiles/nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/srv/detail/traj_generator_service__struct.hpp
@@ -115,7 +111,6 @@ rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimb
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimble_interfaces/msg/FrameState.idl
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl
-rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimble_interfaces/msg/CartesianFullTrajectory.idl
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
@@ -242,18 +237,6 @@ rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.h
 rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp
 
-rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp
-
-rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp
-
-rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp
-
-rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp
-
 rosidl_generator_cpp/nimble_interfaces/srv/traj_generator_service.hpp: rosidl_generator_cpp/nimble_interfaces/msg/measurements.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/srv/traj_generator_service.hpp
 
@@ -267,11 +250,7 @@ rosidl_generator_cpp/nimble_interfaces/srv/detail/traj_generator_service__traits
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/nimble_interfaces/srv/detail/traj_generator_service__traits.hpp
 
 nimble_interfaces__cpp: CMakeFiles/nimble_interfaces__cpp
-nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/cartesian_full_trajectory.hpp
 nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/cartesian_trajectory.hpp
-nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__builder.hpp
-nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__struct.hpp
-nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_full_trajectory__traits.hpp
 nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__builder.hpp
 nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__struct.hpp
 nimble_interfaces__cpp: rosidl_generator_cpp/nimble_interfaces/msg/detail/cartesian_trajectory__traits.hpp

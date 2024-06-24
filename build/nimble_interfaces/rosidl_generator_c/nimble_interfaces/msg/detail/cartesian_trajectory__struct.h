@@ -20,17 +20,38 @@ extern "C"
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.h"
-// Member 'malleolus'
-// Member 'pelvis'
+// Member 'left_pelvis'
+// Member 'right_pelvis'
+// Member 'base_pelvis'
+// Member 'left_hip'
+// Member 'right_hip'
+// Member 'left_knee'
+// Member 'right_knee'
+// Member 'left_ankle'
+// Member 'right_ankle'
+// Member 'left_heel'
+// Member 'right_heel'
+// Member 'left_toe'
+// Member 'right_toe'
 #include "geometry_msgs/msg/detail/point__struct.h"
 
 /// Struct defined in msg/CartesianTrajectory in the package nimble_interfaces.
 typedef struct nimble_interfaces__msg__CartesianTrajectory
 {
   std_msgs__msg__Header header;
-  geometry_msgs__msg__Point__Sequence malleolus;
-  /// Tobillo
-  geometry_msgs__msg__Point__Sequence pelvis;
+  geometry_msgs__msg__Point__Sequence left_pelvis;
+  geometry_msgs__msg__Point__Sequence right_pelvis;
+  geometry_msgs__msg__Point__Sequence base_pelvis;
+  geometry_msgs__msg__Point__Sequence left_hip;
+  geometry_msgs__msg__Point__Sequence right_hip;
+  geometry_msgs__msg__Point__Sequence left_knee;
+  geometry_msgs__msg__Point__Sequence right_knee;
+  geometry_msgs__msg__Point__Sequence left_ankle;
+  geometry_msgs__msg__Point__Sequence right_ankle;
+  geometry_msgs__msg__Point__Sequence left_heel;
+  geometry_msgs__msg__Point__Sequence right_heel;
+  geometry_msgs__msg__Point__Sequence left_toe;
+  geometry_msgs__msg__Point__Sequence right_toe;
 } nimble_interfaces__msg__CartesianTrajectory;
 
 // Struct for a sequence of nimble_interfaces__msg__CartesianTrajectory.

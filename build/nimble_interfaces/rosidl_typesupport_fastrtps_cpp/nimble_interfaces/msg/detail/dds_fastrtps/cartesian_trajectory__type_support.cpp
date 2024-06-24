@@ -66,6 +66,28 @@ max_serialized_size_Point(
 
 // functions for geometry_msgs::msg::Point already declared above
 
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
+// functions for geometry_msgs::msg::Point already declared above
+
 
 namespace nimble_interfaces
 {
@@ -86,23 +108,133 @@ cdr_serialize(
   std_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
     ros_message.header,
     cdr);
-  // Member: malleolus
+  // Member: left_pelvis
   {
-    size_t size = ros_message.malleolus.size();
+    size_t size = ros_message.left_pelvis.size();
     cdr << static_cast<uint32_t>(size);
     for (size_t i = 0; i < size; i++) {
       geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
-        ros_message.malleolus[i],
+        ros_message.left_pelvis[i],
         cdr);
     }
   }
-  // Member: pelvis
+  // Member: right_pelvis
   {
-    size_t size = ros_message.pelvis.size();
+    size_t size = ros_message.right_pelvis.size();
     cdr << static_cast<uint32_t>(size);
     for (size_t i = 0; i < size; i++) {
       geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
-        ros_message.pelvis[i],
+        ros_message.right_pelvis[i],
+        cdr);
+    }
+  }
+  // Member: base_pelvis
+  {
+    size_t size = ros_message.base_pelvis.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.base_pelvis[i],
+        cdr);
+    }
+  }
+  // Member: left_hip
+  {
+    size_t size = ros_message.left_hip.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.left_hip[i],
+        cdr);
+    }
+  }
+  // Member: right_hip
+  {
+    size_t size = ros_message.right_hip.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.right_hip[i],
+        cdr);
+    }
+  }
+  // Member: left_knee
+  {
+    size_t size = ros_message.left_knee.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.left_knee[i],
+        cdr);
+    }
+  }
+  // Member: right_knee
+  {
+    size_t size = ros_message.right_knee.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.right_knee[i],
+        cdr);
+    }
+  }
+  // Member: left_ankle
+  {
+    size_t size = ros_message.left_ankle.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.left_ankle[i],
+        cdr);
+    }
+  }
+  // Member: right_ankle
+  {
+    size_t size = ros_message.right_ankle.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.right_ankle[i],
+        cdr);
+    }
+  }
+  // Member: left_heel
+  {
+    size_t size = ros_message.left_heel.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.left_heel[i],
+        cdr);
+    }
+  }
+  // Member: right_heel
+  {
+    size_t size = ros_message.right_heel.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.right_heel[i],
+        cdr);
+    }
+  }
+  // Member: left_toe
+  {
+    size_t size = ros_message.left_toe.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.left_toe[i],
+        cdr);
+    }
+  }
+  // Member: right_toe
+  {
+    size_t size = ros_message.right_toe.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.right_toe[i],
         cdr);
     }
   }
@@ -119,27 +251,159 @@ cdr_deserialize(
   std_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
     cdr, ros_message.header);
 
-  // Member: malleolus
+  // Member: left_pelvis
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
-    ros_message.malleolus.resize(size);
+    ros_message.left_pelvis.resize(size);
     for (size_t i = 0; i < size; i++) {
       geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-        cdr, ros_message.malleolus[i]);
+        cdr, ros_message.left_pelvis[i]);
     }
   }
 
-  // Member: pelvis
+  // Member: right_pelvis
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
-    ros_message.pelvis.resize(size);
+    ros_message.right_pelvis.resize(size);
     for (size_t i = 0; i < size; i++) {
       geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-        cdr, ros_message.pelvis[i]);
+        cdr, ros_message.right_pelvis[i]);
+    }
+  }
+
+  // Member: base_pelvis
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.base_pelvis.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.base_pelvis[i]);
+    }
+  }
+
+  // Member: left_hip
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.left_hip.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.left_hip[i]);
+    }
+  }
+
+  // Member: right_hip
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.right_hip.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.right_hip[i]);
+    }
+  }
+
+  // Member: left_knee
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.left_knee.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.left_knee[i]);
+    }
+  }
+
+  // Member: right_knee
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.right_knee.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.right_knee[i]);
+    }
+  }
+
+  // Member: left_ankle
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.left_ankle.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.left_ankle[i]);
+    }
+  }
+
+  // Member: right_ankle
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.right_ankle.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.right_ankle[i]);
+    }
+  }
+
+  // Member: left_heel
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.left_heel.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.left_heel[i]);
+    }
+  }
+
+  // Member: right_heel
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.right_heel.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.right_heel[i]);
+    }
+  }
+
+  // Member: left_toe
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.left_toe.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.left_toe[i]);
+    }
+  }
+
+  // Member: right_toe
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.right_toe.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.right_toe[i]);
     }
   }
 
@@ -164,9 +428,9 @@ get_serialized_size(
   current_alignment +=
     std_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
     ros_message.header, current_alignment);
-  // Member: malleolus
+  // Member: left_pelvis
   {
-    size_t array_size = ros_message.malleolus.size();
+    size_t array_size = ros_message.left_pelvis.size();
 
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
@@ -174,12 +438,12 @@ get_serialized_size(
     for (size_t index = 0; index < array_size; ++index) {
       current_alignment +=
         geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
-        ros_message.malleolus[index], current_alignment);
+        ros_message.left_pelvis[index], current_alignment);
     }
   }
-  // Member: pelvis
+  // Member: right_pelvis
   {
-    size_t array_size = ros_message.pelvis.size();
+    size_t array_size = ros_message.right_pelvis.size();
 
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
@@ -187,7 +451,150 @@ get_serialized_size(
     for (size_t index = 0; index < array_size; ++index) {
       current_alignment +=
         geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
-        ros_message.pelvis[index], current_alignment);
+        ros_message.right_pelvis[index], current_alignment);
+    }
+  }
+  // Member: base_pelvis
+  {
+    size_t array_size = ros_message.base_pelvis.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.base_pelvis[index], current_alignment);
+    }
+  }
+  // Member: left_hip
+  {
+    size_t array_size = ros_message.left_hip.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.left_hip[index], current_alignment);
+    }
+  }
+  // Member: right_hip
+  {
+    size_t array_size = ros_message.right_hip.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.right_hip[index], current_alignment);
+    }
+  }
+  // Member: left_knee
+  {
+    size_t array_size = ros_message.left_knee.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.left_knee[index], current_alignment);
+    }
+  }
+  // Member: right_knee
+  {
+    size_t array_size = ros_message.right_knee.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.right_knee[index], current_alignment);
+    }
+  }
+  // Member: left_ankle
+  {
+    size_t array_size = ros_message.left_ankle.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.left_ankle[index], current_alignment);
+    }
+  }
+  // Member: right_ankle
+  {
+    size_t array_size = ros_message.right_ankle.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.right_ankle[index], current_alignment);
+    }
+  }
+  // Member: left_heel
+  {
+    size_t array_size = ros_message.left_heel.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.left_heel[index], current_alignment);
+    }
+  }
+  // Member: right_heel
+  {
+    size_t array_size = ros_message.right_heel.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.right_heel[index], current_alignment);
+    }
+  }
+  // Member: left_toe
+  {
+    size_t array_size = ros_message.left_toe.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.left_toe[index], current_alignment);
+    }
+  }
+  // Member: right_toe
+  {
+    size_t array_size = ros_message.right_toe.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.right_toe[index], current_alignment);
     }
   }
 
@@ -233,7 +640,7 @@ max_serialized_size_CartesianTrajectory(
     }
   }
 
-  // Member: malleolus
+  // Member: left_pelvis
   {
     size_t array_size = 0;
     full_bounded = false;
@@ -256,7 +663,260 @@ max_serialized_size_CartesianTrajectory(
     }
   }
 
-  // Member: pelvis
+  // Member: right_pelvis
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: base_pelvis
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: left_hip
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: right_hip
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: left_knee
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: right_knee
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: left_ankle
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: right_ankle
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: left_heel
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: right_heel
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: left_toe
+  {
+    size_t array_size = 0;
+    full_bounded = false;
+    is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
+  // Member: right_toe
   {
     size_t array_size = 0;
     full_bounded = false;
@@ -287,7 +947,7 @@ max_serialized_size_CartesianTrajectory(
     using DataType = nimble_interfaces::msg::CartesianTrajectory;
     is_plain =
       (
-      offsetof(DataType, pelvis) +
+      offsetof(DataType, right_toe) +
       last_member_size
       ) == ret_val;
   }

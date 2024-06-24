@@ -1,6 +1,6 @@
 import rclpy
 from trajectory_msgs.msg import JointTrajectory
-from nimble_interfaces.msg import CartesianFullTrajectory
+from nimble_interfaces.msg import CartesianTrajectory
 import matplotlib.pyplot as plt
 
 LABELS = ["hipR", "kneeR", "ankleR", "hipL", "kneeL", "ankleL", "a", "b", "b", "f", "f"]
@@ -34,7 +34,7 @@ def main(args=None):
 
     # Create a subscriber for the 'joint_trajectory' topic using the 'JointTrajectory' message type
     #subscriber = node.create_subscription(JointTrajectory, 'joints_target', joint_trajectory_callback, 10)
-    subscriber = node.create_subscription(CartesianFullTrajectory, 'cartesian_full_target', cartesian_callback, 10)
+    subscriber = node.create_subscription(CartesianTrajectory, 'cartesian_trajectory', cartesian_callback, 10)
 
     print("Waiting for JointTrajectory messages. Press Ctrl+C to exit.")
 

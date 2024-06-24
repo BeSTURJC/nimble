@@ -71,7 +71,6 @@ CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces
 CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/FrameState.msg
 CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/JointsTrajectory.msg
 CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianTrajectory.msg
-CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/msg/CartesianFullTrajectory.msg
 CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/srv/TrajGeneratorService.srv
 CMakeFiles/nimble_interfaces: rosidl_cmake/srv/TrajGeneratorService_Request.msg
 CMakeFiles/nimble_interfaces: rosidl_cmake/srv/TrajGeneratorService_Response.msg
