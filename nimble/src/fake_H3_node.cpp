@@ -64,7 +64,7 @@ private:
             std::uniform_real_distribution<> dis(-1.0, 1.0);
             double random_number = dis(gen);
 
-            joints_state_msg.position.push_back(shared_data_.joints_SP.position[i]+random_number);
+            joints_state_msg.position.push_back(shared_data_.joints_SP.position[i]);//+random_number);
                        
         } 
     	publisher_joints_state->publish(joints_state_msg);  //publicar

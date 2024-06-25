@@ -124,7 +124,7 @@ public:
 private:
     int bufferSize;
     bool trajectory_received=false;
-    JointAngle JointStateBuffer;
+    JointAngles JointStateBuffer;
 
 
     // **** Atributes **** //

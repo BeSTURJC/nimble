@@ -105,10 +105,11 @@ void KinematicModelNode::call_back_joints_trajectory(
     jointAng.hipL_abd.push_back(joint_trajectory_msg.trajectory.points[i].positions[9]);
     jointAng.phase.push_back(i);
   }
-
+  //Se toma como primer valor del buffer de angulos la trayectoria ideal
+  JointStateBuffer=jointAng;
   // Executes the kinematic model
   this->executeKinematicModel(jointAng, measurements_, cartesian_trajectory, step_target);
-
+  cartesian_state_buffer=cartesian_trajectory;
   // Gets the timestamp
   rclcpp::Clock clock;
   auto timestamp = clock.now();
@@ -126,63 +127,57 @@ void KinematicModelNode::call_back_joints_state(
 
   if (bufferSize!=0){
 
-    JointAngles curr_joint_state;  
-    curr_joint_state.hipR.push_back(joint_state_msg.position[0]);
-    curr_joint_state.kneeR.push_back(joint_state_msg.position[1]);
-    curr_joint_state.ankleR.push_back(joint_state_msg.position[2]);
-    curr_joint_state.hipL.push_back(joint_state_msg.position[3]);
-    curr_joint_state.kneeL.push_back(joint_state_msg.position[4]);
-    curr_joint_state.ankleL.push_back(joint_state_msg.position[5]);
-    
-    //this->fillJointAngles(joint_state_msg, JointStateBuffer);
+    //Rellenar buffer angular con joint_state, se parte de la tray completa y se hace método FIFO
+    this->fillJointAngles(joint_state_msg, JointStateBuffer);
 
     nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
     nimble_interfaces::msg::TherapyRequirements step_target;
 
-    // Uses a Ring Buffer to pop back the last elements of the buffer
-    this->executeKinematicModel(curr_joint_state, measurements_,
+   
+    this->executeKinematicModel(JointStateBuffer, measurements_,
                                         cartesian_actual_state, step_target);
-
+    
     this->updateCartesianState(cartesian_state_buffer.right_pelvis,
-                                      cartesian_actual_state.right_pelvis[0],
+                                      cartesian_actual_state.right_pelvis[-1],
                                       bufferSize);
-    RCLCPP_INFO(this->get_logger(), "Passed");                                   
+       
     this->updateCartesianState(cartesian_state_buffer.left_pelvis,
-                                      cartesian_actual_state.left_pelvis[0],
+                                      cartesian_actual_state.left_pelvis[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.base_pelvis,
-                                      cartesian_actual_state.base_pelvis[0],
+                                      cartesian_actual_state.base_pelvis[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.right_hip,
-                                      cartesian_actual_state.right_hip[0],
+                                      cartesian_actual_state.right_hip[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.left_hip,
-                                      cartesian_actual_state.left_hip[0],
+                                      cartesian_actual_state.left_hip[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.right_knee,
-                                      cartesian_actual_state.right_knee[0],
+                                      cartesian_actual_state.right_knee[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.left_knee,
-                                      cartesian_actual_state.left_knee[0],
+                                      cartesian_actual_state.left_knee[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.right_ankle,
-                                      cartesian_actual_state.right_ankle[0],
+                                      cartesian_actual_state.right_ankle[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.left_ankle,
-                                      cartesian_actual_state.left_ankle[0],
+                                      cartesian_actual_state.left_ankle[-1],
                                       bufferSize);                                  
     this->updateCartesianState(cartesian_state_buffer.right_heel,
-                                      cartesian_actual_state.right_heel[0],
+                                      cartesian_actual_state.right_heel[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.left_heel,
-                                      cartesian_actual_state.left_heel[0],
+                                      cartesian_actual_state.left_heel[-1],
                                       bufferSize);  
     this->updateCartesianState(cartesian_state_buffer.right_toe,
-                                      cartesian_actual_state.right_toe[0],
+                                      cartesian_actual_state.right_toe[-1],
                                       bufferSize);
     this->updateCartesianState(cartesian_state_buffer.left_toe,
-                                      cartesian_actual_state.left_toe[0],
+                                      cartesian_actual_state.left_toe[-1],
                                       bufferSize); 
+    RCLCPP_INFO(this->get_logger(), "prueba:%f",cartesian_actual_state.base_pelvis[-1].x);
     publisher_cartState_->publish(cartesian_state_buffer);
 
   }  
@@ -212,6 +207,15 @@ void KinematicModelNode::fillJointAngles(
   joint_state_ang.hipL.push_back(joint_state_msg.position[3]);
   joint_state_ang.kneeL.push_back(joint_state_msg.position[4]);
   joint_state_ang.ankleL.push_back(joint_state_msg.position[5]);
+
+  joint_state_ang.hipR.erase(joint_state_ang.hipR.begin());
+  joint_state_ang.kneeR.erase(joint_state_ang.kneeR.begin());
+  joint_state_ang.ankleR.erase(joint_state_ang.ankleR.begin());
+  joint_state_ang.hipL.erase(joint_state_ang.hipL.begin());
+  joint_state_ang.kneeL.erase(joint_state_ang.kneeL.begin());
+  joint_state_ang.ankleL.erase(joint_state_ang.ankleL.begin());
+
+
 }
 
 template <typename T>

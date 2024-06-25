@@ -4,7 +4,8 @@ targets
 	
 	
 vigilar kinematic node
-	no funciona cartesian state (mezcla entre version ant.(desktop) y actual
+	calculo online falla---posible problema la phase que se le adjudica a cada joint_state que viene del exo
+			posible apaño- añadir primer estado a trayectoria angular ideal completa (FIFO), mantener tamaño e ir adjudicando phase segun frecuencia
 	cambiar calculo de la altura por foot clearance
 	meter una trayectoria mía en formato csv
 	vigilar calculos de la z pelvis
