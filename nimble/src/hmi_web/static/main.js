@@ -638,7 +638,7 @@ class ThreeDScene {
     ];
     
     this.exo1 = new Exoskeleton(this.StandardMaterial, stlData, loader, this.scene);
-    // this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
+    this.exo2 = new Exoskeleton(redMaterial, stlData, loader, this.scene);
 
     // Creates the frame
     this.box = new Box(0, 0, 0, 100, 80, 140, this.StandardMaterial, this.scene);

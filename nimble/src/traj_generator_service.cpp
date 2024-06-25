@@ -20,8 +20,7 @@ void generate_trajectory(const std::shared_ptr<nimble_interfaces::srv::TrajGener
           std::shared_ptr<nimble_interfaces::srv::TrajGeneratorService::Response>      response)
 {   float femur=request->measurements.femur;
     float speed=request->therapy_requirements.speed;	
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request\nfemur: %f" " speed: %f",
-                femur, speed);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request");
                 
                 
     std::string csv_file_path = "file.csv";            

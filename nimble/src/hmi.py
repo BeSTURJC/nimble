@@ -17,9 +17,16 @@ class HmiPublisher(Node):
         self.publisher_measur_ = self.create_publisher(Measurements, 'measurements', 10)
         self.publisher_th_req_ = self.create_publisher(TherapyRequirements, 'therapy_requirements', 10)
 
-        subTopic = 'cartesian_trajectory' #** Shows the full trajectory
-        # subTopic = 'cartesian_state' #** Shows the actual position of the exo 
-        self.create_subscription(CartesianTrajectory, subTopic, self.cartesian_callback, 10)
+
+        self.cartesian_target_subscription = self.create_subscription(
+            CartesianTrajectory,'cartesian_target',
+            self.cartesian_target_callback,10)
+        self.cartesian_target_msg = None
+        
+        self.cartesian_state_subscription = self.create_subscription(
+            CartesianTrajectory,'cartesian_state',
+            self.cartesian_state_callback,10)
+        self.cartesian_state_msg = None
 
         # TODO: The cartesian_state probably have a buffer, if the buffer is implemented, get only the last element
 
@@ -50,51 +57,53 @@ class HmiPublisher(Node):
         self.flask_thread = threading.Thread(target=self.run_flask)
         self.flask_thread.start()
 
-    def cartesian_callback(self, msg):
-       
-       multiplier = 100
+    def cartesian_target_callback(self, msg):
+        if self.cartesian_state_msg is not None:
+            multiplier = 100
 
-       for i, position in enumerate(msg.left_knee):
-
-        data1 = self.webHmi.set_articulation_positions( 'exo1', multiplier,
-            msg.left_knee[i],
-            msg.right_knee[i],
-            msg.left_pelvis[i],
-            msg.right_pelvis[i],
-            msg.left_hip[i],
-            msg.right_hip[i],
-            msg.left_ankle[i],
-            msg.right_ankle[i],
-            msg.left_heel[i],
-            msg.right_heel[i],
-            msg.left_toe[i],
-            msg.right_toe[i]
-        )
-
-        data2 = self.webHmi.set_articulation_positions( 'exo2', 115,
-            msg.left_knee[i],
-            msg.right_knee[i],
-            msg.left_pelvis[i],
-            msg.right_pelvis[i],
-            msg.left_hip[i],
-            msg.right_hip[i],
-            msg.left_ankle[i],
-            msg.right_ankle[i],
-            msg.left_heel[i],
-            msg.right_heel[i],
-            msg.left_toe[i],
-            msg.right_toe[i]
-        )
-
-        data3 = {
-            'exo_frame_x': msg.base_pelvis[i].x * multiplier,
-            'exo_frame_y': msg.base_pelvis[i].y * multiplier,
-            'exo_frame_z': msg.base_pelvis[i].z * multiplier
-        }
-
-        self.webHmi.data = {**data1, **data2, **data3}
         
-        time.sleep(0.1)
+
+            data1 = self.webHmi.set_articulation_positions( 'exo1', multiplier,
+                msg.left_knee[0],
+                msg.right_knee[0],
+                msg.left_pelvis[0],
+                msg.right_pelvis[0],
+                msg.left_hip[0],
+                msg.right_hip[0],
+                msg.left_ankle[0],
+                msg.right_ankle[0],
+                msg.left_heel[0],
+                msg.right_heel[0],
+                msg.left_toe[0],
+                msg.right_toe[0]
+        )
+
+            data2 = self.webHmi.set_articulation_positions( 'exo2', 115,
+                self.cartesian_state_msg.left_knee[-1],
+                self.cartesian_state_msg.right_knee[-1],
+                self.cartesian_state_msg.left_pelvis[-1],
+                self.cartesian_state_msg.right_pelvis[-1],
+                self.cartesian_state_msg.left_hip[-1],
+                self.cartesian_state_msg.right_hip[-1],
+                self.cartesian_state_msg.left_ankle[-1],
+                self.cartesian_state_msg.right_ankle[-1],
+                self.cartesian_state_msg.left_heel[-1],
+                self.cartesian_state_msg.right_heel[-1],
+                self.cartesian_state_msg.left_toe[-1],
+                self.cartesian_state_msg.right_toe[-1]
+        )
+
+            data3 = {
+                'exo_frame_x': msg.base_pelvis[0].x * multiplier,
+                'exo_frame_y': msg.base_pelvis[0].y * multiplier,
+                'exo_frame_z': msg.base_pelvis[0].z * multiplier
+            }
+
+            self.webHmi.data = {**data1, **data2, **data3}
+            
+    def cartesian_state_callback(self, msg):
+        # Guarda el mensaje recibido para su uso en el callback del cartesian_target
+        self.cartesian_state_msg = msg
 
     # Runs the Flask app
     def run_flask(self):

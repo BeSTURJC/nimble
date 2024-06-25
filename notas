@@ -1,6 +1,16 @@
-- como sincronizar SP cartesianos y angulares
-	- pelvis z influye en el robot por cables 
-	- podría usarse el angulo pelvisList
-	- se publican en nodos diferentes por lo que no están necesariamente sincronizados
-	- por un lado states machine publica las referencias angulares a periodo deseado,
-	- states machine debería coger la trayectoria entera cartesiana y enviar paquetes con cart y angular
+targets
+	pelvis y angulos, todo en el mismo mensaje para asegurar coordinacion?
+	se publican a la vez pero en 2 msg diferentes	
+	
+	
+vigilar kinematic node
+	no funciona cartesian state (mezcla entre version ant.(desktop) y actual
+	cambiar calculo de la altura por foot clearance
+	meter una trayectoria mía en formato csv
+	vigilar calculos de la z pelvis
+	acumular coordenada x en cada paso terminado para que no reinicie	
+	
+control pelvis
+	movimiento en z en funcion de la cartesiana o del pelvis List?
+	
+	

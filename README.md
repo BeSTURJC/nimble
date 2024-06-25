@@ -17,7 +17,7 @@
 3. [Nodos](#nodos)
    * [HMI](https://github.com/jcarballeira/nimble/blob/HMI/docs/hmi.md)
    * [Kinematic Model](https://github.com/jcarballeira/nimble/blob/HMI/docs/kinematic_model.md)
-   * [Cables Robot](https://github.com/jcarballeira/nimble/blob/HMI/docs/cables_robot.md)
+   * [Gait Control](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
    * [Control MSD](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_MSD.md)
    * [Control ZMP](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_ZMP.md)
    * [Frame](https://github.com/jcarballeira/nimble/blob/HMI/docs/frame.md)
@@ -161,6 +161,11 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * `float64[] position` (vector de vectores [pos_hipR, pos_kneeR, pos_ankleR, pos_hipL, pos_kneeL, pos_ankleL])
 * `float64[] velocity` (análogo al anterior con velocidades)
 * `float64[] effort` (análogo al anterior con velocidades)
+
+### geometry_msgs/Point
+  * `float64 x`
+  * `float64 y`
+  * `float64 z`
 
 ### trajectory_msgs/msg/JointTrajectory
 

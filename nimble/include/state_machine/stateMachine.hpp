@@ -15,6 +15,7 @@
 #include "nimble_interfaces/msg/joints_trajectory.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 
+
 #include "nimble_interfaces/srv/traj_generator_service.hpp"
 
 namespace stateMachine
@@ -67,11 +68,10 @@ private:
     rclcpp::CallbackGroup::SharedPtr client_cb_group_; // Callback group to enable simultaneous service and node operation
     rclcpp::Client<nimble_interfaces::srv::TrajGeneratorService>::SharedPtr client_; // Client for the trajectory service
     rclcpp::TimerBase::SharedPtr timer_joint_trajectory_;
-    rclcpp::TimerBase::SharedPtr timer_joint_target_;
     SharedData shared_data_;
-    std::chrono::steady_clock::time_point time_jt_received_;
     bool th_req_received;
     bool meas_received;
+    
     
     // Subscribers
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_joints_state;
@@ -85,11 +85,11 @@ private:
     rclcpp::Subscription<std_msgs::msg::ByteMultiArray>::SharedPtr subscriber_FSR;
     
     // Publishers
-    rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory>::SharedPtr publisher_joints_target;
     rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory>::SharedPtr publisher_joints_trajectory;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_assistLevel;
     rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr publisher_executionMode;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_controlMode;
+
 
     // Functions
     std::string jointTrajectoryToString(const trajectory_msgs::msg::JointTrajectory::SharedPtr& joint_trajectory);
@@ -108,13 +108,11 @@ private:
     void call_back_FSR(const std_msgs::msg::ByteMultiArray & FSR_msg);
 
     // Publisher functions
-    float get_step_percent();
-    trajectory_msgs::msg::JointTrajectoryPoint get_actual_joint_state(float step_percent);
+    trajectory_msgs::msg::JointTrajectoryPoint get_joint_target_from_index(float step_percent);
     void processData();
 
     // Timer callbacks for publishers
     void call_back_joints_trajectory_timer();
-    void call_back_joints_current_target();
     //Timers periods
     double joints_target_ts;
     double joints_trajectory_ts;

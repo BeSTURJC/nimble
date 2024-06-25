@@ -6,6 +6,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/int64.hpp"
 #include "std_msgs/msg/float32_multi_array.hpp"
+#include "std_msgs/msg/int32_multi_array.hpp"
 #include "std_msgs/msg/byte_multi_array.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
 #include "nimble_interfaces/msg/joints_trajectory.hpp"
@@ -19,7 +20,7 @@ struct SharedData {
 
     nimble_interfaces::msg::JointsTrajectory joints_target;
     sensor_msgs::msg::JointState joints_state;
-    std_msgs::msg::Int64 assist_level;
+    std_msgs::msg::Int32MultiArray assist_level;
     std_msgs::msg::Float32MultiArray interaction_torque;
     std_msgs::msg::ByteMultiArray FSR;
     // Add more fields as needed
@@ -50,9 +51,9 @@ public:
                 // Callback function that publishes the received Int64 message
                 call_back_jointsState(msg);
             }); 
-        subscriber_assist_level = create_subscription<std_msgs::msg::Int64>(
+        subscriber_assist_level = create_subscription<std_msgs::msg::Int32MultiArray>(
             "assistLevel", 10,
-            [this](const std_msgs::msg::Int64 msg) {
+            [this](const std_msgs::msg::Int32MultiArray msg) {
                 
                 call_back_assist_level(msg);
             });
@@ -86,7 +87,7 @@ private:
     SharedData	shared_data_; //esteuctura de datos
     rclcpp::Subscription<nimble_interfaces::msg::JointsTrajectory>::SharedPtr subscriber_jointsTarget; //Subscriptores
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_jointsState;
-    rclcpp::Subscription<std_msgs::msg::Int64>::SharedPtr subscriber_assist_level;
+    rclcpp::Subscription<std_msgs::msg::Int32MultiArray>::SharedPtr subscriber_assist_level;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr suscriber_interaction_torque;
     rclcpp::Subscription<std_msgs::msg::ByteMultiArray>::SharedPtr suscriber_FSR;
         
@@ -108,7 +109,7 @@ private:
         processData();
     }
     
-    void call_back_assist_level(const std_msgs::msg::Int64 & assist_level_msg) 
+    void call_back_assist_level(const std_msgs::msg::Int32MultiArray & assist_level_msg) 
     {
         shared_data_.assist_level = assist_level_msg;
         processData();

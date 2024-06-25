@@ -17,8 +17,6 @@ Control de la posición del COG/ZMP a través de la acción del marco/robot cabl
 
 **Suscribed:**
 
-**Suscribed:**
-
 - `/cartesian_target` (nimble_interfaces/msg/CartesianTrajectory)
   - **Origen:** gait_control
   - Objetivo actual de posición de la pelvis según fase de marcha

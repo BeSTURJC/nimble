@@ -37,6 +37,14 @@ def generate_launch_description():
         ),
         Node(
             package="nimble",
+            executable="gait_control",
+            name="gait_control",
+            output="log",
+            emulate_tty=True,
+            
+        ),
+        Node(
+            package="nimble",
             executable="kinematic_model",
             name="kinematic_model",
             output="log",
@@ -51,7 +59,16 @@ def generate_launch_description():
             output="log",
             emulate_tty=True,
             
-        )#,
+        ),
+        Node(
+            package="nimble",
+            executable="fake_H3_node",
+            name="fake_H3_node",
+            output="log",
+            emulate_tty=True,
+            
+        )
+        #,
         #Node(
            # package="nimble",
             #executable="control_ZMP",

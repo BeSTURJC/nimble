@@ -122,7 +122,11 @@ public:
     KinematicModelNode();
 
 private:
-    
+    int bufferSize;
+    bool trajectory_received=false;
+    JointAngle JointStateBuffer;
+
+
     // **** Atributes **** //
     // Subscribers
     rclcpp::Subscription<nimble_interfaces::msg::JointsTrajectory>::SharedPtr subscriber_joints_trajectory_;
@@ -137,7 +141,7 @@ private:
     rclcpp::Publisher<nimble_interfaces::msg::TherapyRequirements>::SharedPtr publisher_stepTarget_;
 
     // Message data for publishers
-    nimble_interfaces::msg::CartesianTrajectory cartesian_state_;
+    nimble_interfaces::msg::CartesianTrajectory cartesian_state_buffer;
 
     // Message data for subscribers
     nimble_interfaces::msg::Measurements measurements_;
@@ -161,6 +165,7 @@ private:
         nimble_interfaces::msg::CartesianTrajectory &cartesian_trajectory);
 
     void resize_joint_position(jointPosition &position, int size);
+    //void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index);
     void fill_jointPos_with_exopos(jointPosition& joint_pos, Eigen::Vector3d left, Eigen::Vector3d right, int index, float z_error);
     
     // Matrix operations

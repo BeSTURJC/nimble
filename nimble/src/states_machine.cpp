@@ -17,9 +17,10 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
   this->declare_parameter("joints_trajectory_ts", 3000.0);
   this->get_parameter("joints_trajectory_ts",joints_trajectory_ts);
   this->get_parameter("joints_target_ts",joints_target_ts);
-
+  
   th_req_received=false;
   meas_received=false;
+  
   
   // Create all subscribers
 
@@ -66,11 +67,11 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
         call_back_FSR(msg); });
 
   // Create publisher for topics
-  publisher_joints_target = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10);
   publisher_joints_trajectory = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_trajectory", 10);
   publisher_assistLevel = create_publisher<std_msgs::msg::Int32MultiArray>("assistLevel", 10);
   publisher_executionMode = create_publisher<std_msgs::msg::Int32>("executionMode", 10);
   publisher_controlMode = create_publisher<std_msgs::msg::Int32MultiArray>("controlMode", 10);
+  
   
 
   // Create callback groups to avoid multi-executor issues
@@ -82,7 +83,7 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
 
   // Create wall timer to publish periodically
   timer_joint_trajectory_ = this->create_wall_timer(std::chrono::duration<double>(joints_trajectory_ts/1000), std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this));
-  timer_joint_target_= this->create_wall_timer(std::chrono::duration<double>(joints_target_ts/1000), std::bind(&StatesMachineNode::call_back_joints_current_target, this));
+  
 }
 
 
@@ -202,28 +203,25 @@ void StatesMachineNode::call_TrajGenerationService(
   std::future_status status = result.wait_for(10s);  // timeout to guarantee a graceful finish
 
   if (status == std::future_status::ready) {
-    RCLCPP_INFO(this->get_logger(), "Received response");
+    RCLCPP_INFO(this->get_logger(), "Received response. Trajectory Generated");
     shared_data_.joints_trajectory.trajectory=result.get()->joints_trajectory;
     
     //auto joint_trajectory_msg_ptr = std::make_shared<trajectory_msgs::msg::JointTrajectory>(shared_data_.joints_trajectory.trajectory);
     /*RCLCPP_INFO(this->get_logger(), "JointTrajectory message:\n%s",
         jointTrajectoryToString(joint_trajectory_msg_ptr).c_str());*/
         
-    // Gets the timestamp for step percentage 
-    time_jt_received_ = std::chrono::steady_clock::now();
-    
     //Adapt complete trajectory to control frequency (joints_target_ts). Adapting number of points
     //calculate steps in gait percentage depending on the frecuency
     float delta_phase=shared_data_.therapy_requirements.speed/1000*joints_target_ts/shared_data_.therapy_requirements.step_length*100;
     //number of points to interpolate with that step
     int num_samples=1+100/delta_phase;
-    RCLCPP_INFO(this->get_logger(), "Delta:%f, Samples:%i",delta_phase,num_samples);
+    RCLCPP_INFO(this->get_logger(), "Delta Gait:%f%, NumPoints:%i",delta_phase,num_samples);
 
     auto traj=trajectory_msgs::msg::JointTrajectory();
     std::vector<float> linspaced_phases;
     for (int i = 0; i < num_samples; ++i) {
         linspaced_phases.push_back(delta_phase * i);
-        trajectory_msgs::msg::JointTrajectoryPoint target = get_actual_joint_state(delta_phase * i);
+        trajectory_msgs::msg::JointTrajectoryPoint target = get_joint_target_from_index(delta_phase * i);
         traj.points.push_back(target);
     }
     std_msgs::msg::Float32MultiArray phases_msg;
@@ -235,36 +233,7 @@ void StatesMachineNode::call_TrajGenerationService(
   //RCLCPP_INFO(this->get_logger(), "JointTrajectory message:\n%s",jointTrajectoryToString(joint_trajectory_msg_ptr).c_str());
 }
 
-float StatesMachineNode::get_step_percent() {
-
-    float step_percent = 0;
-    size_t num_points = shared_data_.joints_trajectory.trajectory.points.size();
-
-    // joints_target not received
-    if (num_points != 0) {
-        // Gets  linux clock to avoid resets
-        auto now = std::chrono::steady_clock::now();
-        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(now - time_jt_received_);
-        int time_act = static_cast<int>(elapsed.count());
-
-        float step_speed = shared_data_.therapy_requirements.speed; // m/s
-
-        // (m/s * m) * 1000 (ms)    
-        float time_step = (shared_data_.therapy_requirements.step_length/step_speed) * 1000;  
-
-        // Restarts timer if its in other step
-        if (time_act >= time_step) {
-            time_jt_received_ = std::chrono::steady_clock::now();
-            time_act = time_act - time_step;
-        } 
-            
-        step_percent = time_act / time_step * 100;
-    }
-
-    return step_percent;
-}
-
-trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_state(float gait_percent) {
+trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_joint_target_from_index(float gait_percent) {
     trajectory_msgs::msg::JointTrajectoryPoint point;
     
     int num_joints = shared_data_.joints_trajectory.trajectory.points[0].positions.size();
@@ -306,27 +275,27 @@ trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_actual_joint_s
 
 void StatesMachineNode::call_back_joints_state(const sensor_msgs::msg::JointState& joint_state_msg) {
   shared_data_.joints_state =joint_state_msg;  
-  processData();        
+         
 }
 
 void StatesMachineNode::call_back_cartesian_trajectory(const nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory_msg) {
   shared_data_.cartesian_trajectory = cartesian_trajectory_msg;
-  processData();
+    
 }
 
 void StatesMachineNode::call_back_cartesian_state(const nimble_interfaces::msg::CartesianTrajectory& cartesian_state_msg) {
   shared_data_.cartesian_state = cartesian_state_msg;
-  processData();
+  
 }
 
 void StatesMachineNode::call_back_state_cables(const sensor_msgs::msg::JointState& joint_state_cables_msg) {
   shared_data_.cables_state = joint_state_cables_msg;
-  processData();
+  
 }
 
 void StatesMachineNode::call_back_step_target(const nimble_interfaces::msg::TherapyRequirements& step_target_msg) {
   shared_data_.step_target = step_target_msg;
-  processData();
+  
 }
 
 void StatesMachineNode::call_back_therapy_requirements(const nimble_interfaces::msg::TherapyRequirements& therapy_requirements_msg) {
@@ -359,32 +328,14 @@ void StatesMachineNode::call_back_measurements(const nimble_interfaces::msg::Mea
 
 void StatesMachineNode::call_back_interaction_torque(const std_msgs::msg::Float32MultiArray& interaction_torque_msg) {
   shared_data_.interaction_torque = interaction_torque_msg;
-  processData();
+  
 }
 
 void StatesMachineNode::call_back_FSR(const std_msgs::msg::ByteMultiArray& FSR_msg) {
   shared_data_.FSR = FSR_msg;
-  processData();
+  
 }
 
-void StatesMachineNode::call_back_joints_current_target() {
-  auto curr_target_message = nimble_interfaces::msg::JointsTrajectory();
-  
-  std::vector<float> phases;
-  float curr_percent = get_step_percent();
-  
-  // Is there an ideal trajectory?
-  if (!shared_data_.joints_trajectory.trajectory .points.empty()) {
-    trajectory_msgs::msg::JointTrajectoryPoint curr_target = get_actual_joint_state(curr_percent);
-    phases.push_back(curr_percent);
-    curr_target_message.phase.data = phases;
-    curr_target_message.trajectory.joint_names={"hipR","kneeR", "ankleR", "hipL", "kneeL", "ankleL", "pelvisList", "pelvisTilt", "hipR_abd", "hipL_abd"};
-    curr_target_message.trajectory.points.push_back(curr_target);
-
-    publisher_joints_target->publish(curr_target_message);
-
-  }
-}
 
 void StatesMachineNode::call_back_joints_trajectory_timer() {
   if (!shared_data_.joints_trajectory.trajectory.points.empty()) { 

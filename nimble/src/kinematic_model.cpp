@@ -73,6 +73,7 @@ void KinematicModelNode::call_back_joints_trajectory(
 
   // Resizes
   int size = joint_trajectory_msg.trajectory.points.size();
+  bufferSize=size;
 
   // Fills joint ang
   for (int i = 0; i < size; i++) {
@@ -123,59 +124,68 @@ void KinematicModelNode::call_back_joints_trajectory(
 void KinematicModelNode::call_back_joints_state(
     const sensor_msgs::msg::JointState &joint_state_msg) {
 
-  const int bufferSize = 1;
-  const int nJoints = 13;
+  if (bufferSize!=0){
 
-  // TODO: IF TOPIC %STEP IS %5 STORE ONE POSITION
+    JointAngles curr_joint_state;  
+    curr_joint_state.hipR.push_back(joint_state_msg.position[0]);
+    curr_joint_state.kneeR.push_back(joint_state_msg.position[1]);
+    curr_joint_state.ankleR.push_back(joint_state_msg.position[2]);
+    curr_joint_state.hipL.push_back(joint_state_msg.position[3]);
+    curr_joint_state.kneeL.push_back(joint_state_msg.position[4]);
+    curr_joint_state.ankleL.push_back(joint_state_msg.position[5]);
+    
+    //this->fillJointAngles(joint_state_msg, JointStateBuffer);
 
-  JointAngles joint_state_ang;
-  this->fillJointAngles(joint_state_msg, joint_state_ang);
+    nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
+    nimble_interfaces::msg::TherapyRequirements step_target;
 
-  nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
-  nimble_interfaces::msg::TherapyRequirements step_target;
-  
-  // Define an array of pointers to the geometry_msgs/Point arrays
-  std::array<std::vector<geometry_msgs::msg::Point>*, nJoints> actual_point_arrays = {
-      &cartesian_actual_state.right_pelvis,
-      &cartesian_actual_state.left_pelvis,
-      &cartesian_actual_state.base_pelvis,
-      &cartesian_actual_state.right_hip,
-      &cartesian_actual_state.left_hip,
-      &cartesian_actual_state.right_knee,
-      &cartesian_actual_state.left_knee,
-      &cartesian_actual_state.right_ankle,
-      &cartesian_actual_state.left_ankle,
-      &cartesian_actual_state.right_heel,
-      &cartesian_actual_state.left_heel,
-      &cartesian_actual_state.right_toe,
-      &cartesian_actual_state.left_toe
-  };
-  
-  std::array<std::vector<geometry_msgs::msg::Point>*, nJoints> cartesian_states = {
-      &cartesian_state_.right_pelvis,
-      &cartesian_state_.left_pelvis,
-      &cartesian_state_.base_pelvis,
-      &cartesian_state_.right_hip,
-      &cartesian_state_.left_hip,
-      &cartesian_state_.right_knee,
-      &cartesian_state_.left_knee,
-      &cartesian_state_.right_ankle,
-      &cartesian_state_.left_ankle,
-      &cartesian_state_.right_heel,
-      &cartesian_state_.left_heel,
-      &cartesian_state_.right_toe,
-      &cartesian_state_.left_toe
-  };
+    // Uses a Ring Buffer to pop back the last elements of the buffer
+    this->executeKinematicModel(curr_joint_state, measurements_,
+                                        cartesian_actual_state, step_target);
 
-  // Iterate over the arrays and update the Cartesian states
-  for (int i = 0; i < nJoints; ++i) {
-      if (!actual_point_arrays[i]->empty()) {
-          // Uses a Ring Buffer to pop back the last elements of the buffer
-          this->updateCartesianState(*cartesian_states[i], (*actual_point_arrays[i])[0], bufferSize);
-      }
-  }
+    this->updateCartesianState(cartesian_state_buffer.right_pelvis,
+                                      cartesian_actual_state.right_pelvis[0],
+                                      bufferSize);
+    RCLCPP_INFO(this->get_logger(), "Passed");                                   
+    this->updateCartesianState(cartesian_state_buffer.left_pelvis,
+                                      cartesian_actual_state.left_pelvis[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.base_pelvis,
+                                      cartesian_actual_state.base_pelvis[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.right_hip,
+                                      cartesian_actual_state.right_hip[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.left_hip,
+                                      cartesian_actual_state.left_hip[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.right_knee,
+                                      cartesian_actual_state.right_knee[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.left_knee,
+                                      cartesian_actual_state.left_knee[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.right_ankle,
+                                      cartesian_actual_state.right_ankle[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.left_ankle,
+                                      cartesian_actual_state.left_ankle[0],
+                                      bufferSize);                                  
+    this->updateCartesianState(cartesian_state_buffer.right_heel,
+                                      cartesian_actual_state.right_heel[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.left_heel,
+                                      cartesian_actual_state.left_heel[0],
+                                      bufferSize);  
+    this->updateCartesianState(cartesian_state_buffer.right_toe,
+                                      cartesian_actual_state.right_toe[0],
+                                      bufferSize);
+    this->updateCartesianState(cartesian_state_buffer.left_toe,
+                                      cartesian_actual_state.left_toe[0],
+                                      bufferSize); 
+    publisher_cartState_->publish(cartesian_state_buffer);
 
-  publisher_cartState_->publish(cartesian_state_);
+  }  
 }
 
 void KinematicModelNode::call_back_state_cables(
@@ -196,23 +206,12 @@ void KinematicModelNode::fillJointAngles(
     const sensor_msgs::msg::JointState &joint_state_msg,
     JointAngles &joint_state_ang) {
 
-  joint_state_ang.hipR.insert(joint_state_ang.hipR.begin(),
-                              joint_state_msg.position[0]);
-
-  joint_state_ang.hipL.insert(joint_state_ang.hipL.begin(),
-                              joint_state_msg.position[1]);
-
-  joint_state_ang.kneeR.insert(joint_state_ang.kneeR.begin(),
-                               joint_state_msg.position[2]);
-
-  joint_state_ang.kneeL.insert(joint_state_ang.kneeL.begin(),
-                               joint_state_msg.position[3]);
-
-  joint_state_ang.ankleR.insert(joint_state_ang.ankleR.begin(),
-                                joint_state_msg.position[4]);
-
-  joint_state_ang.ankleL.insert(joint_state_ang.ankleL.begin(),
-                                joint_state_msg.position[5]);
+  joint_state_ang.hipR.push_back(joint_state_msg.position[0]);
+  joint_state_ang.kneeR.push_back(joint_state_msg.position[1]);
+  joint_state_ang.ankleR.push_back(joint_state_msg.position[2]);
+  joint_state_ang.hipL.push_back(joint_state_msg.position[3]);
+  joint_state_ang.kneeL.push_back(joint_state_msg.position[4]);
+  joint_state_ang.ankleL.push_back(joint_state_msg.position[5]);
 }
 
 template <typename T>
@@ -221,7 +220,7 @@ void KinematicModelNode::updateCartesianState(std::vector<T> &target,
                                             std::size_t bufferSize) {
   target.push_back(value);
   if (target.size() > bufferSize) {
-    target.pop_back();
+    target.erase(target.begin());
   }
 }
 

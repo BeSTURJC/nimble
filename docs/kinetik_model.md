@@ -15,7 +15,7 @@ Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del ma
 
 **Suscribed:**
 
-- `/joints_target` (trajectory_msgs/msg/JointTrajectory)
+- `/joints_trajectory` (nimble_interfaces/msg/JointsTrajectory)
   - **Origen:** states_machin
   - Trayectoria articular ideal
 
@@ -33,10 +33,10 @@ Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del ma
 
 **Publishes:**
 
-- `/cartesian_target` (nimble_interfaces/msg/CartesianFullTrajectory)
+- `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
   - Posiciones xyz para toda la trayectoria ideal tanto de la pelvis como del maleolo.
 
-- `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)
+- `/cartesian_state` (nimble_interfaces/msg/CartesianTrajectory)
   - Posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
 
 - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
