@@ -15,10 +15,6 @@ Paso de espacio articular a cartesiano del Exo, obteniendo posiciones xyz del ma
 
 **Suscribed:**
 
-- `/joints_trajectory` (nimble_interfaces/msg/JointsTrajectory)
-  - **Origen:** states_machine
-  - Trayectoria articular ideal
-
 - `/joints_state` (sensor_msgs/msg/JointState)
   - **Origen:** Nodo_Simulink (H3)
   - Información actual de las articulaciones del H3

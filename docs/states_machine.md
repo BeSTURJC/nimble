@@ -56,7 +56,7 @@ Funciones por definir para la evaluacion de las trayectoria real vs ideal (carte
 - `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
     - posiciones xyz acumuladas hasta el instante actual desde el inicio del paso (pelvis, maleolo, toe, heel) 
   
-  - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
+- `/step_target` (nimble_interfaces/msg/TherapyRequirements)
     - altura y longitud de paso a ejecutar, consecuencia del calculo cinematico usando la trayectoria articular ideal
 
 - `/assistLevel` (std_msgs/Int32Multiarray)
