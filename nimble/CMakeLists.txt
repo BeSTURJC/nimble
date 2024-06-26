@@ -45,6 +45,9 @@ ament_target_dependencies(gamming rclcpp nimble_interfaces)
 add_executable(traj_generator_server src/traj_generator_service.cpp)
 ament_target_dependencies(traj_generator_server rclcpp nimble_interfaces)
 
+add_executable(cartesian_traj_server src/cartesian_traj_service.cpp)
+ament_target_dependencies(cartesian_traj_server rclcpp nimble_interfaces sensor_msgs trajectory_msgs)
+
 install(TARGETS
   kinematic_model
   control_ZMP
@@ -55,6 +58,7 @@ install(TARGETS
   frame
   states_machine
   traj_generator_server
+  cartesian_traj_server
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch include config

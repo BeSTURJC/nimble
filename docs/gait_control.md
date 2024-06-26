@@ -20,7 +20,7 @@ Publicación a frecuencia concreta de setpoints tanto articulares para el exo co
   - Trayectoria articular ideal para paso completo. El numero de puntos depende de la frecuancia de publicacion de setpoints.
   
 - `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
-  - **Origen:** kinematic model
+  - **Origen:** states_machine
   - Trayectoria cartesiana ideal para paso completo (pelvis, toe, heel, ankle). El numero de puntos depende de la frecuancia de publicacion de setpoints.  
   
 - `/therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)

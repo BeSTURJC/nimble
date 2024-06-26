@@ -7,7 +7,11 @@
 
 ## Objetivo
 
-Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. Para esta trayectoria ideal ajusta el numero de puntos según velocidad de avance del paciente y el periodo que reclame el control MSD. Publica toda la trayectoria y punto a punto con el porcentaje de marcha asociado. Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia.
+Reclama el servicio de generacion de trayectorias ante cada modificacion de las medidas o requisitos de la terapia. 
+Para esta trayectoria ideal ajusta el numero de puntos según velocidad de avance del paciente y el periodo que reclame el control MSD. 
+Solicita servicio de calculo cinematico directo para toda esa trayectoria articular. 
+Publica ambas trayectorias completas. 
+Funciones por definir para la evaluacion de las trayectoria real vs ideal (cartesiana y articular?), el ajuste del nivel de asistencia en consecuencia.
 
 ---
 
@@ -30,18 +34,10 @@ Reclama el servicio de generacion de trayectorias ante cada modificacion de las 
   - **Origen:** kinematic_model
   - posiciones xyz para la trayectoria completa de un paso (pelvis, maleolo, toe, heel)
  
-- `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
-  - **Origen:** kinematic_model
-  - posiciones xyz acumuladas hasta el instante actual desde el inicio del paso (pelvis, maleolo, toe, heel) 
-
 - `/cables_state` (sensor_msgs/msg/JointState)
   - **Origen:** cables_robot
   - Posición, esfuerzo, etc. de los cables (por definir)
- 
-- `/step_target` (nimble_interfaces/msg/TherapyRequirements)
-  - **Origen:** kinematic model
-  - altura y longitud de paso a ejecutar, consecuencia del calculo cinematico usando la trayectoria articular ideal
- 
+
 - `/interactionTorque` (std_msgs/Float32Multiarray)
   - **Origen:** Nodo_Simulink (H3)
   - torque de interacción medido por el H3, 6 elementos ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]
@@ -57,6 +53,11 @@ Reclama el servicio de generacion de trayectorias ante cada modificacion de las 
 - `/joints_trajectory` (nimble_interfaces/msg/JointsTrajectory)
     - trayectoria articular ideal obtenida por servicio (NN: TrajGenerationService) e interpolada para ajustar al periodo que requiere el control MSD
 
+- `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
+    - posiciones xyz acumuladas hasta el instante actual desde el inicio del paso (pelvis, maleolo, toe, heel) 
+  
+  - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
+    - altura y longitud de paso a ejecutar, consecuencia del calculo cinematico usando la trayectoria articular ideal
 
 - `/assistLevel` (std_msgs/Int32Multiarray)
     - vector nivel de asistencia para cada articulacion ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]

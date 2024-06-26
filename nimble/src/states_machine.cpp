@@ -28,11 +28,6 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
       "joints_state", 10, [this](const sensor_msgs::msg::JointState msg) { 
         call_back_joints_state(msg);});
 
-  subscriber_cartesian_trajectory =
-      create_subscription<nimble_interfaces::msg::CartesianTrajectory>(
-          "cartesian_trajectory", 10, [this](const nimble_interfaces::msg::CartesianTrajectory msg) {
-            call_back_cartesian_trajectory(msg);});
-
   subscriber_cartesian_state =
       create_subscription<nimble_interfaces::msg::CartesianTrajectory>(
           "cartesian_state", 10, [this](const nimble_interfaces::msg::CartesianTrajectory msg) {
@@ -41,11 +36,6 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
   subscriber_state_cables = create_subscription<sensor_msgs::msg::JointState>(
       "cables_state", 10, [this](const sensor_msgs::msg::JointState msg) {
         call_back_state_cables(msg);});
-
-  subscriber_step_target =
-      create_subscription<nimble_interfaces::msg::TherapyRequirements>(
-          "step_target", 10, [this](const nimble_interfaces::msg::TherapyRequirements msg) {
-            call_back_step_target(msg);});
 
   subscriber_therapy_requirements =
       create_subscription<nimble_interfaces::msg::TherapyRequirements>(
@@ -68,18 +58,18 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
 
   // Create publisher for topics
   publisher_joints_trajectory = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_trajectory", 10);
+  publisher_cartesian_trajectory= create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_trajectory", 10);
+  publisher_step_target=create_publisher<nimble_interfaces::msg::TherapyRequirements>("step_target", 10);
   publisher_assistLevel = create_publisher<std_msgs::msg::Int32MultiArray>("assistLevel", 10);
   publisher_executionMode = create_publisher<std_msgs::msg::Int32>("executionMode", 10);
   publisher_controlMode = create_publisher<std_msgs::msg::Int32MultiArray>("controlMode", 10);
   
-  
-
   // Create callback groups to avoid multi-executor issues
   client_cb_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
 
-  // Create a client for your service
-  client_ = this->create_client<nimble_interfaces::srv::TrajGeneratorService>(
-      "traj_generator_service", rmw_qos_profile_services_default, client_cb_group_);
+  // Create a client for your joint trajectory
+  joints_client_ = this->create_client<nimble_interfaces::srv::TrajGeneratorService>("traj_generator_service", rmw_qos_profile_services_default, client_cb_group_);
+  cart_client_= this->create_client<nimble_interfaces::srv::CartesianTrajService>("cartesian_traj_service", rmw_qos_profile_services_default, client_cb_group_);    
 
   // Create wall timer to publish periodically
   timer_joint_trajectory_ = this->create_wall_timer(std::chrono::duration<double>(joints_trajectory_ts/1000), std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this));
@@ -175,62 +165,75 @@ std::string StatesMachineNode::jointTrajectoryToString(const trajectory_msgs::ms
 
 
 // Function to request the trajectory calculation service
-void StatesMachineNode::call_TrajGenerationService(
-    const nimble_interfaces::msg::Measurements& measurements,
+void StatesMachineNode::call_TrajGenerationService(const nimble_interfaces::msg::Measurements& measurements,
     const nimble_interfaces::msg::TherapyRequirements& requirements) {
 
   RCLCPP_INFO(this->get_logger(), "Sending trajectory request");
-  // Create a request to send to the service
-  auto request = std::make_shared<nimble_interfaces::srv::TrajGeneratorService::Request>();
-
-  // Populate the request fields as needed
-  request->measurements = measurements;
-  request->therapy_requirements = requirements;
-
-  while (!client_->wait_for_service(3s)) {
+  while (!cart_client_->wait_for_service(3s) && !joints_client_->wait_for_service(3s)) {
     if (!rclcpp::ok()) {
-      RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Interrupted while waiting for the service. Exiting.");
-      // return 0;
+      RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Interrupted while waiting for trajectory services. Exiting.");
+      return ;
     }
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "service not available, waiting again...");
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Trajectory services not available, waiting again...");
   }
 
   // Call the service using the client
-  auto result = client_->async_send_request(request);
+  // Create a request to send to the service
+  auto joints_request = std::make_shared<nimble_interfaces::srv::TrajGeneratorService::Request>();
+  // Populate the request fields as needed
+  joints_request->measurements = measurements;
+  joints_request->therapy_requirements = requirements;
 
-  // Wait for the result
-  // Do this instead of rclcpp::spin_until_future_complete()
-  std::future_status status = result.wait_for(10s);  // timeout to guarantee a graceful finish
+  using ServiceResponseFuture = rclcpp::Client<nimble_interfaces::srv::TrajGeneratorService>::SharedFuture;
+  auto response_received_callback = [this](ServiceResponseFuture future) {
+      auto result = future.get();
+      //RCLCPP_INFO(this->get_logger(), "Received response from TrajGeneratorService");
+      // Procesa la respuesta y llama al segundo servicio
+      shared_data_.joints_trajectory.trajectory=result->joints_trajectory;
+      //Adapt complete trajectory to control frequency (joints_target_ts). Adapting number of points
+      //calculate steps in gait percentage depending on the frecuency
+      float delta_phase=shared_data_.therapy_requirements.speed/1000*joints_target_ts/shared_data_.therapy_requirements.step_length*100;
+      //number of points to interpolate with that step
+      int num_samples=1+100/delta_phase;
+      RCLCPP_INFO(this->get_logger(), "Received response from Joint Trajectory Generator. Delta Gait:%f%, NumPoints:%i",delta_phase,num_samples);
 
-  if (status == std::future_status::ready) {
-    RCLCPP_INFO(this->get_logger(), "Received response. Trajectory Generated");
-    shared_data_.joints_trajectory.trajectory=result.get()->joints_trajectory;
-    
-    //auto joint_trajectory_msg_ptr = std::make_shared<trajectory_msgs::msg::JointTrajectory>(shared_data_.joints_trajectory.trajectory);
-    /*RCLCPP_INFO(this->get_logger(), "JointTrajectory message:\n%s",
-        jointTrajectoryToString(joint_trajectory_msg_ptr).c_str());*/
-        
-    //Adapt complete trajectory to control frequency (joints_target_ts). Adapting number of points
-    //calculate steps in gait percentage depending on the frecuency
-    float delta_phase=shared_data_.therapy_requirements.speed/1000*joints_target_ts/shared_data_.therapy_requirements.step_length*100;
-    //number of points to interpolate with that step
-    int num_samples=1+100/delta_phase;
-    RCLCPP_INFO(this->get_logger(), "Delta Gait:%f%, NumPoints:%i",delta_phase,num_samples);
+      auto traj=trajectory_msgs::msg::JointTrajectory();
+      std::vector<float> linspaced_phases;
+      for (int i = 0; i < num_samples; ++i) {
+          linspaced_phases.push_back(delta_phase * i);
+          trajectory_msgs::msg::JointTrajectoryPoint target = get_joint_target_from_index(delta_phase * i);
+          traj.points.push_back(target);
+      }
+      std_msgs::msg::Float32MultiArray phases_msg;
+      phases_msg.data=linspaced_phases;
+      shared_data_.joints_trajectory.phase=phases_msg;
+      shared_data_.joints_trajectory.trajectory.points=traj.points;
+      this->call_cartesian_traj_service(traj);
+  };
 
-    auto traj=trajectory_msgs::msg::JointTrajectory();
-    std::vector<float> linspaced_phases;
-    for (int i = 0; i < num_samples; ++i) {
-        linspaced_phases.push_back(delta_phase * i);
-        trajectory_msgs::msg::JointTrajectoryPoint target = get_joint_target_from_index(delta_phase * i);
-        traj.points.push_back(target);
-    }
-    std_msgs::msg::Float32MultiArray phases_msg;
-    phases_msg.data=linspaced_phases;
-    shared_data_.joints_trajectory.phase=phases_msg;
-    shared_data_.joints_trajectory.trajectory.points=traj.points;
-  }
+  auto result_future = joints_client_->async_send_request(joints_request, response_received_callback);
+
+  
   //auto joint_trajectory_msg_ptr = std::make_shared<trajectory_msgs::msg::JointTrajectory>(shared_data_.joints_trajectory.trajectory);
   //RCLCPP_INFO(this->get_logger(), "JointTrajectory message:\n%s",jointTrajectoryToString(joint_trajectory_msg_ptr).c_str());
+}
+
+void StatesMachineNode::call_cartesian_traj_service(const trajectory_msgs::msg::JointTrajectory traj_response)
+  {
+    auto cart_request = std::make_shared<nimble_interfaces::srv::CartesianTrajService::Request>();;
+    // Llena los datos necesarios para la solicitud usando la respuesta del primer servicio
+    cart_request->measurements = shared_data_.measurements;
+    cart_request->joints_trajectory = traj_response;
+    using ServiceResponseFuture = rclcpp::Client<nimble_interfaces::srv::CartesianTrajService>::SharedFuture;
+    auto response_received_callback = [this](ServiceResponseFuture future) {
+      auto result = future.get();
+      RCLCPP_INFO(this->get_logger(), "Received response from Cartesian Traj Service");
+      // Procesa la respuesta del segundo servicio
+      shared_data_.step_target=result->step_target;
+      shared_data_.cartesian_trajectory=result->cartesian_trajectory;
+    };
+
+    auto result_future = cart_client_->async_send_request(cart_request, response_received_callback);
 }
 
 trajectory_msgs::msg::JointTrajectoryPoint StatesMachineNode::get_joint_target_from_index(float gait_percent) {
@@ -278,11 +281,6 @@ void StatesMachineNode::call_back_joints_state(const sensor_msgs::msg::JointStat
          
 }
 
-void StatesMachineNode::call_back_cartesian_trajectory(const nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory_msg) {
-  shared_data_.cartesian_trajectory = cartesian_trajectory_msg;
-    
-}
-
 void StatesMachineNode::call_back_cartesian_state(const nimble_interfaces::msg::CartesianTrajectory& cartesian_state_msg) {
   shared_data_.cartesian_state = cartesian_state_msg;
   
@@ -290,11 +288,6 @@ void StatesMachineNode::call_back_cartesian_state(const nimble_interfaces::msg::
 
 void StatesMachineNode::call_back_state_cables(const sensor_msgs::msg::JointState& joint_state_cables_msg) {
   shared_data_.cables_state = joint_state_cables_msg;
-  
-}
-
-void StatesMachineNode::call_back_step_target(const nimble_interfaces::msg::TherapyRequirements& step_target_msg) {
-  shared_data_.step_target = step_target_msg;
   
 }
 
@@ -306,8 +299,8 @@ void StatesMachineNode::call_back_therapy_requirements(const nimble_interfaces::
   RCLCPP_INFO(this->get_logger(), "Speed: %f", shared_data_.therapy_requirements.speed);*/
   if (th_req_received && meas_received && therapy_variation) {
       // If there are any, request ideal trajectory calculation
-      call_TrajGenerationService(shared_data_.measurements, shared_data_.therapy_requirements);
-      therapy_variation = false;
+      call_TrajGenerationService(shared_data_.measurements,shared_data_.therapy_requirements);
+      
     
   }
     
@@ -319,8 +312,8 @@ void StatesMachineNode::call_back_measurements(const nimble_interfaces::msg::Mea
   bool therapy_variation = check_variations_in_therapy();
   if (th_req_received && meas_received && therapy_variation){  
     // If there are any, request ideal trajectory calculation
-    call_TrajGenerationService(shared_data_.measurements, shared_data_.therapy_requirements);
-    therapy_variation = false;
+    call_TrajGenerationService(shared_data_.measurements,shared_data_.therapy_requirements);
+    
     
   }
   
@@ -344,18 +337,11 @@ void StatesMachineNode::call_back_joints_trajectory_timer() {
     joints_trajectory_msg.header.stamp = now();  // Header with the publication timestamp
     //joints_trajectory_msg.trajectory.joint_names={"hipR", "kneeR","ankleR","hipL", "kneeL","ankleL"};
     publisher_joints_trajectory->publish(joints_trajectory_msg);  // publish
+
+    shared_data_.cartesian_trajectory.header.stamp = now();
+    publisher_cartesian_trajectory->publish(shared_data_.cartesian_trajectory);  // publish
   }
 }
-
-
-// Process function
-void StatesMachineNode::processData() {
-  // TODO: Aquí quizás habría que hacer distintas funciones de procesamiento y comprobar que existen datos de todo lo necesario con un if
-
-
-  
-}
-
 
 };  // namespace stateMachine
 

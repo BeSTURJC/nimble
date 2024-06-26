@@ -16,7 +16,7 @@ Movimiento del marco en la direccion de avance como acompañamiento e impulso de
 **Suscribed:**
 
 - `/pelvis_SP` (sensor_msgs/msg/JointState)
-  - **Origen:** control_MSD
+  - **Origen:** gait_control
   - Setpoints de posición, velocidad y/o torque en x,y,z. Interesan la coordenada x.
   
 **Publishes:**

@@ -129,16 +129,13 @@ private:
 
     // **** Atributes **** //
     // Subscribers
-    rclcpp::Subscription<nimble_interfaces::msg::JointsTrajectory>::SharedPtr subscriber_joints_trajectory_;
-
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_joints_state_;
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_state_cables_;
     rclcpp::Subscription<nimble_interfaces::msg::Measurements>::SharedPtr subscriber_measurements_;
 
     // Publishers
-    rclcpp::Publisher<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr publisher_cartTrajectory_;
     rclcpp::Publisher<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr publisher_cartState_;
-    rclcpp::Publisher<nimble_interfaces::msg::TherapyRequirements>::SharedPtr publisher_stepTarget_;
+    
 
     // Message data for publishers
     nimble_interfaces::msg::CartesianTrajectory cartesian_state_buffer;
@@ -175,9 +172,9 @@ private:
 
     // Main functions
     Eigen::Vector3d gaitFeatureExtraction(  
-        // const std::vector<double>& ankleIpsi_X,
+        const std::vector<double>& ankleIpsi_X,
         const std::vector<double>& ankleContra_X,
-        // const std::vector<double>& ankleIpsi_Z,
+        const std::vector<double>& ankleIpsi_Z,
         const std::vector<double>& ankleContra_Z,
         const std::vector<double>& heelIpsi_Z,
         const std::vector<double>& heelContra_Z,
@@ -196,7 +193,7 @@ private:
     void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
             nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
-            nimble_interfaces::msg::TherapyRequirements& step_target);
+            nimble_interfaces::msg::TherapyRequirements& step_target, bool extr_params);
 };
 
 

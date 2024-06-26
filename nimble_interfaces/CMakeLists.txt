@@ -24,6 +24,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointsTrajectory.msg"
   "msg/CartesianTrajectory.msg"
   "srv/TrajGeneratorService.srv"
+  "srv/CartesianTrajService.srv"
   DEPENDENCIES std_msgs trajectory_msgs geometry_msgs
  )
 

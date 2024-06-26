@@ -1,156 +1,127 @@
+#define EIGEN_RUNTIME_NO_MALLOC
+
 #include <chrono>
 #include <functional>
 #include <memory>
 #include <string>
-#include <iterator>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <boost/tokenizer.hpp>
+#include <eigen3/Eigen/Dense>
+#include <cmath>
 
-#include "kinetik_model/kineticModel.hpp"
-#include "nimble_interfaces/msg/cartesian_trajectory.hpp"
+
+#include "rclcpp/rclcpp.hpp"
 #include "nimble_interfaces/msg/measurements.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
+#include "nimble_interfaces/msg/cartesian_trajectory.hpp"
+#include "nimble_interfaces/srv/cartesian_traj_service.hpp"
 #include "nimble_interfaces/msg/joints_trajectory.hpp"
-#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "std_msgs/msg/int64.hpp"
-#include "std_msgs/msg/float64_multi_array.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
-#include "geometry_msgs/msg/point.hpp"
 
-using namespace std::chrono_literals;
+// ***** Structs ***** // 
+struct jointPosition {
+    struct pos {
+        std::vector<double> X;
+        std::vector<double> Y;
+        std::vector<double> Z;
+    } R, L, base;
 
-namespace kineticModel 
-{
+    std::vector<double> phase;
+};
 
-// *** Class initializer *** // 
-KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
-  // Possible internal parameters
-  this->declare_parameter("contact_point", 1);
-  this->declare_parameter("param2", 2);
 
-  // Creates subscribers
-  subscriber_joints_state_ = create_subscription<sensor_msgs::msg::JointState>(
-      "joints_state", 10, [this](const sensor_msgs::msg::JointState msg) {
-        call_back_joints_state(msg);
-      });
+struct JointAngles {
+    std::vector<double> hipR_abd;
+    std::vector<double> hipL_abd;
+    std::vector<double> hipR;
+    std::vector<double> hipL;
 
-  subscriber_state_cables_ = create_subscription<sensor_msgs::msg::JointState>(
-      "cables_state", 10, [this](const sensor_msgs::msg::JointState msg) {
-        call_back_state_cables(msg);
-      });
+    std::vector<double> kneeR;
+    std::vector<double> kneeL;
 
-  subscriber_measurements_ =
-      create_subscription<nimble_interfaces::msg::Measurements>(
-          "measurements", 10,[this](const nimble_interfaces::msg::Measurements msg) {
-            call_back_measurements(msg);
-          });
+    std::vector<double> ankleR;
+    std::vector<double> ankleL;
 
-  // Creates publishers
-  publisher_cartState_ =
-      create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_state", 10);
-}
+    std::vector<double> pelvisList;
+    std::vector<double> pelvisTilt;
+    std::vector<double> phase;
+};
 
-// *** Callbacks *** //
-void KinematicModelNode::call_back_joints_state(
-    const sensor_msgs::msg::JointState &joint_state_msg) {
-    
-    JointAngles curr_jointAng;
-    //Fill structure with current angles from Exo  
-    this->fillJointAngles(joint_state_msg, curr_jointAng);
-    curr_jointAng.pelvisList.push_back(0); //Will be filled with joint_state_cables_msg
-    curr_jointAng.pelvisTilt.push_back(0);
-    curr_jointAng.hipR_abd.push_back(0);
-    curr_jointAng.hipL_abd.push_back(0);
 
-    nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
-    nimble_interfaces::msg::TherapyRequirements step_target;
+struct JointAngle {
+    double hipR_abd{0.0};
+    double hipR{0.0};
+    double kneeR{0.0};
+    double ankleR{0.0};
+    double hipL_abd{0.0};
+    double hipL{0.0};
+    double kneeL{0.0};
+    double kneeL_flex{0.0};
+    double kneeR_flex{0.0};
+    double ankleR_flex{0.0};
+    double ankleL{0.0};
+    double pelvisList{0.0};
+    double hipR_flex{0.0};
+    double hipL_flex{0.0};
+    double pelvisTilt{0.0};
+    double ankleL_flex{0.0};
+    double phase{0.0};
+};
 
-    bool extract_features=false;
-    this->executeKinematicModel(curr_jointAng, measurements_,
-                                        cartesian_actual_state, step_target,extract_features);
-    /*this->updateCartesianState(cartesian_state_buffer.right_pelvis,
-                                      cartesian_actual_state.right_pelvis[-1],
-                                      bufferSize);
-       
-    this->updateCartesianState(cartesian_state_buffer.left_pelvis,
-                                      cartesian_actual_state.left_pelvis[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.base_pelvis,
-                                      cartesian_actual_state.base_pelvis[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_hip,
-                                      cartesian_actual_state.right_hip[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_hip,
-                                      cartesian_actual_state.left_hip[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_knee,
-                                      cartesian_actual_state.right_knee[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_knee,
-                                      cartesian_actual_state.left_knee[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_ankle,
-                                      cartesian_actual_state.right_ankle[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_ankle,
-                                      cartesian_actual_state.left_ankle[-1],
-                                      bufferSize);                                  
-    this->updateCartesianState(cartesian_state_buffer.right_heel,
-                                      cartesian_actual_state.right_heel[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_heel,
-                                      cartesian_actual_state.left_heel[-1],
-                                      bufferSize);  
-    this->updateCartesianState(cartesian_state_buffer.right_toe,
-                                      cartesian_actual_state.right_toe[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_toe,
-                                      cartesian_actual_state.left_toe[-1],
-                                      bufferSize); 
-    //RCLCPP_INFO(this->get_logger(), "prueba:%f",cartesian_actual_state.base_pelvis[-1].x);*/
-    publisher_cartState_->publish(cartesian_actual_state);
 
-  //}  
-}
+struct Leg {
+    Eigen::VectorXd X;
+    Eigen::VectorXd Y;
+    Eigen::VectorXd Z;
 
-void KinematicModelNode::call_back_state_cables(
-    const sensor_msgs::msg::JointState &joint_state_cables_msg) {
-  // shared_data_.cables_state = joint_state_cables_msg;
-}
+    Leg() : X(Eigen::VectorXd::Zero(0)),
+            Y(Eigen::VectorXd::Zero(0)),
+            Z(Eigen::VectorXd::Zero(0)) {}
+};
 
-// Always updates measurements callback
-void KinematicModelNode::call_back_measurements(
-    const nimble_interfaces::msg::Measurements &measurements_msg) {
-  measurements_ = measurements_msg;
-}
+struct ExoPositions {
+    bool initialized{true};
+    struct RefSystems {
+        Eigen::Vector3d base{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftPelvis{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftHip{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftKnee{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftAnkle{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftFoot{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftToe{0.0, 0.0, 0.0};
+        Eigen::Vector3d leftHeel{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightPelvis{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightHip{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightKnee{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightAnkle{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightFoot{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightToe{0.0, 0.0, 0.0};
+        Eigen::Vector3d rightHeel{0.0, 0.0, 0.0};
+    } refSystems;
 
+    Leg leftLeg;
+    Leg rightLeg;
+
+    // Defines contact points
+    struct ContactPoint {
+        std::string name;
+        double X{0};
+        double Y{0};
+        double Z{0};
+    } contactPoint;
+
+};
 
 
 // ***** Structs functions ***** //
-void KinematicModelNode::fillJointAngles(
-    const sensor_msgs::msg::JointState &joint_state_msg,
-    JointAngles &joint_state_ang) {
 
-  joint_state_ang.hipR.push_back(joint_state_msg.position[0]);
-  joint_state_ang.kneeR.push_back(joint_state_msg.position[1]);
-  joint_state_ang.ankleR.push_back(joint_state_msg.position[2]);
-  joint_state_ang.hipL.push_back(joint_state_msg.position[3]);
-  joint_state_ang.kneeL.push_back(joint_state_msg.position[4]);
-  joint_state_ang.ankleL.push_back(joint_state_msg.position[5]);
-
-}
-
-template <typename T>
-void KinematicModelNode::updateCartesianState(std::vector<T> &target,
-                                            const T &value,
-                                            std::size_t bufferSize) {
-  target.push_back(value);
-  if (target.size() > bufferSize) {
-    target.erase(target.begin());
-  }
-}
-
-void KinematicModelNode::fill_joint_state(
+void fill_joint_state(
     jointPosition &pelvisPosition,
     jointPosition &hipPositions,
     jointPosition &anklePositions,
@@ -198,7 +169,7 @@ void KinematicModelNode::fill_joint_state(
   fill_cartesian_positions(kneePositions.L, cartesian_trajectory.left_knee);
 }
 
-void KinematicModelNode::resize_joint_position(
+void resize_joint_position(
     jointPosition &position, int size) {
         
   position.R.X.resize(size);
@@ -213,7 +184,7 @@ void KinematicModelNode::resize_joint_position(
   position.phase.resize(size);
 }
 
-void KinematicModelNode::fill_jointPos_with_exopos(
+void fill_jointPos_with_exopos(
     jointPosition &joint_pos, Eigen::Vector3d left,
     Eigen::Vector3d right, int index, float z_error) {
 
@@ -226,10 +197,8 @@ void KinematicModelNode::fill_jointPos_with_exopos(
   joint_pos.R.Z[index] = right[2] + z_error;
 }
 
-
-
 // ******* Matrix operations***** //
-Eigen::Vector3d KinematicModelNode::position_fromSR(const Eigen::Matrix4d &T) {
+Eigen::Vector3d position_fromSR(const Eigen::Matrix4d &T) {
 
   Eigen::Vector3d pos;
   pos(0) = T(0, 3);
@@ -239,7 +208,7 @@ Eigen::Vector3d KinematicModelNode::position_fromSR(const Eigen::Matrix4d &T) {
   return pos;
 }
 
-Eigen::Vector3d KinematicModelNode::position_fromSR_pelvisTilt(
+Eigen::Vector3d position_fromSR_pelvisTilt(
     const Eigen::Matrix4d &T) {
 
   Eigen::Vector3d pos;
@@ -251,7 +220,7 @@ Eigen::Vector3d KinematicModelNode::position_fromSR_pelvisTilt(
   return pos;
 }
 
-Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
+Eigen::Matrix4d DH_deg(double theta, double d, double a,
                                            double alpha) {
   Eigen::Matrix4d trans_Z, trans_X;
 
@@ -272,8 +241,9 @@ Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
   return A;
 }
 
+
 // ***** Main functions ***** //
-Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(  
+Eigen::Vector3d gaitFeatureExtraction(  
     const std::vector<double>& ankleIpsi_X,
     const std::vector<double> &ankleContra_X,
     const std::vector<double>& ankleIpsi_Z,
@@ -329,7 +299,7 @@ Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(
   return data;
 }
 
-void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngles, 
+void exoKinematicModel_pelvisMov(const JointAngle& jointAngles, 
         const nimble_interfaces::msg::Measurements& measurements, const ExoPositions& previousExoPosition,
         ExoPositions& exoPositions_fixedBase, ExoPositions& exoPositions_movilBase) {
     
@@ -545,13 +515,13 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     // RCLCPP_INFO_STREAM(this->get_logger(), "Offset: '" << exoPositions_movilBase.refSystems.leftPelvis << "'"); 
 }
 
-void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
+void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
             nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
             nimble_interfaces::msg::TherapyRequirements& step_target,bool extract_features)
 { 
-    int numPoints = jointAng.hipR.size();
-    RCLCPP_INFO(this->get_logger(), "Feat:%s, NumPoints:%i",extract_features ? "true" : "false",numPoints);
+    int numPoints = jointAng.hipR_abd.size();
+    //RCLCPP_INFO(this->get_logger(), "Feat:%s, NumPoints:%i",extract_features ? "true" : "false",numPoints);
     
     // Theres no joint data received, return
     if (numPoints == 0) {
@@ -584,9 +554,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
 
         // Set joint angles
         JointAngle q_model;
-        
         q_model.hipR_abd = jointAng.hipR_abd[i];
-        RCLCPP_INFO(this->get_logger(), "PASS");
         q_model.hipR = jointAng.hipR[i];
         q_model.hipL_abd = jointAng.hipL_abd[i];
         q_model.hipL = jointAng.hipL[i];
@@ -613,7 +581,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
         } 
 
         // Kinematic model of the pelvis movement
-        this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
+        exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
                                                 exoPositions_fixedBase, exoPositions);
 
         // Store positions
@@ -662,7 +630,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
   if (extract_features==true){
     // Gets the step length and the height
     Eigen::Vector3d data;   // {length, height, swingPercent}
-    data = this->gaitFeatureExtraction(anklePositions.R.X, anklePositions.L.X,
+    data = gaitFeatureExtraction(anklePositions.R.X, anklePositions.L.X,
                         anklePositions.R.Z, anklePositions.L.Z,
                         heelsPositions.R.Z, heelsPositions.L.Z,
                         toePositions.R.Z, toePositions.L.Z,
@@ -680,12 +648,61 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
   }
 }
 
-};  // namespace kineticModel
 
-int main(int argc, char *argv[]) {
+void calculate_trajectory(const std::shared_ptr<nimble_interfaces::srv::CartesianTrajService::Request> request,
+          std::shared_ptr<nimble_interfaces::srv::CartesianTrajService::Response>      response)
+{   	
+    //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request");
+                
+    // Create a CartesianTrajectory message
+    //auto cartesian_trajectory = std::make_shared<nimble_interfaces::msg::CartesianTrajectory>();
+    //auto step_target = std::make_shared<nimble_interfaces::msg::TherapyRequirements>();
+    nimble_interfaces::msg::CartesianTrajectory cartesian_trajectory;
+    nimble_interfaces::msg::TherapyRequirements step_target;
+    trajectory_msgs::msg::JointTrajectory joints_trajectory=request->joints_trajectory;
+    nimble_interfaces::msg::Measurements measurements=request->measurements;
+    int size = joints_trajectory.points.size();
+    JointAngles jointAng;
+    for (int i = 0; i < size; i++) {
+      jointAng.hipR.push_back(joints_trajectory.points[i].positions[0]);
+      jointAng.kneeR.push_back(joints_trajectory.points[i].positions[1]);
+      jointAng.ankleR.push_back(joints_trajectory.points[i].positions[2]);
+      jointAng.hipL.push_back(joints_trajectory.points[i].positions[3]);
+      jointAng.kneeL.push_back(joints_trajectory.points[i].positions[4]);
+      jointAng.ankleL.push_back(joints_trajectory.points[i].positions[5]);
+      jointAng.pelvisList.push_back(joints_trajectory.points[i].positions[6]);
+      jointAng.pelvisTilt.push_back(joints_trajectory.points[i].positions[7]);
+      jointAng.hipR_abd.push_back(joints_trajectory.points[i].positions[8]);
+      jointAng.hipL_abd.push_back(joints_trajectory.points[i].positions[9]);
+      jointAng.phase.push_back(i);
+    }
+
+    bool extract_features=true;
+    executeKinematicModel(jointAng, measurements, cartesian_trajectory, step_target,extract_features);
+    rclcpp::Clock clock;
+    auto timestamp = clock.now();
+
+    //cartesian_trajectory->header.stamp = timestamp;
+    //step_target->header.stamp = timestamp;
+
+    response->cartesian_trajectory = cartesian_trajectory;
+    response->step_target = step_target;                  
+  
+}
+
+
+int main(int argc, char **argv)
+{
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<kineticModel::KinematicModelNode>();
+
+  std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("cartesian_traj_service");
+
+  rclcpp::Service<nimble_interfaces::srv::CartesianTrajService>::SharedPtr service =
+    node->create_service<nimble_interfaces::srv::CartesianTrajService>("cartesian_traj_service", &calculate_trajectory);
+
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Trajectory Generator Service: Ready.");
+
   rclcpp::spin(node);
   rclcpp::shutdown();
-  return 0;
 }
+

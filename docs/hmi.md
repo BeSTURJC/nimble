@@ -15,7 +15,7 @@ Publicar periódicamente las medidas del paciente y los requisitos de la terapia
 * **Suscripciones:**
 
   * `/cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
-    - **Origen:** kinematic model
+    - **Origen:** states_machine
     - Recreacion ruta cartesiana ideal.
   
   * `/cartesian_state` (nimble_interfaces/msg/CartesianFullTrajectory)

@@ -20,7 +20,7 @@ Proyeccion de incentivo para el paciente en forma de huellas sobre el suelo
   - Posición y velocidad en x del marco, información del sensor óptico
 
 - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
-  - **Origen:** kinematic_model
+  - **Origen:** states_machine
   - Altura y longitud de paso buscada 
 
 **Publishes:**

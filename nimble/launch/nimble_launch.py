@@ -29,6 +29,14 @@ def generate_launch_description():
         ),
         Node(
             package="nimble",
+            executable="cartesian_traj_server",
+            name="cartesian_traj_server",
+            output="log",
+            emulate_tty=True,
+            
+        ),
+        Node(
+            package="nimble",
             executable="states_machine",
             name="states_machine",
             output="log",

@@ -149,6 +149,13 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * Request 2: `therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
 * Response: `joints_trajectory` (trajectory_msgs/msg/JointTrajectory)
 
+#### nimble_interfaces/srv/CartesianTrajService (a partir de trayectoria articular completa calcula la cartesiana completa)
+
+- Request 1: `measurements` (nimble_interfaces/msg/Measurements)
+* Request 2: `joints_trajectory` (trajectory_msgs/msg/JointTrajectory)
+* Response 1: `cartesian_trajectory` (nimble_interfaces/msg/CartesianTrajectory)
+* Response 2: `step_target` (nimble_interfaces/msg/TherapyRequirements)
+
 ---
 ---
 

@@ -26,7 +26,7 @@ Control de la posición del COG/ZMP a través de la acción del marco/robot cabl
   - Posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
   
 - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
-  - **Origen:** kinematic_model
+  - **Origen:** states_machine
   - Altura y longitud de paso buscada 
 
 - `/frame_state` (nimble_interfaces/msg/FrameState)

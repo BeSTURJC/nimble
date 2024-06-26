@@ -35,14 +35,14 @@ class HmiPublisher(Node):
         self.declare_parameters(
             namespace=self.yamlNamespace,
             parameters=[
-                ('height', 1.8),
-                ('femur', 0.3371),
-                ('tibia', 0.3495),
-                ('distance_to_heel', 0.0),
+                ('height', 1.81),
+                ('femur', 0.4),
+                ('tibia', 0.4206),
+                ('distance_to_heel', 0.04),
                 ('distance_to_toe', 0.1065),
-                ('height_ankle', 0.0705),
+                ('height_ankle', 0.0608),
                 ('depth_pelvis', 0.0),
-                ('width_pelvis', 0.4367),
+                ('width_pelvis', 0.33),
                 ('min_assist_level', 10),
                 ('max_assist_level', 50),
                 ('speed', 1.0),
@@ -78,7 +78,7 @@ class HmiPublisher(Node):
                 msg.right_toe[0]
         )
 
-            data2 = self.webHmi.set_articulation_positions( 'exo2', 115,
+            data2 = self.webHmi.set_articulation_positions( 'exo2', multiplier,
                 self.cartesian_state_msg.left_knee[-1],
                 self.cartesian_state_msg.right_knee[-1],
                 self.cartesian_state_msg.left_pelvis[-1],

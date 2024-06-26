@@ -4,10 +4,7 @@ targets
 	
 	
 vigilar kinematic node
-	calculo online falla---posible problema la phase que se le adjudica a cada joint_state que viene del exo
-			posible apaño- añadir primer estado a trayectoria angular ideal completa (FIFO), mantener tamaño e ir adjudicando phase segun frecuencia
-	cambiar calculo de la altura por foot clearance
-	meter una trayectoria mía en formato csv
+	entra en calculo de pos cart singular pero dá error de segmentacion
 	vigilar calculos de la z pelvis
 	acumular coordenada x en cada paso terminado para que no reinicie	
 	
