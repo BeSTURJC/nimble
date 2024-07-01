@@ -120,12 +120,17 @@ void ZMPNode::command(std::string line){
         {this->PublishCommand(6);}
         else if (line=="VERBOSE")
         {this->PublishCommand(7);}
+        else if (line=="a")
+        {this->PublishCommand(8);}
+        else if (line=="d")
+        {this->PublishCommand(9);}
+        else if (line=="w")
+        {this->PublishCommand(10);}
+        else if (line=="q")
+        {this->PublishCommand(11);}
+        else if (line=="e")
+        {this->PublishCommand(12);}
 
-        //        if (line=="s" || line=="VELOCITY" ||line =="POSITION" || line =="VERBOSE" ||
-        //                line =="Poserror")
-        //        {
-        //            this->PublishCommand(4);
-        //        }
         else{
             std::cout<<"Not a valid Command"<<std::endl;
         }
