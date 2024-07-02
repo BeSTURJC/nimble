@@ -27,6 +27,9 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
   this->declare_parameter("contact_point", 1);
   this->declare_parameter("param2", 2);
 
+  
+  last_exoPositions.initialized = false;
+
   // Creates subscribers
   subscriber_joints_state_ = create_subscription<sensor_msgs::msg::JointState>(
       "joints_state", 10, [this](const sensor_msgs::msg::JointState msg) {
@@ -66,7 +69,7 @@ void KinematicModelNode::call_back_joints_state(
 
     bool extract_features=false;
     this->executeKinematicModel(curr_jointAng, measurements_,
-                                        cartesian_actual_state, step_target,extract_features);
+                                        cartesian_actual_state, last_exoPositions);
     /*this->updateCartesianState(cartesian_state_buffer.right_pelvis,
                                       cartesian_actual_state.right_pelvis[-1],
                                       bufferSize);
@@ -273,62 +276,6 @@ Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
 }
 
 // ***** Main functions ***** //
-Eigen::Vector3d KinematicModelNode::gaitFeatureExtraction(  
-    const std::vector<double>& ankleIpsi_X,
-    const std::vector<double> &ankleContra_X,
-    const std::vector<double>& ankleIpsi_Z,
-    const std::vector<double> &ankleContra_Z,
-    const std::vector<double> &heelIpsi_Z,
-    const std::vector<double> &heelContra_Z,
-    const std::vector<double> &toeIpsi_Z,
-    const std::vector<double> &toeContra_Z, const std::vector<double> &phase) {
-
-  Eigen::Vector3d data;
-  int legcross=0;
-  int ind=0;
-
-  // Stride length calculation
-  data(0) = ankleContra_X[-1] - ankleContra_X[0];
-
-  while (legcross==0 && ind!=static_cast<int>(phase.size())){
-    ind=ind+1;
-    if (ankleIpsi_X[ind]>=ankleContra_X[ind]){
-       legcross=1;
-       data(1)=std::min(heelIpsi_Z[ind],toeIpsi_Z[ind]);
-    } 
-  }
-  if (ind==(static_cast<int>(phase.size())-1)){
-    data(1)=static_cast<int>(phase.size());
-  }
-  // Height calculation
-  //data(1) = *std::max_element(ankleContra_Z.begin(), ankleContra_Z.end()) -
-  //          *std::min_element(ankleContra_Z.begin(), ankleContra_Z.end());
-
-  // Swing percent calculation
-  size_t id_toeOff = 1;
-  bool lookFor_toeOff = true;
-  while (lookFor_toeOff) {
-    if (toeContra_Z[id_toeOff] >= toeIpsi_Z[id_toeOff]) {
-      lookFor_toeOff = false;
-    } else {
-      ++id_toeOff;
-    }
-  }
-
-  size_t id_heelStrike = id_toeOff;
-  bool lookFor_heelStrike = true;
-  while (lookFor_heelStrike) {
-    if (heelContra_Z[id_heelStrike] <= heelIpsi_Z[id_heelStrike]) {
-      lookFor_heelStrike = false;
-    } else {
-      ++id_heelStrike;
-    }
-  }
-
-  data(2) = phase[id_heelStrike] - phase[id_toeOff];
-  return data;
-}
-
 void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngles, 
         const nimble_interfaces::msg::Measurements& measurements, const ExoPositions& previousExoPosition,
         ExoPositions& exoPositions_fixedBase, ExoPositions& exoPositions_movilBase) {
@@ -547,137 +494,123 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
-            nimble_interfaces::msg::TherapyRequirements& step_target,bool extract_features)
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, ExoPositions last_exoPositions)
 { 
-    int numPoints = jointAng.hipR.size();
-    RCLCPP_INFO(this->get_logger(), "Feat:%s, NumPoints:%i",extract_features ? "true" : "false",numPoints);
-    
-    // Theres no joint data received, return
-    if (numPoints == 0) {
-        return;
-    }
-        
-    ExoPositions last_exoPositions;
-    last_exoPositions.initialized = false;
-    // Initializes all the arrays of each jointPosition structure
-    jointPosition pelvisPosition;
-    resize_joint_position(pelvisPosition, numPoints);
-
-    jointPosition kneePositions;
-    resize_joint_position(kneePositions, numPoints);
-
-    jointPosition hipPositions;
-    resize_joint_position(hipPositions, numPoints);
-
-    jointPosition anklePositions;
-    resize_joint_position(anklePositions, numPoints);
-
-    jointPosition heelsPositions;
-    resize_joint_position(heelsPositions, numPoints);
-
-    jointPosition toePositions;
-    resize_joint_position(toePositions, numPoints);
-
-    for (int i = 0; i < numPoints; ++i) {
-        ExoPositions exoPositions_fixedBase, exoPositions;
-
-        // Set joint angles
-        JointAngle q_model;
-        
-        q_model.hipR_abd = jointAng.hipR_abd[i];
-        RCLCPP_INFO(this->get_logger(), "PASS");
-        q_model.hipR = jointAng.hipR[i];
-        q_model.hipL_abd = jointAng.hipL_abd[i];
-        q_model.hipL = jointAng.hipL[i];
-            
-        q_model.kneeL = jointAng.kneeL[i];
-        q_model.kneeR = jointAng.kneeR[i];
-
-        q_model.ankleR = jointAng.ankleR[i];
-        q_model.ankleL = jointAng.ankleL[i];
-
-        q_model.pelvisList = jointAng.pelvisList[i];
-        q_model.pelvisTilt = jointAng.pelvisTilt[i];
-
-        // Determine contact point
-        if (i == 0) {
-            if (q_model.hipR > q_model.hipL) {
-                exoPositions.contactPoint.name = "rightHeel";
-            } else {
-                exoPositions.contactPoint.name = "leftHeel";
-            }
-            exoPositions.contactPoint.X = 0;
-            exoPositions.contactPoint.Y = measurements.width_pelvis * 0.5;
-            exoPositions.contactPoint.Z = 0;
-        } 
-
-        // Kinematic model of the pelvis movement
-        this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
-                                                exoPositions_fixedBase, exoPositions);
-
-        // Store positions
-        // Rebases for positive values
-        float z_error = measurements.femur + measurements.tibia + measurements.distance_to_heel + measurements.distance_to_toe;
-
-        // --Pelvis positions
-        fill_jointPos_with_exopos(pelvisPosition, exoPositions.refSystems.leftPelvis, 
-                                                exoPositions.refSystems.rightPelvis, i, z_error);
-
-        pelvisPosition.base.X[i] = exoPositions.refSystems.base[0];
-        pelvisPosition.base.Y[i] = exoPositions.refSystems.base[1];
-        pelvisPosition.base.Z[i] = exoPositions.refSystems.base[2];
-
-        // --Hip positions
-        fill_jointPos_with_exopos(hipPositions, exoPositions.refSystems.leftHip, 
-                                                exoPositions.refSystems.rightHip, i, z_error);
-
-        // --Ankle positions
-        fill_jointPos_with_exopos(anklePositions, exoPositions.refSystems.leftAnkle, 
-                                                exoPositions.refSystems.rightAnkle, i, z_error);
-
-        // --Heel positions
-        fill_jointPos_with_exopos(heelsPositions, exoPositions.refSystems.leftHeel, 
-                                                exoPositions.refSystems.rightHeel, i, z_error);
-
-        // --Toe positions
-        fill_jointPos_with_exopos(toePositions,  exoPositions.refSystems.leftToe, 
-                                                exoPositions.refSystems.rightToe, i, z_error);
-
-        // --Knee positions
-        fill_jointPos_with_exopos(kneePositions,  exoPositions.refSystems.leftKnee, 
-                                                exoPositions.refSystems.rightKnee, i, z_error);
-
-        // --Phases
-        pelvisPosition.phase[i] = jointAng.phase[i];
-        hipPositions.phase[i] = jointAng.phase[i];
-        anklePositions.phase[i] = jointAng.phase[i];
-        heelsPositions.phase[i] = jointAng.phase[i];
-        toePositions.phase[i] = jointAng.phase[i];
-        kneePositions.phase[i] = jointAng.phase[i];
-            
-        // Updates the last exo positions
-        last_exoPositions = exoPositions;
-    }
-  if (extract_features==true){
-    // Gets the step length and the height
-    Eigen::Vector3d data;   // {length, height, swingPercent}
-    data = this->gaitFeatureExtraction(anklePositions.R.X, anklePositions.L.X,
-                        anklePositions.R.Z, anklePositions.L.Z,
-                        heelsPositions.R.Z, heelsPositions.L.Z,
-                        toePositions.R.Z, toePositions.L.Z,
-                        toePositions.phase);
-        
-
-    // Fills step_target message
-    step_target.step_length = data(0);
-    step_target.step_height = data(1);
-    // Swing percent = data(3);
-
-    // Fills cartesian target message
-    fill_joint_state(pelvisPosition, hipPositions, anklePositions, heelsPositions,
-    toePositions, kneePositions, cartesian_trajectory);
+  int numPoints = jointAng.hipR.size();
+      
+  // Theres no joint data received, return
+  if (numPoints == 0) {
+      return;
   }
+      
+  
+  // Initializes all the arrays of each jointPosition structure
+  jointPosition pelvisPosition;
+  resize_joint_position(pelvisPosition, numPoints);
+
+  jointPosition kneePositions;
+  resize_joint_position(kneePositions, numPoints);
+
+  jointPosition hipPositions;
+  resize_joint_position(hipPositions, numPoints);
+
+  jointPosition anklePositions;
+  resize_joint_position(anklePositions, numPoints);
+
+  jointPosition heelsPositions;
+  resize_joint_position(heelsPositions, numPoints);
+
+  jointPosition toePositions;
+  resize_joint_position(toePositions, numPoints);
+
+  for (int i = 0; i < numPoints; ++i) {
+    ExoPositions exoPositions_fixedBase, exoPositions;
+
+    // Set joint angles
+    JointAngle q_model;
+    
+    q_model.hipR = jointAng.hipR[i];
+    q_model.hipL = jointAng.hipL[i];
+        
+    q_model.kneeL = jointAng.kneeL[i];
+    q_model.kneeR = jointAng.kneeR[i];
+
+    q_model.ankleR = jointAng.ankleR[i];
+    q_model.ankleL = jointAng.ankleL[i];
+
+    q_model.pelvisList = jointAng.pelvisList[i];
+    q_model.pelvisTilt = jointAng.pelvisTilt[i];
+
+    q_model.hipR_abd = jointAng.hipR_abd[i];
+    q_model.hipL_abd = jointAng.hipL_abd[i];
+
+    q_model.hipR_abd = jointAng.hipR_abd[i];
+    q_model.hipL_abd = jointAng.hipL_abd[i];
+
+    // Determine contact point
+    if (i == 0) {
+        if (q_model.hipR > q_model.hipL) {
+            exoPositions.contactPoint.name = "rightHeel";
+        } else {
+            exoPositions.contactPoint.name = "leftHeel";
+        }
+        exoPositions.contactPoint.X = 0;
+        exoPositions.contactPoint.Y = measurements.width_pelvis * 0.5;
+        exoPositions.contactPoint.Z = 0;
+    } 
+
+    // Kinematic model of the pelvis movement
+    this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
+                                            exoPositions_fixedBase, exoPositions);
+    
+    // Store positions
+    // Rebases for positive values
+    float z_error = measurements.femur + measurements.tibia + measurements.distance_to_heel + measurements.distance_to_toe;
+
+    // --Pelvis positions
+    this->fill_jointPos_with_exopos(pelvisPosition, exoPositions.refSystems.leftPelvis, 
+                                            exoPositions.refSystems.rightPelvis, i, z_error);
+
+    pelvisPosition.base.X[i] = exoPositions.refSystems.base[0];
+    pelvisPosition.base.Y[i] = exoPositions.refSystems.base[1];
+    pelvisPosition.base.Z[i] = exoPositions.refSystems.base[2];
+
+    // --Hip positions
+    this->fill_jointPos_with_exopos(hipPositions, exoPositions.refSystems.leftHip, 
+                                            exoPositions.refSystems.rightHip, i, z_error);
+
+    // --Ankle positions
+    this->fill_jointPos_with_exopos(anklePositions, exoPositions.refSystems.leftAnkle, 
+                                            exoPositions.refSystems.rightAnkle, i, z_error);
+
+    // --Heel positions
+    this->fill_jointPos_with_exopos(heelsPositions, exoPositions.refSystems.leftHeel, 
+                                            exoPositions.refSystems.rightHeel, i, z_error);
+
+    // --Toe positions
+    this->fill_jointPos_with_exopos(toePositions,  exoPositions.refSystems.leftToe, 
+                                            exoPositions.refSystems.rightToe, i, z_error);
+
+    // --Knee positions
+    this->fill_jointPos_with_exopos(kneePositions,  exoPositions.refSystems.leftKnee, 
+                                            exoPositions.refSystems.rightKnee, i, z_error);
+
+    /*// --Phases
+    pelvisPosition.phase[i] = jointAng.phase[i];
+    hipPositions.phase[i] = jointAng.phase[i];
+    anklePositions.phase[i] = jointAng.phase[i];
+    heelsPositions.phase[i] = jointAng.phase[i];
+    toePositions.phase[i] = jointAng.phase[i];
+    kneePositions.phase[i] = jointAng.phase[i];*/
+    // Updates the last exo positions
+    last_exoPositions = exoPositions;
+  }      
+  
+  // Fills cartesian target message
+  this->fill_joint_state(pelvisPosition, hipPositions, anklePositions, heelsPositions,
+  toePositions, kneePositions, cartesian_trajectory);
+  
+
 }
 
 };  // namespace kineticModel

@@ -1,11 +1,7 @@
-targets
-	pelvis y angulos, todo en el mismo mensaje para asegurar coordinacion?
-	se publican a la vez pero en 2 msg diferentes	
-	
-	
+generador trayectorias
+	probar a pasarlo a c++ y generar "online"	
 vigilar kinematic node
-	entra en calculo de pos cart singular pero dá error de segmentacion
-	vigilar calculos de la z pelvis
+	vigilar calculos de la z pelvis (offset de pierna estirada)
 	acumular coordenada x en cada paso terminado para que no reinicie	
 	
 control pelvis

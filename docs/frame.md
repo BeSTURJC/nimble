@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Movimiento del marco en la direccion de avance como acompañamiento e impulso del paciente
+Movimiento del marco en la direccion de avance como acompañamiento e impulso del paciente. MicroROS, microST.
 
 ---
 
@@ -15,9 +15,9 @@ Movimiento del marco en la direccion de avance como acompañamiento e impulso de
 
 **Suscribed:**
 
-- `/pelvis_SP` (sensor_msgs/msg/JointState)
+- `/pelvis_target` (sensor_msgs/msg/JointState)
   - **Origen:** gait_control
-  - Setpoints de posición, velocidad y/o torque en x,y,z. Interesan la coordenada x.
+  - Setpoints de posición centro masas x,y,z. Interesan la coordenada x.
   
 **Publishes:**
 

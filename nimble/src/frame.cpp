@@ -12,7 +12,7 @@ using namespace std::chrono_literals;
 //Estructura compartida para almacenar datos al recibir cada topic
 struct SharedData {
 
-    sensor_msgs::msg::JointState pelvis_SP;	
+    sensor_msgs::msg::JointState pelvis_target;	
  };
 
 
@@ -27,11 +27,11 @@ public:
     	this->declare_parameter("param2", 2);
     	
         // Create a subscribers 
-        subscriber_pelvisSP = create_subscription<sensor_msgs::msg::JointState>(
-            "pelvis_SP", 10,
+        subscriber_pelvis_target = create_subscription<sensor_msgs::msg::JointState>(
+            "pelvis_target", 10,
             [this](const sensor_msgs::msg::JointState msg) {
                 // Callback function 
-                call_back_pelvisSP(msg);
+                call_back_pelvis_target(msg);
             });
                         
         // Create a publisher
@@ -46,14 +46,14 @@ private:
 
     //Instancias	
     SharedData	shared_data_;    //estructura de datos 
-    rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_pelvisSP;//subscriptores
+    rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_pelvis_target;//subscriptores
     rclcpp::Publisher<nimble_interfaces::msg::FrameState>::SharedPtr publisher_frame_state;//publishers
     rclcpp::TimerBase::SharedPtr timer_; //timer (eliminar si no se usa)
           
     //Callbacks, funciones asociadas a la recepcion de cada topic	
-    void call_back_pelvisSP(const sensor_msgs::msg::JointState & pelvisSP_msg) 
+    void call_back_pelvis_target(const sensor_msgs::msg::JointState & pelvis_target_msg) 
     {
-        shared_data_.pelvis_SP = pelvisSP_msg;  //almacenamiento del mensaje en la estructura de datos
+        shared_data_.pelvis_target = pelvis_target_msg;  //almacenamiento del mensaje en la estructura de datos
         processData();  //llamada a la funcion de procesamiento        
     }
     

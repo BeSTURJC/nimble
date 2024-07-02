@@ -40,7 +40,7 @@ gaitControlNode::gaitControlNode() : Node("gait_control") {
   // Create a publisher
   publisher_joints_target = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10);
   publisher_cartesian_target = create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_target", 10);
-  publisher_pelvis_target = create_publisher<geometry_msgs::msg::Point>("pelvis_SP", 10);
+  publisher_pelvis_target = create_publisher<geometry_msgs::msg::Point>("pelvis_target", 10);
         
   timer_joint_target_= this->create_wall_timer(std::chrono::duration<double>(joints_target_ts/1000), std::bind(&gaitControlNode::call_back_current_target, this));
         

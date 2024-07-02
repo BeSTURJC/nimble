@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Control de la posición del COG/ZMP a través de la acción del marco/robot cables.
+Generacion SP del centro de masas/pelvis para el marco(x) o cables(y,z)
 
 
 
@@ -17,14 +17,10 @@ Control de la posición del COG/ZMP a través de la acción del marco/robot cabl
 
 **Suscribed:**
 
-- `/cartesian_target` (nimble_interfaces/msg/CartesianTrajectory)
+- `/pelvis_target` (sensor_msgs/msg/JointState)
   - **Origen:** gait_control
-  - Objetivo actual de posición de la pelvis según fase de marcha
+  - Objetivo actual de pelvis/ZMP. Posición de marco(x) y cables(y,z)
 
-- `/cartesian_state` (nimble_interfaces/msg/CartesianTrajectory)
-  - **Origen:** kinematic_model
-  - Posiciones xyz acumuladas hasta el instante actual tanto de la pelvis como del maleolo
-  
 - `/step_target` (nimble_interfaces/msg/TherapyRequirements)
   - **Origen:** states_machine
   - Altura y longitud de paso buscada 
@@ -45,3 +41,6 @@ Control de la posición del COG/ZMP a través de la acción del marco/robot cabl
 
 - `/pelvis_SP` (sensor_msgs/msg/JointState)
   - Setpoints de posición, velocidad y/o torque en x,y,z. Se usa de forma análoga al caso de articulaciones, considerando en este caso cada coordenada como articulación.
+  
+- `/frame_controlMode` (std_msgs/msg/Float32)
+  - Modo control marco

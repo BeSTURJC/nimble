@@ -86,7 +86,7 @@ struct Leg {
 };
 
 struct ExoPositions {
-    bool initialized{true};
+    bool initialized{false};
     struct RefSystems {
         Eigen::Vector3d base{0.0, 0.0, 0.0};
         Eigen::Vector3d leftPelvis{0.0, 0.0, 0.0};
@@ -641,11 +641,11 @@ void executeKinematicModel(JointAngles& jointAng,
     step_target.step_length = data(0);
     step_target.step_height = data(1);
     // Swing percent = data(3);
-
-    // Fills cartesian target message
-    fill_joint_state(pelvisPosition, hipPositions, anklePositions, heelsPositions,
-    toePositions, kneePositions, cartesian_trajectory);
   }
+  // Fills cartesian target message
+  fill_joint_state(pelvisPosition, hipPositions, anklePositions, heelsPositions,
+  toePositions, kneePositions, cartesian_trajectory);
+  
 }
 
 

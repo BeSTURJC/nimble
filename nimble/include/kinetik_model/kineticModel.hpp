@@ -125,6 +125,9 @@ private:
     int bufferSize;
     bool trajectory_received=false;
     JointAngles JointStateBuffer;
+    ExoPositions last_exoPositions;
+    
+    
 
 
     // **** Atributes **** //
@@ -171,17 +174,7 @@ private:
     Eigen::Matrix4d DH_deg(double theta, double d, double a, double alpha);
 
     // Main functions
-    Eigen::Vector3d gaitFeatureExtraction(  
-        const std::vector<double>& ankleIpsi_X,
-        const std::vector<double>& ankleContra_X,
-        const std::vector<double>& ankleIpsi_Z,
-        const std::vector<double>& ankleContra_Z,
-        const std::vector<double>& heelIpsi_Z,
-        const std::vector<double>& heelContra_Z,
-        const std::vector<double>& toeIpsi_Z,
-        const std::vector<double>& toeContra_Z,
-        const std::vector<double>& phase);
-
+    
     void exoKinematicModel_pelvisMov(
         const JointAngle& jointAngles,
         const nimble_interfaces::msg::Measurements& measurements,
@@ -192,8 +185,7 @@ private:
     
     void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
-            nimble_interfaces::msg::TherapyRequirements& step_target, bool extr_params);
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, ExoPositions last_exoPositions);
 };
 
 

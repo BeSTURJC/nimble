@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Publicación a frecuencia concreta de setpoints tanto articulares para el exo como cartesianos para marco (x) y pelvis(y,z)
+Publicación a frecuencia concreta de targets actuales tanto articulares para el exo como cartesianos pelvis: para marco (x) y cables(y,z).
 
 ---
 
@@ -29,7 +29,7 @@ Publicación a frecuencia concreta de setpoints tanto articulares para el exo co
   
 **Publishes:**
 
-- `/pelvis_SP` (sensor_msgs/msg/JointState)
-  - Posición, esfuerzo, etc. de los cables (por definir)
+- `/pelvis_target` (sensor_msgs/msg/JointState)
+  - Objetivo actual de pelvis/ZMP. Posición de marco(x) y cables(y,z) (por definir)
 - `/joints_target` (nimble_interfaces/msg/JointsTrajectory)
   - objetivo actual del control MSD (joints_trajectory punto por punto)
