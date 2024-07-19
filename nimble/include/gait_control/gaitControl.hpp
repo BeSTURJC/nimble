@@ -5,12 +5,14 @@
 #include <cstdlib>
 #include "std_msgs/msg/int16.hpp"
 #include "std_msgs/msg/int32.hpp"
+#include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
 #include "std_msgs/msg/float32_multi_array.hpp"
 #include "std_msgs/msg/byte_multi_array.hpp"
 #include "nimble_interfaces/msg/cartesian_trajectory.hpp"
 #include "nimble_interfaces/msg/joints_trajectory.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
+#include "nimble_interfaces/msg/zmp_target.hpp"
 #include "geometry_msgs/msg/point.hpp"
 
 namespace gaitControl
@@ -37,6 +39,8 @@ private:
      bool th_req_received;
      bool cart_tr_received;
      bool joints_tr_received;
+    float prev_index;
+    int pasos;
     
     // Subscribers
     rclcpp::Subscription<nimble_interfaces::msg::JointsTrajectory>::SharedPtr subscriber_joints_trajectory;
@@ -46,7 +50,7 @@ private:
     // Publishers
     rclcpp::Publisher<nimble_interfaces::msg::JointsTrajectory>::SharedPtr publisher_joints_target;
     rclcpp::Publisher<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr publisher_cartesian_target;
-    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr publisher_pelvis_target;
+    rclcpp::Publisher<nimble_interfaces::msg::ZMPTarget>::SharedPtr publisher_pelvis_target;
 
     // Subscribers callbacks
     void call_back_joints_trajectory(const nimble_interfaces::msg::JointsTrajectory & joints_trajectory_msg);

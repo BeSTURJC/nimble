@@ -75,6 +75,7 @@ nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimb
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_joints_trajectory.py
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory.py
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service.py
+nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service.py
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/__init__.py
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/__init__.py
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_measurements_s.c
@@ -83,6 +84,7 @@ nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimb
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_joints_trajectory_s.c
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory_s.c
 nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c
+nimble_interfaces__py/CMakeFiles/nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service_s.c
 
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_py/__init__.py
@@ -103,6 +105,7 @@ rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl
+rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/nimble_interfaces/srv/CartesianTrajService.idl
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -195,6 +198,9 @@ rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory.py: rosidl_gener
 rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service.py: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service.py
 
+rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service.py: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service.py
+
 rosidl_generator_py/nimble_interfaces/msg/__init__.py: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/nimble_interfaces/msg/__init__.py
 
@@ -219,6 +225,9 @@ rosidl_generator_py/nimble_interfaces/msg/_cartesian_trajectory_s.c: rosidl_gene
 rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c
 
+rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service_s.c: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service_s.c
+
 nimble_interfaces__py: nimble_interfaces__py/CMakeFiles/nimble_interfaces__py
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_c.c
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/_nimble_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
@@ -235,6 +244,8 @@ nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_measurements_s
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_therapy_requirements.py
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/msg/_therapy_requirements_s.c
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/__init__.py
+nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service.py
+nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service_s.c
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service.py
 nimble_interfaces__py: rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c
 nimble_interfaces__py: nimble_interfaces__py/CMakeFiles/nimble_interfaces__py.dir/build.make

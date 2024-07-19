@@ -81,6 +81,7 @@ rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: ros
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl
+rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: rosidl_adapter/nimble_interfaces/srv/CartesianTrajService.idl
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -163,6 +164,9 @@ rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.
 
 rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp: rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp
+
+rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp: rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp
 
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/flags.make
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp.o: rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp
@@ -248,6 +252,20 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp -o CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.s
 
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/flags.make
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o: rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o -MF CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o.d -o CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o -c /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp
+
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp > CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.i
+
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp -o CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.s
+
 # Object files for target nimble_interfaces__rosidl_typesupport_cpp
 nimble_interfaces__rosidl_typesupport_cpp_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp.o" \
@@ -255,7 +273,8 @@ nimble_interfaces__rosidl_typesupport_cpp_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/frame_state__type_support.cpp.o" \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o" \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o" \
-"CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o"
+"CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o" \
+"CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o"
 
 # External object files for target nimble_interfaces__rosidl_typesupport_cpp
 nimble_interfaces__rosidl_typesupport_cpp_EXTERNAL_OBJECTS =
@@ -266,6 +285,7 @@ libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__r
 libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp.o
 libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/msg/cartesian_trajectory__type_support.cpp.o
 libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp.o
+libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp.o
 libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/build.make
 libnimble_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/libtrajectory_msgs__rosidl_typesupport_cpp.so
 libnimble_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
@@ -276,7 +296,7 @@ libnimble_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librosidl_t
 libnimble_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libnimble_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librcutils.so
 libnimble_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library libnimble_interfaces__rosidl_typesupport_cpp.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libnimble_interfaces__rosidl_typesupport_cpp.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -292,6 +312,7 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/nimble_interfaces/msg/joints_trajectory__type_support.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/nimble_interfaces/msg/measurements__type_support.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/nimble_interfaces/msg/therapy_requirements__type_support.cpp
+CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/nimble_interfaces/srv/cartesian_traj_service__type_support.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/nimble_interfaces/srv/traj_generator_service__type_support.cpp
 	cd /home/jcarballeira/nimble_ws/src/build/nimble_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcarballeira/nimble_ws/src/nimble_interfaces /home/jcarballeira/nimble_ws/src/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/nimble_interfaces__rosidl_typesupport_cpp.dir/depend

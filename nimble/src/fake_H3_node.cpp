@@ -29,7 +29,7 @@ public:
     	
         // Create a subscribers 
         subscriber_jointsSP = create_subscription<sensor_msgs::msg::JointState>(
-            "joints_SP", 10,
+            "jointsSP", 10,
             [this](const sensor_msgs::msg::JointState msg) {
                 // Callback function
                 call_back_jointsSP(msg);
@@ -61,7 +61,7 @@ private:
             joints_state_msg.name = {"hipR","kneeR", "ankleR", "hipL", "kneeL", "ankleL"};
             std::random_device rd;
     	    std::mt19937 gen(rd());
-            std::uniform_real_distribution<> dis(-1.0, 1.0);
+            std::uniform_real_distribution<> dis(-3.0, 3.0);
             double random_number = dis(gen);
 
             joints_state_msg.position.push_back(shared_data_.joints_SP.position[i]);//+random_number);

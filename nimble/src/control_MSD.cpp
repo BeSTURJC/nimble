@@ -74,7 +74,7 @@ public:
             
                 
         // Create a publisher
-        publisher_jointsSP = create_publisher<sensor_msgs::msg::JointState>("joints_SP", 10);
+        publisher_jointsSP = create_publisher<sensor_msgs::msg::JointState>("jointsSP", 10);
         
         //Create wall timer to publish periodically (eliminar si no se usa)
         timer_ = this->create_wall_timer(100ms, std::bind(&MSDControlNode::timer_callback, this)); 

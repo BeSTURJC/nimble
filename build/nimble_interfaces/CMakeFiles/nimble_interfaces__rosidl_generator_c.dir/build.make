@@ -88,6 +88,7 @@ rosidl_generator_c/nimble_interfaces/msg/measurements.h: rosidl_adapter/nimble_i
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl
+rosidl_generator_c/nimble_interfaces/msg/measurements.h: rosidl_adapter/nimble_interfaces/srv/CartesianTrajService.idl
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_c/nimble_interfaces/msg/measurements.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -225,6 +226,18 @@ rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__struct.h
 rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.h: rosidl_generator_c/nimble_interfaces/msg/measurements.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.h
 
+rosidl_generator_c/nimble_interfaces/srv/cartesian_traj_service.h: rosidl_generator_c/nimble_interfaces/msg/measurements.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/cartesian_traj_service.h
+
+rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.h: rosidl_generator_c/nimble_interfaces/msg/measurements.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.h
+
+rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__struct.h: rosidl_generator_c/nimble_interfaces/msg/measurements.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__struct.h
+
+rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.h: rosidl_generator_c/nimble_interfaces/msg/measurements.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.h
+
 rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c: rosidl_generator_c/nimble_interfaces/msg/measurements.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c
 
@@ -242,6 +255,9 @@ rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.
 
 rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c: rosidl_generator_c/nimble_interfaces/msg/measurements.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c
+
+rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c: rosidl_generator_c/nimble_interfaces/msg/measurements.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c
 
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c.o: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c.o: rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c
@@ -327,6 +343,20 @@ CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_i
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c -o CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.s
 
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o: rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o -MF CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o.d -o CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o -c /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c
+
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c > CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.i
+
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c -o CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.s
+
 # Object files for target nimble_interfaces__rosidl_generator_c
 nimble_interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/measurements__functions.c.o" \
@@ -334,7 +364,8 @@ nimble_interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/frame_state__functions.c.o" \
 "CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/joints_trajectory__functions.c.o" \
 "CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.c.o" \
-"CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.o"
+"CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.o" \
+"CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o"
 
 # External object files for target nimble_interfaces__rosidl_generator_c
 nimble_interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
@@ -345,6 +376,7 @@ libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosid
 libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/joints_trajectory__functions.c.o
 libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/msg/detail/cartesian_trajectory__functions.c.o
 libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c.o
+libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c.o
 libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/build.make
 libnimble_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libtrajectory_msgs__rosidl_generator_c.so
 libnimble_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
@@ -353,7 +385,7 @@ libnimble_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_inte
 libnimble_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libnimble_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libnimble_interfaces__rosidl_generator_c.so: CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C shared library libnimble_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libnimble_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -389,6 +421,11 @@ CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/msg/joints_trajectory.h
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/msg/measurements.h
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/msg/therapy_requirements.h
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/cartesian_traj_service.h
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.c
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__functions.h
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__struct.h
+CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.h
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.c
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__functions.h
 CMakeFiles/nimble_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/nimble_interfaces/srv/detail/traj_generator_service__struct.h

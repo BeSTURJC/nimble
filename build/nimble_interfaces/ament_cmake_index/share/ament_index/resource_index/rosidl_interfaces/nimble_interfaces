@@ -8,6 +8,10 @@ msg/Measurements.idl
 msg/Measurements.msg
 msg/TherapyRequirements.idl
 msg/TherapyRequirements.msg
+srv/CartesianTrajService.idl
+srv/CartesianTrajService.srv
+srv/CartesianTrajService_Request.msg
+srv/CartesianTrajService_Response.msg
 srv/TrajGeneratorService.idl
 srv/TrajGeneratorService.srv
 srv/TrajGeneratorService_Request.msg

@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_JointsTrajectory_new_indicator
+{
+public:
+  explicit Init_JointsTrajectory_new_indicator(::nimble_interfaces::msg::JointsTrajectory & msg)
+  : msg_(msg)
+  {}
+  ::nimble_interfaces::msg::JointsTrajectory new_indicator(::nimble_interfaces::msg::JointsTrajectory::_new_indicator_type arg)
+  {
+    msg_.new_indicator = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::nimble_interfaces::msg::JointsTrajectory msg_;
+};
+
 class Init_JointsTrajectory_trajectory
 {
 public:
   explicit Init_JointsTrajectory_trajectory(::nimble_interfaces::msg::JointsTrajectory & msg)
   : msg_(msg)
   {}
-  ::nimble_interfaces::msg::JointsTrajectory trajectory(::nimble_interfaces::msg::JointsTrajectory::_trajectory_type arg)
+  Init_JointsTrajectory_new_indicator trajectory(::nimble_interfaces::msg::JointsTrajectory::_trajectory_type arg)
   {
     msg_.trajectory = std::move(arg);
-    return std::move(msg_);
+    return Init_JointsTrajectory_new_indicator(msg_);
   }
 
 private:

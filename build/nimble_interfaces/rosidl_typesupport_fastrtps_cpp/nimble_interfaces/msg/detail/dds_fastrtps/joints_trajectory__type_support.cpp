@@ -116,6 +116,8 @@ cdr_serialize(
   trajectory_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
     ros_message.trajectory,
     cdr);
+  // Member: new_indicator
+  cdr << (ros_message.new_indicator ? true : false);
   return true;
 }
 
@@ -136,6 +138,13 @@ cdr_deserialize(
   // Member: trajectory
   trajectory_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
     cdr, ros_message.trajectory);
+
+  // Member: new_indicator
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.new_indicator = tmp ? true : false;
+  }
 
   return true;
 }
@@ -168,6 +177,12 @@ get_serialized_size(
   current_alignment +=
     trajectory_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
     ros_message.trajectory, current_alignment);
+  // Member: new_indicator
+  {
+    size_t item_size = sizeof(ros_message.new_indicator);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -249,6 +264,14 @@ max_serialized_size_JointsTrajectory(
     }
   }
 
+  // Member: new_indicator
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -257,7 +280,7 @@ max_serialized_size_JointsTrajectory(
     using DataType = nimble_interfaces::msg::JointsTrajectory;
     is_plain =
       (
-      offsetof(DataType, trajectory) +
+      offsetof(DataType, new_indicator) +
       last_member_size
       ) == ret_val;
   }

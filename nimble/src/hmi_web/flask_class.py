@@ -28,9 +28,9 @@ class FlaskApp:
         log.disabled = True
 
         # Patient measurements
-        self.speed = 0.3
-        self.step_length = 0.6
-        self.step_height = 0.12
+        self.speed = 0.1
+        self.step_length = 0.5
+        self.step_height = 0.018
 
         self.setup_routes()
         self.it = 0

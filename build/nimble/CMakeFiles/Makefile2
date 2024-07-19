@@ -67,10 +67,12 @@ all: CMakeFiles/kinematic_model.dir/all
 all: CMakeFiles/states_machine.dir/all
 all: CMakeFiles/control_ZMP.dir/all
 all: CMakeFiles/control_MSD.dir/all
-all: CMakeFiles/cables_robot.dir/all
+all: CMakeFiles/fake_H3_node.dir/all
+all: CMakeFiles/gait_control.dir/all
 all: CMakeFiles/frame.dir/all
 all: CMakeFiles/gamming.dir/all
 all: CMakeFiles/traj_generator_server.dir/all
+all: CMakeFiles/cartesian_traj_server.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -84,10 +86,12 @@ clean: CMakeFiles/kinematic_model.dir/clean
 clean: CMakeFiles/states_machine.dir/clean
 clean: CMakeFiles/control_ZMP.dir/clean
 clean: CMakeFiles/control_MSD.dir/clean
-clean: CMakeFiles/cables_robot.dir/clean
+clean: CMakeFiles/fake_H3_node.dir/clean
+clean: CMakeFiles/gait_control.dir/clean
 clean: CMakeFiles/frame.dir/clean
 clean: CMakeFiles/gamming.dir/clean
 clean: CMakeFiles/traj_generator_server.dir/clean
+clean: CMakeFiles/cartesian_traj_server.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -149,7 +153,7 @@ CMakeFiles/nimble_uninstall.dir/clean:
 CMakeFiles/kinematic_model.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kinematic_model.dir/build.make CMakeFiles/kinematic_model.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kinematic_model.dir/build.make CMakeFiles/kinematic_model.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=11,12 "Built target kinematic_model"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=15,16 "Built target kinematic_model"
 .PHONY : CMakeFiles/kinematic_model.dir/all
 
 # Build rule for subdir invocation for target.
@@ -175,7 +179,7 @@ CMakeFiles/kinematic_model.dir/clean:
 CMakeFiles/states_machine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/states_machine.dir/build.make CMakeFiles/states_machine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/states_machine.dir/build.make CMakeFiles/states_machine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=13,14 "Built target states_machine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=17,18 "Built target states_machine"
 .PHONY : CMakeFiles/states_machine.dir/all
 
 # Build rule for subdir invocation for target.
@@ -247,30 +251,56 @@ CMakeFiles/control_MSD.dir/clean:
 .PHONY : CMakeFiles/control_MSD.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cables_robot.dir
+# Target rules for target CMakeFiles/fake_H3_node.dir
 
 # All Build rule for target.
-CMakeFiles/cables_robot.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=1,2 "Built target cables_robot"
-.PHONY : CMakeFiles/cables_robot.dir/all
+CMakeFiles/fake_H3_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=7,8 "Built target fake_H3_node"
+.PHONY : CMakeFiles/fake_H3_node.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cables_robot.dir/rule: cmake_check_build_system
+CMakeFiles/fake_H3_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cables_robot.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fake_H3_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 0
-.PHONY : CMakeFiles/cables_robot.dir/rule
+.PHONY : CMakeFiles/fake_H3_node.dir/rule
 
 # Convenience name for target.
-cables_robot: CMakeFiles/cables_robot.dir/rule
-.PHONY : cables_robot
+fake_H3_node: CMakeFiles/fake_H3_node.dir/rule
+.PHONY : fake_H3_node
 
 # clean rule for target.
-CMakeFiles/cables_robot.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/clean
-.PHONY : CMakeFiles/cables_robot.dir/clean
+CMakeFiles/fake_H3_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/clean
+.PHONY : CMakeFiles/fake_H3_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/gait_control.dir
+
+# All Build rule for target.
+CMakeFiles/gait_control.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=11,12 "Built target gait_control"
+.PHONY : CMakeFiles/gait_control.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/gait_control.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gait_control.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 0
+.PHONY : CMakeFiles/gait_control.dir/rule
+
+# Convenience name for target.
+gait_control: CMakeFiles/gait_control.dir/rule
+.PHONY : gait_control
+
+# clean rule for target.
+CMakeFiles/gait_control.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/clean
+.PHONY : CMakeFiles/gait_control.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/frame.dir
@@ -279,7 +309,7 @@ CMakeFiles/cables_robot.dir/clean:
 CMakeFiles/frame.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/frame.dir/build.make CMakeFiles/frame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/frame.dir/build.make CMakeFiles/frame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=7,8 "Built target frame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=9,10 "Built target frame"
 .PHONY : CMakeFiles/frame.dir/all
 
 # Build rule for subdir invocation for target.
@@ -305,7 +335,7 @@ CMakeFiles/frame.dir/clean:
 CMakeFiles/gamming.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamming.dir/build.make CMakeFiles/gamming.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamming.dir/build.make CMakeFiles/gamming.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=9,10 "Built target gamming"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=13,14 "Built target gamming"
 .PHONY : CMakeFiles/gamming.dir/all
 
 # Build rule for subdir invocation for target.
@@ -331,7 +361,7 @@ CMakeFiles/gamming.dir/clean:
 CMakeFiles/traj_generator_server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/traj_generator_server.dir/build.make CMakeFiles/traj_generator_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/traj_generator_server.dir/build.make CMakeFiles/traj_generator_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=15,16 "Built target traj_generator_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=19,20 "Built target traj_generator_server"
 .PHONY : CMakeFiles/traj_generator_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -349,6 +379,32 @@ traj_generator_server: CMakeFiles/traj_generator_server.dir/rule
 CMakeFiles/traj_generator_server.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/traj_generator_server.dir/build.make CMakeFiles/traj_generator_server.dir/clean
 .PHONY : CMakeFiles/traj_generator_server.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cartesian_traj_server.dir
+
+# All Build rule for target.
+CMakeFiles/cartesian_traj_server.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles --progress-num=1,2 "Built target cartesian_traj_server"
+.PHONY : CMakeFiles/cartesian_traj_server.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cartesian_traj_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cartesian_traj_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles 0
+.PHONY : CMakeFiles/cartesian_traj_server.dir/rule
+
+# Convenience name for target.
+cartesian_traj_server: CMakeFiles/cartesian_traj_server.dir/rule
+.PHONY : cartesian_traj_server
+
+# clean rule for target.
+CMakeFiles/cartesian_traj_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/clean
+.PHONY : CMakeFiles/cartesian_traj_server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

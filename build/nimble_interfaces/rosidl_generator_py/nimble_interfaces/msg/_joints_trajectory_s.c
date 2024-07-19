@@ -95,6 +95,15 @@ bool nimble_interfaces__msg__joints_trajectory__convert_from_py(PyObject * _pyms
     }
     Py_DECREF(field);
   }
+  {  // new_indicator
+    PyObject * field = PyObject_GetAttrString(_pymsg, "new_indicator");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->new_indicator = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -153,6 +162,17 @@ PyObject * nimble_interfaces__msg__joints_trajectory__convert_to_py(void * raw_r
     }
     {
       int rc = PyObject_SetAttrString(_pymessage, "trajectory", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // new_indicator
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->new_indicator ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "new_indicator", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

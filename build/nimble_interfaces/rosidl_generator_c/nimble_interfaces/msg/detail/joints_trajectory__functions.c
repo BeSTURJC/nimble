@@ -40,6 +40,7 @@ nimble_interfaces__msg__JointsTrajectory__init(nimble_interfaces__msg__JointsTra
     nimble_interfaces__msg__JointsTrajectory__fini(msg);
     return false;
   }
+  // new_indicator
   return true;
 }
 
@@ -55,6 +56,7 @@ nimble_interfaces__msg__JointsTrajectory__fini(nimble_interfaces__msg__JointsTra
   std_msgs__msg__Float32MultiArray__fini(&msg->phase);
   // trajectory
   trajectory_msgs__msg__JointTrajectory__fini(&msg->trajectory);
+  // new_indicator
 }
 
 bool
@@ -79,6 +81,10 @@ nimble_interfaces__msg__JointsTrajectory__are_equal(const nimble_interfaces__msg
   if (!trajectory_msgs__msg__JointTrajectory__are_equal(
       &(lhs->trajectory), &(rhs->trajectory)))
   {
+    return false;
+  }
+  // new_indicator
+  if (lhs->new_indicator != rhs->new_indicator) {
     return false;
   }
   return true;
@@ -110,6 +116,8 @@ nimble_interfaces__msg__JointsTrajectory__copy(
   {
     return false;
   }
+  // new_indicator
+  output->new_indicator = input->new_indicator;
   return true;
 }
 

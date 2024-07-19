@@ -28,9 +28,7 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
   this->declare_parameter("param2", 2);
 
   
-  last_exoPositions.initialized = false;
-
-  // Creates subscribers
+    // Creates subscribers
   subscriber_joints_state_ = create_subscription<sensor_msgs::msg::JointState>(
       "joints_state", 10, [this](const sensor_msgs::msg::JointState msg) {
         call_back_joints_state(msg);
@@ -59,7 +57,9 @@ void KinematicModelNode::call_back_joints_state(
     JointAngles curr_jointAng;
     //Fill structure with current angles from Exo  
     this->fillJointAngles(joint_state_msg, curr_jointAng);
-    curr_jointAng.pelvisList.push_back(0); //Will be filled with joint_state_cables_msg
+    //Pelvis List Will be filled with joint_state_cables_msg
+    curr_jointAng.pelvisList.push_back(cables_state_.position[0]);
+    //curr_jointAng.pelvisList.push_back(0); 
     curr_jointAng.pelvisTilt.push_back(0);
     curr_jointAng.hipR_abd.push_back(0);
     curr_jointAng.hipL_abd.push_back(0);
@@ -68,49 +68,9 @@ void KinematicModelNode::call_back_joints_state(
     nimble_interfaces::msg::TherapyRequirements step_target;
 
     bool extract_features=false;
+    //RCLCPP_INFO(this->get_logger(), "Previous Position:%s",last_exoPositions.initialized ? "true" : "false");
     this->executeKinematicModel(curr_jointAng, measurements_,
-                                        cartesian_actual_state, last_exoPositions);
-    /*this->updateCartesianState(cartesian_state_buffer.right_pelvis,
-                                      cartesian_actual_state.right_pelvis[-1],
-                                      bufferSize);
-       
-    this->updateCartesianState(cartesian_state_buffer.left_pelvis,
-                                      cartesian_actual_state.left_pelvis[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.base_pelvis,
-                                      cartesian_actual_state.base_pelvis[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_hip,
-                                      cartesian_actual_state.right_hip[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_hip,
-                                      cartesian_actual_state.left_hip[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_knee,
-                                      cartesian_actual_state.right_knee[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_knee,
-                                      cartesian_actual_state.left_knee[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.right_ankle,
-                                      cartesian_actual_state.right_ankle[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_ankle,
-                                      cartesian_actual_state.left_ankle[-1],
-                                      bufferSize);                                  
-    this->updateCartesianState(cartesian_state_buffer.right_heel,
-                                      cartesian_actual_state.right_heel[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_heel,
-                                      cartesian_actual_state.left_heel[-1],
-                                      bufferSize);  
-    this->updateCartesianState(cartesian_state_buffer.right_toe,
-                                      cartesian_actual_state.right_toe[-1],
-                                      bufferSize);
-    this->updateCartesianState(cartesian_state_buffer.left_toe,
-                                      cartesian_actual_state.left_toe[-1],
-                                      bufferSize); 
-    //RCLCPP_INFO(this->get_logger(), "prueba:%f",cartesian_actual_state.base_pelvis[-1].x);*/
+                                        cartesian_actual_state);
     publisher_cartState_->publish(cartesian_actual_state);
 
   //}  
@@ -118,13 +78,13 @@ void KinematicModelNode::call_back_joints_state(
 
 void KinematicModelNode::call_back_state_cables(
     const sensor_msgs::msg::JointState &joint_state_cables_msg) {
-  // shared_data_.cables_state = joint_state_cables_msg;
+  cables_state_ = joint_state_cables_msg;
 }
 
 // Always updates measurements callback
 void KinematicModelNode::call_back_measurements(
     const nimble_interfaces::msg::Measurements &measurements_msg) {
-  measurements_ = measurements_msg;
+    measurements_ = measurements_msg;
 }
 
 
@@ -141,16 +101,6 @@ void KinematicModelNode::fillJointAngles(
   joint_state_ang.kneeL.push_back(joint_state_msg.position[4]);
   joint_state_ang.ankleL.push_back(joint_state_msg.position[5]);
 
-}
-
-template <typename T>
-void KinematicModelNode::updateCartesianState(std::vector<T> &target,
-                                            const T &value,
-                                            std::size_t bufferSize) {
-  target.push_back(value);
-  if (target.size() > bufferSize) {
-    target.erase(target.begin());
-  }
 }
 
 void KinematicModelNode::fill_joint_state(
@@ -277,10 +227,10 @@ Eigen::Matrix4d KinematicModelNode::DH_deg(double theta, double d, double a,
 
 // ***** Main functions ***** //
 void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngles, 
-        const nimble_interfaces::msg::Measurements& measurements, const ExoPositions& previousExoPosition,
+        const nimble_interfaces::msg::Measurements& measurements, 
         ExoPositions& exoPositions_fixedBase, ExoPositions& exoPositions_movilBase) {
     
-    
+    //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Cont Point Before: %s",last_exoPositions.contactPoint.name.c_str());
     // Model for the left leg
     Eigen::Matrix4d A0_L = DH_deg(jointAngles.pelvisList, 0, -measurements.width_pelvis/2, 0);
     Eigen::Matrix4d A1_L = DH_deg((-jointAngles.hipL_abd)-90, -measurements.depth_pelvis, 0, -90);
@@ -352,8 +302,8 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     }
 
     double zMin = refSys_feet[minIndex].z();
-
-    auto last_error = previousExoPosition.refSystems.leftHeel;
+    
+    auto last_error = last_exoPositions.refSystems.leftHeel;
     // Determine the point of contact
     switch (minIndex) {
         case 0:
@@ -362,7 +312,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftHeel(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftHeel(2);
 
-            //auto last_error = previousExoPosition.refSystems.leftHeel;
+            //auto last_error = last_exoPositions.refSystems.leftHeel;
             break;
         case 1:
             exoPositions_movilBase.contactPoint.name = "leftToe";
@@ -370,7 +320,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.leftToe(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.leftToe(2);
 
-            last_error = previousExoPosition.refSystems.leftToe;
+            last_error = last_exoPositions.refSystems.leftToe;
             break;
         case 2:
             exoPositions_movilBase.contactPoint.name = "rightHeel";
@@ -378,7 +328,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightHeel(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightHeel(2);
 
-            last_error = previousExoPosition.refSystems.rightHeel;
+            last_error = last_exoPositions.refSystems.rightHeel;
             break;
         case 3:
             exoPositions_movilBase.contactPoint.name = "rightToe";
@@ -386,25 +336,23 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
             exoPositions_movilBase.contactPoint.Y = exoPositions_fixedBase.refSystems.rightToe(1);
             exoPositions_movilBase.contactPoint.Z = exoPositions_fixedBase.refSystems.rightToe(2);
 
-            last_error = previousExoPosition.refSystems.rightToe;
+            last_error = last_exoPositions.refSystems.rightToe;
             break;
     }
 
     
     // Error correction
     Eigen::Vector3d offset;
-    if (previousExoPosition.initialized) {
+    if (last_exoPositions.initialized) {
         // Considers the last point
-        
         offset << exoPositions_movilBase.contactPoint.X - last_error(0),
             exoPositions_movilBase.contactPoint.Y - last_error(1),
-            exoPositions_movilBase.contactPoint.Z - zMin;
+            zMin;    
+            
 
     } else{
         Eigen::Vector3d initialOffset(0, 0, zMin);
-        offset << initialOffset(0),
-            initialOffset(1),
-            exoPositions_movilBase.contactPoint.Z - initialOffset(2);
+        offset=initialOffset;    
     }
 
     // Apply the correction to all references in the system 
@@ -430,7 +378,9 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
     exoPositions_movilBase.contactPoint.Y -= offset.y();
     exoPositions_movilBase.contactPoint.Z -= offset.z();
 
-  
+    //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Cont Point: %s, AnkleX:%f",last_exoPositions.contactPoint.name.c_str(),exoPositions_movilBase.refSystems.rightToe(0));
+
+      
     // Generate output variables for fixed base
     Eigen::MatrixXd posExo_L_fixedBase(3, 8);
     posExo_L_fixedBase << exoPositions_fixedBase.refSystems.base,
@@ -494,7 +444,7 @@ void KinematicModelNode::exoKinematicModel_pelvisMov(const JointAngle& jointAngl
 
 void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, ExoPositions last_exoPositions)
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory)
 { 
   int numPoints = jointAng.hipR.size();
       
@@ -503,7 +453,7 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
       return;
   }
       
-  
+   
   // Initializes all the arrays of each jointPosition structure
   jointPosition pelvisPosition;
   resize_joint_position(pelvisPosition, numPoints);
@@ -560,13 +510,13 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
     } 
 
     // Kinematic model of the pelvis movement
-    this->exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
-                                            exoPositions_fixedBase, exoPositions);
-    
+    this->exoKinematicModel_pelvisMov(q_model, measurements,exoPositions_fixedBase, exoPositions);
+
+       
     // Store positions
     // Rebases for positive values
     float z_error = measurements.femur + measurements.tibia + measurements.distance_to_heel + measurements.distance_to_toe;
-
+    z_error = 0;
     // --Pelvis positions
     this->fill_jointPos_with_exopos(pelvisPosition, exoPositions.refSystems.leftPelvis, 
                                             exoPositions.refSystems.rightPelvis, i, z_error);
@@ -604,6 +554,8 @@ void KinematicModelNode::executeKinematicModel(JointAngles& jointAng,
     kneePositions.phase[i] = jointAng.phase[i];*/
     // Updates the last exo positions
     last_exoPositions = exoPositions;
+    //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Cont Point After: %s",last_exoPositions.contactPoint.name.c_str());
+    last_exoPositions.initialized=true;
   }      
   
   // Fills cartesian target message

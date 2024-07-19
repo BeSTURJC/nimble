@@ -45,7 +45,7 @@ void nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_
   nimble_interfaces__msg__JointsTrajectory__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_c__JointsTrajectory_message_member_array[3] = {
+static rosidl_typesupport_introspection_c__MessageMember nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_c__JointsTrajectory_message_member_array[4] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -96,13 +96,30 @@ static rosidl_typesupport_introspection_c__MessageMember nimble_interfaces__msg_
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "new_indicator",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces__msg__JointsTrajectory, new_indicator),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_c__JointsTrajectory_message_members = {
   "nimble_interfaces__msg",  // message namespace
   "JointsTrajectory",  // message name
-  3,  // number of fields
+  4,  // number of fields
   sizeof(nimble_interfaces__msg__JointsTrajectory),
   nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_c__JointsTrajectory_message_member_array,  // message members
   nimble_interfaces__msg__JointsTrajectory__rosidl_typesupport_introspection_c__JointsTrajectory_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -192,11 +192,16 @@ void StatesMachineNode::call_TrajGenerationService(const nimble_interfaces::msg:
       shared_data_.joints_trajectory.trajectory=result->joints_trajectory;
       //Adapt complete trajectory to control frequency (joints_target_ts). Adapting number of points
       //calculate steps in gait percentage depending on the frecuency
-      float delta_phase=shared_data_.therapy_requirements.speed/1000*joints_target_ts/shared_data_.therapy_requirements.step_length*100;
+      //float delta_phase=shared_data_.therapy_requirements.speed/1000*joints_target_ts/shared_data_.therapy_requirements.step_length*100;
       //number of points to interpolate with that step
-      int num_samples=1+100/delta_phase;
-      RCLCPP_INFO(this->get_logger(), "Received response from Joint Trajectory Generator. Delta Gait:%f%, NumPoints:%i",delta_phase,num_samples);
+      //int num_samples=1+100/delta_phase;
+      float num_steps=shared_data_.therapy_requirements.step_length*1000/shared_data_.therapy_requirements.speed/joints_target_ts;
+      
+      float delta_phase=100/num_steps;
+      float num_samples=num_steps+1;
 
+      RCLCPP_INFO(this->get_logger(), "Received response from Joint Trajectory Generator.");
+      RCLCPP_INFO(this->get_logger(), "Speed:%.2f m/s, Step:%.2f m, Period:%.0f ms, Num.Samples:%.0f, Delta Gait:%.2f %%",shared_data_.therapy_requirements.speed,shared_data_.therapy_requirements.step_length,joints_target_ts,num_samples,delta_phase);
       auto traj=trajectory_msgs::msg::JointTrajectory();
       std::vector<float> linspaced_phases;
       for (int i = 0; i < num_samples; ++i) {
@@ -208,6 +213,7 @@ void StatesMachineNode::call_TrajGenerationService(const nimble_interfaces::msg:
       phases_msg.data=linspaced_phases;
       shared_data_.joints_trajectory.phase=phases_msg;
       shared_data_.joints_trajectory.trajectory.points=traj.points;
+      shared_data_.joints_trajectory.new_indicator=true;
       this->call_cartesian_traj_service(traj);
   };
 
@@ -337,9 +343,15 @@ void StatesMachineNode::call_back_joints_trajectory_timer() {
     joints_trajectory_msg.header.stamp = now();  // Header with the publication timestamp
     //joints_trajectory_msg.trajectory.joint_names={"hipR", "kneeR","ankleR","hipL", "kneeL","ankleL"};
     publisher_joints_trajectory->publish(joints_trajectory_msg);  // publish
+    //RCLCPP_INFO(this->get_logger(), "Indicator Send: %s", joints_trajectory_msg.new_indicator ? "true" : "false");
+    if (shared_data_.joints_trajectory.new_indicator==true){
+      shared_data_.joints_trajectory.new_indicator=false;
+    }  
 
     shared_data_.cartesian_trajectory.header.stamp = now();
     publisher_cartesian_trajectory->publish(shared_data_.cartesian_trajectory);  // publish
+    shared_data_.step_target.header.stamp = now();
+    publisher_step_target->publish(shared_data_.step_target);
   }
 }
 

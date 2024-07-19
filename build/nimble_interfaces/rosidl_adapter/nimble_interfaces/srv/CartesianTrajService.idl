@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nimble_interfaces/srv/CartesianTrajService.srv
+// generated code does not contain a copyright notice
+
+#include "nimble_interfaces/msg/CartesianTrajectory.idl"
+#include "nimble_interfaces/msg/Measurements.idl"
+#include "nimble_interfaces/msg/TherapyRequirements.idl"
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+module nimble_interfaces {
+  module srv {
+    struct CartesianTrajService_Request {
+      trajectory_msgs::msg::JointTrajectory joints_trajectory;
+
+      nimble_interfaces::msg::Measurements measurements;
+    };
+    struct CartesianTrajService_Response {
+      nimble_interfaces::msg::CartesianTrajectory cartesian_trajectory;
+
+      nimble_interfaces::msg::TherapyRequirements step_target;
+    };
+  };
+};

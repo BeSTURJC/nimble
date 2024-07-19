@@ -32,4 +32,6 @@ Publicación a frecuencia concreta de targets actuales tanto articulares para el
 - `/pelvis_target` (sensor_msgs/msg/JointState)
   - Objetivo actual de pelvis/ZMP. Posición de marco(x) y cables(y,z) (por definir)
 - `/joints_target` (nimble_interfaces/msg/JointsTrajectory)
-  - objetivo actual del control MSD (joints_trajectory punto por punto)
+  - objetivo actual del control MSD (joints_trajectory punto por punto con %marcha asociado)
+- `/cartesian_target` (nimble_interfaces/msg/CartesianTrajectory)
+  - Objetivo cartesiano actual de todas las articulaciones

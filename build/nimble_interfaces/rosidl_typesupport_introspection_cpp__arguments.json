@@ -8,7 +8,8 @@
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/FrameState.idl",
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/JointsTrajectory.idl",
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:msg/CartesianTrajectory.idl",
-    "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:srv/TrajGeneratorService.idl"
+    "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:srv/TrajGeneratorService.idl",
+    "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces:srv/CartesianTrajService.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/humble/share/std_msgs/msg/Bool.idl",
@@ -92,6 +93,7 @@
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl",
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl",
     "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl",
+    "/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_adapter/nimble_interfaces/srv/CartesianTrajService.idl",
     "/opt/ros/humble/share/std_msgs/msg/Bool.idl",
     "/opt/ros/humble/share/std_msgs/msg/Byte.idl",
     "/opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl",

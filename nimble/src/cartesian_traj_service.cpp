@@ -258,13 +258,15 @@ Eigen::Vector3d gaitFeatureExtraction(
   int ind=0;
 
   // Stride length calculation
-  data(0) = ankleContra_X[-1] - ankleContra_X[0];
+  data(0) = ankleContra_X.back() - ankleContra_X[0];
 
-  while (legcross==0 && ind!=static_cast<int>(phase.size())){
+  while (legcross==0 && ind!=static_cast<int>(phase.size()-1)){
     ind=ind+1;
     if (ankleIpsi_X[ind]>=ankleContra_X[ind]){
        legcross=1;
        data(1)=std::min(heelIpsi_Z[ind],toeIpsi_Z[ind]);
+       
+       //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Cross Ind:%f, Value:%f",static_cast<float>(100*ind/ankleIpsi_X.size()),data(1)); 
     } 
   }
   if (ind==(static_cast<int>(phase.size())-1)){
@@ -419,17 +421,19 @@ void exoKinematicModel_pelvisMov(const JointAngle& jointAngles,
     if (previousExoPosition.initialized) {
         // Considers the last point
         
+        /*offset << exoPositions_movilBase.contactPoint.X - last_error(0),
+            exoPositions_movilBase.contactPoint.Y - last_error(1),
+            exoPositions_movilBase.contactPoint.Z - zMin;*/
         offset << exoPositions_movilBase.contactPoint.X - last_error(0),
             exoPositions_movilBase.contactPoint.Y - last_error(1),
-            exoPositions_movilBase.contactPoint.Z - zMin;
+            zMin;    
+            //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "entra");
 
     } else{
         Eigen::Vector3d initialOffset(0, 0, zMin);
-        offset << initialOffset(0),
-            initialOffset(1),
-            exoPositions_movilBase.contactPoint.Z - initialOffset(2);
+        offset=initialOffset;    
     }
-
+    //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Offset (%f,%f,%f)",offset(0),offset(1),offset(2));
     // Apply the correction to all references in the system 
     exoPositions_movilBase.refSystems.base = exoPositions_fixedBase.refSystems.base - offset;
     exoPositions_movilBase.refSystems.leftPelvis = exoPositions_fixedBase.refSystems.leftPelvis - offset;
@@ -520,7 +524,7 @@ void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, 
             nimble_interfaces::msg::TherapyRequirements& step_target,bool extract_features)
 { 
-    int numPoints = jointAng.hipR_abd.size();
+    int numPoints = jointAng.hipR.size();
     //RCLCPP_INFO(this->get_logger(), "Feat:%s, NumPoints:%i",extract_features ? "true" : "false",numPoints);
     
     // Theres no joint data received, return
@@ -584,10 +588,14 @@ void executeKinematicModel(JointAngles& jointAng,
         exoKinematicModel_pelvisMov(q_model, measurements, last_exoPositions, 
                                                 exoPositions_fixedBase, exoPositions);
 
+              
+        //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Cont Point: %s",exoPositions.contactPoint.name.c_str());
+        //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "BaseX: %f",exoPositions.refSystems.base[0]);
+
         // Store positions
         // Rebases for positive values
         float z_error = measurements.femur + measurements.tibia + measurements.distance_to_heel + measurements.distance_to_toe;
-
+        z_error=0;
         // --Pelvis positions
         fill_jointPos_with_exopos(pelvisPosition, exoPositions.refSystems.leftPelvis, 
                                                 exoPositions.refSystems.rightPelvis, i, z_error);
@@ -626,7 +634,11 @@ void executeKinematicModel(JointAngles& jointAng,
             
         // Updates the last exo positions
         last_exoPositions = exoPositions;
+        last_exoPositions.initialized=true;
+
+        
     }
+
   if (extract_features==true){
     // Gets the step length and the height
     Eigen::Vector3d data;   // {length, height, swingPercent}

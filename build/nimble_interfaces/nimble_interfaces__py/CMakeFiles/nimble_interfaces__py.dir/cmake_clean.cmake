@@ -14,6 +14,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/nimble_interfaces/msg/_therapy_requirements.py"
   "../rosidl_generator_py/nimble_interfaces/msg/_therapy_requirements_s.c"
   "../rosidl_generator_py/nimble_interfaces/srv/__init__.py"
+  "../rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service.py"
+  "../rosidl_generator_py/nimble_interfaces/srv/_cartesian_traj_service_s.c"
   "../rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service.py"
   "../rosidl_generator_py/nimble_interfaces/srv/_traj_generator_service_s.c"
   "CMakeFiles/nimble_interfaces__py"

@@ -45,9 +45,9 @@ class HmiPublisher(Node):
                 ('width_pelvis', 0.33),
                 ('min_assist_level', 10),
                 ('max_assist_level', 50),
-                ('speed', 1.0),
-                ('step_length', 0.8),
-                ('step_height', 0.1)
+                ('speed', 0.1),
+                ('step_length', 0.5),
+                ('step_height', 0.018)
             ]
         )
         self.timer_ = self.create_timer(1.0, self.publisher_callback)
@@ -64,21 +64,6 @@ class HmiPublisher(Node):
         
 
             data1 = self.webHmi.set_articulation_positions( 'exo1', multiplier,
-                msg.left_knee[0],
-                msg.right_knee[0],
-                msg.left_pelvis[0],
-                msg.right_pelvis[0],
-                msg.left_hip[0],
-                msg.right_hip[0],
-                msg.left_ankle[0],
-                msg.right_ankle[0],
-                msg.left_heel[0],
-                msg.right_heel[0],
-                msg.left_toe[0],
-                msg.right_toe[0]
-        )
-
-            data2 = self.webHmi.set_articulation_positions( 'exo2', multiplier,
                 self.cartesian_state_msg.left_knee[-1],
                 self.cartesian_state_msg.right_knee[-1],
                 self.cartesian_state_msg.left_pelvis[-1],
@@ -91,6 +76,24 @@ class HmiPublisher(Node):
                 self.cartesian_state_msg.right_heel[-1],
                 self.cartesian_state_msg.left_toe[-1],
                 self.cartesian_state_msg.right_toe[-1]
+        )
+
+            data2 = self.webHmi.set_articulation_positions( 'exo2', multiplier,
+                                                           
+                msg.left_knee[0],
+                msg.right_knee[0],
+                msg.left_pelvis[0],
+                msg.right_pelvis[0],
+                msg.left_hip[0],
+                msg.right_hip[0],
+                msg.left_ankle[0],
+                msg.right_ankle[0],
+                msg.left_heel[0],
+                msg.right_heel[0],
+                msg.left_toe[0],
+                msg.right_toe[0]
+
+                
         )
 
             data3 = {

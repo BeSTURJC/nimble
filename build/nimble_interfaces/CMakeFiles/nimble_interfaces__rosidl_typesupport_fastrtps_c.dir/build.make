@@ -83,6 +83,7 @@ rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/nimble_interfaces/msg/JointsTrajectory.idl
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/nimble_interfaces/msg/CartesianTrajectory.idl
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/nimble_interfaces/srv/TrajGeneratorService.idl
+rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: rosidl_adapter/nimble_interfaces/srv/CartesianTrajService.idl
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -184,6 +185,12 @@ rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_servic
 rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp
 
+rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__rosidl_typesupport_fastrtps_c.h: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__rosidl_typesupport_fastrtps_c.h
+
+rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__rosidl_typesupport_fastrtps_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp
+
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
@@ -268,6 +275,20 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesuppo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp -o CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.s
 
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/flags.make
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o -MF CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o.d -o CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o -c /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp
+
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp > CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.i
+
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp -o CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.s
+
 # Object files for target nimble_interfaces__rosidl_typesupport_fastrtps_c
 nimble_interfaces__rosidl_typesupport_fastrtps_c_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp.o" \
@@ -275,7 +296,8 @@ nimble_interfaces__rosidl_typesupport_fastrtps_c_OBJECTS = \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/frame_state__type_support_c.cpp.o" \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/joints_trajectory__type_support_c.cpp.o" \
 "CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support_c.cpp.o" \
-"CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.o"
+"CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.o" \
+"CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o"
 
 # External object files for target nimble_interfaces__rosidl_typesupport_fastrtps_c
 nimble_interfaces__rosidl_typesupport_fastrtps_c_EXTERNAL_OBJECTS =
@@ -286,6 +308,7 @@ libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interf
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/joints_trajectory__type_support_c.cpp.o
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/cartesian_trajectory__type_support_c.cpp.o
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp.o
+libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp.o
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: libnimble_interfaces__rosidl_generator_c.so
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/libtrajectory_msgs__rosidl_typesupport_fastrtps_c.so
@@ -303,7 +326,7 @@ libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/libb
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: /opt/ros/humble/lib/librcutils.so
 libnimble_interfaces__rosidl_typesupport_fastrtps_c.so: CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library libnimble_interfaces__rosidl_typesupport_fastrtps_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libnimble_interfaces__rosidl_typesupport_fastrtps_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -324,6 +347,8 @@ CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_t
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/measurements__type_support_c.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_fastrtps_c.h
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/msg/detail/therapy_requirements__type_support_c.cpp
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__rosidl_typesupport_fastrtps_c.h
+CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support_c.cpp
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_fastrtps_c.h
 CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/depend: rosidl_typesupport_fastrtps_c/nimble_interfaces/srv/detail/traj_generator_service__type_support_c.cpp
 	cd /home/jcarballeira/nimble_ws/src/build/nimble_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcarballeira/nimble_ws/src/nimble_interfaces /home/jcarballeira/nimble_ws/src/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces /home/jcarballeira/nimble_ws/src/build/nimble_interfaces/CMakeFiles/nimble_interfaces__rosidl_typesupport_fastrtps_c.dir/DependInfo.cmake --color=$(COLOR)

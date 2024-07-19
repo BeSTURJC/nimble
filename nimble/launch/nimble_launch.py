@@ -75,6 +75,14 @@ def generate_launch_description():
             output="log",
             emulate_tty=True,
             
+        ),
+        Node(
+            package="nimble",
+            executable="fake_cables_node",
+            name="fake_cables_node",
+            output="log",
+            emulate_tty=True,
+            
         )
         #,
         #Node(

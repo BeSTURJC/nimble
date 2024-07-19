@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/measurements__type_support.c.o.d"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__type_support.c.o"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__type_support.c.o.d"
+  "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.c.o"
+  "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.c.o.d"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.c.o"
   "CMakeFiles/nimble_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.c.o.d"
   "libnimble_interfaces__rosidl_typesupport_introspection_c.pdb"
@@ -23,6 +25,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/measurements__type_support.c"
   "rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/nimble_interfaces/msg/detail/therapy_requirements__type_support.c"
+  "rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/cartesian_traj_service__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/cartesian_traj_service__type_support.c"
   "rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/nimble_interfaces/srv/detail/traj_generator_service__type_support.c"
 )

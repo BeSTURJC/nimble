@@ -117,12 +117,13 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * `float64 velocity`
 * `float64 position`
 
-#### nimble_interfaces/src/JointsTrajectory
+#### nimble_interfaces/msg/JointsTrajectory (tanto para trayectoria completa como punto a punto)
 - `std_msgs/Header header`
--  std_msgs/Float32MultiArray phase
+-  std_msgs/Float32MultiArray phase (fase de marcha)
 -  trajectory_msgs/msg/JointTrajectory trajectory
+-  bool new_indicator (indicador de que la trayectoria completa es nueva)
 
-#### nimble_interfaces/src/CartesianTrajectory
+#### nimble_interfaces/msg/CartesianTrajectory (tanto para trayectoria completa como punto a punto)
 
 - `std_msgs/Header header`
 * `geometry_msgs/Point[] left_pelvis`
@@ -142,6 +143,10 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * `geometry_msgs/Point[] left_toe`
 * `geometry_msgs/Point[] right_toe`
 
+#### nimble_interfaces/msg/ZMPTarget (tanto para trayectoria completa como punto a punto)
+- `std_msgs/Header header`
+-  std_msgs/Float32MultiArray phase (fase de marcha)
+-  geometry_msgs/Point point
 
 #### nimble_interfaces/srv/TrajGeneratorService (a partir de medidas y necesidades de paso genera la trayectoria ideal articulaciones)
 
@@ -149,7 +154,7 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 * Request 2: `therapy_requirements` (nimble_interfaces/msg/TherapyRequirements)
 * Response: `joints_trajectory` (trajectory_msgs/msg/JointTrajectory)
 
-#### nimble_interfaces/srv/CartesianTrajService (a partir de trayectoria articular completa calcula la cartesiana completa)
+#### nimble_interfaces/srv/CartesianTrajService (a partir de trayectoria articular completa calcula la cartesiana completa y los parametros de paso resultantes)
 
 - Request 1: `measurements` (nimble_interfaces/msg/Measurements)
 * Request 2: `joints_trajectory` (trajectory_msgs/msg/JointTrajectory)
@@ -164,8 +169,8 @@ Ahora que cada cual haga sus chapuzas correspondientes en cada nodo. Salud y rep
 ### sensor_msgs/msg/JointState
 
 - `std_msgs/Header header`
-* `string[] name` (seguiremos este orden ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"])
-* `float64[] position` (vector de vectores [pos_hipR, pos_kneeR, pos_ankleR, pos_hipL, pos_kneeL, pos_ankleL])
+* `string[] name` (seguiremos este orden para articulaciones ["hipR", "kneeR", "ankleR","hipL", "kneeL", "ankleL"]) ó ["x","y","z"] si es cartesiana
+* `float64[] position` (vector de vectores con posicion angular)
 * `float64[] velocity` (análogo al anterior con velocidades)
 * `float64[] effort` (análogo al anterior con velocidades)
 

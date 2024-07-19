@@ -6,6 +6,7 @@
     "/home/jcarballeira/nimble_ws/src/nimble_interfaces:msg/FrameState.msg",
     "/home/jcarballeira/nimble_ws/src/nimble_interfaces:msg/JointsTrajectory.msg",
     "/home/jcarballeira/nimble_ws/src/nimble_interfaces:msg/CartesianTrajectory.msg",
-    "/home/jcarballeira/nimble_ws/src/nimble_interfaces:srv/TrajGeneratorService.srv"
+    "/home/jcarballeira/nimble_ws/src/nimble_interfaces:srv/TrajGeneratorService.srv",
+    "/home/jcarballeira/nimble_ws/src/nimble_interfaces:srv/CartesianTrajService.srv"
   ]
 }

@@ -310,7 +310,7 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install("TARGETS" "kinematic_model" "control_ZMP" "control_MSD" "cables_robot" "gamming" "frame" "states_machine" "traj_generator_server" "DESTINATION" "lib/nimble")
+# install("TARGETS" "kinematic_model" "control_ZMP" "control_MSD" "fake_H3_node" "gait_control" "gamming" "frame" "states_machine" "traj_generator_server" "cartesian_traj_server" "DESTINATION" "lib/nimble")
 include("/home/jcarballeira/nimble_ws/src/build/nimble/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "launch" "include" "config" "DESTINATION" "share/nimble")

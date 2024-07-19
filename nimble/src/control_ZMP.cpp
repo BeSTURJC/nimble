@@ -6,6 +6,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "nimble_interfaces/msg/therapy_requirements.hpp"
 #include "nimble_interfaces/msg/cartesian_trajectory.hpp"
+#include "nimble_interfaces/msg/zmp_target.hpp"
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
 #include "nimble_interfaces/msg/frame_state.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
@@ -17,7 +18,7 @@ using namespace std::chrono_literals;
 //Estructura compartida para almacenar datos al recibir cada topic
 struct SharedData {
 
-    nimble_interfaces::msg::CartesianTrajectory cart_target;
+    nimble_interfaces::msg::ZMPTarget pelvis_target;
     nimble_interfaces::msg::TherapyRequirements step_target;
     nimble_interfaces::msg::FrameState frame_state;
     sensor_msgs::msg::JointState cables_state;
@@ -36,11 +37,11 @@ public:
     	this->declare_parameter("param2", 2);
     	
         // Create a subscribers 
-        subscriber_cartTarget = create_subscription<nimble_interfaces::msg::CartesianTrajectory>(
-            "cartesian_target", 10,
-            [this](const nimble_interfaces::msg::CartesianTrajectory msg) {
+        subscriber_pelvisTarget = create_subscription<nimble_interfaces::msg::ZMPTarget>(
+            "pelvis_target", 10,
+            [this](const nimble_interfaces::msg::ZMPTarget msg) {
                 // Callback function
-                call_back_carTarget(msg);
+                call_back_pelvisTarget(msg);
             });
             
         subscriber_stepTarget = create_subscription<nimble_interfaces::msg::TherapyRequirements>(
@@ -83,7 +84,7 @@ public:
 private:
     //Instancias
     SharedData	shared_data_;    //estructura de datos
-    rclcpp::Subscription<nimble_interfaces::msg::CartesianTrajectory>::SharedPtr subscriber_cartTarget; //susbcriptores
+    rclcpp::Subscription<nimble_interfaces::msg::ZMPTarget>::SharedPtr subscriber_pelvisTarget; //susbcriptores
     rclcpp::Subscription<nimble_interfaces::msg::TherapyRequirements>::SharedPtr subscriber_stepTarget;
     rclcpp::Subscription<nimble_interfaces::msg::FrameState>::SharedPtr subscriber_framestate;
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_cablestate;
@@ -94,9 +95,9 @@ private:
     
     
     //Callbacks, funciones asociadas a la recepcion de cada topic        
-    void call_back_carTarget(const nimble_interfaces::msg::CartesianTrajectory & cart_target_msg)
+    void call_back_pelvisTarget(const nimble_interfaces::msg::ZMPTarget & pelvis_target_msg)
     {
-	shared_data_.cart_target = cart_target_msg;  //almacenamiento del mensaje en la estructura de datos
+	shared_data_.pelvis_target = pelvis_target_msg;  //almacenamiento del mensaje en la estructura de datos
         processData();  //llamada a la funcion de procesamiento
         
     }

@@ -70,18 +70,21 @@ class JointsTrajectory(metaclass=Metaclass_JointsTrajectory):
         '_header',
         '_phase',
         '_trajectory',
+        '_new_indicator',
     ]
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
         'phase': 'std_msgs/Float32MultiArray',
         'trajectory': 'trajectory_msgs/JointTrajectory',
+        'new_indicator': 'boolean',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Float32MultiArray'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['trajectory_msgs', 'msg'], 'JointTrajectory'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -94,6 +97,7 @@ class JointsTrajectory(metaclass=Metaclass_JointsTrajectory):
         self.phase = kwargs.get('phase', Float32MultiArray())
         from trajectory_msgs.msg import JointTrajectory
         self.trajectory = kwargs.get('trajectory', JointTrajectory())
+        self.new_indicator = kwargs.get('new_indicator', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -129,6 +133,8 @@ class JointsTrajectory(metaclass=Metaclass_JointsTrajectory):
         if self.phase != other.phase:
             return False
         if self.trajectory != other.trajectory:
+            return False
+        if self.new_indicator != other.new_indicator:
             return False
         return True
 
@@ -178,3 +184,16 @@ class JointsTrajectory(metaclass=Metaclass_JointsTrajectory):
                 isinstance(value, JointTrajectory), \
                 "The 'trajectory' field must be a sub message of type 'JointTrajectory'"
         self._trajectory = value
+
+    @builtins.property
+    def new_indicator(self):
+        """Message field 'new_indicator'."""
+        return self._new_indicator
+
+    @new_indicator.setter
+    def new_indicator(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'new_indicator' field must be of type 'bool'"
+        self._new_indicator = value

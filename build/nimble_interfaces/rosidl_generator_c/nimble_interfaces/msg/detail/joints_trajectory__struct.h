@@ -31,6 +31,7 @@ typedef struct nimble_interfaces__msg__JointsTrajectory
   std_msgs__msg__Header header;
   std_msgs__msg__Float32MultiArray phase;
   trajectory_msgs__msg__JointTrajectory trajectory;
+  bool new_indicator;
 } nimble_interfaces__msg__JointsTrajectory;
 
 // Struct for a sequence of nimble_interfaces__msg__JointsTrajectory.

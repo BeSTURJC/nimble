@@ -22,6 +22,7 @@ gaitControlNode::gaitControlNode() : Node("gait_control") {
   th_req_received=false;
   cart_tr_received=false;
   joints_tr_received=false;
+  prev_index=0;
     	
   // Create a subscribers 
   subscriber_cartesian_trajectory = create_subscription<nimble_interfaces::msg::CartesianTrajectory>(
@@ -40,7 +41,7 @@ gaitControlNode::gaitControlNode() : Node("gait_control") {
   // Create a publisher
   publisher_joints_target = create_publisher<nimble_interfaces::msg::JointsTrajectory>("joints_target", 10);
   publisher_cartesian_target = create_publisher<nimble_interfaces::msg::CartesianTrajectory>("cartesian_target", 10);
-  publisher_pelvis_target = create_publisher<geometry_msgs::msg::Point>("pelvis_target", 10);
+  publisher_pelvis_target = create_publisher<nimble_interfaces::msg::ZMPTarget>("pelvis_target", 10);
         
   timer_joint_target_= this->create_wall_timer(std::chrono::duration<double>(joints_target_ts/1000), std::bind(&gaitControlNode::call_back_current_target, this));
         
@@ -161,8 +162,19 @@ void gaitControlNode::call_back_cartesian_trajectory(const nimble_interfaces::ms
 
 void gaitControlNode::call_back_joints_trajectory(const nimble_interfaces::msg::JointsTrajectory& joints_trajectory_msg) {
   shared_data_.joints_trajectory = joints_trajectory_msg;
-  time_jt_received_ = std::chrono::steady_clock::now();
-  joints_tr_received=true;
+  //RCLCPP_INFO(this->get_logger(), "Indicator Received: %s", joints_trajectory_msg.new_indicator ? "true" : "false");
+  if (shared_data_.joints_trajectory.new_indicator){
+    time_jt_received_ = std::chrono::steady_clock::now();
+    RCLCPP_INFO(this->get_logger(), "Reset Time New");
+    joints_tr_received=true;
+    
+  }
+  if (shared_data_.joints_trajectory.trajectory.points.empty()) {
+    time_jt_received_ = std::chrono::steady_clock::now();
+    joints_tr_received=true;
+    RCLCPP_INFO(this->get_logger(), "Reset Time First");
+  }    
+  
    
 }
 
@@ -183,26 +195,54 @@ void gaitControlNode::call_back_current_target() {
   if (!shared_data_.joints_trajectory.trajectory .points.empty() && !shared_data_.cartesian_trajectory.base_pelvis.empty() && th_req_received==true) {
     trajectory_msgs::msg::JointTrajectoryPoint curr_joint_target = get_joint_target_from_index(curr_percent);
     nimble_interfaces::msg::CartesianTrajectory curr_cartesian_target;
+    if (prev_index>curr_percent+90){
+      pasos=pasos+1;
+          
+    }
 
+    //RCLCPP_INFO(this->get_logger(), "Index:%.2f, PrevIndex:%.2f, Pasos:%i",curr_percent,prev_index,pasos);
     //Fill Complete Cartesian Current Target (For Representation)
     curr_cartesian_target.left_pelvis=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_pelvis); 
+    curr_cartesian_target.left_pelvis[0].x =curr_cartesian_target.left_pelvis[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_pelvis=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_pelvis); 
-    curr_cartesian_target.base_pelvis =get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.base_pelvis); 
+    curr_cartesian_target.right_pelvis[0].x =curr_cartesian_target.right_pelvis[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
+    curr_cartesian_target.base_pelvis =get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.base_pelvis);
+    curr_cartesian_target.base_pelvis[0].x =curr_cartesian_target.base_pelvis[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
 
     curr_cartesian_target.left_hip=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_hip); 
+    curr_cartesian_target.left_hip[0].x =curr_cartesian_target.left_hip[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_hip=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_hip); 
+    curr_cartesian_target.right_hip[0].x =curr_cartesian_target.right_hip[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
 
     curr_cartesian_target.left_knee=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_knee); 
+    curr_cartesian_target.left_knee[0].x =curr_cartesian_target.left_knee[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_knee=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_knee); 
+    curr_cartesian_target.right_knee[0].x =curr_cartesian_target.right_knee[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
 
     curr_cartesian_target.left_ankle=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_ankle); 
+    curr_cartesian_target.left_ankle[0].x =curr_cartesian_target.left_ankle[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_ankle=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_ankle); 
+    curr_cartesian_target.right_ankle[0].x =curr_cartesian_target.right_ankle[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
 
     curr_cartesian_target.left_heel=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_heel); 
+    curr_cartesian_target.left_heel[0].x =curr_cartesian_target.left_heel[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_heel=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_heel); 
+    curr_cartesian_target.right_heel[0].x =curr_cartesian_target.right_heel[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
 
     curr_cartesian_target.left_toe=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.left_toe); 
+    curr_cartesian_target.left_toe[0].x =curr_cartesian_target.left_toe[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+
     curr_cartesian_target.right_toe=get_cartesian_target_from_index(curr_percent, shared_data_.cartesian_trajectory.right_toe); 
+    curr_cartesian_target.right_toe[0].x =curr_cartesian_target.right_toe[0].x+pasos*shared_data_.cartesian_trajectory.base_pelvis.back().x; 
+    //RCLCPP_INFO(this->get_logger(), "Pasos:%i",pasos);
+    //RCLCPP_INFO(this->get_logger(), "End pelvis:%f",shared_data_.cartesian_trajectory.base_pelvis.back().x);
+    
 
     phases.push_back(curr_percent);
     curr_joint_target_message.phase.data = phases;
@@ -213,7 +253,13 @@ void gaitControlNode::call_back_current_target() {
     publisher_joints_target->publish(curr_joint_target_message);
     publisher_cartesian_target->publish(curr_cartesian_target);
     //Publish pelvis SP individually
-    publisher_pelvis_target->publish(curr_cartesian_target.base_pelvis[0]);
+
+    nimble_interfaces::msg::ZMPTarget pelvis_target_msg;
+    pelvis_target_msg.phase.data=phases;
+    pelvis_target_msg.header.stamp=now();
+    pelvis_target_msg.point=curr_cartesian_target.base_pelvis[0];
+    publisher_pelvis_target->publish(pelvis_target_msg);
+    prev_index=curr_percent;
   }
 
 }

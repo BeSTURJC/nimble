@@ -33,6 +33,9 @@ ament_target_dependencies(control_MSD rclcpp nimble_interfaces sensor_msgs traje
 add_executable(fake_H3_node src/fake_H3_node.cpp)
 ament_target_dependencies(fake_H3_node rclcpp sensor_msgs std_msgs)
 
+add_executable(fake_cables_node src/fake_cables_node.cpp)
+ament_target_dependencies(fake_cables_node rclcpp nimble_interfaces sensor_msgs trajectory_msgs std_msgs)
+
 add_executable(gait_control src/gait_control.cpp)
 ament_target_dependencies(gait_control rclcpp nimble_interfaces sensor_msgs trajectory_msgs std_msgs)
 
@@ -53,6 +56,7 @@ install(TARGETS
   control_ZMP
   control_MSD
   fake_H3_node
+  fake_cables_node
   gait_control
   gamming
   frame

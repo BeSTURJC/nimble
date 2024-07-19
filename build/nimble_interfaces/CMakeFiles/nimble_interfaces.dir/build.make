@@ -74,6 +74,9 @@ CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces
 CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/srv/TrajGeneratorService.srv
 CMakeFiles/nimble_interfaces: rosidl_cmake/srv/TrajGeneratorService_Request.msg
 CMakeFiles/nimble_interfaces: rosidl_cmake/srv/TrajGeneratorService_Response.msg
+CMakeFiles/nimble_interfaces: /home/jcarballeira/nimble_ws/src/nimble_interfaces/srv/CartesianTrajService.srv
+CMakeFiles/nimble_interfaces: rosidl_cmake/srv/CartesianTrajService_Request.msg
+CMakeFiles/nimble_interfaces: rosidl_cmake/srv/CartesianTrajService_Response.msg
 CMakeFiles/nimble_interfaces: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 CMakeFiles/nimble_interfaces: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 CMakeFiles/nimble_interfaces: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl

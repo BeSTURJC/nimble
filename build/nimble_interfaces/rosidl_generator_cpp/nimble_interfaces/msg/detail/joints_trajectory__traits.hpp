@@ -51,6 +51,13 @@ inline void to_flow_style_yaml(
   {
     out << "trajectory: ";
     to_flow_style_yaml(msg.trajectory, out);
+    out << ", ";
+  }
+
+  // member: new_indicator
+  {
+    out << "new_indicator: ";
+    rosidl_generator_traits::value_to_yaml(msg.new_indicator, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -84,6 +91,16 @@ inline void to_block_style_yaml(
     }
     out << "trajectory:\n";
     to_block_style_yaml(msg.trajectory, out, indentation + 2);
+  }
+
+  // member: new_indicator
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "new_indicator: ";
+    rosidl_generator_traits::value_to_yaml(msg.new_indicator, out);
+    out << "\n";
   }
 }  // NOLINT(readability/fn_size)
 

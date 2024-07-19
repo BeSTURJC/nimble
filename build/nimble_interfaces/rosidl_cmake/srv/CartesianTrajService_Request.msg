@@ -1,0 +1,2 @@
+trajectory_msgs/JointTrajectory joints_trajectory
+nimble_interfaces/Measurements measurements

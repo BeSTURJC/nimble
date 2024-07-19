@@ -250,17 +250,30 @@ control_MSD/fast:
 .PHONY : control_MSD/fast
 
 #=============================================================================
-# Target rules for targets named cables_robot
+# Target rules for targets named fake_H3_node
 
 # Build rule for target.
-cables_robot: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cables_robot
-.PHONY : cables_robot
+fake_H3_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fake_H3_node
+.PHONY : fake_H3_node
 
 # fast build rule for target.
-cables_robot/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/build
-.PHONY : cables_robot/fast
+fake_H3_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/build
+.PHONY : fake_H3_node/fast
+
+#=============================================================================
+# Target rules for targets named gait_control
+
+# Build rule for target.
+gait_control: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gait_control
+.PHONY : gait_control
+
+# fast build rule for target.
+gait_control/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/build
+.PHONY : gait_control/fast
 
 #=============================================================================
 # Target rules for targets named frame
@@ -301,29 +314,42 @@ traj_generator_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/traj_generator_server.dir/build.make CMakeFiles/traj_generator_server.dir/build
 .PHONY : traj_generator_server/fast
 
-src/cables_robot.o: src/cables_robot.cpp.o
-.PHONY : src/cables_robot.o
+#=============================================================================
+# Target rules for targets named cartesian_traj_server
+
+# Build rule for target.
+cartesian_traj_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cartesian_traj_server
+.PHONY : cartesian_traj_server
+
+# fast build rule for target.
+cartesian_traj_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/build
+.PHONY : cartesian_traj_server/fast
+
+src/cartesian_traj_service.o: src/cartesian_traj_service.cpp.o
+.PHONY : src/cartesian_traj_service.o
 
 # target to build an object file
-src/cables_robot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/src/cables_robot.cpp.o
-.PHONY : src/cables_robot.cpp.o
+src/cartesian_traj_service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/src/cartesian_traj_service.cpp.o
+.PHONY : src/cartesian_traj_service.cpp.o
 
-src/cables_robot.i: src/cables_robot.cpp.i
-.PHONY : src/cables_robot.i
+src/cartesian_traj_service.i: src/cartesian_traj_service.cpp.i
+.PHONY : src/cartesian_traj_service.i
 
 # target to preprocess a source file
-src/cables_robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/src/cables_robot.cpp.i
-.PHONY : src/cables_robot.cpp.i
+src/cartesian_traj_service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/src/cartesian_traj_service.cpp.i
+.PHONY : src/cartesian_traj_service.cpp.i
 
-src/cables_robot.s: src/cables_robot.cpp.s
-.PHONY : src/cables_robot.s
+src/cartesian_traj_service.s: src/cartesian_traj_service.cpp.s
+.PHONY : src/cartesian_traj_service.s
 
 # target to generate assembly for a file
-src/cables_robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cables_robot.dir/build.make CMakeFiles/cables_robot.dir/src/cables_robot.cpp.s
-.PHONY : src/cables_robot.cpp.s
+src/cartesian_traj_service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_traj_server.dir/build.make CMakeFiles/cartesian_traj_server.dir/src/cartesian_traj_service.cpp.s
+.PHONY : src/cartesian_traj_service.cpp.s
 
 src/control_MSD.o: src/control_MSD.cpp.o
 .PHONY : src/control_MSD.o
@@ -373,6 +399,30 @@ src/control_ZMP.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_ZMP.dir/build.make CMakeFiles/control_ZMP.dir/src/control_ZMP.cpp.s
 .PHONY : src/control_ZMP.cpp.s
 
+src/fake_H3_node.o: src/fake_H3_node.cpp.o
+.PHONY : src/fake_H3_node.o
+
+# target to build an object file
+src/fake_H3_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/src/fake_H3_node.cpp.o
+.PHONY : src/fake_H3_node.cpp.o
+
+src/fake_H3_node.i: src/fake_H3_node.cpp.i
+.PHONY : src/fake_H3_node.i
+
+# target to preprocess a source file
+src/fake_H3_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/src/fake_H3_node.cpp.i
+.PHONY : src/fake_H3_node.cpp.i
+
+src/fake_H3_node.s: src/fake_H3_node.cpp.s
+.PHONY : src/fake_H3_node.s
+
+# target to generate assembly for a file
+src/fake_H3_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fake_H3_node.dir/build.make CMakeFiles/fake_H3_node.dir/src/fake_H3_node.cpp.s
+.PHONY : src/fake_H3_node.cpp.s
+
 src/frame.o: src/frame.cpp.o
 .PHONY : src/frame.o
 
@@ -396,6 +446,30 @@ src/frame.s: src/frame.cpp.s
 src/frame.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/frame.dir/build.make CMakeFiles/frame.dir/src/frame.cpp.s
 .PHONY : src/frame.cpp.s
+
+src/gait_control.o: src/gait_control.cpp.o
+.PHONY : src/gait_control.o
+
+# target to build an object file
+src/gait_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/src/gait_control.cpp.o
+.PHONY : src/gait_control.cpp.o
+
+src/gait_control.i: src/gait_control.cpp.i
+.PHONY : src/gait_control.i
+
+# target to preprocess a source file
+src/gait_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/src/gait_control.cpp.i
+.PHONY : src/gait_control.cpp.i
+
+src/gait_control.s: src/gait_control.cpp.s
+.PHONY : src/gait_control.s
+
+# target to generate assembly for a file
+src/gait_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gait_control.dir/build.make CMakeFiles/gait_control.dir/src/gait_control.cpp.s
+.PHONY : src/gait_control.cpp.s
 
 src/gamming.o: src/gamming.cpp.o
 .PHONY : src/gamming.o
@@ -508,26 +582,34 @@ help:
 	@echo "... test"
 	@echo "... nimble_uninstall"
 	@echo "... uninstall"
-	@echo "... cables_robot"
+	@echo "... cartesian_traj_server"
 	@echo "... control_MSD"
 	@echo "... control_ZMP"
+	@echo "... fake_H3_node"
 	@echo "... frame"
+	@echo "... gait_control"
 	@echo "... gamming"
 	@echo "... kinematic_model"
 	@echo "... states_machine"
 	@echo "... traj_generator_server"
-	@echo "... src/cables_robot.o"
-	@echo "... src/cables_robot.i"
-	@echo "... src/cables_robot.s"
+	@echo "... src/cartesian_traj_service.o"
+	@echo "... src/cartesian_traj_service.i"
+	@echo "... src/cartesian_traj_service.s"
 	@echo "... src/control_MSD.o"
 	@echo "... src/control_MSD.i"
 	@echo "... src/control_MSD.s"
 	@echo "... src/control_ZMP.o"
 	@echo "... src/control_ZMP.i"
 	@echo "... src/control_ZMP.s"
+	@echo "... src/fake_H3_node.o"
+	@echo "... src/fake_H3_node.i"
+	@echo "... src/fake_H3_node.s"
 	@echo "... src/frame.o"
 	@echo "... src/frame.i"
 	@echo "... src/frame.s"
+	@echo "... src/gait_control.o"
+	@echo "... src/gait_control.i"
+	@echo "... src/gait_control.s"
 	@echo "... src/gamming.o"
 	@echo "... src/gamming.i"
 	@echo "... src/gamming.s"

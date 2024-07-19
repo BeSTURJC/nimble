@@ -37,7 +37,7 @@ void JointsTrajectory_fini_function(void * message_memory)
   typed_message->~JointsTrajectory();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember JointsTrajectory_message_member_array[3] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember JointsTrajectory_message_member_array[4] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -88,13 +88,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember JointsTraject
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "new_indicator",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(nimble_interfaces::msg::JointsTrajectory, new_indicator),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers JointsTrajectory_message_members = {
   "nimble_interfaces::msg",  // message namespace
   "JointsTrajectory",  // message name
-  3,  // number of fields
+  4,  // number of fields
   sizeof(nimble_interfaces::msg::JointsTrajectory),
   JointsTrajectory_message_member_array,  // message members
   JointsTrajectory_init_function,  // function to initialize message memory (memory has to be allocated)

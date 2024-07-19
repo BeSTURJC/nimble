@@ -4,10 +4,12 @@
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/states_machine.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/control_ZMP.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/control_MSD.dir
-/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/cables_robot.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/fake_H3_node.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/gait_control.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/frame.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/gamming.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/traj_generator_server.dir
+/home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/cartesian_traj_server.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/test.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/edit_cache.dir
 /home/jcarballeira/nimble_ws/src/build/nimble/CMakeFiles/rebuild_cache.dir

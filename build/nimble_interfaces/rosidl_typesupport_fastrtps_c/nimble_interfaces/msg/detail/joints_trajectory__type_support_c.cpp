@@ -136,6 +136,11 @@ static bool _JointsTrajectory__cdr_serialize(
     }
   }
 
+  // Field name: new_indicator
+  {
+    cdr << (ros_message->new_indicator ? true : false);
+  }
+
   return true;
 }
 
@@ -190,6 +195,13 @@ static bool _JointsTrajectory__cdr_deserialize(
     }
   }
 
+  // Field name: new_indicator
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->new_indicator = tmp ? true : false;
+  }
+
   return true;
 }  // NOLINT(readability/fn_size)
 
@@ -219,6 +231,12 @@ size_t get_serialized_size_nimble_interfaces__msg__JointsTrajectory(
 
   current_alignment += get_serialized_size_trajectory_msgs__msg__JointTrajectory(
     &(ros_message->trajectory), current_alignment);
+  // field.name new_indicator
+  {
+    size_t item_size = sizeof(ros_message->new_indicator);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -305,6 +323,13 @@ size_t max_serialized_size_nimble_interfaces__msg__JointsTrajectory(
       is_plain &= inner_is_plain;
     }
   }
+  // member: new_indicator
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -314,7 +339,7 @@ size_t max_serialized_size_nimble_interfaces__msg__JointsTrajectory(
     using DataType = nimble_interfaces__msg__JointsTrajectory;
     is_plain =
       (
-      offsetof(DataType, trajectory) +
+      offsetof(DataType, new_indicator) +
       last_member_size
       ) == ret_val;
   }

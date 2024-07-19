@@ -46,7 +46,11 @@ struct JointsTrajectory_
     phase(_init),
     trajectory(_init)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->new_indicator = false;
+    }
   }
 
   explicit JointsTrajectory_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
@@ -54,7 +58,11 @@ struct JointsTrajectory_
     phase(_alloc, _init),
     trajectory(_alloc, _init)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->new_indicator = false;
+    }
   }
 
   // field types and members
@@ -67,6 +75,9 @@ struct JointsTrajectory_
   using _trajectory_type =
     trajectory_msgs::msg::JointTrajectory_<ContainerAllocator>;
   _trajectory_type trajectory;
+  using _new_indicator_type =
+    bool;
+  _new_indicator_type new_indicator;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -85,6 +96,12 @@ struct JointsTrajectory_
     const trajectory_msgs::msg::JointTrajectory_<ContainerAllocator> & _arg)
   {
     this->trajectory = _arg;
+    return *this;
+  }
+  Type & set__new_indicator(
+    const bool & _arg)
+  {
+    this->new_indicator = _arg;
     return *this;
   }
 
@@ -137,6 +154,9 @@ struct JointsTrajectory_
       return false;
     }
     if (this->trajectory != other.trajectory) {
+      return false;
+    }
+    if (this->new_indicator != other.new_indicator) {
       return false;
     }
     return true;

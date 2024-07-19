@@ -17,7 +17,7 @@ Generacion SP del centro de masas/pelvis para el marco(x) o cables(y,z)
 
 **Suscribed:**
 
-- `/pelvis_target` (sensor_msgs/msg/JointState)
+- `/pelvis_target` (nimble_interfaces/msg/ZMPTarget)
   - **Origen:** gait_control
   - Objetivo actual de pelvis/ZMP. Posición de marco(x) y cables(y,z)
 

@@ -19,6 +19,8 @@
 #include "trajectory_msgs/msg/joint_trajectory.hpp"
 
 // ***** Structs ***** // 
+
+
 struct jointPosition {
     struct pos {
         std::vector<double> X;
@@ -80,7 +82,7 @@ struct Leg {
 };
 
 struct ExoPositions {
-    bool initialized{true};
+    bool initialized{false};
     struct RefSystems {
         Eigen::Vector3d base{0.0, 0.0, 0.0};
         Eigen::Vector3d leftPelvis{0.0, 0.0, 0.0};
@@ -122,14 +124,9 @@ public:
     KinematicModelNode();
 
 private:
-    int bufferSize;
-    bool trajectory_received=false;
-    JointAngles JointStateBuffer;
-    ExoPositions last_exoPositions;
-    
-    
-
-
+   ExoPositions last_exoPositions;
+   
+   
     // **** Atributes **** //
     // Subscribers
     rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_joints_state_;
@@ -146,6 +143,8 @@ private:
     // Message data for subscribers
     nimble_interfaces::msg::Measurements measurements_;
 
+    sensor_msgs::msg::JointState cables_state_;
+
     // **** Functions **** //
     // Callback functions 
     void call_back_joints_trajectory(const nimble_interfaces::msg::JointsTrajectory & joint_trajectory_msg);
@@ -156,10 +155,7 @@ private:
     // Struct functions
     void fillJointAngles(const sensor_msgs::msg::JointState& joint_state_msg, JointAngles& joint_state_ang);
     
-    template <typename T>
-    void updateCartesianState(std::vector<T>& target, const T& value, std::size_t bufferSize);
-    
-    void fill_joint_state( jointPosition &pelvisPosition, jointPosition &hipPositions,
+        void fill_joint_state( jointPosition &pelvisPosition, jointPosition &hipPositions,
         jointPosition &anklePositions, jointPosition &heelsPositions,
         jointPosition &toePositions, jointPosition &kneePositions,
         nimble_interfaces::msg::CartesianTrajectory &cartesian_trajectory);
@@ -178,14 +174,13 @@ private:
     void exoKinematicModel_pelvisMov(
         const JointAngle& jointAngles,
         const nimble_interfaces::msg::Measurements& measurements,
-        const ExoPositions& previousExoPosition,
         ExoPositions& exoPositions_fixedBase,
         ExoPositions& exoPositions_movilBase);
 
     
     void executeKinematicModel(JointAngles& jointAng,
             nimble_interfaces::msg::Measurements& measurements,
-            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory, ExoPositions last_exoPositions);
+            nimble_interfaces::msg::CartesianTrajectory& cartesian_trajectory);
 };
 
 

@@ -1,0 +1,3 @@
+
+nimble_interfaces/CartesianTrajectory cartesian_trajectory
+nimble_interfaces/TherapyRequirements step_target
