@@ -15,15 +15,15 @@
 2. [Anotaciones](#anotaciones)
 
 3. [Nodos](#nodos)
-   * [HMI](https://github.com/jcarballeira/nimble/blob/HMI/docs/hmi.md)
-   * [Kinematic Model](https://github.com/jcarballeira/nimble/blob/HMI/docs/kinematic_model.md)
-   * [Gait Control](https://github.com/jcarballeira/nimble/blob/HMI/docs/gait_control.md)
-   * [Control MSD](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_MSD.md)
-   * [Control ZMP](https://github.com/jcarballeira/nimble/blob/HMI/docs/Control_ZMP.md)
-   * [Frame](https://github.com/jcarballeira/nimble/blob/HMI/docs/frame.md)
-   * [Gaming](https://github.com/jcarballeira/nimble/blob/HMI/docs/gaming.md)
-   * [States Machine](https://github.com/jcarballeira/nimble/blob/HMI/docs/states_machine.md)
-   * [Simulink Node](https://github.com/jcarballeira/nimble/blob/HMI/docs/simulink_node.md)
+   * [HMI](https://github.com/BeSTURJC/nimble/blob/HMI/docs/hmi.md)
+   * [Kinematic Model](https://github.com/BeSTURJC/nimble/blob/HMI/docs/kinematic_model.md)
+   * [Gait Control](https://github.com/BeSTURJC/nimble/blob/HMI/docs/gait_control.md)
+   * [Control MSD](https://github.com/BeSTURJC/nimble/blob/HMI/docs/Control_MSD.md)
+   * [Control ZMP](https://github.com/BeSTURJC/nimble/blob/HMI/docs/Control_ZMP.md)
+   * [Frame](https://github.com/BeSTURJC/nimble/blob/HMI/docs/frame.md)
+   * [Gaming](https://github.com/BeSTURJC/nimble/blob/HMI/docs/gaming.md)
+   * [States Machine](https://github.com/BeSTURJC/nimble/blob/HMI/docs/states_machine.md)
+   * [Simulink Node](https://github.com/BeSTURJC/nimble/blob/HMI/docs/simulink_node.md)
 
 4. [Tipos de Mensaje Utilizados](#tipos-de-mensaje-utilizados)
 
@@ -42,7 +42,7 @@
 1. **Crear una carpeta workspace** (p.e. nimble_ws o ros_ws) y subcarpeta nimble_ws/src. En ella copiaremos los archivos descargandolos directamente o ejecutando:
 
 ```bash
-git clone https://github.com/jcarballeira/nimble.git
+git clone https://github.com/BeSTURJC/nimble.git
 ```
 
 3. **Compilar:** Situarse en "cd nimble_ws" y ejecutar "colcon build". Rezar a vuestra divinidad favorita.
