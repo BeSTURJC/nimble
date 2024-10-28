@@ -15,7 +15,7 @@
 2. [Anotaciones](#anotaciones)
 
 3. [Nodos](#nodos)
-   * [HMI](https://github.com/BeSTURJC/nimble/blob/HMI/docs/hmi.md)
+   * [HMI](https://github.com/BeSTURJC/nimble/docs/hmi.md)
    * [Kinematic Model](https://github.com/BeSTURJC/nimble/blob/HMI/docs/kinematic_model.md)
    * [Gait Control](https://github.com/BeSTURJC/nimble/blob/HMI/docs/gait_control.md)
    * [Control MSD](https://github.com/BeSTURJC/nimble/blob/HMI/docs/Control_MSD.md)
