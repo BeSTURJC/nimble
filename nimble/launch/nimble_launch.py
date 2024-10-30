@@ -51,15 +51,7 @@ def generate_launch_description():
             emulate_tty=True,
             
         ),
-        Node(
-            package="nimble",
-            executable="kinematic_model",
-            name="kinematic_model",
-            output="log",
-            emulate_tty=True,
             
-        ),
-                
         Node(
             package="nimble",
             executable="control_MSD",
@@ -68,22 +60,22 @@ def generate_launch_description():
             emulate_tty=True,
             
         ),
-        Node(
-            package="nimble",
-            executable="fake_H3_node",
-            name="fake_H3_node",
-            output="log",
-            emulate_tty=True,
+        #Node(
+         #  package="nimble",
+          # executable="fake_H3_node",
+           #name="fake_H3_node",
+           #output="log",
+           #emulate_tty=True,
             
-        ),
-        Node(
-            package="nimble",
-            executable="fake_cables_node",
-            name="fake_cables_node",
-            output="log",
-            emulate_tty=True,
+        #),
+        #Node(
+         #  package="nimble",
+          # executable="fake_cables_node",
+          # name="fake_cables_node",
+          # output="log",
+          # emulate_tty=True,
             
-        )
+        #)
         #,
         #Node(
            # package="nimble",
@@ -93,4 +85,13 @@ def generate_launch_description():
             #emulate_tty=True,
             
         #)
+        Node(
+            package="nimble",
+            executable="kinematic_model",
+            name="kinematic_model",
+            output="log",
+            emulate_tty=True,
+            
+        )
+            
     ])

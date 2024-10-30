@@ -94,6 +94,8 @@ private:
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_controlMode;
 
     // Functions
+    
+    void iniciar_EXOH3();
     std::string jointTrajectoryToString(const trajectory_msgs::msg::JointTrajectory::SharedPtr& joint_trajectory);
     bool check_variations_in_therapy();
     void call_TrajGenerationService(const nimble_interfaces::msg::Measurements& measurements,

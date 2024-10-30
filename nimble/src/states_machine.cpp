@@ -74,6 +74,9 @@ StatesMachineNode::StatesMachineNode() : Node("states_machine") {
   // Create wall timer to publish periodically
   timer_joint_trajectory_ = this->create_wall_timer(std::chrono::duration<double>(joints_trajectory_ts/1000), std::bind(&StatesMachineNode::call_back_joints_trajectory_timer, this));
   
+  
+  iniciar_EXOH3();
+  
 }
 
 
@@ -332,6 +335,35 @@ void StatesMachineNode::call_back_interaction_torque(const std_msgs::msg::Float3
 
 void StatesMachineNode::call_back_FSR(const std_msgs::msg::ByteMultiArray& FSR_msg) {
   shared_data_.FSR = FSR_msg;
+  
+}
+
+void StatesMachineNode::iniciar_EXOH3(){
+
+	RCLCPP_INFO(this->get_logger(), "INITIALIZING H3........");
+	std_msgs::msg::Int32 ex_mode;
+	
+	std::vector<int32_t> datos = {80, 80, 80, 80, 80, 80}; 
+        std_msgs::msg::Int32MultiArray ass_level;
+        ass_level.data = datos; 
+	
+	ex_mode.data=0;
+ 	publisher_executionMode->publish(ex_mode);
+ 	std::this_thread::sleep_for(std::chrono::seconds(3));	
+ 	ex_mode.data=1;
+ 	publisher_executionMode->publish(ex_mode);
+ 	std::this_thread::sleep_for(std::chrono::seconds(3));
+ 	ex_mode.data=2;
+ 	publisher_executionMode->publish(ex_mode);
+ 	std::this_thread::sleep_for(std::chrono::seconds(5));
+ 	ex_mode.data=3;
+ 	publisher_executionMode->publish(ex_mode);
+ 	std::this_thread::sleep_for(std::chrono::seconds(3));
+ 	
+ 	publisher_assistLevel->publish(ass_level);
+ 	ex_mode.data=4;
+ 	publisher_executionMode->publish(ex_mode);
+ 	RCLCPP_INFO(this->get_logger(), "....H3 READY!!!");
   
 }
 

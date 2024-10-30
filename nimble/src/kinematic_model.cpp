@@ -54,33 +54,38 @@ KinematicModelNode::KinematicModelNode() : Node("kinematic_model") {
 void KinematicModelNode::call_back_joints_state(
     const sensor_msgs::msg::JointState &joint_state_msg) {
     
-    JointAngles curr_jointAng;
-    //Fill structure with current angles from Exo  
-    this->fillJointAngles(joint_state_msg, curr_jointAng);
-    //Pelvis List Will be filled with joint_state_cables_msg
-    curr_jointAng.pelvisList.push_back(cables_state_.position[0]);
-    //curr_jointAng.pelvisList.push_back(0); 
-    curr_jointAng.pelvisTilt.push_back(0);
-    curr_jointAng.hipR_abd.push_back(0);
-    curr_jointAng.hipL_abd.push_back(0);
+    if (!joint_state_msg.position.empty()) { 
+            //RCLCPP_INFO(this->get_logger(), "JOINT STATE RECEIVED");		
+	    JointAngles curr_jointAng;
+	    //Fill structure with current angles from Exo  
+	    this->fillJointAngles(joint_state_msg, curr_jointAng);
+	    
+	    //Pelvis List Will be filled with joint_state_cables_msg if existing
+	    if (!cables_state_.position.empty()) { curr_jointAng.pelvisList.push_back(cables_state_.position[0]);}
+	    else{curr_jointAng.pelvisList.push_back(0); }
+	    
+	    curr_jointAng.pelvisTilt.push_back(0);
+	    curr_jointAng.hipR_abd.push_back(0);
+	    curr_jointAng.hipL_abd.push_back(0);
 
-    nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
-    nimble_interfaces::msg::TherapyRequirements step_target;
+	    nimble_interfaces::msg::CartesianTrajectory cartesian_actual_state;
+	    nimble_interfaces::msg::TherapyRequirements step_target;
 
-    bool extract_features=false;
-    //RCLCPP_INFO(this->get_logger(), "Previous Position:%s",last_exoPositions.initialized ? "true" : "false");
-    this->executeKinematicModel(curr_jointAng, measurements_,
-                                        cartesian_actual_state);
-    publisher_cartState_->publish(cartesian_actual_state);
+	    bool extract_features=false;
+	    //RCLCPP_INFO(this->get_logger(), "Previous Position:%s",last_exoPositions.initialized ? "true" : "false");
+	    this->executeKinematicModel(curr_jointAng, measurements_,
+		                                cartesian_actual_state);
+	    publisher_cartState_->publish(cartesian_actual_state);
 
-  //}  
+   } 
+   
 }
 
 void KinematicModelNode::call_back_state_cables(
     const sensor_msgs::msg::JointState &joint_state_cables_msg) {
-  cables_state_ = joint_state_cables_msg;
+  	cables_state_ = joint_state_cables_msg;
+  	
 }
-
 // Always updates measurements callback
 void KinematicModelNode::call_back_measurements(
     const nimble_interfaces::msg::Measurements &measurements_msg) {
